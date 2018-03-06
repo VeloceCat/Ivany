@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/info', 'HomeController@info')->name('info');
+Route::get('/forum', 'HomeController@forum')->name('forum');
+Route::get('/contact', 'HomeController@contact')->name('contact');
+
+
+Route::group(['middleware' => 'auth'], function () {
+    
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

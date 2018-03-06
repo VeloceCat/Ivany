@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a href="{{ route('home') }}"><img src="{{ asset('/img/A_Logo.svg') }}" alt="logo"></a></li>
+                        <li id="logo"><a href="{{ route('home') }}"><img src="{{ asset('/img/A_Logo.svg') }}" alt="logo"></a></li>
                         <li><a href="{{ route('home') }}">Stad Antwerpen</a></li>
                     </ul>
 
@@ -56,9 +56,9 @@
                             </li>
                         @endguest
                         -->
-                        <li><a href="route('/')">Home</a></li>
-                        <li><a href="route('/forum')">Forum</a></li>
-                        <li><a href="route('/contact')">Contact</a></li>
+                        <li><a href="{{ route('home')  }}">Home</a></li>
+                        <li><a href="{{ route('forum')  }}">Forum</a></li>
+                        <li><a href="{{ route('contact')  }}">Contact</a></li>
                     </ul>
                 </div>
             </div>

@@ -25,12 +25,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li id="logo"><a href="{{ route('home') }}"><img src="{{ asset('/img/A_Logo.svg') }}" alt="logo"></a></li>
-                        <li><a href="{{ route('home') }}">Stad Antwerpen</a></li>
+                        <li id="logo"><a href="{{ route('home') }}"><img src="{{ asset('/img/A_Logo.svg') }}" alt="logo">Stad Antwerpen</a></li>
+                        <!-- <li id="title"><a href="{{ route('home') }}">Stad Antwerpen</a></li> -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul id="navigatie" class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <!--
                         @guest

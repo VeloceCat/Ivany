@@ -1,8 +1,12 @@
 /* -------------- HOMEPAGE -------------- */
 
-#logo {
+#logo img {
     width: 90px;
     height: 90px;
+}
+
+#navigatie li {
+    margin-left: 10%;
 }
 
 #home {
@@ -21,4 +25,5 @@
     background-color: transparent;
     z-index: 2;
     box-shadow: none;
+    color: #fff;
 }

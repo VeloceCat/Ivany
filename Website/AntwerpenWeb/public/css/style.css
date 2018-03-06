@@ -1,5 +1,11 @@
 /* -------------- HOMEPAGE -------------- */
 
+.navbar {
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+}
+
 #home {
     height: 100%;
     width: 100%;
@@ -14,8 +20,3 @@
     float: right;
 }
 
-.navbar {
-    position: relative;
-    background-color: transparent;
-    z-index: 2;
-}

@@ -1,5 +1,10 @@
 /* -------------- HOMEPAGE -------------- */
 
+.navbar a {
+    color: #fff;
+    font-size: 130%;
+}
+
 #logo img {
     width: 90px;
     height: 90px;
@@ -25,5 +30,4 @@
     background-color: transparent;
     z-index: 2;
     box-shadow: none;
-    color: #fff;
 }

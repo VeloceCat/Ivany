@@ -1,5 +1,10 @@
 /* -------------- HOMEPAGE -------------- */
 
+#logo {
+    width: 90px;
+    height: 90px;
+}
+
 #home {
     height: 100%;
     width: 100%;
@@ -7,15 +12,13 @@
     overflow: hidden;
     top: 0;
     z-index: 1;
-}
-
-#home img {
-    position: relative;
-    float: right;
+    background-image: url('/img/HomeFoto.png');
+    background-position: top right;
 }
 
 .navbar {
     position: relative;
     background-color: transparent;
     z-index: 2;
+    box-shadow: none;
 }

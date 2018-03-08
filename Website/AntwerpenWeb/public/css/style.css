@@ -1,4 +1,4 @@
-/* -------------- HOMEPAGE -------------- */
+/* -------------- FONTS -------------- */
 @font-face{
     font-family: 'Antwerpen';
     src:  url('/fonts/Antwerpen-Regular.woff') format('woff'),
@@ -19,6 +19,7 @@ h1, h2, a {
     font-family: 'Antwerpen', Arial;
 }
 
+/* -------------- NAVIGATIE -------------- */
 #logo img {
     width: 90px;
     height: 90px;
@@ -26,17 +27,6 @@ h1, h2, a {
 
 #navigatie li {
     margin: 0 5%;
-}
-
-#home {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    z-index: 1;
-    background-image: url('/img/HomeFoto.png');
-    background-position: top right;
 }
 
 .navbar {
@@ -57,21 +47,57 @@ h1, h2, a {
     max-width: 100%;
 }
 
-button {
+
+/* -------------- HOMEPAGE -------------- */
+#home {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    background-image: url('/img/HomeFoto.png');
+    background-position: top right;
+    text-align: center;
+    background-size: cover;
+}
+
+#buttons{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 80%;
+    bottom: 200px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+#buttons button {
     background-color: transparent;
     color: #fff;
     border: 1px solid #fff;
     border-radius: 0px;
     padding: 5px 15px;
-    font-size: 140%;
-    margin: 35% 25% 0 0;
+    font-size: 20px;
     cursor: pointer;
+    width: 180px;
 }
 
-button:hover {
+#buttons button:hover {
     background-color: #fff;
     color: #000;
 }
+
+
+
+
 
 @media (max-width: 767.99px) {
     #navigatie li {
@@ -80,5 +106,18 @@ button:hover {
 
     .container {
         margin-left: 0;
+    }
+
+    #buttons{
+        left: 0;
+        right: 0;
+    }
+
+    #buttons button:last-child {
+        margin-top: 20px;
+    }
+
+    .buttonFullWidth {
+        width: 100%;
     }
 }

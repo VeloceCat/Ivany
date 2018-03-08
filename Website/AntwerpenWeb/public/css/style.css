@@ -1,4 +1,23 @@
 /* -------------- HOMEPAGE -------------- */
+@font-face{
+    font-family: 'Antwerpen';
+    src:  url('/fonts/Antwerpen-Regular.woff') format('woff'),
+    url('/fonts/Antwerpen-Regular.ttf')  format('truetype');
+}
+
+@font-face{
+    font-family: 'SunAntwerpen';
+    src:  url('/fonts/SunAntwerpen_300.woff') format('woff'),
+    url('/fonts/SunAntwerpen_300.ttf')  format('truetype');
+}
+
+* {
+    font-family: 'SunAntwerpen', Arial;
+}
+
+h1, h2, a {
+    font-family: 'Antwerpen', Arial;
+}
 
 #logo img {
     width: 90px;
@@ -36,6 +55,22 @@
     margin-left: 5%;
     margin-right: 8%;
     max-width: 100%;
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    padding: 5px 15px;
+    font-size: 140%;
+    margin: 35% 25% 0 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #000;
 }
 
 @media (max-width: 767.99px) {

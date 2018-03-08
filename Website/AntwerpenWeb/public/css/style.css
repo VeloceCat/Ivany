@@ -107,7 +107,7 @@ h1, h2, a {
 #homeText {
     -webkit-flex-flow: column wrap;
     color: #fff;
-    height: 80%;
+    height: 75%;
     padding-top: 8%;
 }
 
@@ -122,7 +122,7 @@ h1, h2, a {
 
 #buttons{
     -webkit-flex-flow: row wrap;
-    height: 20%;
+    height: 25%;
 }
 
 #buttons button {
@@ -164,6 +164,10 @@ h1, h2, a {
         margin: 0;
     }
 
+    .navbar {
+        background-color: #1E1E1E;
+    }
+
     .container {
         margin-left: 0;
     }
@@ -177,15 +181,24 @@ h1, h2, a {
         right: 0;
     }
 
+    #homeText {
+        height: 70%;
+        width: 80%;
+    }
+
+    #buttons {
+        height: 30%;
+    }
+
     #homeText p {
         padding: 0;
     }
 
-    #buttons .buttonFullWidth:last-child button {
-        margin-top: 20px;
+    #buttons .buttonFullWidth:last-child {
+        margin-top: -60px;
     }
 
-    .buttonFullWidth, .textFullWidth, #home section {
+    .buttonFullWidth, #home section {
         width: 100%;
     }
 

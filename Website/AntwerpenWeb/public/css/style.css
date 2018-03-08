@@ -80,21 +80,39 @@ h1, h2, a {
     background-size: cover;
 }
 
-#buttons{
+#buttons, #homeText {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
-    -webkit-flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+
     position: absolute;
     width: 80%;
-    bottom: 200px;
     margin: 0 auto;
     padding: 0 auto;
+}
+
+#homeText {
+    -webkit-flex-flow: column wrap;
+    top: 250px;
+    color: #fff;
+}
+
+#homeText h1 {
+    font-size: 2.5em;
+}
+
+#homeText p {
+    font-size: 1.5em;
+}
+
+#buttons{
+    margin-top: 20px;
+    -webkit-flex-flow: row wrap;
+    bottom: 200px;
 }
 
 #buttons button {
@@ -116,7 +134,7 @@ h1, h2, a {
 
 
 
-/* -------------- VANAF HAMBURGERMENU -------------- */
+/* -------------- VANAF HAMBURGERMENU OP SCHERM KOMT -------------- */
 @media (max-width: 767.99px) {
     #navigatie li {
         margin: 0;
@@ -126,7 +144,7 @@ h1, h2, a {
         margin-left: 0;
     }
 
-    #buttons{
+    #buttons, #homeText{
         left: 0;
         right: 0;
     }
@@ -135,7 +153,8 @@ h1, h2, a {
         margin-top: 20px;
     }
 
-    .buttonFullWidth {
+    .buttonFullWidth, .textFullWidth {
         width: 100%;
     }
+
 }

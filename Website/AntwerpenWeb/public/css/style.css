@@ -34,12 +34,16 @@
 
 .container {
     margin-left: 5%;
-    margin-right: 0;
+    margin-right: 5%;
     max-width: 90%;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 767.99px) {
     #navigatie li {
         padding: 0;
+    }
+
+    .container {
+        margin-left: 0;
     }
 }

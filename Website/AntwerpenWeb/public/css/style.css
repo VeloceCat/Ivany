@@ -32,6 +32,8 @@ h1, h2, a {
 .navbar {
     position: relative;
     background-color: transparent;
+    /*tijdelijke kleur zodat menu zichtbaar blijft */
+    background-color: #1E1E1E;
     z-index: 2;
     box-shadow: none;
 }

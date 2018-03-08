@@ -107,6 +107,7 @@ h1, h2, a {
 
 #homeText p {
     font-size: 1.5em;
+    padding: 0 20%;
 }
 
 #buttons{
@@ -147,6 +148,10 @@ h1, h2, a {
     #buttons, #homeText{
         left: 0;
         right: 0;
+    }
+
+    #homeText p {
+        padding: 0;
     }
 
     #buttons button:last-child {

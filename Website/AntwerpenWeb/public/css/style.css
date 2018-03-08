@@ -19,10 +19,16 @@ h1, h2, a {
     font-family: 'Antwerpen', Arial;
 }
 
+
+
 /* -------------- NAVIGATIE -------------- */
 #logo img {
     width: 90px;
     height: 90px;
+}
+
+#logo a {
+    text-decoration: none;
 }
 
 #navigatie li {
@@ -32,8 +38,6 @@ h1, h2, a {
 .navbar {
     position: relative;
     background-color: transparent;
-    /*tijdelijke kleur zodat menu zichtbaar blijft */
-    background-color: #1E1E1E;
     z-index: 2;
     box-shadow: none;
 }
@@ -80,6 +84,12 @@ h1, h2, a {
     background-size: cover;
 }
 
+#home section {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+}
+
 #buttons, #homeText {
     display: -webkit-box;
     display: -moz-box;
@@ -89,16 +99,16 @@ h1, h2, a {
     justify-content: space-around;
     align-items: center;
 
-    position: absolute;
-    width: 80%;
+    position: relative;
     margin: 0 auto;
     padding: 0 auto;
 }
 
 #homeText {
     -webkit-flex-flow: column wrap;
-    top: 250px;
     color: #fff;
+    height: 80%;
+    padding-top: 8%;
 }
 
 #homeText h1 {
@@ -111,9 +121,8 @@ h1, h2, a {
 }
 
 #buttons{
-    margin-top: 20px;
     -webkit-flex-flow: row wrap;
-    bottom: 200px;
+    height: 20%;
 }
 
 #buttons button {
@@ -122,6 +131,7 @@ h1, h2, a {
     border: 1px solid #fff;
     border-radius: 0px;
     padding: 5px 15px;
+    margin: 0;
     font-size: 20px;
     cursor: pointer;
     width: 180px;
@@ -131,6 +141,19 @@ h1, h2, a {
     background-color: #fff;
     color: #000;
 }
+
+
+
+/* -------------- ACHTERGROND OP ALLE PAGINA'S VOOR MENU TE KUNNEN ZIEN -------------- */
+#achtergrond {
+    background-color: #1E1E1E;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+
 
 
 
@@ -145,6 +168,10 @@ h1, h2, a {
         margin-left: 0;
     }
 
+    #home {
+        font-size: 80%;
+    }
+
     #buttons, #homeText{
         left: 0;
         right: 0;
@@ -154,11 +181,11 @@ h1, h2, a {
         padding: 0;
     }
 
-    #buttons button:last-child {
+    #buttons .buttonFullWidth:last-child button {
         margin-top: 20px;
     }
 
-    .buttonFullWidth, .textFullWidth {
+    .buttonFullWidth, .textFullWidth, #home section {
         width: 100%;
     }
 

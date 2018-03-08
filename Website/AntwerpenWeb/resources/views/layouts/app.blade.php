@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li id="logo"><a href="{{ route('home') }}"><img src="{{ asset('/img/A_Logo.svg') }}" alt="logo">Stad Antwerpen</a></li>
+                        <li id="logo"><a href="{{ route('home') }}" title="Klik op het logo om terug naar de startpagina te gaan."><img src="{{ asset('/img/A_Logo.svg') }}" alt="logo">Stad Antwerpen</a></li>
                         <!-- <li id="title"><a href="{{ route('home') }}">Stad Antwerpen</a></li> -->
                     </ul>
 

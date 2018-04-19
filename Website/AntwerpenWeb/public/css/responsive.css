@@ -1,11 +1,11 @@
 /* -------------- VANAF HAMBURGERMENU OP SCHERM KOMT -------------- */
-@media (max-width: 767.99px) and (orientation: portrait) {
+@media (orientation: portrait) {
     #navigatie li {
         margin: 0;
     }
 
     .navbar {
-        background-color: #1E1E1E;
+        background-color: #121212;
     }
 
     .container {
@@ -16,41 +16,71 @@
         font-size: 80%;
     }
 
-    #buttons, #homeText{
-        left: 0;
-        right: 0;
-    }
-
     #homeText {
-        height: 70%;
-        width: 80%;
+        width: 100%;
+        padding: 0 10% 0 10%;
+        margin-top: 30%;
     }
 
     #buttons {
-        height: 30%;
+        margin-top: 20px;
+        -webkit-flex-flow: column wrap;
     }
 
     #homeText p {
         padding: 0;
     }
 
-    #buttons .buttonFullWidth:last-child {
-        margin-top: -60px;
-    }
-
     .buttonFullWidth, #home section {
         width: 100%;
     }
 
-    #buttons button {
-        margin: 0;
+    #buttons .buttonFullWidth:last-child {
+        margin-left: 0px;
     }
-
+    
+    #buttons .buttonFullWidth:first-child {
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
 }
 
 
 
 /* -------------- VOOR KLEINE SCHERMEN IN LANDSCAPE -------------- */
-@media (max-width: 767.99px) and (orientation: portrait) {
+@media (max-width: 850px) and (orientation: landscape) {
+    #navigatie li {
+        margin: 0;
+    }
 
+    .navbar {
+        background-color: #121212;
+    }
+
+    .container {
+        margin-left: 0;
+    }
+
+    #home {
+        font-size: 80%;
+    }
+
+    #homeText {
+        width: 100%;
+        padding: 0 10% 0 10%;
+        margin-top: 15%;
+    }
+
+    #buttons {
+        margin-top: 20px;
+        -webkit-flex-flow: row wrap;
+    }
+
+    #homeText p {
+        padding: 0;
+    }
+
+    #home section {
+        width: 100%;
+    }
 }

@@ -11,10 +11,10 @@
         </div>
         <div id="buttons">
             <div class="buttonFullWidth">
-                <button type="button" onclick="window.location.href='{{ route('info') }}'">Lees de verhalen</button>
+                <button id="btnInfo" type="button" onclick="window.location.href='{{ route('info') }}'">Lees de verhalen</button>
             </div>
             <div class="buttonFullWidth">
-                <button type="button" onclick="window.location.href='{{ route('game') }}'">Speel het spel</button>
+                <button id="btnGame" type="button" onclick="window.location.href='{{ route('game') }}'">Speel het spel</button>
             </div>
         </div>
     </section>

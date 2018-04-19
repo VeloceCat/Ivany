@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('text');
-            $table->int('blokID');
+            $table->integer('blokID');
 
             $table->timestamps();
             $table->softDeletes();

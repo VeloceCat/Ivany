@@ -16,7 +16,7 @@ class CreateQuotesTable extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('quote');
-            $table->int('blokID');
+            $table->integer('blokID');
 
             $table->timestamps();
             $table->softDeletes();

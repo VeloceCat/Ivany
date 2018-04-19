@@ -37,7 +37,7 @@ h1, h2, a {
 
 .navbar {
     position: relative;
-    background-color: transparent;
+    background-color: #121212;
     z-index: 2;
     box-shadow: none;
 }
@@ -55,6 +55,40 @@ h1, h2, a {
     margin-left: 5%;
     margin-right: 8%;
     max-width: 100%;
+}
+
+#scroll {
+    position: fixed;
+    bottom: 20px;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#scroll i {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    position: relative;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#scroll:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#scroll:hover i {
+    color: #fff;
 }
 
 /* KLEUR HAMBURGER ICOON 
@@ -159,6 +193,80 @@ h1, h2, a {
 #buttons .buttonFullWidth:first-child {
     margin-right: 5px;
 }
+
+
+
+/* -------------- INFOPAGE -------------- */
+#achtergrond section {
+    width: 100%;
+    margin-top: 8%;
+}
+
+#headerLine {
+    margin-top: 120px;
+    padding-bottom: 2%;
+}
+
+.infoBlok {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 0 auto;
+    background-color: #003865;
+    padding: 5% 0;
+}
+
+.artikel {
+    padding: 0 7%;
+}
+
+.artikel a {
+    color: #F18A00;
+}
+
+.artikel p {
+    text-align: center;
+    color: #fff;
+}
+
+.artikel h2, #headerLine {
+    text-align: center;
+    color: #fff;
+}
+
+.tussenBlok {
+    padding: 5% 0;
+    text-align: center;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    color: #BABABA;
+    padding: 10px;
+    background-color: #000;
+    font-weight: normal;
+}
+
+footer a {
+    text-align: center;
+    color: #BABABA;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
 
 
 

@@ -78,14 +78,13 @@ h1, h2, a {
     overflow: hidden;
     top: 0;
     z-index: 1;
-    background-image: url('/img/HomeFoto.png');
+    background-image: url('/img/HomeFotoDarker.png');
     background-position: top right;
     text-align: center;
     background-size: cover;
 }
 
 #home section {
-    position: absolute;
     height: 100%;
     width: 80%;
 }
@@ -96,10 +95,9 @@ h1, h2, a {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
 
-    position: relative;
     margin: 0 auto;
     padding: 0 auto;
 }
@@ -107,8 +105,8 @@ h1, h2, a {
 #homeText {
     -webkit-flex-flow: column wrap;
     color: #fff;
-    height: 75%;
     padding-top: 8%;
+    margin-top: 15%;
 }
 
 #homeText h1 {
@@ -122,31 +120,51 @@ h1, h2, a {
 
 #buttons{
     -webkit-flex-flow: row wrap;
-    height: 25%;
+    margin-top: 20px;
 }
 
 #buttons button {
-    background-color: transparent;
-    color: #fff;
     border: 1px solid #fff;
     border-radius: 0px;
     padding: 5px 15px;
-    margin-bottom: 200%;
     font-size: 20px;
     cursor: pointer;
     width: 180px;
 }
 
-#buttons button:hover {
+#btnInfo {
+    background-color: transparent;
+    color: #fff;
+}
+
+#btnInfo:hover {
     background-color: #fff;
     color: #000;
+}
+
+#btnGame { 
+    background-color: #fff;
+    color: #000;
+}
+
+#btnGame:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+#buttons .buttonFullWidth:last-child {
+    margin-left: 5px;
+}
+
+#buttons .buttonFullWidth:first-child {
+    margin-right: 5px;
 }
 
 
 
 /* -------------- ACHTERGROND OP ALLE PAGINA'S VOOR MENU TE KUNNEN ZIEN -------------- */
 #achtergrond {
-    background-color: #1E1E1E;
+    background-color: #121212;
     height: 100%;
     width: 100%;
     position: absolute;

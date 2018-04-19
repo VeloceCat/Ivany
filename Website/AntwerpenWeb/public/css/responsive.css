@@ -1,0 +1,56 @@
+/* -------------- VANAF HAMBURGERMENU OP SCHERM KOMT -------------- */
+@media (max-width: 767.99px) and (orientation: portrait) {
+    #navigatie li {
+        margin: 0;
+    }
+
+    .navbar {
+        background-color: #1E1E1E;
+    }
+
+    .container {
+        margin-left: 0;
+    }
+
+    #home {
+        font-size: 80%;
+    }
+
+    #buttons, #homeText{
+        left: 0;
+        right: 0;
+    }
+
+    #homeText {
+        height: 70%;
+        width: 80%;
+    }
+
+    #buttons {
+        height: 30%;
+    }
+
+    #homeText p {
+        padding: 0;
+    }
+
+    #buttons .buttonFullWidth:last-child {
+        margin-top: -60px;
+    }
+
+    .buttonFullWidth, #home section {
+        width: 100%;
+    }
+
+    #buttons button {
+        margin: 0;
+    }
+
+}
+
+
+
+/* -------------- VOOR KLEINE SCHERMEN IN LANDSCAPE -------------- */
+@media (max-width: 767.99px) and (orientation: portrait) {
+
+}

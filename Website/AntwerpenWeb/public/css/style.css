@@ -131,7 +131,7 @@ h1, h2, a {
     border: 1px solid #fff;
     border-radius: 0px;
     padding: 5px 15px;
-    margin: 0;
+    margin-bottom: 200%;
     font-size: 20px;
     cursor: pointer;
     width: 180px;
@@ -151,55 +151,4 @@ h1, h2, a {
     width: 100%;
     position: absolute;
     top: 0;
-}
-
-
-
-
-
-
-/* -------------- VANAF HAMBURGERMENU OP SCHERM KOMT -------------- */
-@media (max-width: 767.99px) {
-    #navigatie li {
-        margin: 0;
-    }
-
-    .navbar {
-        background-color: #1E1E1E;
-    }
-
-    .container {
-        margin-left: 0;
-    }
-
-    #home {
-        font-size: 80%;
-    }
-
-    #buttons, #homeText{
-        left: 0;
-        right: 0;
-    }
-
-    #homeText {
-        height: 70%;
-        width: 80%;
-    }
-
-    #buttons {
-        height: 30%;
-    }
-
-    #homeText p {
-        padding: 0;
-    }
-
-    #buttons .buttonFullWidth:last-child {
-        margin-top: -60px;
-    }
-
-    .buttonFullWidth, #home section {
-        width: 100%;
-    }
-
 }

@@ -4,13 +4,14 @@
 
 <?php 
 
-$postResults = DB::select('SELECT * FROM posts WHERE deleted_at IS NULL ORDER BY points DESC');
-                    foreach($postResults as $postResult) {
-                        $voteCounter = $postResult->points;
-                        $postedID = $postResult->post_id;
-                        $userPosted = $postResult->user_id;
-                        $voted = "";
+    $articles = DB::select('SELECT * FROM articles WHERE deleted_at IS NULL ORDER BY id DESC');
 
+    foreach($articles as $article) {
+        $articleID = $article->id;
+        $articleTitle = $article->title;
+        $articleText = $article->text;
+        $articleBlokID = $article->blokID;
+    }
 
 ?>
 <div id="achtergrond">

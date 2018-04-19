@@ -19,6 +19,25 @@ h1, h2, a {
     font-family: 'Antwerpen', Arial;
 }
 
+footer {
+    text-align: center;
+    color: #BABABA;
+    padding: 10px;
+    background-color: #000;
+    font-weight: normal;
+}
+
+footer a {
+    text-align: center;
+    color: #BABABA;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 
 
 /* -------------- NAVIGATIE -------------- */
@@ -246,25 +265,6 @@ h1, h2, a {
     color: #fff;
 }
 
-footer {
-    text-align: center;
-    color: #BABABA;
-    padding: 10px;
-    background-color: #000;
-    font-weight: normal;
-}
-
-footer a {
-    text-align: center;
-    color: #BABABA;
-    text-decoration: underline;
-}
-
-footer a:hover {
-    color: #fff;
-    text-decoration: none;
-}
-
 
 
 
@@ -276,5 +276,5 @@ footer a:hover {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
+    top: 0;*/
 }

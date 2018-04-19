@@ -69,9 +69,14 @@
 
         <main class="py-4">
 
-        <a href="javascript:void(0)" id="scroll"><i class="fas arrow-alt-circle-up"></a>
+            <a href="javascript:void(0)" id="scroll"><i class="fas arrow-alt-circle-up"></i></a>
+                @yield('content')
+                <footer>
+                    <span>© 2018 Antwerpen.be | </span>
+                    <a href="https://www.antwerpen.be/nl/info/5310f241aaa8a74f6c8b458d/a-stad-uw-privacy-en-hoe-gebruiken" target="_blank"  >Privacy &amp; gebruiksvoorwaarden</a>
+                </footer>
+            </div>
 
-            @yield('content')
         </main>
     </div>
 
@@ -79,4 +84,5 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/scroll.js') }}"></script>
 </body>
+
 </html>

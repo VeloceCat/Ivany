@@ -32,6 +32,7 @@
                 foreach($quotes as $quote) {
                     $quoteText = $quote->quote;
                     $quoteBlokID = $quote->blokID;
+                    $quoteBlokID += 1;
 
                     echo("<div class='tussenBlok'><h2>$quoteText</h2></div>");
 

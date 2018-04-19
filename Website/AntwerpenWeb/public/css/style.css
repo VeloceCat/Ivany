@@ -78,10 +78,9 @@ footer a:hover {
 
 #scroll {
     position: fixed;
-    bottom: 20px;
+    bottom: 50px;
+    right: 50px;
     margin: 0 auto;
-    width: 30px;
-    height: 30px;
     display: block;
     text-decoration: none;
     -webkit-transition: all 0.3s linear;
@@ -90,23 +89,20 @@ footer a:hover {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 #scroll i {
-    color: #fff;
-    width: 30px;
-    height: 30px;
+    color: #F18A00;
     margin: 0;
     position: relative;
-    font-size: 19px;
+    font-size: 40px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-#scroll:hover {
-    background: rgba(0, 0, 0, 0.9);
-}
-#scroll:hover i {
+
+#scroll i:hover {
     color: #fff;
 }
 
@@ -164,6 +160,7 @@ footer a:hover {
 
 #homeText h1 {
     font-size: 2.5em;
+    color: #F18A00;
 }
 
 #homeText p {
@@ -177,32 +174,34 @@ footer a:hover {
 }
 
 #buttons button {
-    border: 1px solid #fff;
-    border-radius: 0px;
     padding: 5px 15px;
     font-size: 20px;
     cursor: pointer;
     width: 180px;
+    font-weight: bolder;
 }
 
 #btnInfo {
     background-color: transparent;
     color: #fff;
+    border: 1px solid #FFF;
 }
 
 #btnInfo:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: transparent;
+    color: #CF0039;
+    border: 1px solid #CF0039;
 }
 
 #btnGame { 
-    background-color: #fff;
-    color: #000;
+    background-color: #CF0039;
+    color: #fff;
+    border: 1px solid #CF0039;
 }
 
 #btnGame:hover {
     background-color: transparent;
-    color: #fff;
+    color: #CF0039;
 }
 
 #buttons .buttonFullWidth:last-child {
@@ -262,7 +261,7 @@ footer a:hover {
 .tussenBlok {
     padding: 5% 0;
     text-align: center;
-    color: #fff;
+    color: #CF0039;
 }
 
 

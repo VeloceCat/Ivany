@@ -82,6 +82,7 @@ footer a:hover {
     right: 50px;
     margin: 0 auto;
     display: block;
+    display: none;
     text-decoration: none;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s ease;
@@ -231,8 +232,9 @@ footer a:hover {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /*align-items: left;*/
+    /*justify-content: left;*/
+    flex-wrap: wrap;
 
     margin: 0 auto;
     padding: 0 auto;
@@ -242,6 +244,8 @@ footer a:hover {
 
 .artikel {
     padding: 0 7%;
+    flex: 30%;
+    max-width: 33%;
 }
 
 .artikel a {
@@ -272,8 +276,7 @@ footer a:hover {
 /* -------------- ACHTERGROND OP ALLE PAGINA'S VOOR MENU TE KUNNEN ZIEN -------------- */
 #achtergrond {
     background-color: #121212;
-    height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;*/
+    top: 0;
 }

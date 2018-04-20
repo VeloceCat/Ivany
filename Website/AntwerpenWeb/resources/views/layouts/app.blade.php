@@ -14,6 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 <body>
     <div id="app">
@@ -26,8 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li id="logo"><a href="{{ route('home') }}" title="Klik op het logo om terug naar de startpagina te gaan."><img src="{{ asset('/img/A_Logo.svg') }}" alt="logo">Stad Antwerpen</a></li>
-                        <!-- <li id="title"><a href="{{ route('home') }}">Stad Antwerpen</a></li> -->
+                        <li id="logo"><a href="{{ route('home') }}" title="Klik op het logo om terug naar de startpagina te gaan."><img src="{{ asset('/img/A_Logo_RGB.svg') }}" alt="logo"> Stad Antwerpen</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -68,11 +68,21 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+
+                @yield('content')
+                <a href="javascript:void(0)" id="scroll"><i class="fas fa-arrow-alt-circle-up"></i></a>
+                <footer>
+                    <span>© 2018 Antwerpen.be | </span>
+                    <a href="https://www.antwerpen.be/nl/info/5310f241aaa8a74f6c8b458d/a-stad-uw-privacy-en-hoe-gebruiken" target="_blank"  >Privacy &amp; gebruiksvoorwaarden</a>
+                </footer>
+            </div>
+
         </main>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/scroll.js') }}"></script>
 </body>
+
 </html>

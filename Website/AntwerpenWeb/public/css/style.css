@@ -19,6 +19,25 @@ h1, h2, a {
     font-family: 'Antwerpen', Arial;
 }
 
+footer {
+    text-align: center;
+    color: #BABABA;
+    padding: 10px;
+    background-color: #000;
+    font-weight: normal;
+}
+
+footer a {
+    text-align: center;
+    color: #BABABA;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 
 
 /* -------------- NAVIGATIE -------------- */
@@ -37,7 +56,7 @@ h1, h2, a {
 
 .navbar {
     position: relative;
-    background-color: transparent;
+    background-color: #121212;
     z-index: 2;
     box-shadow: none;
 }
@@ -55,6 +74,36 @@ h1, h2, a {
     margin-left: 5%;
     margin-right: 8%;
     max-width: 100%;
+}
+
+#scroll {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    margin: 0 auto;
+    display: block;
+    text-decoration: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#scroll i {
+    color: #F18A00;
+    margin: 0;
+    position: relative;
+    font-size: 40px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#scroll i:hover {
+    color: #fff;
 }
 
 /* KLEUR HAMBURGER ICOON 
@@ -111,6 +160,7 @@ h1, h2, a {
 
 #homeText h1 {
     font-size: 2.5em;
+    color: #F18A00;
 }
 
 #homeText p {
@@ -124,32 +174,34 @@ h1, h2, a {
 }
 
 #buttons button {
-    border: 1px solid #fff;
-    border-radius: 0px;
     padding: 5px 15px;
     font-size: 20px;
     cursor: pointer;
     width: 180px;
+    font-weight: bolder;
 }
 
 #btnInfo {
     background-color: transparent;
     color: #fff;
+    border: 1px solid #FFF;
 }
 
 #btnInfo:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: transparent;
+    color: #CF0039;
+    border: 1px solid #CF0039;
 }
 
 #btnGame { 
-    background-color: #fff;
-    color: #000;
+    background-color: #CF0039;
+    color: #fff;
+    border: 1px solid #CF0039;
 }
 
 #btnGame:hover {
     background-color: transparent;
-    color: #fff;
+    color: #CF0039;
 }
 
 #buttons .buttonFullWidth:last-child {
@@ -162,11 +214,66 @@ h1, h2, a {
 
 
 
+/* -------------- INFOPAGE -------------- */
+#achtergrond section {
+    width: 100%;
+    margin-top: 8%;
+}
+
+#headerLine {
+    margin-top: 120px;
+    padding-bottom: 2%;
+}
+
+.infoBlok {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 0 auto;
+    background-color: #003865;
+    padding: 5% 0;
+}
+
+.artikel {
+    padding: 0 7%;
+}
+
+.artikel a {
+    color: #F18A00;
+}
+
+.artikel p {
+    text-align: center;
+    color: #fff;
+}
+
+.artikel h2, #headerLine {
+    text-align: center;
+    color: #fff;
+}
+
+.tussenBlok {
+    padding: 5% 0;
+    text-align: center;
+    color: #CF0039;
+}
+
+
+
+
+
+
 /* -------------- ACHTERGROND OP ALLE PAGINA'S VOOR MENU TE KUNNEN ZIEN -------------- */
 #achtergrond {
     background-color: #121212;
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
+    top: 0;*/
 }

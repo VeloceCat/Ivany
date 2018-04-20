@@ -232,8 +232,6 @@ footer a:hover {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    /*align-items: left;*/
-    /*justify-content: left;*/
     flex-wrap: wrap;
 
     margin: 0 auto;

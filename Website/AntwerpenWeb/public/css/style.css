@@ -243,7 +243,7 @@ footer a:hover {
 }
 
 .artikel {
-    padding: 0 7%;
+    padding: 2% 7% 0 7%;
     flex: 30%;
     max-width: 33%;
 }

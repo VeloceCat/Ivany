@@ -25,7 +25,7 @@
                         $title = $firstarticle->title;
                         $text = $firstarticle->text;
 
-                        echo("<div class='artikel'><h2>$title</h2><p>$text... <a href='#'>lees meer ></a></p></div>");
+                        echo("<div class='artikel'><h2>$title</h2><p>$text...<br><a href='#'>lees meer ></a></p></div>");
                     }
                     echo("</div>");
                 }
@@ -44,7 +44,7 @@
                             foreach($articles as $article) {
                                 $title = $article->title;
                                 $text = $article->text;
-                                echo("<div class='artikel'><h2>$title</h2><p>$text... <a href='#'>lees meer ></a></p></div>");
+                                echo("<div class='artikel'><h2>$title</h2><p>$text...<br><a href='#'>lees meer ></a></p></div>");
                             }
                             echo("</div>");
                         }

@@ -5,7 +5,7 @@
 <div id="achtergrond">
     <section>
         <div id="headerLine">
-            <h2>HeaderLine</h2>
+            <h2>Niemand is verantwoordelijk voor de acties van anderen.</h2>
         </div>
         <div id="info">
             <?php 

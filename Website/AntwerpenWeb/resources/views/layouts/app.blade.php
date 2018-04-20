@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li id="logo"><a href="{{ route('home') }}" title="Klik op het logo om terug naar de startpagina te gaan."><img src="{{ asset('/img/A_Logo_RGB.svg') }}" alt="logo"> Stad Antwerpen</a></li>
+                        <li id="logo"><a href="{{ route('home') }}" title="Klik hier om terug naar de startpagina te gaan."><img src="{{ asset('/img/A_Logo_RGB.svg') }}" alt="logo"> Stad Antwerpen</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -70,7 +70,7 @@
         <main class="py-4">
 
                 @yield('content')
-                <a href="javascript:void(0)" id="scroll"><i class="fas fa-arrow-alt-circle-up"></i></a>
+                <a href="javascript:void(0)" id="scroll" title="Naar de top van de pagina"><i class="fas fa-arrow-alt-circle-up"></i></a>
                 <footer>
                     <span>© 2018 Antwerpen.be | </span>
                     <a href="https://www.antwerpen.be/nl/info/5310f241aaa8a74f6c8b458d/a-stad-uw-privacy-en-hoe-gebruiken" target="_blank"  >Privacy &amp; gebruiksvoorwaarden</a>

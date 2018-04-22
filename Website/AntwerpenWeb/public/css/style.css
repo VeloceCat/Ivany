@@ -66,6 +66,11 @@ footer a:hover {
     font-size: 130%;
 }
 
+.navbar a:hover {
+    text-decoration: none;
+    border-bottom: 3px solid #CF0039;
+}
+
 .navbar-toggler-icon {
     color: #fff;
 }
@@ -74,6 +79,10 @@ footer a:hover {
     margin-left: 5%;
     margin-right: 8%;
     max-width: 100%;
+}
+
+.active a{
+    border-bottom: 3px solid #CF0039;
 }
 
 #scroll {
@@ -190,8 +199,8 @@ footer a:hover {
 
 #btnInfo:hover {
     background-color: transparent;
-    color: #CF0039;
-    border: 1px solid #CF0039;
+    color: #F18A00;
+    border: 1px solid #F18A00;
 }
 
 #btnGame { 
@@ -202,7 +211,8 @@ footer a:hover {
 
 #btnGame:hover {
     background-color: transparent;
-    color: #CF0039;
+    color: #F18A00;
+    border: 1px solid #F18A00;
 }
 
 #buttons .buttonFullWidth:last-child {
@@ -263,7 +273,7 @@ footer a:hover {
 .tussenBlok {
     padding: 5% 0;
     text-align: center;
-    color: #CF0039;
+    color: #F18A00;
 }
 
 

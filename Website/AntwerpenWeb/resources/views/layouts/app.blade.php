@@ -57,11 +57,11 @@
                             </li>
                         @endguest
                         -->
-                        <li><a href="{{ route('home')  }}">Home</a></li>
-                        <li><a href="{{ route('info')  }}">Info</a></li>
-                        <li><a href="{{ route('game')  }}">Game</a></li>
-                        <li><a href="{{ route('forum')  }}">Forum</a></li>
-                        <li><a href="{{ route('contact')  }}">Contact</a></li>
+                        <li {{ Request::is('home') ? ' class=active' : null }}><a href="{{ route('home')  }}">Home</a></li>
+                        <li {{ Request::is('info') ? ' class=active' : null }}><a href="{{ route('info')  }}">Info</a></li>
+                        <li {{ Request::is('game') ? ' class=active' : null }}><a href="{{ route('game')  }}">Game</a></li>
+                        <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('forum')  }}">Forum</a></li>
+                        <li {{ Request::is('contact') ? ' class=active' : null }}><a href="{{ route('contact')  }}">Contact</a></li>
                     </ul>
                 </div>
             </div>

@@ -249,6 +249,7 @@ footer a:hover {
     padding: 2% 7% 0 7%;
     flex: 30%;
     max-width: 33%;
+    align-content: center;
 }
 
 .artikel a {
@@ -258,9 +259,11 @@ footer a:hover {
 .anchorBtn {
     color: #F18A00;
     background-color: transparent;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     border: none;
+    display: flex; 
+    justify-content: center;
 }
 
 .anchorBtn:hover {

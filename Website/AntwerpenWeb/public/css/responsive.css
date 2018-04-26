@@ -1,15 +1,7 @@
 /* -------------- VANAF HAMBURGERMENU OP SCHERM KOMT -------------- */
 @media (orientation: portrait) {
-    #navigatie li {
-        margin: 0;
-    }
-
     .navbar {
         background-color: #121212;
-    }
-
-    .container {
-        margin-left: 0;
     }
 
     #home {
@@ -45,20 +37,22 @@
     }
 }
 
-
-
-/* -------------- VOOR KLEINE SCHERMEN IN LANDSCAPE -------------- */
-@media (max-width: 850px) and (orientation: landscape) {
+@media (max-width: 767px) {
     #navigatie li {
         margin: 0;
     }
 
-    .navbar {
-        background-color: #121212;
-    }
-
     .container {
         margin-left: 0;
+    }
+}
+
+
+
+/* -------------- VOOR KLEINE SCHERMEN IN LANDSCAPE -------------- */
+@media (orientation: landscape) {
+    .navbar {
+        background-color: #121212;
     }
 
     #home {

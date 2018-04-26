@@ -76,9 +76,10 @@ footer a:hover {
 }
 
 .container {
-    margin-left: 5%;
-    margin-right: 8%;
+    margin-left: -23px;
+    margin-right: 100px;
     max-width: 100%;
+    padding-right: 40px;
 }
 
 .active a{

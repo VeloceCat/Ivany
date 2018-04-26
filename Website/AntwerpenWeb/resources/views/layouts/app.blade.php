@@ -57,11 +57,20 @@
                             </li>
                         @endguest
                         -->
-                        <li {{ Request::is('home') ? ' class=active' : null }}><a href="{{ route('home')  }}">Home</a></li>
-                        <li {{ Request::is('info') ? ' class=active' : null }}><a href="{{ route('info')  }}">Info</a></li>
-                        <li {{ Request::is('game') ? ' class=active' : null }}><a href="{{ route('game')  }}">Game</a></li>
-                        <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('forum')  }}">Forum</a></li>
-                        <li {{ Request::is('contact') ? ' class=active' : null }}><a href="{{ route('contact')  }}">Contact</a></li>
+                        @if (Request::is('/'))
+                            <li  class='active'><a href="{{ route('home')  }}">Home</a></li>
+                            <li><a href="{{ route('info') }}">Info</a></li>
+                            <li><a href="{{ route('game') }}">Game</a></li>
+                            <li><a href="{{ route('forum') }}">Forum</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                        @else
+                            <li {{ Request::is('home') ? ' class=active' : null }}><a href="{{ route('home') }}">Home</a></li>
+                            <li {{ Request::is('info') ? ' class=active' : null }}><a href="{{ route('info') }}">Info</a></li>
+                            <li {{ Request::is('game') ? ' class=active' : null }}><a href="{{ route('game') }}">Game</a></li>
+                            <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('forum') }}">Forum</a></li>
+                            <li {{ Request::is('contact') ? ' class=active' : null }}><a href="{{ route('contact') }}">Contact</a></li>
+                        @endif
+
                     </ul>
                 </div>
             </div>
@@ -83,6 +92,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/scroll.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
 </body>
 
 </html>

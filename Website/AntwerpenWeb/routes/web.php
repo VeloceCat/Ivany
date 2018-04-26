@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/info', 'HomeController@info')->name('info');
+Route::post('/info', 'HomeController@info')->name('info');
 Route::get('/forum', 'HomeController@forum')->name('forum');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/game', 'HomeController@game')->name('game');

@@ -4,25 +4,6 @@
         background-color: #121212;
     }
 
-    #home {
-        font-size: 80%;
-    }
-
-    #homeText {
-        width: 100%;
-        padding: 0 10% 0 10%;
-        margin-top: 30%;
-    }
-
-    #buttons {
-        margin-top: 20px;
-        -webkit-flex-flow: column wrap;
-    }
-
-    #homeText p {
-        padding: 0;
-    }
-
     .buttonFullWidth, #home section {
         width: 100%;
     }
@@ -45,6 +26,29 @@
     .container {
         margin-left: 0;
     }
+
+    #home section {
+        width: 100%;
+    }
+
+    #homeText p {
+        padding: 0;
+    }
+
+    #buttons {
+        margin-top: 20px;
+        -webkit-flex-flow: column wrap;
+    }
+
+    #homeText {
+        width: 100%;
+        padding: 0 10% 0 10%;
+        margin-top: 15%;
+    }
+
+    #home {
+        font-size: 80%;
+    }
 }
 
 
@@ -55,26 +59,8 @@
         background-color: #121212;
     }
 
-    #home {
-        font-size: 80%;
-    }
-
-    #homeText {
-        width: 100%;
-        padding: 0 10% 0 10%;
-        margin-top: 15%;
-    }
-
     #buttons {
-        margin-top: 20px;
         -webkit-flex-flow: row wrap;
     }
 
-    #homeText p {
-        padding: 0;
-    }
-
-    #home section {
-        width: 100%;
-    }
 }

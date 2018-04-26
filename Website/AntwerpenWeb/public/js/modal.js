@@ -3,7 +3,7 @@ function Modal(id) {
     var modal = document.getElementById(id);
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close")[id-1];
 
     // When the user clicks on the button, open the modal 
     modal.style.display = "block";

@@ -63,12 +63,36 @@
                             <li><a href="{{ route('game') }}">Game</a></li>
                             <li><a href="{{ route('forum') }}">Forum</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
+                            @if(null !== Auth::user())
+                                @if(Auth::user()->is_admin == 1)
+                                    <li {{ Request::is('admin') ? ' class=active' : null }}><a href="{{ route('admin') }}">Admin</a></li>
+                                @endif
+                                    <li id="btnLogout">
+                                        <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                            @endif
                         @else
                             <li {{ Request::is('home') ? ' class=active' : null }}><a href="{{ route('home') }}">Home</a></li>
                             <li {{ Request::is('info') ? ' class=active' : null }}><a href="{{ route('info') }}">Info</a></li>
                             <li {{ Request::is('game') ? ' class=active' : null }}><a href="{{ route('game') }}">Game</a></li>
                             <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('forum') }}">Forum</a></li>
                             <li {{ Request::is('contact') ? ' class=active' : null }}><a href="{{ route('contact') }}">Contact</a></li>
+                            @if(null !== Auth::user())
+                                @if(Auth::user()->is_admin == 1)
+                                    <li {{ Request::is('admin') ? ' class=active' : null }}><a href="{{ route('admin') }}">Admin</a></li>
+                                @endif
+                                    <li id="btnLogout">
+                                        <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                            @endif
                         @endif
 
                     </ul>

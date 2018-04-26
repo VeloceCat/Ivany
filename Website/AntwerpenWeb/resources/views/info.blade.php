@@ -64,12 +64,12 @@
                         echo("<div id='$id' class='modal'>
                         <div class='modal-content'>
                             <div class='modal-header'>
-                            <span class='close'>&times;</span><h2>$title</h2></div>
+                            <h2>$title</h2>
+                            <span class='close'>&times;</span>
+                        </div>
                         <div class='modal-body'><p>$text</p></div>
                         <div class='modal-footer'><h3>Modal Footer</h3></div></div></div>");
                     }
-
-                    echo("<button onclick='Modal(4)' class='anchorBtn' type='submit'>lees meer ></button>");
             ?>
         </div>
     </section>

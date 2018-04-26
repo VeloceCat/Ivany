@@ -18,13 +18,8 @@ Route::get('/forum', 'HomeController@forum')->name('forum');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/game', 'HomeController@game')->name('game');
 
-Route::post('/info', function () {
-    return view('info');
-});
-
-
 Route::group(['middleware' => 'auth'], function () {
-    
+    Route::get('/admin', 'HomeController@admin')->name('admin');
 });
 
 Auth::routes();

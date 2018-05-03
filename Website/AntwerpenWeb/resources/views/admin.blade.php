@@ -78,8 +78,10 @@
 
     if(null !== Auth::user()) {
         if(Auth::user()->is_admin == 1) {
+            echo "<div class='keuzeknoppen'>";
             buttonActive(1,$infoNummer);
             buttonActive(2,$infoNummer);
+            echo "</div>";
             
             function overzichtInfo($nummer)
             { 

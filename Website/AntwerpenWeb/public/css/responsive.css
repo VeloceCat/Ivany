@@ -20,8 +20,7 @@
 
 @media (max-width: 767px) {
     .navbar button {
-        margin-top: 10px;
-        margin-left: 10px;
+        margin: 10px;
     }
 
     .navbar {

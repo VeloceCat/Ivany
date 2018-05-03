@@ -19,6 +19,10 @@
 }
 
 @media (max-width: 767px) {
+    .navbar button {
+        margin-top: 10px;
+    }
+    
     #navigatie li {
         margin: 0;
     }
@@ -49,6 +53,50 @@
     #home {
         font-size: 80%;
     }
+
+    .artikel {
+        flex: 100%;
+        max-width: 100%;
+        padding: 20px 40px;
+    }
+
+    .artikel:first-child {
+        margin-top: 20px;
+    }
+
+    .tussenBlok {
+        padding: 20px 15px;
+    }
+
+    .tussenBlok h2 {
+        font-size: 1.2em;
+    }
+
+    .modal {
+        padding-top: 10%;
+    }
+
+    .modal-content {
+        min-height: 80%;
+    }
+
+    .modal-header h2 {
+        font-size: 1.1em;
+    }
+
+    .modal-header, .modal-body, .modal-footer {
+        padding: 5px 10px;
+    }
+
+    #scroll {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #scroll i {
+        font-size: 28px;
+    }
+
 }
 
 
@@ -62,5 +110,7 @@
     #buttons {
         -webkit-flex-flow: row wrap;
     }
+
+    
 
 }

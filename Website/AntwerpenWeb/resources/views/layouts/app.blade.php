@@ -67,13 +67,13 @@
                                 @if(Auth::user()->is_admin == 1)
                                     <li {{ Request::is('admin') ? ' class=active' : null }}><a href="{{ route('admin') }}">Admin</a></li>
                                 @endif
-                                    <li id="btnLogout">
-                                        <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                <li id="btnLogout">
+                                    <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
                             @endif
                         @else
                             <li {{ Request::is('home') ? ' class=active' : null }}><a href="{{ route('home') }}">Home</a></li>
@@ -85,13 +85,13 @@
                                 @if(Auth::user()->is_admin == 1)
                                     <li {{ Request::is('admin') ? ' class=active' : null }}><a href="{{ route('admin') }}">Admin</a></li>
                                 @endif
-                                    <li id="btnLogout">
-                                        <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                <li id="btnLogout">
+                                    <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
                             @endif
                         @endif
 

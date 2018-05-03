@@ -68,7 +68,7 @@
                             <span class='close'>&times;</span>
                         </div>
                         <div class='modal-body'><p>$text</p></div>
-                        <div class='modal-footer'><h3>Modal Footer</h3></div></div></div>");
+                        <div class='modal-footer'><h3>Stad Antwerpen</h3></div></div></div>");
                     }
             ?>
         </div>

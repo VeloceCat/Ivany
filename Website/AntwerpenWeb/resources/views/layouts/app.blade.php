@@ -32,38 +32,40 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul id="navigatie" class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        <!--
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                        -->
+                        
                         @if (Request::is('/'))
                             <li  class='active'><a href="{{ route('home')  }}">Home</a></li>
                             <li><a href="{{ route('info') }}">Info</a></li>
                             <li><a href="{{ route('game') }}">Game</a></li>
                             <li><a href="{{ route('forum') }}">Forum</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
-                            @if(null !== Auth::user())
+                            <!-- Authentication Links -->
+                            @guest
+                                <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                                <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link" href="{{ route('admin') }}" role="button">
+                                        {{ Auth::user()->name }} 
+                                    </a>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                            <!--@if(null !== Auth::user())
                                 @if(Auth::user()->is_admin == 1)
                                     <li {{ Request::is('admin') ? ' class=active' : null }}><a href="{{ route('admin') }}">Admin</a></li>
                                 @endif
@@ -74,14 +76,40 @@
                                         @csrf
                                     </form>
                                 </li>
-                            @endif
+                            @endif-->
                         @else
                             <li {{ Request::is('home') ? ' class=active' : null }}><a href="{{ route('home') }}">Home</a></li>
                             <li {{ Request::is('info') ? ' class=active' : null }}><a href="{{ route('info') }}">Info</a></li>
                             <li {{ Request::is('game') ? ' class=active' : null }}><a href="{{ route('game') }}">Game</a></li>
                             <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('forum') }}">Forum</a></li>
                             <li {{ Request::is('contact') ? ' class=active' : null }}><a href="{{ route('contact') }}">Contact</a></li>
-                            @if(null !== Auth::user())
+                            <!-- Authentication Links -->
+                            @guest
+                                <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                                <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                            @else
+                                <li class="nav-item dropdown  {{ Request::is('admin') ? ' active' : null }}">
+                                    <a id="navbarDropdown" class="nav-link" href="{{ route('admin') }}" role="button">
+                                        {{ Auth::user()->name }} 
+                                    </a>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                            <!--@if(null !== Auth::user())
                                 @if(Auth::user()->is_admin == 1)
                                     <li {{ Request::is('admin') ? ' class=active' : null }}><a href="{{ route('admin') }}">Admin</a></li>
                                 @endif
@@ -92,7 +120,7 @@
                                         @csrf
                                     </form>
                                 </li>
-                            @endif
+                            @endif-->
                         @endif
 
                     </ul>

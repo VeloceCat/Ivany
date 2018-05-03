@@ -15,7 +15,7 @@
     font-family: 'SunAntwerpen', Arial;
 }
 
-h1, h2, a, .anchorBtn {
+h1, h2, h3, a, .anchorBtn {
     font-family: 'Antwerpen', Arial;
 }
 
@@ -54,49 +54,88 @@ footer a:hover {
     text-decoration: none;
 }
 
-#navigatie li {
-    margin: 0 5%;
-}
-
 .navbar {
-    position: relative;
-    background-color: #121212;
-    z-index: 1;
+    z-index: 2;
     box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+    background-color: #121212;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
 }
 
-.navbar-nav {
-    
+.container {
+    min-width:100%;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar a {
-    color: #fff;
-    font-size: 130%;
+#navigatie {
+    min-width: 50%!important;
+    right: 0!important;
+    margin: 0!important;
+    display: flex!important;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: flex-end!important;
 }
 
-.navbar a:hover {
-    text-decoration: none;
-    border-bottom: 3px solid #CF0039;
+#navigatie li {
+    margin: 0 2%;
+}
+
+#navigatie li:last-child {
+    margin-right: 40px;
+}
+
+.dropdown-menu {
+    background-color: #CF0039!important;
+    color: #fff!important;
+    border: solid 3px #CF0039;
+    border-radius: 0!important;
+    min-width: 5rem!important;
+    padding: 10px 20px;
+}
+
+.dropdown-group {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    padding: 0!important;
+    text-transform: capitalize!important;
+}
+
+.navbar a, .nav-link a, .dropdown-item a {
+    color: #fff!important;
+    font-size: 130%!important;
+    display: inline;
+    padding: 0!important;
+}
+
+.navbar a:hover, .nav-link a:hover, .dropdown-group:hover {
+    text-decoration: none!important;
+    background-color: transparent!important;
+    border-bottom: 3px solid #CF0039!important;
+}
+
+.dropdown-menu:hover {
+    border: solid 3px #fff;
 }
 
 .navbar-toggler-icon {
     color: #fff;
 }
 
-.container {
-    margin-left: -23px;
-    margin-right: 100px;
-    margin: -8px 100px 0px -31px;
-    max-width: 100%;
-    padding-right: 40px;
-}
-
-.active a{
+.active a {
     border-bottom: 3px solid #CF0039;
-}
-
-#btnLogout {
-    padding-right: 100px;
 }
 
 #scroll {

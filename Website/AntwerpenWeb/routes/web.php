@@ -21,6 +21,7 @@ Route::get('/game', 'HomeController@game')->name('game');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', 'HomeController@admin')->name('admin');
     Route::post('/admin', 'HomeController@admin')->name('adminPost');
+    Route::post('/adminEdit', 'HomeController@adminEdit')->name('adminEdit');
 });
 
 Auth::routes();

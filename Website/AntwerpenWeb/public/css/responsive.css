@@ -117,6 +117,28 @@
         font-size: 28px;
     }
 
+    .keuzeknoppen {
+        max-width: 100%;
+    }
+
+    .keuzeknop {
+        margin: 5px 10px;
+        width: 80px;
+        font-size: .8em;
+    }
+
+    #myTable th:nth-child(3), #myTable th:nth-child(4), #myTable th:nth-child(5), #myTable th:nth-child(6) {
+        display: none;
+    }
+
+    #myTable td:nth-child(3), #myTable td:nth-child(4), #myTable td:nth-child(5), #myTable td:nth-child(6) {
+        display: none;
+    }
+
+    #myTable th:nth-child(2), #myTable td:nth-child(2) {
+        border-right: 3px solid #000;
+    }
+
 }
 
 

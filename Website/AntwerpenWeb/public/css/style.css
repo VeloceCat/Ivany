@@ -421,6 +421,117 @@ footer a:hover {
     
 }
 
+/* -------------- ADMINPAGE -------------- */
+.py-4 {
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.keuzeknoppen {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 50px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bolder;
+    border-bottom: 3px solid #CF0039;
+}
+
+.keuzeknoppen:first-child .keuzeknop {
+    margin-left: 0!important;
+}
+
+.keuzeknop {
+    background-color: #CF0039;
+    color: #fff;
+    border: solid 2px #CF0039;
+    margin: 10px 20px;
+    width: 150px;
+}
+
+.keuzeknop:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #CF0039;
+    cursor: pointer;
+}
+
+#activeKeuzeknop {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #CF0039;
+}
+
+#myTable {
+    margin: 20px 50px;
+    max-width: 90%;
+}
+
+#myTable td, #myTable th {
+    padding: 0 10px;
+}
+
+#myTable tbody {
+    border: 3px solid #000;
+    border-radius: 5px;
+}
+
+#myTable th, #myTable td {
+    border: 1px solid #000;
+ }
+
+#myTable th {
+    height: 50px;
+    font-weight: bold;
+    background-color: #F4C3CC;
+}
+
+#myTable tr:nth-child(even) {
+    background-color: #F4C3CC;
+}
+
+#myTable .editbuttons {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+    align-content: center;
+    border: none;
+    border-top: 1px solid #000;
+}
+
+#myTable tr:nth-child(3) .editbuttons {
+    border: none;
+}
+
+#myTable .editbuttons button {
+    margin: 5px;
+}
+
+#myTable .editbuttons .buttonEdit button {
+    background-color: #F18A00;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+#myTable .editbuttons .buttonDelete button {
+    background-color: #CF0039;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+#myTable .editbuttons .buttonEdit button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+#myTable .editbuttons .buttonDelete button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+}
 
 
 

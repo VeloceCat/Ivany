@@ -97,15 +97,15 @@
                                         
 
                                         echo "  <tr href='#'>
-                                                    <td>"        
-                                                    ?> <form method='POST' action="{{ route('adminEdit') }}"> 
+                                                    <td class='editbuttons'>"        
+                                                    ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
                                                             <input type='hidden' name='id' value='<?php echo $article->id ?>'>
                                                             <input type='hidden' name='table' value="articles">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                         </form>
                                                         
-                                                        <form method='POST' action="{{ route('adminPost') }}"> 
+                                                        <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='1'>
                                                             <input type='hidden' name='delete' value='pushed'>
@@ -129,15 +129,15 @@
                                         
 
                                         echo "  <tr href='#'>
-                                                    <td>"        
-                                                    ?> <form method='POST' action="{{ route('adminEdit') }}"> 
+                                                    <td class='editbuttons'>"        
+                                                    ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='id' value='<?php echo $article->id ?>'>
                                                             <input type='hidden' name='table' value="quotes">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                         </form>
                                                         
-                                                        <form method='POST' action="{{ route('adminPost') }}"> 
+                                                        <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='2'>
                                                             <input type='hidden' name='delete' value='pushed'>

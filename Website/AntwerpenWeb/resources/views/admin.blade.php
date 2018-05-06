@@ -28,7 +28,9 @@
                         <form method='POST' action="{{ route('adminPost') }}"  class="pull-right"> 
                                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                 <input type='hidden' name='nummer' value="<?php echo $infoNummer; ?>"> 
-                                <button type='submit' class='btn btn-danger'><i class='fas fa-times-circle'> Annuleren</i></button>
+                                <button type='submit' class='btn btn-danger'>
+                                    <i class='fas fa-times-circle'> Annuleren</i>
+                                </button>
                         </form>
                     </div>
                 </div> <?php

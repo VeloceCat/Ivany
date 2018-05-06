@@ -427,6 +427,29 @@ footer a:hover {
     padding: 0!important;
 }
 
+.bg-danger {
+    width: 50%;
+    margin: 0 auto;
+    background-color: transparent!important;
+    border: solid 3px #000;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.bg-danger h3 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.3em;
+    background-color: #CF0039;
+    padding: 10px;
+    margin: 0;
+}
+
+.btn-danger {
+    float: left;
+    margin: 10px;
+}
+
 .keuzeknoppen {
     display: flex;
     flex-direction: row;

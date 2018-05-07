@@ -21,6 +21,7 @@
                             <input type="hidden" name="delete" value="confirmed">
                             <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
                             <input type="hidden" name="table" value="<?php echo $_POST['table'] ?>">
+                            <input type='hidden' name='nummer' value="<?php echo $infoNummer; ?>"> 
                             <button type='submit' name="button" class="btn btn-danger" value="delete">
                                 <i class="fa fa-btn fa-trash" title="delete"></i> Verwijderen
                             </button>
@@ -40,14 +41,39 @@
             $table = $_POST['table'];
             $id = $_POST['id'];
             $dateToPost = date('Y-m-d H:i:s');
-                    try {
-                        DB::update("UPDATE `$table` SET deleted_at = '$dateToPost' WHERE id='$id'");
-                        DB::commit();
-                    } catch (\Exception $e) {
-                        DB::rollback();
-                        $MSG = "Comment failed deleting. " . $e->getMessage() . "";
-                        echo $MSG;
-                    }
+            try {
+                DB::update("UPDATE `$table` SET deleted_at = '$dateToPost' WHERE id='$id'");
+                DB::commit();
+            } catch (\Exception $e) {
+                DB::rollback();
+                $MSG = "Comment failed deleting. " . $e->getMessage() . "";
+                echo $MSG;
+            }
+        }
+    }
+
+    if (isset($_POST['edited']) && $_POST['edited'] == true) {
+        $table = $_POST['table'];
+        $id = $_POST['id'];
+        $dateToPost = date('Y-m-d H:i:s');
+        $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ', deleted_at = null' : '';
+        try {
+            if ($table == 'articles') {
+                $title = $_POST['titel'];
+                $text = $_POST['text'];
+                $blokID = $_POST['blokID'];
+                DB::update("UPDATE `articles` SET title = '$title', text = '$text', blokID = '$blokID', updated_at = '$dateToPost'$undelete WHERE id='$id'");
+            }
+            elseif ($table == 'quotes') {
+                $quote = $_POST['text'];
+                $blokID = $_POST['blokID'];
+                DB::update("UPDATE `quotes` SET quote = '$quote', blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
+            }
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            $MSG = "Comment failed editing. " . $e->getMessage() . "";
+            echo $MSG;
         }
     }
 
@@ -93,7 +119,7 @@
                 {
                     case 1:
                             echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Bloknummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
-                                    $articles = DB::select("SELECT * FROM `articles` WHERE deleted_at IS NULL ORDER BY id DESC");
+                                    $articles = DB::select("SELECT * FROM `articles` ORDER BY deleted_at DESC, id DESC");
                                     foreach($articles as $article) {
                                         $shortendText = substr($article->text, 0, 100);
                                         $deleted = ($article->deleted_at == null) ? 'Nee' : $article->deleted_at;
@@ -114,7 +140,9 @@
                                                             <input type='hidden' name='delete' value='pushed'>
                                                             <input type='hidden' name='id' value='<?php echo $article->id ?>'>
                                                             <input type='hidden' name='table' value="articles">
-                                                            <button type='submit'><i class='fa fa-trash'></i></button>
+                                                            @if ($deleted == 'Nee')
+                                                                <button type='submit'><i class='fa fa-trash'></i></button>
+                                                            @endif
                                                         </form> <?php
                                                     
                                                     echo"</td><td>$article->title</td><td>$shortendText...</td><td>$article->blokID</td><td>$updated</td><td>$deleted</td></tr>";
@@ -126,7 +154,7 @@
 
                     case 2:
                             echo "  <table id='myTable'><tr id='eersteLijn'><th></th><th>Quote</th><th>Bloknummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='5'></td></tr>";
-                                    $articles = DB::select("SELECT * FROM `quotes` WHERE deleted_at IS NULL ORDER BY id DESC");
+                                    $articles = DB::select("SELECT * FROM `quotes` ORDER BY deleted_at DESC, id DESC");
                                     foreach($articles as $article) {
                                         $shortendText = substr($article->quote, 0, 100);
                                         $deleted = ($article->deleted_at == null) ? 'Nee' : $article->deleted_at;
@@ -147,7 +175,9 @@
                                                             <input type='hidden' name='delete' value='pushed'>
                                                             <input type='hidden' name='id' value='<?php echo $article->id ?>'>
                                                             <input type='hidden' name='table' value="quotes">
-                                                            <button type='submit'><i class='fa fa-trash'></i></button>
+                                                            @if ($deleted == 'Nee')
+                                                                <button type='submit'><i class='fa fa-trash'></i></button>
+                                                            @endif
                                                         </form> <?php
                                                     
                                                     echo"</td><td>$shortendText...</td><td>$article->blokID</td><td>$updated</td><td>$deleted</td></tr>";

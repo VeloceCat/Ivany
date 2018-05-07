@@ -6,7 +6,7 @@
     <section>
         <div id="info">
             <?php 
-                $counter = 0;
+                $idCounter = 0;
                 $maxCharacters = 100; /* text letters */
                 $articlesCount = DB::select('SELECT COUNT(id) AS counter FROM `articles` WHERE `deleted_at` IS NULL');
                 $firstarticlesnumber = DB::select('SELECT blokID FROM `articles` WHERE `deleted_at` IS NULL LIMIT 1');
@@ -22,10 +22,10 @@
                     foreach($firstarticles as $firstarticle) {
                         $title = $firstarticle->title;
                         $text = $firstarticle->text;
-                        $id = $firstarticle->id;
                         $shortendText = substr($text, 0, $maxCharacters);
+                        $idCounter += 1;
 
-                        echo("<div class='artikel'><h2>$title</h2><p>$shortendText...<br><button onclick='Modal($id)' class='anchorBtn' type='submit'>lees meer ></button></p></div>");
+                        echo("<div class='artikel'><h2>$title</h2><p>$shortendText...<br><button onclick='Modal($idCounter)' class='anchorBtn' type='submit'>lees meer ></button></p></div>");
                         
                     }
                     echo("</div>");
@@ -45,10 +45,10 @@
                             foreach($articles as $article) {
                                 $title = $article->title;
                                 $text = $article->text;
-                                $id = $article->id;
                                 $shortendText = substr($text, 0, $maxCharacters);
+                                $idCounter += 1;
 
-                                echo("<div class='artikel'><h2>$title</h2><p>$shortendText...<br><button onclick='Modal($id)' class='anchorBtn' type='submit'>lees meer ></button></p></div>");
+                                echo("<div class='artikel'><h2>$title</h2><p>$shortendText...<br><button onclick='Modal($idCounter)' class='anchorBtn' type='submit'>lees meer ></button></p></div>");
                             }
                             echo("</div>");
                         }
@@ -56,12 +56,13 @@
                 }
                     
                     $articlesModal = DB::select("SELECT * FROM `articles` WHERE `deleted_at` IS NULL");
+                    $idCounter = 0;
                     foreach($articlesModal as $articleModal) {
                         $text = $articleModal->text;
                         $title = $articleModal->title;
-                        $id = $articleModal->id;
+                        $idCounter += 1;
 
-                        echo("<div id='$id' class='modal'>
+                        echo("<div id='$idCounter' class='modal'>
                         <div class='modal-content'>
                             <div class='modal-header'>
                             <h2>$title</h2>

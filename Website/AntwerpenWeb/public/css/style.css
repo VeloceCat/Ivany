@@ -455,7 +455,6 @@ footer a:hover {
     flex-direction: row;
     padding: 10px 50px;
     font-size: 20px;
-    cursor: pointer;
     font-weight: bolder;
     border-bottom: 3px solid #CF0039;
 }

@@ -96,7 +96,8 @@
                                     $articles = DB::select("SELECT * FROM `articles` WHERE deleted_at IS NULL ORDER BY id DESC");
                                     foreach($articles as $article) {
                                         $shortendText = substr($article->text, 0, 100);
-                                        
+                                        $deleted = ($article->deleted_at == null) ? 'Nee' : $article->deleted_at;
+                                        $updated = ($article->updated_at == null) ? 'Nooit' : $article->updated_at;
 
                                         echo "  <tr href='#'>
                                                     <td class='editbuttons'>"        
@@ -116,7 +117,7 @@
                                                             <button type='submit'><i class='fa fa-trash'></i></button>
                                                         </form> <?php
                                                     
-                                                    echo"</td><td>$article->title</td><td>$shortendText...</td><td>$article->blokID</td><td>$article->updated_at</td><td>$article->deleted_at</td></tr>";
+                                                    echo"</td><td>$article->title</td><td>$shortendText...</td><td>$article->blokID</td><td>$updated</td><td>$deleted</td></tr>";
                                     }
                                     echo '</table>';
                            
@@ -128,7 +129,8 @@
                                     $articles = DB::select("SELECT * FROM `quotes` WHERE deleted_at IS NULL ORDER BY id DESC");
                                     foreach($articles as $article) {
                                         $shortendText = substr($article->quote, 0, 100);
-                                        
+                                        $deleted = ($article->deleted_at == null) ? 'Nee' : $article->deleted_at;
+                                        $updated = ($article->updated_at == null) ? 'Nooit' : $article->updated_at;
 
                                         echo "  <tr href='#'>
                                                     <td class='editbuttons'>"        
@@ -148,7 +150,7 @@
                                                             <button type='submit'><i class='fa fa-trash'></i></button>
                                                         </form> <?php
                                                     
-                                                    echo"</td><td>$shortendText...</td><td>$article->blokID</td><td>$article->updated_at</td><td>$article->deleted_at</td></tr>";
+                                                    echo"</td><td>$shortendText...</td><td>$article->blokID</td><td>$updated</td><td>$deleted</td></tr>";
 
                                     }
                                     echo '</table>';

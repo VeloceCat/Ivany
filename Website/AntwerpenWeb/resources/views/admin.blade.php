@@ -77,6 +77,29 @@
         }
     }
 
+    if (isset($_POST['added']) && $_POST['added'] == true) {
+        $table = $_POST['table'];
+        $dateToPost = date('Y-m-d H:i:s');
+        try {
+            if ($table == 'articles') {
+                $title = $_POST['titel'];
+                $text = $_POST['text'];
+                $blokID = $_POST['blokID'];
+                DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ('$title', '$text', '$blokID', '$dateToPost')");
+            }
+            elseif ($table == 'quotes') {
+                $quote = $_POST['text'];
+                $blokID = $_POST['blokID'];
+                DB::insert("INSERT INTO `quotes`(`quote`, `blokID`, `created_at`) VALUES ('$quote', '$blokID', '$dateToPost')");
+            }
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            $MSG = "Comment failed inserting. " . $e->getMessage() . "";
+            echo $MSG;
+        }
+    }
+
 
 	function buttonActive($nummer, $n) {
 		$id = '';
@@ -91,7 +114,7 @@
 				break;
 			case 2:
 				$buttonNaam = "Quotes";
-				break;
+                break;
 			default:
 				$buttonNaam = "Artikels";
         }
@@ -109,6 +132,13 @@
             echo "<div class='keuzeknoppen'>";
             buttonActive(1,$infoNummer);
             buttonActive(2,$infoNummer);
+            ?> 
+            <form method='POST' action="{{ route('adminAdd') }}"> 
+                <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
+                <input type='hidden' name='nummer' value='{{(isset($_POST['nummer'])) ?  $_POST['nummer'] : 1 }}'>
+                <button type='submit' class='keuzeknop'><i class="fas fa-plus"></i> Toevoegen</button>
+            </form>
+            <?php
             echo "</div>";
             
             function overzichtInfo($nummer)

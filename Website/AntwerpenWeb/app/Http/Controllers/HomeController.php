@@ -56,4 +56,9 @@ class HomeController extends Controller
         return view('adminEdit');
     }
 
+    public function adminAdd()
+    {
+        return view('adminAdd');
+    }
+
 }

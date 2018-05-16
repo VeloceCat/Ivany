@@ -55,7 +55,7 @@
 
     ?>
            
-        <div>
+        <div class="edit-page-container">
             <div>
                 <div class="col-md-10 col-md-offset-1">
 

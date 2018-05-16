@@ -429,11 +429,10 @@ footer a:hover {
 
 .bg-danger {
     width: 50%;
-    margin: 0 auto;
+    margin: 10px auto;
     background-color: transparent!important;
     border: solid 3px #000;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
 }
 
 .bg-danger h3 {
@@ -443,6 +442,8 @@ footer a:hover {
     background-color: #CF0039;
     padding: 10px;
     margin: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .btn-danger {
@@ -555,7 +556,99 @@ footer a:hover {
     cursor: pointer;
 }
 
+/* -------------- EDIT PAGE -------------- */
+.edit-page-container, .add-page-container {
+    margin: 20px 50px;
+    max-width: 90%;
+}
 
+.breadcrumb {
+    width: 190px;
+    height: 37px;
+    margin-right: 10px;
+    padding: 0;
+    background-color: #0064B4;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.breadcrumb a {
+    padding: 7px 15px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.breadcrumb:hover {
+    background-color: rgb(0, 114, 207);
+    border-radius: .25rem;
+}
+
+.breadcrumb a:hover {
+    background-color: rgb(0, 114, 207);
+    text-decoration: none;
+    border-radius: .25rem;
+}
+
+.breadcrumb, .delete-button {
+    float: left;
+}
+
+.delete-button {
+    height: 37px;
+}
+
+.delete-button .btn-danger {
+    margin: 0!important;
+}
+
+.btn-danger:hover {
+    cursor: pointer;
+}
+
+.panel-content {
+    padding-top: 40px;
+}
+
+.col-md-10 {
+    padding: 0!important;
+    margin: 0!important;
+}
+
+.col-sm-6 {
+    padding: 0!important;
+    max-width: 100%!important;
+}
+
+.col-sm-6 label {
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 20px;
+    left: 0;
+}
+
+.col-sm-6 label:first-child {
+    margin-left: -200px;
+}
+
+.col-sm-6 input, .col-sm-6 textarea {
+    width: 100%;
+}
+
+.col-sm-6 textarea {
+    height: 300px;
+}
+
+.col-sm-6 .btn-default {
+    margin: 10px 0;
+    background-color: #0064B4;
+    border-radius: .25rem;
+    color: #fff;
+}
+
+.col-sm-6 .btn-default:hover {
+    background-color: rgb(0, 114, 207);
+}
 
 /* -------------- ACHTERGROND OP ALLE PAGINA'S VOOR MENU TE KUNNEN ZIEN -------------- */
 #achtergrond {

@@ -66,7 +66,7 @@
                     </div>
                 @if (isset($_POST['id']))
                     <div class="panel panel-default">
-                        <form method='POST' action="{{ route('adminEdit') }}"> 
+                        <form method='POST' action="{{ route('adminEdit') }}" class='delete-button'> 
                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                             <input type='hidden' name='nummer' value='<?php echo $infoNummer; ?>'>
                             <input type='hidden' name='delete' value='pushed'>

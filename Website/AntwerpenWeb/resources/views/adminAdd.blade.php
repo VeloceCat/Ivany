@@ -40,6 +40,7 @@
                                             <textarea type="text" name="text" class="form-control" required></textarea>
                                             <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
                                             <input type="text" name="blokID" class="form-control">
+                                            <p>Voor elk artikelblok moet er een quote worden opgegeven.</p>
                                         </div>
                                     </div>
                                     <!-- Add Article Button -->

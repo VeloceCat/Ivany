@@ -43,7 +43,7 @@
         <div class="artikel contactLink">
             <h2>Zelfmoordlijn</h2>
             <p>Dringend nood aan een gesprek? Bij de Zelfmoordlijn1813 staat er iemand voor je klaar. Elk gesprek is anoniem en gratis.</p>
-            <p>Bezoek de <a href="https://www.zelfmoord1813.be" target="_blank">site</a>, <a href="mailto:indy.bosschem@gmail.com?Subject=Website%20visit" target="_top">email</a>, of bel naar 1813.</p>
+            <p>Bezoek de <a href="https://www.zelfmoord1813.be" target="_blank">site</a>, <a href="https://email.zelfmoord1813.be/node/add/vraag" target="_blank">email</a>, of bel naar 1813.</p>
         </div>
 </div>
 

@@ -19,6 +19,9 @@ public class ShoppingController : MonoBehaviour {
     protected GameObject storePanel;
 
     [SerializeField]
+    protected GameObject buttonGroup;
+
+    [SerializeField]
     protected Button goggles;
     [SerializeField]
     protected Button book;
@@ -29,10 +32,18 @@ public class ShoppingController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        int rnd = Random.Range(1, 6);
+        if (rnd == 3)
+        {
+            DisableRoom();
+            shopEvent.enabled = true;
+            shopEvent.StartDialogue();
+        }
         if (StaticInfo.HasGoggles)
         {
             goggles.interactable = false;
         }
+
 	}
 	
 	// Update is called once per frame
@@ -130,6 +141,24 @@ public class ShoppingController : MonoBehaviour {
         else
         {
             hintPanel.ActivateHintPanel("Je hebt niet genoeg geld om snoep te kopen.");
+        }
+    }
+
+    public void DisableRoom()
+    {
+        Button[] btns = buttonGroup.GetComponentsInChildren<Button>();
+        foreach (Button b in btns)
+        {
+            b.interactable = false;
+        }
+    }
+
+    public void EnableRoom()
+    {
+        Button[] btns = buttonGroup.GetComponentsInChildren<Button>();
+        foreach (Button b in btns)
+        {
+            b.interactable = true;
         }
     }
 }

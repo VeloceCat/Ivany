@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ClassroomController : MonoBehaviour {
 
+    [SerializeField]
+    protected School_Events schoolEvent;
+
     private int testScore;
 
     [SerializeField]
@@ -13,10 +16,12 @@ public class ClassroomController : MonoBehaviour {
     protected HUDController hudControl;
     // Use this for initialization
     void Start () {
+        schoolEvent.StartDialogue();
         if (StaticInfo.DayCounter % 6 < 4)
         {
             StaticInfo.DaysPresent += 1;
             StaticInfo.ChanceToSucceed += 10;
+            
         }
         else if (StaticInfo.DayCounter % 6 == 5)
         {

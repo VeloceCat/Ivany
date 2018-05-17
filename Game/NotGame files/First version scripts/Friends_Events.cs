@@ -123,14 +123,15 @@ public class Friend_Events : ChoiceScript {
                 break;
 
             case 18:
-                narrativeText = "\"Daarna gaan voor jou zorgen, vandaag ga ik geen les geven en jullie 2 hoeven niet naar de les. Ik zal met jullie meegaan naar de politie.\"";
+                narrativeText = "\"Daarna we gaan voor jou zorgen, vandaag ga ik geen les geven en jullie 2 hoeven niet naar de les. Ik zal met jullie meegaan naar de politie.\"";
                 moodValue = 5;
                 endOfEvent = true;
                 break;
 
             case 19:
-                narrativeText = " Na aan rare blik gaan jullie weer bij de rest staan.";
+                narrativeText = "Na aan rare blik gaan jullie weer bij de rest staan.";
                 moodValue = -5;
+                endOfEvent = true;
                 break;
 
             case 20:

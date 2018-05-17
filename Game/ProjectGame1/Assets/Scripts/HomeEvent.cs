@@ -265,10 +265,11 @@ public class HomeEvent : ChoiceScript {
                 break;
 
             case 28:
-                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe gingen en voor het eerst in een lange tijd voel je je gewoon blij en gelukkig.";
-                endOfEvent = true;
+                narrativeText = "1.	De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe gingen en voor het eerst in een lange tijd voel je je gewoon blij en gelukkig.";
+                chain = 22;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
-
             default:
                 narrativeText = "Error";
                 endOfEvent = true;

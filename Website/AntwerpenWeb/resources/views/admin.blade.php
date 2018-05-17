@@ -149,7 +149,7 @@
                 {
                     case 1:
                             echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Bloknummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
-                                    $articles = DB::select("SELECT * FROM `articles` ORDER BY deleted_at DESC, id DESC");
+                                    $articles = DB::select("SELECT * FROM `articles` ORDER BY deleted_at ASC, id DESC");
                                     foreach($articles as $article) {
                                         $shortendText = substr($article->text, 0, 100);
                                         $deleted = ($article->deleted_at == null) ? 'Nee' : $article->deleted_at;
@@ -158,7 +158,8 @@
                                         echo "  <tr href='#'>
                                                     <td class='editbuttons'>"        
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
-                                                            <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
+                                                            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                            <input type='hidden' name='nummer' value='1'>
                                                             <input type='hidden' name='id' value='<?php echo $article->id ?>'>
                                                             <input type='hidden' name='table' value="articles">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>
@@ -184,7 +185,7 @@
 
                     case 2:
                             echo "  <table id='myTable'><tr id='eersteLijn'><th></th><th>Quote</th><th>Bloknummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='5'></td></tr>";
-                                    $articles = DB::select("SELECT * FROM `quotes` ORDER BY deleted_at DESC, id DESC");
+                                    $articles = DB::select("SELECT * FROM `quotes` ORDER BY deleted_at ASC, id DESC");
                                     foreach($articles as $article) {
                                         $shortendText = substr($article->quote, 0, 100);
                                         $deleted = ($article->deleted_at == null) ? 'Nee' : $article->deleted_at;
@@ -194,6 +195,7 @@
                                                     <td class='editbuttons'>"        
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                            <input type='hidden' name='nummer' value='2'>
                                                             <input type='hidden' name='id' value='<?php echo $article->id ?>'>
                                                             <input type='hidden' name='table' value="quotes">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>

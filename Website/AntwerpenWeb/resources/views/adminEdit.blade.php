@@ -60,9 +60,11 @@
                 <div class="col-md-10 col-md-offset-1">
 
                     <div class="breadcrumb">
-                        
-                        <a href="{{ route('admin') }}">← Terug naar overzicht</a>
-
+                        <form method='POST' action="{{ route('admin') }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type='hidden' name='nummer' value='<?php echo $infoNummer; ?>'>
+                            <button type="submit">← Terug naar overzicht</button>
+                        </form>
                     </div>
                 @if (isset($_POST['id']))
                     <div class="panel panel-default">

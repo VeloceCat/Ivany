@@ -16,6 +16,10 @@
         margin-right: 0px;
         margin-bottom: 15px;
     }
+
+    #info {
+        padding-top: 30px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -153,6 +157,11 @@
 
     .col-sm-6 label:first-child {
         margin-left: 0;
+    }
+
+    .contactLink {
+        border-bottom: none;
+        border-top: solid 3px #F18A00;
     }
 
 }

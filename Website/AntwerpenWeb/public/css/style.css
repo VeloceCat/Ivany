@@ -277,7 +277,6 @@ footer a:hover {
 /* -------------- INFOPAGE -------------- */
 #achtergrond section {
     width: 100%;
-    margin-top: 8%;
 }
 
 .infoBlok {
@@ -292,6 +291,10 @@ footer a:hover {
     padding: 0 auto;
     background-color: #003865;
     padding: 5% 0;
+}
+
+#info {
+    padding-top: 96px;
 }
 
 .artikel {
@@ -576,6 +579,7 @@ footer a:hover {
     border-radius: .25rem;
     display: flex;
     flex-direction: row;
+    border: none;
 }
 
 .breadcrumb button:hover {
@@ -648,6 +652,39 @@ footer a:hover {
 
 .col-sm-6 .btn-default:hover {
     background-color: rgb(0, 114, 207);
+}
+
+/* -------------- CONTACT PAGE -------------- */
+.contactBlok {
+    background-color: #121212;
+}
+
+#contactTitle2 {
+    width: 100%;
+    margin: 0 auto 15% auto;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.infoBlok h1 {
+    width: 100%;
+    margin: 10% auto 0 auto;
+    padding-top: 30px;
+    color: #F18A00;
+    text-align: center;
+}
+
+.contactLink {
+    margin: 0 2% 0 2%;
+    padding: 3% 2% 2% 2%;
+    max-width: 29%;
+    border-bottom: solid 3px #F18A00;
+    color: #fff;
+}
+
+.contactLink:nth-child(3), .contactLink:nth-child(4), .contactLink:nth-child(5) {
+    border-top: solid 3px #F18A00;
 }
 
 /* -------------- ACHTERGROND OP ALLE PAGINA'S VOOR MENU TE KUNNEN ZIEN -------------- */

@@ -134,7 +134,7 @@
             <form method='POST' action="{{ route('adminAdd') }}"> 
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
                 <input type='hidden' name='nummer' value='{{(isset($_POST['nummer'])) ?  $_POST['nummer'] : 1 }}'>
-                <button type='submit' class='keuzeknop'><i class="fas fa-plus"></i></button>
+                <button type='submit' class='keuzeknop plusknop'><i class="fas fa-plus"></i></button>
             </form>
             <?php
             buttonActive(1,$infoNummer);

@@ -6,7 +6,7 @@
         <h1>Waar kan je terecht?</h1>
         <p id="contactTitle2">Heel wat mensen en organisaties staan voor je klaar.</p>
         <div class="artikel contactLink">
-            <h2>Jongerenadviescentrum (JAC)</h2>
+            <h2>Jongeren adviescentrum (JAC)</h2>
             <p>Jongeren kunnen met al hun vragen terecht bij de Jongerenadviescentra (JAC) voor een <a href="http://www.jac.be/onthaal" target="_blank">gesprek, afspraak of chat</a>.</p>
             <p>Bezoek <a href="http://www.jac.be" target="_blank">JAC.be</a>.</p>
         </div>

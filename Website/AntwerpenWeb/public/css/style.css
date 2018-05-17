@@ -275,6 +275,13 @@ footer a:hover {
 
 
 /* -------------- INFOPAGE -------------- */
+#achtergrond {
+    background-image: url('/img/InfoFoto.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 #achtergrond section {
     width: 100%;
 }
@@ -289,7 +296,7 @@ footer a:hover {
 
     margin: 0 auto;
     padding: 0 auto;
-    background-color: #003865;
+    background-color: rgba(0, 56, 101, 0.9);
     padding: 5% 0;
 }
 
@@ -336,6 +343,7 @@ footer a:hover {
 .tussenBlok {
     padding: 5% 0;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
     color: #F18A00;
 }
 
@@ -367,7 +375,8 @@ footer a:hover {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    border: none;
 }
 
 /* Add Animation */
@@ -662,6 +671,7 @@ footer a:hover {
 #contactTitle2 {
     width: 100%;
     margin: 0 auto 15% auto;
+    padding: 0 10px;
     color: #fff;
     font-size: 1.5em;
     text-align: center;
@@ -671,6 +681,7 @@ footer a:hover {
     width: 100%;
     margin: 10% auto 0 auto;
     padding-top: 30px;
+    padding: 30px 10px 0 10px;
     color: #F18A00;
     text-align: center;
 }

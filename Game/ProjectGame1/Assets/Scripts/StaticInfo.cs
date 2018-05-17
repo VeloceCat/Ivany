@@ -5,7 +5,7 @@ using UnityEngine;
 public static class StaticInfo {
 
     //Kaartje
-    private static string nextScene;
+    private static string nextScene = "Map";
 
     //Stats
     private static int energy = 100;

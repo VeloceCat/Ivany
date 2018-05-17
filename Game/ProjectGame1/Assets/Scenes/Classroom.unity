@@ -564,7 +564,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1362946486}
         m_MethodName: ChoiceOption01
         m_Mode: 1
         m_Arguments:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1362946486}
         m_MethodName: ChoiceOption02
         m_Mode: 1
         m_Arguments:
@@ -1865,6 +1865,7 @@ GameObject:
   - component: {fileID: 1362946482}
   - component: {fileID: 1362946481}
   - component: {fileID: 1362946485}
+  - component: {fileID: 1362946486}
   m_Layer: 5
   m_Name: ClassroomCanvas
   m_TagString: Untagged
@@ -1943,6 +1944,7 @@ RectTransform:
   - {fileID: 1608514380}
   - {fileID: 436633683}
   - {fileID: 802469061}
+  - {fileID: 1778623605}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1962,7 +1964,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d07d0aff923924290c6a90b9d7222a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  schoolEvent: {fileID: 1362946486}
   hintPanel: {fileID: 436633684}
+  hudControl: {fileID: 699843269}
+--- !u!114 &1362946486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1362946480}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8ffc8130653e741998ab0cba3c42f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 1220169812}
+  choice01: {fileID: 327076330}
+  choice02: {fileID: 534579278}
+  choice03: {fileID: 1386528716}
+  choice04: {fileID: 1946527765}
   hudControl: {fileID: 699843269}
 --- !u!1 &1386528716
 GameObject:
@@ -2040,7 +2060,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1362946486}
         m_MethodName: ChoiceOption03
         m_Mode: 1
         m_Arguments:
@@ -2555,6 +2575,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1728343469}
+--- !u!1 &1778623604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1778623605}
+  - component: {fileID: 1778623607}
+  - component: {fileID: 1778623606}
+  m_Layer: 5
+  m_Name: Logo antwerpen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1778623605
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778623604}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1362946484}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 47.999992, y: -48}
+  m_SizeDelta: {x: 96, y: 96}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1778623606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778623604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1f18173c0e57b7442831cf91af467193, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1778623607
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778623604}
 --- !u!1 &1946527765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,7 +2719,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1362946486}
         m_MethodName: ChoiceOption04
         m_Mode: 1
         m_Arguments:

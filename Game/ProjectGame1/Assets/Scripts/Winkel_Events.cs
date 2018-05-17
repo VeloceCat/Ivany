@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Winkel_Events : ChoiceScript {
 
+    [SerializeField]
+    protected ShoppingController shopControl;
+
     public override void StartDialogue()
     {
         choiceMade = 0;
@@ -26,6 +29,7 @@ public class Winkel_Events : ChoiceScript {
         choice03.SetActive(false);
         choice04.SetActive(false);
         StaticInfo.MenuInteractable = true;
+        shopControl.EnableRoom();
     }
 
     public override void StartTalking(int num)

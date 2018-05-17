@@ -34,10 +34,40 @@ public class HomeEvent : ChoiceScript {
         int rnd;
         switch (num)
         {
+            //Deze zin zou elke keer in het begin moeten komen, ik heb geprobeerd om het hier met een random te maken. Mss had gij daar al iets voor?
             case 1:
-                narrativeText = "Je doet de deur achter je dicht, zet je schoenen aan de kant en wandelt naar binnen.";
-                rnd = Random.Range(1, 6); //range is dus 1-5, chain wordt 2-6
-                chain = rnd;
+                narrativeText = "Je doet de deur achter je dicht, duwt je schoenen aan de kant en wandelt naar binnen.";
+                if (StaticInfo.Mood >= 75)
+                {
+                    rnd = Random.Range(1, 3);
+                    if (rnd == 1)
+                    {
+                        chain = 1;
+                    }
+                    else
+                    {
+                        chain = 2;
+                    }
+                }
+                else
+                {
+                    if (StaticInfo.Mood < 40)
+                    {
+                        chain = 5;
+                    }
+                    else
+                    {
+                        rnd = Random.Range(1, 3);
+                        if (rnd == 1)
+                        {
+                            chain = 3;
+                        }
+                        else
+                        {
+                            chain = 4;
+                        }
+                    }
+                }
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
@@ -45,7 +75,6 @@ public class HomeEvent : ChoiceScript {
             case 2:
                 narrativeText = "Er is niemand thuis als je binnen komt. Dus je eet een appel en gaat naar je kamer.";
                 endOfEvent = true;
-                StaticInfo.CanTalkToParents = false;
                 break;
 
             case 3:
@@ -54,7 +83,7 @@ public class HomeEvent : ChoiceScript {
                 numberOfOptions = 3;
                 option01Text = "\"Goed\" antwoord je een beetje tegen je zin.";
                 option02Text = "\"Heel goed\" zeg je tegen je vader.";
-                option03Text = "Je zegt niets en gaat meteen naar je kamer.";
+                option03Text = "Je zegt niets en meteen naar je kamer.";
                 break;
 
             case 4:
@@ -90,7 +119,7 @@ public class HomeEvent : ChoiceScript {
 
             case 8:
                 narrativeText = "Je ouders komen net terug van de supermarkt en je vertelt wat over je dag terwijl je helpt met het uitladen van de boodschappen. Daarna ga je naar je kamer.";
-                moodValue = 5;
+                moodValue = +5;
                 endOfEvent = true;
                 break;
 
@@ -113,7 +142,7 @@ public class HomeEvent : ChoiceScript {
                 else
                 {
                     narrativeText = "Je verteld tijdens het eten over je dag en je hebt een leuke gesprek met je ouders.";
-                    moodValue = 5;
+                    moodValue = +5;
 
                 }
                 endOfEvent = true;
@@ -141,7 +170,7 @@ public class HomeEvent : ChoiceScript {
                 narrativeText = "Even later ga je naar beneden om hallo te zeggen tegen je oma. Ze ziet dat je er een beetje triest uitziet. \"Wat is er?\" vraagt ze.";
                 chain = 16;
                 numberOfOptions = 3;
-                option01Text = "\"Het was een moeilijke dag, meer niet.\" Zeg je.";
+                option01Text = "\"Het was een moeilijke dag, meer niet.\"";
                 option02Text = "Je zegt helemaal niets en gaat weer naar je kamer.";
                 option03Text = "Je verteld hen wat er gebeurt is de voorbije dagen.";
                 break;
@@ -167,14 +196,14 @@ public class HomeEvent : ChoiceScript {
                 break;
 
             case 18:
-                narrativeText = "\"Tja, kleine kindjes worden groot.\" zegt je oma al lachend tegen je ouders.";
+                narrativeText = "\"Tja, kleine kindjes worden groot\" zegt je oma al lachend tegen je ouders.";
                 moodValue = -5;
                 endOfEvent = true;
                 break;
 
             case 19:
                 narrativeText = "Iedereen luistert aandachtig tot je je hele verhaal hebt gedaan, je moeder komt naast je zitten en slaagt haar arm om je. \n\"We zullen samen naar een oplossing zoeken\" stelt ze voor, en je kan enkel nog knikken. Je verhaal doen was  moeilijk maar je weet dat dit de juiste beslissing was.";
-                moodValue = 5;
+                moodValue = +5;
                 endOfEvent = true;
                 break;
 
@@ -206,7 +235,7 @@ public class HomeEvent : ChoiceScript {
                 else
                 {
                     narrativeText = "Je verteld tijdens het eten over je dag en je hebt een leuke gesprek met je ouders.";
-                    moodValue = 5;
+                    moodValue = +5;
 
                 }
                 endOfEvent = true;
@@ -235,7 +264,7 @@ public class HomeEvent : ChoiceScript {
                 break;
 
             case 25:
-                rnd = Random.Range(1, 2);
+                rnd = Random.Range(1, 3);
                 if (rnd == 1)
                 {
                     narrativeText = "Je vader hoort je zachtjes wenen en stapt de kamer binnen.";
@@ -244,7 +273,7 @@ public class HomeEvent : ChoiceScript {
                 }
                 else
                 {
-                    narrativeText = "Je hoort je vader weer naar beneden gaan. En voelt je zo alleen.";
+                    narrativeText = "Je hoort  je vader weer naar beneden gaan. En voelt je zo alleen.";
                     chain = 26;
 
                 }
@@ -258,22 +287,21 @@ public class HomeEvent : ChoiceScript {
                 break;
 
             case 27:
-                narrativeText = "Je laat je tranen de vrije loop gaan. Wanneer je even later naar beneden gaat voor het avond eten zien je ouders dat er iets niet klopt.\nZe zijn zo bezorgd om je en zonder nog verder aan het eten te denken slaan ze hun armen om je heen om vragen je wat er is. Je voelt plots toch de kracht om te praten over de dingen die je de laatste dagen hebt meegemaakt.";
+                narrativeText = "Je laat je tranen de vrije loop gaan. Wanneer je even later  naar  beneden gaat voor het avond eten zien je ouders dat er iets niet klopt.\nZe zijn zo bezorgd om  je en zonder nog verder aan het eten te denken slaan ze hun armen om je heen om vragen je wat er is. Je voelt plots toch de kracht om  het  te vertellen en je verteld over de dingen die je de laatste dagen hebt meegemaakt.";
                 chain = 27;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 28:
-                narrativeText = "1.	De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe gingen en voor het eerst in een lange tijd voel je je gewoon blij en gelukkig.";
-                chain = 22;
-                numberOfOptions = 1;
-                option01Text = "...";
+                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging, en voor het eerst in een lange tijd voel je je gewoon blij en gelukkig.";
+                endOfEvent = true;
                 break;
+
             default:
                 narrativeText = "Error";
                 endOfEvent = true;
                 break;
         }
     }
-    }
+}

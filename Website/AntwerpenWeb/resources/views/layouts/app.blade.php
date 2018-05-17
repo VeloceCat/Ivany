@@ -86,7 +86,6 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                                <li><a class="nav-link" href="{{ route('register') }}">Registreer</a></li>
                             @else
                                 <li class="nav-item dropdown  {{ Request::is('admin') ? ' active' : null }}">
                                     <a id="navbarDropdown" class="nav-link" href="{{ route('admin') }}" role="button">
@@ -100,7 +99,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Afmelden
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -95,6 +95,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Registreer
                                 </button>
+                                <p>Al een account? <a href="{{ route('login') }}">Log in</a></p>
                             </div>
                         </div>
                     </form>

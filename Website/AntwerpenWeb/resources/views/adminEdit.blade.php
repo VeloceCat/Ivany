@@ -105,9 +105,9 @@
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="titel" class="col-sm-3 control-label">Titel</label>
-                                            <input type="text" name="titel" value="{{$title}}" class="form-control">
+                                            <input type="text" name="titel" value="{{$title}}" class="form-control" required>
                                             <label for="text" class="col-sm-3 control-label">Text</label>
-                                            <textarea type="text" name="text" class="form-control">{{$text}}</textarea>
+                                            <textarea type="text" name="text" class="form-control" required>{{$text}}</textarea>
                                             <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
                                             <input type="text" name="blokID" value="{{$blokID}}" class="form-control">
                                             @if ($deleted == 'true')
@@ -143,9 +143,9 @@
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="text" class="col-sm-3 control-label">Quote</label>
-                                            <textarea type="text" name="text" class="form-control">{{$text}}</textarea>
+                                            <textarea type="text" name="text" class="form-control" required>{{$text}}</textarea>
                                             <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
-                                            <input type="text" name="blokID" value="{{$blokID}}" class="form-control">
+                                            <input type="text" name="blokID" value="{{$blokID}}" class="form-control" required>
                                             @if ($deleted == 'true')
                                                 <label for="undelete" class="col-sm-3 control-label">Herstellen</label>
                                                 <input type="checkbox" name="undelete" value="true">

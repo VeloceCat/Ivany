@@ -35,9 +35,9 @@
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="titel" class="col-sm-3 control-label">Titel</label>
-                                            <input type="text" name="titel" class="form-control">
+                                            <input type="text" name="titel" class="form-control" required>
                                             <label for="text" class="col-sm-3 control-label">Text</label>
-                                            <textarea type="text" name="text" class="form-control"></textarea>
+                                            <textarea type="text" name="text" class="form-control" required></textarea>
                                             <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
                                             <input type="text" name="blokID" class="form-control">
                                         </div>
@@ -56,7 +56,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="text" class="col-sm-3 control-label">Quote</label>
-                                            <textarea type="text" name="text" class="form-control"></textarea>
+                                            <textarea type="text" name="text" class="form-control" required></textarea>
                                             <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
                                             <input type="text" name="blokID" class="form-control">
                                         </div>

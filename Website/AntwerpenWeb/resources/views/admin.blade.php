@@ -55,19 +55,20 @@
     if (isset($_POST['edited']) && $_POST['edited'] == true) {
         $table = $_POST['table'];
         $id = $_POST['id'];
-        $dateToPost = date('Y-m-d H:i:s');
+        $dateToPost =  date('Y-m-d H:i:s');
         $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ', deleted_at = null' : '';
         try {
             if ($table == 'articles') {
-                $title = $_POST['titel'];
-                $text = $_POST['text'];
+                $title = '"'.str_replace('"', '\"', $_POST['titel']).'"';
+                $text = '"'.str_replace('"', '\"', $_POST['text']).'"';
                 $blokID = $_POST['blokID'];
-                DB::update("UPDATE `articles` SET title = '$title', text = '$text', blokID = '$blokID', updated_at = '$dateToPost'$undelete WHERE id='$id'");
+
+                DB::update("UPDATE `articles` SET title = $title, text = $text, blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id' ");
             }
             elseif ($table == 'quotes') {
-                $quote = $_POST['text'];
-                $blokID = $_POST['blokID'];
-                DB::update("UPDATE `quotes` SET quote = '$quote', blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
+                $blokID =  $_POST['blokID'];
+                $quote = '"'.str_replace('"', '\"', $_POST['text']).'"';
+                DB::update("UPDATE `quotes` SET quote = $quote, blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
             }
             DB::commit();
         } catch (\Exception $e) {
@@ -79,18 +80,18 @@
 
     if (isset($_POST['added']) && $_POST['added'] == true) {
         $table = $_POST['table'];
-        $dateToPost = date('Y-m-d H:i:s');
+        $dateToPost = '"' . date('Y-m-d H:i:s') . '"';
         try {
             if ($table == 'articles') {
-                $title = $_POST['titel'];
-                $text = $_POST['text'];
-                $blokID = $_POST['blokID'];
-                DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ('$title', '$text', '$blokID', '$dateToPost')");
+                $title = '"' . $_POST['titel'] . '"';
+                $text = '"' . $_POST['text'] . '"';
+                $blokID = '"' . $_POST['blokID'] . '"';
+                DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ($title, $text, $blokID, $dateToPost)");
             }
             elseif ($table == 'quotes') {
-                $quote = $_POST['text'];
-                $blokID = $_POST['blokID'];
-                DB::insert("INSERT INTO `quotes`(`quote`, `blokID`, `created_at`) VALUES ('$quote', '$blokID', '$dateToPost')");
+                $quote = '"' . $_POST['text'] . '"';
+                $blokID = '"' . $_POST['blokID'] . '"';
+                DB::insert("INSERT INTO `quotes`(`quote`, `blokID`, `created_at`) VALUES ($quote, $blokID, $dateToPost)");
             }
             DB::commit();
         } catch (\Exception $e) {

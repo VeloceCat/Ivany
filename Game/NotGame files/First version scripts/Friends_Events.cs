@@ -36,7 +36,7 @@ public class Friend_Events : ChoiceScript {
 
             case 2:
                 int rnd = Random.Range(1, 3);
-                if (rnd = 1)
+                if (rnd == 1)
                 {
                     narrativeText = "Een van je vrienden ziet je en komt meteen naar je toe.";
                     chain = 9;
@@ -110,7 +110,7 @@ public class Friend_Events : ChoiceScript {
                 break;
 
             case 16:
-                narrativeText = "Je zegt haar dat ze zich maar wat inbeeld.";
+                narrativeText = "Je vriend blijft nog staan als jij verder naar he vrienden wandeld";
                 moodValue = -5;
                 endOfEvent = true;
                 break;

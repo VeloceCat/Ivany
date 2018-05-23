@@ -70,7 +70,7 @@ public class ChoiceScript : MonoBehaviour {
         choiceMade = 1;
         choiceTree =chain + 1;
         Consequences(choiceTree);
-        Debug.Log(choiceTree);
+        //Debug.Log(choiceTree);
     }
 
     public void ChoiceOption02()

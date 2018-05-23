@@ -7,17 +7,33 @@ using UnityEngine.UI;
 public class SchoolController : MonoBehaviour {
 
     [SerializeField]
-    protected Friends_Events friendEvent;
+    protected HintPanel hintPanel;
 
     [SerializeField]
-    protected GameObject buttonGroup;
+    protected FriendEvent friendEvent;
+
+    [SerializeField]
+    protected HUDController hudControl;
+
+    [SerializeField]
+    protected Button door;
+
+    [SerializeField]
+    protected Button friends;
 
     // Use this for initialization
     void Start()
     {
-
+        friends.interactable = true;
         friendEvent.AfterDialogue();
-        
+        if (StaticInfo.AfterClass)
+        {
+            door.interactable = false;
+        }
+        else
+        {
+            door.interactable = true;
+        }
 
         
     }
@@ -30,27 +46,29 @@ public class SchoolController : MonoBehaviour {
 
     public void DisableRoom()
     {
-        Button[] btns = buttonGroup.GetComponentsInChildren<Button>();
-        foreach (Button b in btns)
-        {
-            b.interactable = false;
-        }
+        door.interactable = false;
     }
 
     public void EnableRoom()
     {
-        Button[] btns = buttonGroup.GetComponentsInChildren<Button>();
-        foreach (Button b in btns)
-        {
-            b.interactable = true;
-        }
+        door.interactable = true;
     }
 
     public void TalkToFriends()
     {
-        friendEvent.enabled = true;
-        DisableRoom();
-        friendEvent.StartDialogue();
+        if (StaticInfo.Energy >= 10)
+        {
+            friends.interactable = false;
+            hudControl.AffectEnergy(-10);
+            DisableRoom();
+            friendEvent.enabled = true;
+            friendEvent.StartDialogue();
+        }
+        else
+        {
+            hintPanel.ActivateHintPanel("Je hebt niet genoeg energie voor je vrienden.");
+        }
+        
     }
 
     public void EnterClassroom()

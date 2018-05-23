@@ -54,7 +54,7 @@
      <Compile Include="Assets\Scripts\ChoiceScript.cs" />
      <Compile Include="Assets\Scripts\ClassroomController.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
-     <Compile Include="Assets\Scripts\Friends_Events.cs" />
+     <Compile Include="Assets\Scripts\FriendEvent.cs" />
      <Compile Include="Assets\Scripts\HintPanel.cs" />
      <Compile Include="Assets\Scripts\HomeEvent.cs" />
      <Compile Include="Assets\Scripts\HomeEvent_v3.cs" />

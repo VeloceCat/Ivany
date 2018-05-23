@@ -17,6 +17,7 @@ public static class StaticInfo {
     private static int chanceToSucceed = 10;
     private static int moneyReward = 0;
     private static bool getReward = false;
+    private static bool afterClass = false;
 
     //money
     private static int money = 0;
@@ -127,6 +128,18 @@ public static class StaticInfo {
         set
         {
             getReward = value;
+        }
+    }
+
+    public static bool AfterClass
+    {
+        get
+        {
+            return afterClass;
+        }
+        set
+        {
+            afterClass = value;
         }
     }
 

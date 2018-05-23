@@ -16,6 +16,7 @@ public class ClassroomController : MonoBehaviour {
     protected HUDController hudControl;
     // Use this for initialization
     void Start () {
+        StaticInfo.AfterClass = true;
         schoolEvent.StartDialogue();
         if (StaticInfo.DayCounter % 6 < 4)
         {

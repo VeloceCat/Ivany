@@ -39,6 +39,10 @@ public class ShoppingController : MonoBehaviour {
             shopEvent.enabled = true;
             shopEvent.StartDialogue();
         }
+        else
+        {
+            shopEvent.AfterDialogue();
+        }
         if (StaticInfo.HasGoggles)
         {
             goggles.interactable = false;

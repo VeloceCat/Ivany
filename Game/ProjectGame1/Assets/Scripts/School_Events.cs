@@ -10,6 +10,7 @@ public class School_Events : ChoiceScript {
         choiceMade = 0;
         chain = 0;
         int rnd = Random.Range(1, 6);
+        
         Consequences(rnd);
     }
 

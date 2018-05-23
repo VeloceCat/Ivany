@@ -95,6 +95,8 @@ public class RoomController : MonoBehaviour {
         Debug.Log(StaticInfo.DayCounter%5);
         EnterFade();
         StaticInfo.Energy = 100;
+        StaticInfo.AfterClass = false;
+        hudControl.AffectEnergy(100);
         StaticInfo.DayCounter += 1;
         if (StaticInfo.DayCounter % 6 == 5 && StaticInfo.DaysPresent < 4)
         {

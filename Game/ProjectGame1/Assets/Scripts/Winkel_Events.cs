@@ -23,6 +23,7 @@ public class Winkel_Events : ChoiceScript {
 
     public override void AfterDialogue()
     {
+        base.AfterDialogue();
         textBox.SetActive(false);
         choice01.SetActive(false);
         choice02.SetActive(false);
@@ -143,10 +144,9 @@ public class Winkel_Events : ChoiceScript {
                     narrativeText = "Je schrikt en kijk recht naar de camera.";
                     chain = 10;
                     CameraIsPointedAtYou = false;
-                    numberOfOptions = 3;
-                    option01Text = "...";
-                    option02Text = "Je schreeuwt dat er iemand je aan het filmen is.";
-                    option03Text = "Je stapt snel uit je pashokje.";
+                    numberOfOptions = 2;
+                    option01Text = "Je schreeuwt dat er iemand je aan het filmen is.";
+                    option02Text = "Je stapt snel uit je pashokje.";
                 }
                 break;
 

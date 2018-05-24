@@ -35,7 +35,7 @@
                             <li {{ Request::is('home') ? ' class=active' : (Request::is('/') ? ' class=active' : null) }}><a href="{{ route('home') }}">Home</a></li>
                             <li {{ Request::is('info') ? ' class=active' : null }}><a href="{{ route('info') }}">Info</a></li>
                             <li {{ Request::is('game') ? ' class=active' : null }}><a href="{{ route('game') }}">Game</a></li>
-                            <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('forum') }}">Forum</a></li>
+                            <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('posts_path') }}">Forum</a></li>
                             <li {{ Request::is('contact') ? ' class=active' : null }}><a href="{{ route('contact') }}">Contact</a></li>
                             <!-- Authentication Links -->
                             @guest

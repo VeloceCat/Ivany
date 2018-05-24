@@ -11,8 +11,8 @@
             Article: {{ $post->title }}
         </div>
         <div class="panel-content">
-            <div class="url">
-                <a href="{{ $post->url }}" target="_blank" class="urlTitle">{{ $post->title }}</a>
+            <div class="post">
+                <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->title }}</a>
 
                 @if($post->wasCreatedBy( Auth::user() ))
                     <small class="pull-right">

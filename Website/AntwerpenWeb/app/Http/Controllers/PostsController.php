@@ -40,7 +40,7 @@ class PostsController extends Controller
         $post = new Post;
 
         $post->fill(
-            $request->only('title', 'description', 'url')
+            $request->only('title', 'description')
         );
 
         $post->user_id = $request->user()->id;
@@ -66,7 +66,7 @@ class PostsController extends Controller
     public function update(Post $post, UpdatePostRequest $request)
     {
         $post->update(
-            $request->only('title', 'description', 'url')
+            $request->only('title', 'description')
         );
 
         session()->flash('message', 'Post Updated!');

@@ -16,7 +16,7 @@ class Post extends Model {
 
     protected $casts = ['user_id' => 'integer'];
 
-    protected $fillable = ['title', 'description', 'url'];
+    protected $fillable = ['title', 'description'];
 
     protected $dates = ['deleted_at'];
 

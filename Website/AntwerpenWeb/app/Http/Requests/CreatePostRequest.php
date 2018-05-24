@@ -25,7 +25,7 @@ class CreatePostRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'url' => 'required|url'
+            'description' => 'required'
         ];
     }
 }

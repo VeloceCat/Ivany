@@ -26,13 +26,6 @@
 
         </div>
 
-        <div class="form-group">
-
-            <label for="url">Url:</label>
-            <input type="text" name="url" class="form-control" value="{{ $post->url or old('url') }}"/>
-
-        </div>
-
         @if($post->exists)
             <div class="form-group">
                 <button type="submit" class='btn btn-primary'>Edit Article</button>

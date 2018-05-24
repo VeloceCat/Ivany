@@ -68,6 +68,9 @@
             </nav>
 
             <main class="py-4">
+                    @include('layouts._errors')
+                    @include('layouts._messages')
+                    
                     @yield('content')
                     <a href="javascript:void(0)" id="scroll" title="Naar de top van de pagina"><i class="fas fa-arrow-alt-circle-up"></i></a>
                 </div>

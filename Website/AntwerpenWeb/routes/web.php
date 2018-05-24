@@ -57,6 +57,6 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-Route::get('/forum', 'PostsController@index')->name('posts_path');
+Route::get('/forum', 'PostsController@forum')->name('posts_path');
 
 Route::get('/forum/{post}', 'PostsController@show')->name('post_path');

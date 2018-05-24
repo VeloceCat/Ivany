@@ -10,11 +10,11 @@ use App\Http\Requests\UpdatePostRequest;
 
 class PostsController extends Controller
 {
-    public function index()
+    public function forum()
     {
         $posts = Post::with('user')->orderBy('id', 'desc')->paginate(10);
 
-        return view('posts.index')->with(['posts' => $posts]);
+        return view('posts.forum')->with(['posts' => $posts]);
     }
 
 

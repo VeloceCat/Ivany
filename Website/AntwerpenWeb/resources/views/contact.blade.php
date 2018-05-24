@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="achtergrond">
-    <div class="infoBlok contactBlok">
+    <div class="contactBlok">
         <h1>Waar kan je terecht?</h1>
         <p id="contactTitle2">Heel wat mensen en organisaties staan voor je klaar.</p>
         <div class="artikel contactLink">

@@ -676,7 +676,15 @@ footer a:hover {
 
 /* -------------- CONTACT PAGE -------------- */
 .contactBlok {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+
     background-color: #121212;
+    padding-bottom: 5%;
 }
 
 #contactTitle2 {
@@ -688,7 +696,7 @@ footer a:hover {
     text-align: center;
 }
 
-.infoBlok h1 {
+.infoBlok h1, .contactBlok h1 {
     width: 100%;
     margin: 10% auto 0 auto;
     padding-top: 30px;

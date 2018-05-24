@@ -6,7 +6,7 @@
         <div id="homeText">
             <div class="textFullWidth">
                 <h1>Seksuele intimidatie bij jongeren</h1>
-                <p>Op de info pagina vind je allerlei verhalen, speel het spel om je in te leven in de wereld van seksuele intimidatie. We willen hierbij slachtoffers helpen, omstaanders leren begrijpen en mensen waarschuwen. </p>
+                <p>Op de info pagina vind je allerlei verhalen, speel het spel om te ervaren wat seksuele intimidatie kan veroorzaken. We willen hierbij slachtoffers helpen, omstaanders leren begrijpen en mensen waarschuwen. </p>
             </div>
         </div>
         <div id="buttons">

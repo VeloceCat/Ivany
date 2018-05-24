@@ -104,11 +104,11 @@
                                     <input type='hidden' name='nummer' value="1">
                                     <div class="form-group">
                                         <div class="col-sm-6">
-                                            <label for="titel" class="col-sm-3 control-label">Titel</label>
+                                            <label for="titel" class="col-sm-3 control-label">Titel:</label>
                                             <input type="text" name="titel" value="{{$title}}" class="form-control" required>
-                                            <label for="text" class="col-sm-3 control-label">Text</label>
+                                            <label for="text" class="col-sm-3 control-label">Text:</label>
                                             <textarea type="text" name="text" class="form-control" required>{{$text}}</textarea>
-                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
+                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer:</label>
                                             <input type="text" name="blokID" value="{{$blokID}}" class="form-control">
                                             @if ($deleted == 'true')
                                                 <label for="undelete" class="col-sm-3 control-label">Herstellen</label>
@@ -126,6 +126,7 @@
                                             </button>
                                         </div>
                                     </div>
+
                                 @elseif ($_POST['table'] == 'quotes')
                                     <?php 
                                         $id = $_POST['id'];
@@ -142,10 +143,88 @@
                                     <input type='hidden' name='nummer' value="2">
                                     <div class="form-group">
                                         <div class="col-sm-6">
-                                            <label for="text" class="col-sm-3 control-label">Quote</label>
+                                            <label for="text" class="col-sm-3 control-label">Quote:</label>
                                             <textarea type="text" name="text" class="form-control" required>{{$text}}</textarea>
-                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
+                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer:</label>
                                             <input type="text" name="blokID" value="{{$blokID}}" class="form-control" required>
+                                            @if ($deleted == 'true')
+                                                <label for="undelete" class="col-sm-3 control-label">Herstellen</label>
+                                                <input type="checkbox" name="undelete" value="true">
+                                            @else
+                                                <input type="hidden" name="undelete" value="false">
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <!-- Add Article Button -->
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-6">
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fa fa-pencil-square-o"></i>Bewaren
+                                            </button>
+                                        </div>
+                                    </div>
+                                @elseif ($_POST['table'] == 'posts')
+                                    <?php 
+                                        $id = $_POST['id'];
+
+                                        $posts = DB::select("SELECT * FROM `posts` WHERE id='$id'");
+                                        foreach($posts as $post) {
+                                            $title = $post->title;
+                                            $text = $post->description;
+                                            $userID = $post->user_id;
+                                            $deleted = ($post->deleted_at == null) ? 'false' : 'true';
+                                        }
+                                    ?>
+                                    <input type='hidden' name='id' value='{{$id}}'>
+                                    <input type='hidden' name='table' value="quotes">
+                                    <input type='hidden' name='nummer' value="3">
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label for="title" class="col-sm-3 control-label">Titel:</label>
+                                            <input type="text" name="title" value="{{$title}}" class="form-control" required>
+                                            <label for="description" class="col-sm-3 control-label">Beschrijving:</label>
+                                            <textarea type="text" name="description" class="form-control" required>{{$text}}</textarea>
+                                            <label for="userID" class="col-sm-3 control-label">Bloknummer:</label>
+                                            <input type="text" name="userID" value="{{$userID}}" class="form-control" required>
+                                            @if ($deleted == 'true')
+                                                <label for="undelete" class="col-sm-3 control-label">Herstellen</label>
+                                                <input type="checkbox" name="undelete" value="true">
+                                            @else
+                                                <input type="hidden" name="undelete" value="false">
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <!-- Add Article Button -->
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-6">
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fa fa-pencil-square-o"></i>Bewaren
+                                            </button>
+                                        </div>
+                                    </div>
+                                @elseif ($_POST['table'] == 'comments')
+                                    <?php 
+                                        $id = $_POST['id'];
+
+                                        $comments = DB::select("SELECT * FROM `comments` WHERE id='$id'");
+                                        foreach($comments as $comment) {
+                                            $commentText = $comment->comment;
+                                            $userID = $comment->user_id;
+                                            $postID = $comment->post_id;
+                                            $deleted = ($comment->deleted_at == null) ? 'false' : 'true';
+                                        }
+                                    ?>
+                                    <input type='hidden' name='id' value='{{$id}}'>
+                                    <input type='hidden' name='table' value="comments">
+                                    <input type='hidden' name='nummer' value="4">
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label for="comment" class="col-sm-3 control-label">Comment:</label>
+                                            <textarea type="text" name="comment" class="form-control" required>{{$commentText}}</textarea>
+                                            <label for="userID" class="col-sm-3 control-label">Gebruikersnummer:</label>
+                                            <input type="text" name="userID" value="{{$userID}}" class="form-control" required>
+                                            <label for="postID" class="col-sm-3 control-label">Post nummer:</label>
+                                            <input type="text" name="postID" value="{{$postID}}" class="form-control" required>
                                             @if ($deleted == 'true')
                                                 <label for="undelete" class="col-sm-3 control-label">Herstellen</label>
                                                 <input type="checkbox" name="undelete" value="true">

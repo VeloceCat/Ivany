@@ -56,7 +56,7 @@
         $table = $_POST['table'];
         $id = $_POST['id'];
         $dateToPost =  date('Y-m-d H:i:s');
-        $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ', deleted_at = null' : '';
+        $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ', deleted_at = NULL' : '';
         try {
             if ($table == 'articles') {
                 $title = '"'.str_replace('"', '\"', $_POST['titel']).'"';
@@ -69,6 +69,20 @@
                 $blokID =  $_POST['blokID'];
                 $quote = '"'.str_replace('"', '\"', $_POST['text']).'"';
                 DB::update("UPDATE `quotes` SET quote = $quote, blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
+            }
+            elseif ($table == 'posts') {
+                $title = $_POST['title'];
+                $description = '"'.str_replace('"', '\"', $_POST['description']).'"';
+                $userID = $_POST['userID'];
+
+                DB::update("UPDATE `posts` SET title = '$title', description = $description, user_id = '$userID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
+            }
+            elseif ($table == 'comments') {
+                $comment = '"'.str_replace('"', '\"', $_POST['comment']).'"';
+                $userID = $_POST['userID'];
+                $postID = $_POST['postID'];
+
+                DB::update("UPDATE `comments` SET comment = $comment, user_id = '$userID', post_id = '$userID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
             }
             DB::commit();
         } catch (\Exception $e) {
@@ -116,6 +130,12 @@
 			case 2:
 				$buttonNaam = "Quotes";
                 break;
+            case 3:
+                $buttonNaam = "Forum posts";
+                break;
+            case 4:
+                $buttonNaam = "Forum reacties";
+                break;
 			default:
 				$buttonNaam = "Artikels";
         }
@@ -132,14 +152,18 @@
         if(Auth::user()->is_admin == 1) {
             echo "<div class='keuzeknoppen'>";
             ?> 
-            <form method='POST' action="{{ route('adminAdd') }}"> 
-                <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
-                <input type='hidden' name='nummer' value='{{(isset($_POST['nummer'])) ?  $_POST['nummer'] : 1 }}'>
-                <button type='submit' class='keuzeknop plusknop'><i class="fas fa-plus"></i></button>
-            </form>
+            @if(isset($_POST['nummer']) && $_POST['nummer'] != 3 && $_POST['nummer'] != 4)
+                <form method='POST' action="{{ route('adminAdd') }}"> 
+                    <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
+                    <input type='hidden' name='nummer' value='{{(isset($_POST['nummer'])) ?  $_POST['nummer'] : 1 }}'>
+                    <button type='submit' class='keuzeknop plusknop'><i class="fas fa-plus"></i></button>
+                </form>
+            @endif
             <?php
             buttonActive(1,$infoNummer);
             buttonActive(2,$infoNummer);
+            buttonActive(3,$infoNummer);
+            buttonActive(4,$infoNummer);
             echo "</div>";
             
             function overzichtInfo($nummer)
@@ -219,6 +243,76 @@
                                     echo '</table>';
                                     
                             
+                        break;
+
+                        case 3:
+                            echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Gebruikersnummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
+                                    $posts = DB::select("SELECT * FROM `posts` ORDER BY deleted_at ASC, id DESC");
+                                    foreach($posts as $post) {
+                                        $shortendText = substr($post->description, 0, 100);
+                                        $deleted = ($post->deleted_at == null) ? 'Nee' : $post->deleted_at;
+                                        $updated = ($post->updated_at == null) ? 'Nooit' : $post->updated_at;
+
+                                        echo "  <tr href='#'>
+                                                    <td class='editbuttons'>"
+                                                    ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
+                                                    <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                    <input type='hidden' name='nummer' value='3'>
+                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='table' value="posts">
+                                                    <button type='submit'><i class='fas fa-pencil-alt'></i></button>
+                                                    </form>
+
+                                                    <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}"> 
+                                                    <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                    <input type='hidden' name='nummer' value='3'>
+                                                    <input type='hidden' name='delete' value='pushed'>
+                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='table' value="posts">
+                                                    @if ($deleted == 'Nee')
+                                                        <button type='submit'><i class='fa fa-trash'></i></button>
+                                                    @endif
+                                                    </form> <?php
+                                                    
+                                                    echo"</td><td>$post->title</td><td>$shortendText...</td><td>$post->user_id</td><td>$updated</td><td>$deleted</td></tr>";
+                                    }
+                                    echo '</table>';
+                           
+                        break;
+
+                        case 4:
+                            echo "  <table id='myTable'><tr><th></th><th>Reacties</th><th>Gebruikersnummer</th><th>Post nummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
+                                    $comments = DB::select("SELECT * FROM `comments` ORDER BY deleted_at ASC, id DESC");
+                                    foreach($comments as $comment) {
+                                        $shortendText = substr($comment->comment, 0, 100);
+                                        $deleted = ($comment->deleted_at == null) ? 'Nee' : $comment->deleted_at;
+                                        $updated = ($comment->updated_at == null) ? 'Nooit' : $comment->updated_at;
+
+                                        echo "  <tr href='#'>
+                                                    <td class='editbuttons'>"        
+                                                    ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
+                                                            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                            <input type='hidden' name='nummer' value='4'>
+                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='table' value="comments">
+                                                            <button type='submit'><i class='fas fa-pencil-alt'></i></button>
+                                                        </form>
+                                                        
+                                                        <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}"> 
+                                                            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                            <input type='hidden' name='nummer' value='4'>
+                                                            <input type='hidden' name='delete' value='pushed'>
+                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='table' value="comments">
+                                                            @if ($deleted == 'Nee')
+                                                                <button type='submit'><i class='fa fa-trash'></i></button>
+                                                            @endif
+                                                        </form> <?php
+                                                    
+                                                    echo"</td><td>$shortendText...</td><td>$comment->user_id</td><td>$comment->post_id</td><td>$updated</td><td>$deleted</td></tr>";
+                                    }
+                                    echo '</table>';
+                           
                         break;
                 }
 

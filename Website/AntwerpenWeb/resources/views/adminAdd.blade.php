@@ -34,12 +34,12 @@
                                     <input type='hidden' name='nummer' value="1">
                                     <div class="form-group">
                                         <div class="col-sm-6">
-                                            <label for="titel" class="col-sm-3 control-label">Titel</label>
+                                            <label for="titel" class="col-sm-3 control-label">Titel:</label>
                                             <input type="text" name="titel" class="form-control" required>
-                                            <label for="text" class="col-sm-3 control-label">Text</label>
+                                            <label for="text" class="col-sm-3 control-label">Text:</label>
                                             <textarea type="text" name="text" class="form-control" required></textarea>
-                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
-                                            <input type="text" name="blokID" class="form-control">
+                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer:</label>
+                                            <input type="text" name="blokID" class="form-control" required>
                                             <p>Voor elk artikelblok moet er een quote worden opgegeven om af te sluiten.</p>
                                         </div>
                                     </div>
@@ -56,10 +56,10 @@
                                     <input type='hidden' name='nummer' value="2">
                                     <div class="form-group">
                                         <div class="col-sm-6">
-                                            <label for="text" class="col-sm-3 control-label">Quote</label>
+                                            <label for="text" class="col-sm-3 control-label">Quote:</label>
                                             <textarea type="text" name="text" class="form-control" required></textarea>
-                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer</label>
-                                            <input type="text" name="blokID" class="form-control">
+                                            <label for="blokID" class="col-sm-3 control-label">Bloknummer:</label>
+                                            <input type="text" name="blokID" class="form-control" required>
                                             <p>Voor elke quote moeten er artikels aanwezig zijn in het artikelblok met hetzelfde bloknummer.</p>
                                         </div>
                                     </div>

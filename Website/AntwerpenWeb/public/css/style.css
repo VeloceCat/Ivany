@@ -15,12 +15,12 @@
     font-family: 'SunAntwerpen', Arial;
 }
 
-html, body {
+html {
     height: 100%;
 }
 
 #app {
-    min-height: calc(100vh - 43px);
+    min-height: calc(99vh - 43px);
 }
 
 h1, h2, h3, a, .anchorBtn {
@@ -509,7 +509,7 @@ footer a:hover {
 }
 
 #myTable {
-    margin: 20px 50px;
+    margin: 20px 50px 10px 50px;
     max-width: 90%;
 }
 

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="achtergrond"></div>
+
+<div>
+    
+</div>
 
 @endsection

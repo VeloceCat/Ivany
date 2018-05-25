@@ -46,8 +46,8 @@
                 DB::commit();
             } catch (\Exception $e) {
                 DB::rollback();
-                $MSG = "Comment failed deleting. " . $e->getMessage() . "";
-                echo $MSG;
+                /*$MSG = "Comment failed deleting. " . $e->getMessage() . "";
+                echo $MSG;*/
             }
         }
     }
@@ -56,7 +56,7 @@
         $table = $_POST['table'];
         $id = $_POST['id'];
         $dateToPost =  date('Y-m-d H:i:s');
-        $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ', deleted_at = NULL' : '';
+        $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ", deleted_at = NULL" : '';
         try {
             if ($table == 'articles') {
                 $title = '"'.str_replace('"', '\"', $_POST['titel']).'"';
@@ -87,7 +87,7 @@
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            $MSG = "Comment failed editing. " . $e->getMessage() . "";
+            $MSG = $table . " failed editing. " . $e->getMessage() . "";
             echo $MSG;
         }
     }
@@ -110,8 +110,8 @@
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            $MSG = "Comment failed inserting. " . $e->getMessage() . "";
-            echo $MSG;
+            /*$MSG = "Comment failed inserting. " . $e->getMessage() . "";
+            echo $MSG;*/
         }
     }
 

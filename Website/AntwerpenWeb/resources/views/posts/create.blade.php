@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Add Article</h2>
+    <h2>Post toevoegen</h2>
 
     @include('posts._form', ['post' => $post])
 

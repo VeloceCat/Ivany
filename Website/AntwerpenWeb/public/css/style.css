@@ -346,7 +346,7 @@ footer a:hover {
 }
 
 .tussenBlok {
-    padding: 5% 0;
+    padding: 5% 10px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.8);
     border-top: solid 3px #F18A00;
@@ -672,6 +672,313 @@ footer a:hover {
 
 .col-sm-6 .btn-default:hover {
     background-color: rgb(0, 114, 207);
+}
+
+/* -------------- FORUM PAGE -------------- */
+.alert {
+    margin-bottom: 0!important;
+}
+
+/* FORUM HOME */
+.panelBackground {
+    min-height: 100%;
+    background-color: #121212;
+    padding-bottom: 5%;
+}
+
+.panel-heading h1 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10% 10px 0 10px;
+    color: #F18A00;
+    font-size: 3em;
+    text-align: center;
+}
+
+.forumTitleUnder {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+
+.addPostButton, .addCommentButton {
+    width: 100%;
+    margin: 20px auto;
+    padding-bottom: 15%;
+    text-align: center;
+    border-bottom: solid 2px #F18A00;
+}
+
+.addPostButton a, .addCommentButton a {
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: inherit;
+    border: solid 1px #fff;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    background-color: transparent;
+}
+
+.addPostButton a:hover, .addCommentButton a:hover {
+    background-color: #fff;
+    color: #000;
+    border: solid 1px #fff;
+}
+
+.article-overview, .fullPost, .comments {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+.post {
+    width: 45%;
+    margin: 30px 0;
+    padding: 20px;
+    border: solid 2px #fff;
+}
+
+.post:nth-child(odd) {
+    margin-right: 10%;
+}
+
+.postHeader, .postBody {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.postAvatar {
+    width: 50px;
+    height: 50px;
+    max-width: 35%;
+    margin-right: 5%;
+}
+
+.postHeader h2 {
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    vertical-align: center;
+    width: 60%;
+    text-transform: capitalize!important;
+    color: #F18A00;
+}
+
+.postBody {
+    border-bottom: solid 2px #F18A00;
+}
+
+.postContent {
+    width: 70%;
+    margin-right: 5%;
+}
+
+.post .managePost {
+    width: 25%;
+}
+
+.postTitle a {
+    padding-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-transform: capitalize!important;
+    text-decoration: none;
+}
+
+.postTitle a:hover {
+    color: #0064B4;
+}
+
+.postText {
+    font-size: 1.2em;
+}
+
+.post p {
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.managePost, .manageComment {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.managePost .btn-info, .manageComment .btn-info {
+    margin: 10px 0;
+    background-color: #F18A00!important;
+    border: solid 1px #F18A00;
+    border-radius: 0;
+}
+
+.managePost .btn-info:hover, .manageComment .btn-info:hover {
+    background-color: #fff!important;
+    color: #000;
+    border: solid 1px #fff;
+}
+
+.managePost .btn-danger, .manageComment .btn-danger {
+    border-radius: 0;
+}
+
+.managePost .btn-danger:hover, .manageComment .btn-danger:hover {
+    background-color: #fff!important;
+    color: #000;
+    border: solid 1px #fff;
+}
+
+.postFooter p {
+    color: #8d9092;
+}
+
+.postFooter a {
+    color: #8d9092;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.postFooter a:hover {
+    color: #0064B4;
+}
+
+/* FORUM SHOW */
+.backButton {
+    padding: 0 10px;
+}
+
+.backButton a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.backButton a:hover {
+    color: #0064B4;
+}
+
+.forumTitleUnder b {
+    text-transform: capitalize!important;
+}
+
+.fullPost {
+    margin: 20px 0;
+}
+
+.description {
+    width: 88%;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 1.8em;
+    margin-right: 2%;
+}
+
+.fullPost .managePost {
+    width: 10%;
+}
+
+.comments {
+    margin-left: 5%;
+}
+
+.comments ul {
+    width: 100%;
+    color: #fff;
+    list-style-type: none;
+}
+
+.comments ul li {
+    margin-bottom: 10px;
+}
+
+.commentHeader {
+    width: 98%;
+    padding: 10px 0;
+    border-top: solid 1px #F18A00;
+}
+
+.commentAvatar {
+    width: 40px;
+    height: 40px;
+    max-width: 35%;
+    margin-right: 2%;
+}
+
+.commentHeader h3 {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: center;
+    width: 60%;
+    text-transform: capitalize!important;
+    color: #F18A00;
+}
+
+.commentBody, .commentHeader {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.commentText {
+    width: 87%;
+    margin-right: 2%;
+    font-size: 1.3em;
+}
+
+.manageComment {
+    width: 11%;
+    align-content: right;
+}
+
+.manageComment small {
+    margin: 0!important;
+    display: block;
+    right: 0;
+}
+
+.managecomment button {
+    right: 0;
+}
+
+.commentFooter {
+    color: #8d9092;
+
+}
+
+/* FORUM EDIT */
+.confirmButtons {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.confirmButtons .form-group {
+    margin: 10px;
 }
 
 /* -------------- CONTACT PAGE -------------- */

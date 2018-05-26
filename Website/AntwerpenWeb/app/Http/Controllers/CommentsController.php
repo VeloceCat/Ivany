@@ -22,7 +22,7 @@ class CommentsController extends Controller
 
     public function store(CreateCommentRequest $request, $id) 
     {
-        $post= Post::find($id);
+        $post = Post::find($id);
 
         $comment = new Comment;
 
@@ -33,7 +33,7 @@ class CommentsController extends Controller
 
         $comment->save();
 
-        session()->flash('message', 'Comment Created!');
+        session()->flash('message', 'Je reactie is toegevoegd.');
 
         return redirect()->route('post_path', [$post->post]);
     }
@@ -53,9 +53,9 @@ class CommentsController extends Controller
         $comment->comment = $request->comment;
         $comment->save();
 
-        session()->flash('message', 'Comment Updated!');
+        session()->flash('message', 'Je reactie is bijgewerkt.');
 
-        return redirect()->route('posts_path', $comment->post->id);
+        return redirect()->route('post_path', $comment->post->id);
     }
 
     public function delete(Comment $comment)
@@ -68,10 +68,8 @@ class CommentsController extends Controller
 
         $comment->delete();
 
-        session()->flash('message', 'Comment Deleted!');
+        session()->flash('message', 'Je reactie is verwijderd.');
 
         return redirect()->route('posts_path');
     }
-
-    
 }

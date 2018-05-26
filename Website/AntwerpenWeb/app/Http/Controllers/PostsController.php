@@ -47,7 +47,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        session()->flash('message', 'Post Created!');
+        session()->flash('message', 'Je post is toegevoegd.');
 
         return redirect()->route('posts_path');
     }
@@ -69,7 +69,7 @@ class PostsController extends Controller
             $request->only('title', 'description')
         );
 
-        session()->flash('message', 'Post Updated!');
+        session()->flash('message', 'Je post is bijgewerkt.');
 
         return redirect()->route('post_path', ['post' => $post->id]);
     }
@@ -83,7 +83,7 @@ class PostsController extends Controller
 
         $post->delete();
 
-        session()->flash('message', 'Post Deleted!');
+        session()->flash('message', 'Je post is verwijderd.');
 
         return redirect()->route('posts_path');
     }

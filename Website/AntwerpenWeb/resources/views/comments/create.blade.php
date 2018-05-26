@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Add Comment</h2>
+    <h2>Reactie toevoegen</h2>
 
     @include('comments._form', ['comment' => $comment])
 

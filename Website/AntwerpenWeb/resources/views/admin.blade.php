@@ -46,8 +46,8 @@
                 DB::commit();
             } catch (\Exception $e) {
                 DB::rollback();
-                $MSG = "Comment failed deleting. " . $e->getMessage() . "";
-                echo $MSG;
+                /*$MSG = "Comment failed deleting. " . $e->getMessage() . "";
+                echo $MSG;*/
             }
         }
     }
@@ -56,7 +56,7 @@
         $table = $_POST['table'];
         $id = $_POST['id'];
         $dateToPost =  date('Y-m-d H:i:s');
-        $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ', deleted_at = NULL' : '';
+        $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ", deleted_at = NULL" : '';
         try {
             if ($table == 'articles') {
                 $title = '"'.str_replace('"', '\"', $_POST['titel']).'"';
@@ -82,12 +82,12 @@
                 $userID = $_POST['userID'];
                 $postID = $_POST['postID'];
 
-                DB::update("UPDATE `comments` SET comment = $comment, user_id = '$userID', post_id = '$userID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
+                DB::update("UPDATE `comments` SET comment = $comment, user_id = '$userID', post_id = '$postID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
             }
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            $MSG = "Comment failed editing. " . $e->getMessage() . "";
+            $MSG = $table . " failed editing. " . $e->getMessage() . "";
             echo $MSG;
         }
     }
@@ -110,8 +110,8 @@
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            $MSG = "Comment failed inserting. " . $e->getMessage() . "";
-            echo $MSG;
+            /*$MSG = "Comment failed inserting. " . $e->getMessage() . "";
+            echo $MSG;*/
         }
     }
 
@@ -152,10 +152,10 @@
         if(Auth::user()->is_admin == 1) {
             echo "<div class='keuzeknoppen'>";
             ?> 
-            @if(isset($_POST['nummer']) && $_POST['nummer'] != 3 && $_POST['nummer'] != 4)
+            @if($infoNummer != 3 && $infoNummer != 4)
                 <form method='POST' action="{{ route('adminAdd') }}"> 
                     <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
-                    <input type='hidden' name='nummer' value='{{(isset($_POST['nummer'])) ?  $_POST['nummer'] : 1 }}'>
+                    <input type='hidden' name='nummer' value='{{$infoNummer}}'>
                     <button type='submit' class='keuzeknop plusknop'><i class="fas fa-plus"></i></button>
                 </form>
             @endif

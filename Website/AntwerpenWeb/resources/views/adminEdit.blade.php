@@ -176,7 +176,7 @@
                                         }
                                     ?>
                                     <input type='hidden' name='id' value='{{$id}}'>
-                                    <input type='hidden' name='table' value="quotes">
+                                    <input type='hidden' name='table' value="posts">
                                     <input type='hidden' name='nummer' value="3">
                                     <div class="form-group">
                                         <div class="col-sm-6">
@@ -184,7 +184,7 @@
                                             <input type="text" name="title" value="{{$title}}" class="form-control" required>
                                             <label for="description" class="col-sm-3 control-label">Beschrijving:</label>
                                             <textarea type="text" name="description" class="form-control" required>{{$text}}</textarea>
-                                            <label for="userID" class="col-sm-3 control-label">Bloknummer:</label>
+                                            <label for="userID" class="col-sm-3 control-label">Gebruikersnummer:</label>
                                             <input type="text" name="userID" value="{{$userID}}" class="form-control" required>
                                             @if ($deleted == 'true')
                                                 <label for="undelete" class="col-sm-3 control-label">Herstellen</label>

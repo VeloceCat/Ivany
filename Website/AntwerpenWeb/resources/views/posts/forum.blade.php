@@ -4,6 +4,7 @@
 
         <div class="panelBackground panel-default">
             <div class="panel-heading">
+<<<<<<< HEAD
                 <h1>Welkom op ons forum</h1>
                 <p class="forumTitleUnder">Vertel anderen over jouw ervaringen. Bovendien blijf je anoniem.</p>
                 <div class="addPostButton">
@@ -53,6 +54,31 @@
                             <div class="postFooter">
                                 <p>Gepost op {{ $post->created_at->formatLocalized('%d %B') }} | <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->comments()->count() }} @if($post->comments()->count() == 1) reactie @else reacties @endif</a></p>
                             </div>
+=======
+                Forum overzicht
+            </div>
+            @if(\Auth::check()) 
+                <a href="{{ route('create_post_path') }}">Post plaatsen</a>
+            @endif
+            <div class="panel-content">
+                <ul class="article-overview">
+                    @foreach($posts as $post)
+                        <div class="post">
+                            <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->title }}</a>
+
+                            @if($post->wasCreatedBy( Auth::user() ))
+                                <small class="pull-right">
+                                    <a href="{{ route('edit_post_path', ['post' => $post->id]) }}" class="btn btn-info">Aanpassen</a>
+                                </small>
+                            @endif
+                        </div>
+                        <div class="info">
+                            @if (Auth::user()->is_admin === 1 || $post->wasCreatedBy(Auth::user()) || $post->user->is_admin === 1)
+                                <p>Geplaatst door <b>{{ $post->user->name }}</b> | <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->comments()->count() }} reacties</a></p>
+                            @else
+                                <p>Geplaatst door <b>anoniem</b> | <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->comments()->count() }} reacties</a></p>
+                            @endif
+>>>>>>> f688386756557a83c6f7e3729434126482322ae3
                         </div>
                     @endforeach
                 </div>

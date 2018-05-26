@@ -13,14 +13,16 @@
 
 * {
     font-family: 'SunAntwerpen', Arial;
-}
-
-html, body {
+}   
+ 
+ body, html {
+    margin: 0px;
     height: 100%;
-}
+ }
 
 #app {
-    min-height: calc(100vh - 43px);
+    margin: 0px;
+    min-height: calc(100% - 45px);
 }
 
 h1, h2, h3, a, .anchorBtn {
@@ -32,13 +34,15 @@ footer {
     color: #BABABA;
     padding: 10px 0;
     background-color: #000;
+    font-size: 13px;
     font-weight: normal;
     width: 100%;
-    height: 43px;
+    height: 45px;
 }
 
 footer a {
     text-align: center;
+    font-size: 13px;
     color: #BABABA;
     text-decoration: underline;
 }
@@ -509,7 +513,7 @@ footer a:hover {
 }
 
 #myTable {
-    margin: 20px 50px;
+    margin: 20px 50px 10px 50px;
     max-width: 90%;
 }
 
@@ -1027,4 +1031,9 @@ footer a:hover {
 /* -------------- LOGIN PAGE -------------- */
 .row {
     margin: 0;
+}
+
+/* -------------- FORUM PAGE -------------- */
+.panel-default {
+    padding-bottom: 20px;
 }

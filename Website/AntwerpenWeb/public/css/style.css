@@ -376,7 +376,7 @@ footer a:hover {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #fff;
     margin: auto;
     padding: 0;
     width: 70%;
@@ -386,7 +386,7 @@ footer a:hover {
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-    border: solid 3px #fff;
+    border: solid 3px #F18A00;
 }
 
 /* Add Animation */
@@ -402,7 +402,7 @@ footer a:hover {
 
 /* The Close Button */
 .close {
-    color: #fff;
+    color: #000;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -411,7 +411,7 @@ footer a:hover {
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #0064B4;
     text-decoration: none;
     text-shadow: none!important;
     cursor: pointer;
@@ -419,8 +419,8 @@ footer a:hover {
 
 .modal-header {
     padding: 10px 20px;
-    background-color: #0064B4;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
     border-radius: none;
 }
 
@@ -428,14 +428,14 @@ footer a:hover {
     padding: 10px 20px;
     font-size: 110%;
     overflow: scroll;
-    background-color: #0064B4;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
 }
 
 .modal-footer {
     padding: 10px 20px;
-    background-color: #0064B4;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
     height: 30px;
 }
 
@@ -681,6 +681,20 @@ footer a:hover {
 /* -------------- FORUM PAGE -------------- */
 .alert {
     margin-bottom: 0!important;
+}
+
+.alert-success {
+    background-color: #6CC24A;
+    border-color: #6CC24A;
+    border-radius: 0;
+    color: #000;
+}
+
+.alert-danger {
+    background-color: #CF0039;
+    border-color: #CF0039;
+    border-radius: 0;
+    color: #fff;
 }
 
 /* FORUM HOME */

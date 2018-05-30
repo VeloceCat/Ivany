@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label for="title">Reactie:</label>
-            <textarea rows="5" name="comment" class="form-control"/>{{ $comment->comment or old('comment') }}</textarea>
+            <textarea rows="5" name="comment" class="form-control" required/>{{ $comment->comment or old('comment') }}</textarea>
         </div>
    
         <div class="confirmButtons">

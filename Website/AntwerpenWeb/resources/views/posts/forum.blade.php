@@ -24,19 +24,21 @@
                                 <h2>{{ $post->user->username }}</h2>
                             </div>
                             <div class="postBody">
-                                <div class="postContent">
-                                    <div class="postTitle">
-                                        <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->title }}</a>
+                                
+                                @if($post->wasCreatedBy( Auth::user() ))
+                                    <div class="postContent">
+                                        <div class="postTitle">
+                                            <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->title }}</a>
+                                        </div>
+                                        <div class="postText">
+                                            <?php 
+                                                $shortendText = substr($post->description, 0, 80); 
+                                                echo "<p>$shortendText ...</p>";
+                                            ?>
+                                        </div>
                                     </div>
-                                    <div class="postText">
-                                        <?php 
-                                            $shortendText = substr($post->description, 0, 80); 
-                                            echo "<p>$shortendText ...</p>";
-                                        ?>
-                                    </div>
-                                </div>
-                                <div class="managePost">
-                                    @if($post->wasCreatedBy( Auth::user() ))
+
+                                    <div class="managePost">
                                         <small class="pull-right">
                                             <a href="{{ route('edit_post_path', ['post' => $post->id]) }}" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>
                                         </small>
@@ -47,8 +49,21 @@
                                                 <button type="submit" class="btn btn-danger"><i class='fa fa-trash'></i></button>
                                             </form>
                                         </small>  
-                                    @endif
-                                </div>
+                                    </div>
+                                @else
+                                    <div class="postContentFullWidth">
+                                        <div class="postTitle">
+                                            <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->title }}</a>
+                                        </div>
+                                        <div class="postText">
+                                            <?php 
+                                                $shortendText = substr($post->description, 0, 80); 
+                                                echo "<p>$shortendText ...</p>";
+                                            ?>
+                                        </div>
+                                    </div>
+                                @endif
+                                
                             </div>
                             <div class="postFooter">
                                 <p>Gepost op {{ $post->created_at->formatLocalized('%d %B') }} | <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->comments()->count() }} @if($post->comments()->count() == 1) reactie @else reacties @endif</a></p>

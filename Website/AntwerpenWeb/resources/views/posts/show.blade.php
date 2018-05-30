@@ -18,11 +18,13 @@
         </div>
         <div class="panel-body">
             <div class="fullPost">
-                <div class="description">
-                    <p>{{ $post->description }}</p>
-                </div>
-                <div class="managePost">
-                    @if($post->wasCreatedBy( Auth::user() ))
+                
+                @if($post->wasCreatedBy( Auth::user() ))
+                    <div class="description">
+                        <p>{{ $post->description }}</p>
+                    </div>
+                
+                    <div class="managePost">
                         <small class="pull-right">
                             <a href="{{ route('edit_post_path', ['post' => $post->id]) }}" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>
                         </small>
@@ -33,8 +35,14 @@
                                 <button type="submit" class="btn btn-danger"><i class='fa fa-trash'></i></button>
                             </form>
                         </small>
-                    @endif
-                </div>
+                    </div>
+
+                @else
+                    <div class="descriptionFullWidth">
+                        <p>{{ $post->description }}</p>
+                    </div>
+                @endif
+                
             </div>
 
             <div class="comments">
@@ -46,23 +54,29 @@
                                 <h3>{{ $comment->user->username }}</h3>
                             </div>
                             <div class="commentBody clearfix">
-                                <div class="commentText">
-                                    {{ $comment->comment }}
-                                </div>
-                                <div class="manageComment">
-                                    @if($comment->wasCreatedBy( Auth::user() ))
-                                            <small class="pull-right">
-                                                <a href="{{ route('edit_comment_path', ['comment' => $comment->id]) }}" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>
-                                            </small>
-                                            <small class="pull-right" style="margin-right: 10px;">
-                                                <form action="{{ route('delete_comment_path', ['post' => $post->id, 'comment' => $comment->id]) }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <button type="submit" class="btn btn-danger"><i class='fa fa-trash'></i></button>
-                                                </form>
-                                            </small>
-                                    @endif
-                                </div>
+                                
+                                @if($comment->wasCreatedBy( Auth::user() ))
+                                    <div class="commentText">
+                                        {{ $comment->comment }}
+                                    </div>
+                                    <div class="manageComment"> 
+                                        <small class="pull-right">
+                                            <a href="{{ route('edit_comment_path', ['comment' => $comment->id]) }}" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>
+                                        </small>
+                                        <small class="pull-right" style="margin-right: 10px;">
+                                            <form action="{{ route('delete_comment_path', ['post' => $post->id, 'comment' => $comment->id]) }}" method="POST">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-danger"><i class='fa fa-trash'></i></button>
+                                            </form>
+                                        </small>
+                                    </div>
+                                @else
+                                    <div class="commentTextFullWidth">
+                                        {{ $comment->comment }}
+                                    </div>
+                                @endif
+                                
                             </div>
                             <div class="commentFooter">
                                 Reactie toegevoegd op {{ $comment->created_at->formatLocalized('%d %B') }}

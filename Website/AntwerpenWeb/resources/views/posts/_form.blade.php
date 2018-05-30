@@ -12,12 +12,12 @@
 
         <div class="form-group">
             <label for="title">Titel:</label>
-            <input type="text" name="title" class="form-control" value="{{ $post->title or old('title') }}" maxlength="50"/>
+            <input type="text" name="title" class="form-control" value="{{ $post->title or old('title') }}" maxlength="50" required/>
         </div>
 
         <div class="form-group">
             <label for="description">Beschrijving:</label>
-            <textarea rows="5" name="description" class="form-control"/>{{ $post->description or old('description') }}</textarea>
+            <textarea rows="5" name="description" class="form-control" required/>{{ $post->description or old('description') }}</textarea>
 
         </div>
 

@@ -48,40 +48,42 @@
             <div class="comments">
                 <ul>
                     @foreach($post->comments as $comment)
-                        <li>
-                            <div class="commentHeader">
-                                <img src="/img/AvatarPlaceholder.png" alt="Anoniem" class="commentAvatar">
-                                <h3>{{ $comment->user->username }}</h3>
-                            </div>
-                            <div class="commentBody clearfix">
-                                
-                                @if($comment->wasCreatedBy( Auth::user() ))
-                                    <div class="commentText">
-                                        {{ $comment->comment }}
-                                    </div>
-                                    <div class="manageComment"> 
-                                        <small class="pull-right">
-                                            <a href="{{ route('edit_comment_path', ['comment' => $comment->id]) }}" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>
-                                        </small>
-                                        <small class="pull-right" style="margin-right: 10px;">
-                                            <form action="{{ route('delete_comment_path', ['post' => $post->id, 'comment' => $comment->id]) }}" method="POST">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-danger"><i class='fa fa-trash'></i></button>
-                                            </form>
-                                        </small>
-                                    </div>
-                                @else
-                                    <div class="commentTextFullWidth">
-                                        {{ $comment->comment }}
-                                    </div>
-                                @endif
-                                
-                            </div>
-                            <div class="commentFooter">
-                                Reactie toegevoegd op {{ $comment->created_at->formatLocalized('%d %B') }}
-                            </div>
-                        </li>
+                        @if($post->is_allowed == 1)
+                            <li>
+                                <div class="commentHeader">
+                                    <img src="/img/AvatarPlaceholder.png" alt="Anoniem" class="commentAvatar">
+                                    <h3>{{ $comment->user->username }}</h3>
+                                </div>
+                                <div class="commentBody clearfix">
+                                    
+                                    @if($comment->wasCreatedBy( Auth::user() ))
+                                        <div class="commentText">
+                                            {{ $comment->comment }}
+                                        </div>
+                                        <div class="manageComment"> 
+                                            <small class="pull-right">
+                                                <a href="{{ route('edit_comment_path', ['comment' => $comment->id]) }}" class="btn btn-info"><i class='fas fa-pencil-alt'></i></a>
+                                            </small>
+                                            <small class="pull-right" style="margin-right: 10px;">
+                                                <form action="{{ route('delete_comment_path', ['post' => $post->id, 'comment' => $comment->id]) }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger"><i class='fa fa-trash'></i></button>
+                                                </form>
+                                            </small>
+                                        </div>
+                                    @else
+                                        <div class="commentTextFullWidth">
+                                            {{ $comment->comment }}
+                                        </div>
+                                    @endif
+                                    
+                                </div>
+                                <div class="commentFooter">
+                                    Reactie toegevoegd op {{ $comment->created_at->formatLocalized('%d %B') }}
+                                </div>
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>

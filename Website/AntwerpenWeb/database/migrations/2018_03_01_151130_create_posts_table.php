@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
 
             $table->string('title');
             $table->text('description');
+            $table->boolean('is_allowed')->default('0');
 
             $table->integer('user_id');
 

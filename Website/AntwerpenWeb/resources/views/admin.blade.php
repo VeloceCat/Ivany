@@ -136,6 +136,12 @@
             case 4:
                 $buttonNaam = "Forum reacties";
                 break;
+            case 5:
+                $buttonNaam = "Bevestig post";
+                break;
+            case 6:
+                $buttonNaam = "Bevestig reactie";
+                break;
 			default:
 				$buttonNaam = "Artikels";
         }
@@ -164,6 +170,8 @@
             buttonActive(2,$infoNummer);
             buttonActive(3,$infoNummer);
             buttonActive(4,$infoNummer);
+            buttonActive(5,$infoNummer);
+            buttonActive(6,$infoNummer);
             echo "</div>";
             
             function overzichtInfo($nummer)
@@ -244,10 +252,10 @@
                                     
                             
                         break;
-
+                        
                         case 3:
                             echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Gebruikersnummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
-                                    $posts = DB::select("SELECT * FROM `posts` ORDER BY deleted_at ASC, id DESC");
+                                    $posts = DB::select("SELECT * FROM `posts` WHERE is_allowed='1' ORDER BY deleted_at ASC, id DESC");
                                     foreach($posts as $post) {
                                         $shortendText = substr($post->description, 0, 100);
                                         $deleted = ($post->deleted_at == null) ? 'Nee' : $post->deleted_at;
@@ -282,7 +290,7 @@
 
                         case 4:
                             echo "  <table id='myTable'><tr><th></th><th>Reacties</th><th>Gebruikersnummer</th><th>Post nummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
-                                    $comments = DB::select("SELECT * FROM `comments` ORDER BY deleted_at ASC, id DESC");
+                                    $comments = DB::select("SELECT * FROM `comments` WHERE is_allowed='1' ORDER BY deleted_at ASC, id DESC");
                                     foreach($comments as $comment) {
                                         $shortendText = substr($comment->comment, 0, 100);
                                         $deleted = ($comment->deleted_at == null) ? 'Nee' : $comment->deleted_at;
@@ -301,6 +309,76 @@
                                                         <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='4'>
+                                                            <input type='hidden' name='delete' value='pushed'>
+                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='table' value="comments">
+                                                            @if ($deleted == 'Nee')
+                                                                <button type='submit'><i class='fa fa-trash'></i></button>
+                                                            @endif
+                                                        </form> <?php
+                                                    
+                                                    echo"</td><td>$shortendText...</td><td>$comment->user_id</td><td>$comment->post_id</td><td>$updated</td><td>$deleted</td></tr>";
+                                    }
+                                    echo '</table>';
+                           
+                        break;
+
+                        case 5:
+                            echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Gebruikersnummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
+                                    $posts = DB::select("SELECT * FROM `posts` WHERE is_allowed ='0' ORDER BY deleted_at ASC, id DESC");
+                                    foreach($posts as $post) {
+                                        $shortendText = substr($post->description, 0, 100);
+                                        $deleted = ($post->deleted_at == null) ? 'Nee' : $post->deleted_at;
+                                        $updated = ($post->updated_at == null) ? 'Nooit' : $post->updated_at;
+
+                                        echo "  <tr href='#'>
+                                                    <td class='editbuttons'>"
+                                                    ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
+                                                    <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                    <input type='hidden' name='nummer' value='5'>
+                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='table' value="posts">
+                                                    <button type='submit'><i class='fas fa-pencil-alt'></i></button>
+                                                    </form>
+
+                                                    <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}"> 
+                                                    <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                    <input type='hidden' name='nummer' value='5'>
+                                                    <input type='hidden' name='delete' value='pushed'>
+                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='table' value="posts">
+                                                    @if ($deleted == 'Nee')
+                                                        <button type='submit'><i class='fa fa-trash'></i></button>
+                                                    @endif
+                                                    </form> <?php
+                                                    
+                                                    echo"</td><td>$post->title</td><td>$shortendText...</td><td>$post->user_id</td><td>$updated</td><td>$deleted</td></tr>";
+                                    }
+                                    echo '</table>';
+                           
+                        break;
+
+                        case 6:
+                            echo "  <table id='myTable'><tr><th></th><th>Reacties</th><th>Gebruikersnummer</th><th>Post nummer</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
+                                    $comments = DB::select("SELECT * FROM `comments` WHERE is_allowed ='0' ORDER BY deleted_at ASC, id DESC");
+                                    foreach($comments as $comment) {
+                                        $shortendText = substr($comment->comment, 0, 100);
+                                        $deleted = ($comment->deleted_at == null) ? 'Nee' : $comment->deleted_at;
+                                        $updated = ($comment->updated_at == null) ? 'Nooit' : $comment->updated_at;
+
+                                        echo "  <tr href='#'>
+                                                    <td class='editbuttons'>"        
+                                                    ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
+                                                            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                            <input type='hidden' name='nummer' value='6'>
+                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='table' value="comments">
+                                                            <button type='submit'><i class='fas fa-pencil-alt'></i></button>
+                                                        </form>
+                                                        
+                                                        <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}"> 
+                                                            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                            <input type='hidden' name='nummer' value='6'>
                                                             <input type='hidden' name='delete' value='pushed'>
                                                             <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
                                                             <input type='hidden' name='table' value="comments">

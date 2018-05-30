@@ -19,17 +19,17 @@
                             <form action="{{ route('adminEdit') }}" method="POST" class="pull-right">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="delete" value="confirmed">
-                                <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
-                                <input type="hidden" name="table" value="<?php echo $_POST['table'] ?>">
+                                <input type="hidden" name="id" value="{{$_POST['id']}}">
+                                <input type="hidden" name="table" value="{{$_POST['table']}}">
                                 <button type='submit' name="button" class="btn btn-danger" value="delete">
                                     <i class="fa fa-btn fa-trash" title="delete"></i> Verwijderen
                                 </button>
                             </form>
                             <form method='POST' action="{{ route('adminEdit') }}"  class="pull-right"> 
                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                                    <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
-                                    <input type="hidden" name="table" value="<?php echo $_POST['table'] ?>">
-                                    <input type='hidden' name='nummer' value="<?php echo $infoNummer; ?>"> 
+                                    <input type="hidden" name="id" value="{{$_POST['id']}}">
+                                    <input type="hidden" name="table" value="{{$_POST['table']}}">
+                                    <input type='hidden' name='nummer' value="{{$infoNummer}}"> 
                                     <button type='submit' class='btn btn-danger'>
                                         <i class='fas fa-times-circle'> Annuleren</i>
                                     </button>
@@ -62,7 +62,7 @@
                     <div class="breadcrumb">
                         <form method='POST' action="{{ route('admin') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type='hidden' name='nummer' value='<?php echo $infoNummer; ?>'>
+                            <input type='hidden' name='nummer' value='{{$infoNummer}}'>
                             <button type="submit">← Terug naar overzicht</button>
                         </form>
                     </div>
@@ -70,10 +70,10 @@
                     <div class="panel panel-default">
                         <form method='POST' action="{{ route('adminEdit') }}" class='delete-button'> 
                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                            <input type='hidden' name='nummer' value='<?php echo $infoNummer; ?>'>
+                            <input type='hidden' name='nummer' value='{{$infoNummer}}'>
                             <input type='hidden' name='delete' value='pushed'>
-                            <input type='hidden' name='id' value='<?php echo $_POST['id']; ?>'>
-                            <input type='hidden' name='table' value="<?php echo $_POST['table']; ?>">
+                            <input type='hidden' name='id' value="{{$_POST['id']}}">
+                            <input type='hidden' name='table' value="{{$_POST['table']}}">
                             <button type='submit' class="btn btn-danger"><i class='fa fa-trash'></i> Verwijderen</button>
                         </form>
 
@@ -101,7 +101,7 @@
                                     ?>
                                     <input type='hidden' name='id' value='{{$id}}'>
                                     <input type='hidden' name='table' value="articles">
-                                    <input type='hidden' name='nummer' value="1">
+                                    <input type='hidden' name='nummer' value="{{$infoNummer}}">
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="titel" class="col-sm-3 control-label">Titel:</label>
@@ -140,7 +140,7 @@
                                     ?>
                                     <input type='hidden' name='id' value='{{$id}}'>
                                     <input type='hidden' name='table' value="quotes">
-                                    <input type='hidden' name='nummer' value="2">
+                                    <input type='hidden' name='nummer' value="{{$infoNummer}}">
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="text" class="col-sm-3 control-label">Quote:</label>
@@ -177,7 +177,7 @@
                                     ?>
                                     <input type='hidden' name='id' value='{{$id}}'>
                                     <input type='hidden' name='table' value="posts">
-                                    <input type='hidden' name='nummer' value="3">
+                                    <input type='hidden' name='nummer' value="{{$infoNummer}}">
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="title" class="col-sm-3 control-label">Titel:</label>
@@ -216,7 +216,7 @@
                                     ?>
                                     <input type='hidden' name='id' value='{{$id}}'>
                                     <input type='hidden' name='table' value="comments">
-                                    <input type='hidden' name='nummer' value="4">
+                                    <input type='hidden' name='nummer' value="{{$infoNummer}}">
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="comment" class="col-sm-3 control-label">Comment:</label>

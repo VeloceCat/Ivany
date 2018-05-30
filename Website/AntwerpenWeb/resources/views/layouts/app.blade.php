@@ -15,6 +15,14 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        
+        <!-- Game Scripts -->
+        <script src="{{ asset('gamescripts/TemplateData/UnityProgress.js') }}"></script>  
+        <script src="{{ asset('gamescripts/Build/UnityLoader.js') }}"></script>
+        <script>
+          var gameInstance = UnityLoader.instantiate("gameContainer", "{{ asset('gamescripts/Build/Build.json') }}", {onProgress: UnityProgress});
+        </script>
+        
     </head>
     <body>
         <div id="app">

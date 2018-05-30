@@ -4,7 +4,7 @@
     <div class="panelBackground panel-default">
         <div class="panel-heading">
             <h1>{{ $post->title }}</h1>
-            <p class="forumTitleUnder"><b>{{ $post->user->name }}</b> schreef op {{ $post->created_at->formatLocalized('%d %B') }} | {{ $post->comments()->count() }} @if($post->comments()->count() == 1) reactie @else reacties @endif</p>
+            <p class="forumTitleUnder"><b>{{ $post->user->username }}</b> schreef op {{ $post->created_at->formatLocalized('%d %B') }} | {{ $post->comments()->count() }} @if($post->comments()->count() == 1) reactie @else reacties @endif</p>
             <div class="addCommentButton">
                 @if(\Auth::check()) 
                     <a href="{{ route('create_comment_path', ['post' => $post->id]) }}">Een reactie toevoegen</a>
@@ -43,7 +43,7 @@
                         <li>
                             <div class="commentHeader">
                                 <img src="/img/AvatarPlaceholder.png" alt="Anoniem" class="commentAvatar">
-                                <h3>{{ $comment->user->name }}</h3>
+                                <h3>{{ $comment->user->username }}</h3>
                             </div>
                             <div class="commentBody clearfix">
                                 <div class="commentText">

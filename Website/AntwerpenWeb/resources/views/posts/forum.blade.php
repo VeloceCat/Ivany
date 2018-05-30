@@ -21,7 +21,7 @@
                         <div class="post">
                             <div class="postHeader">
                                 <img src="/img/AvatarPlaceholder.png" alt="Anoniem" class="postAvatar">
-                                <h2>{{ $post->user->name }}</h2>
+                                <h2>{{ $post->user->username }}</h2>
                             </div>
                             <div class="postBody">
                                 <div class="postContent">

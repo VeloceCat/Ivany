@@ -300,6 +300,32 @@ footer a:hover {
     width: 100%;
 }
 
+.infoTitelBlok {
+    width: 100%;
+    margin: 0 0 5% 0;
+    padding: 0;
+    background-color: #121212;
+    border-bottom: solid 3px #F18A00;
+}
+
+.infoBlok h1 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3% 10px 0 10px;
+    color: #F18A00;
+    font-size: 3em;
+    text-align: center;
+}
+
+#infoTitle2 {
+    width: 100%;
+    margin: 0 auto 10% auto;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+
 .infoBlok {
     display: -webkit-box;
     display: -moz-box;
@@ -309,7 +335,6 @@ footer a:hover {
     flex-wrap: wrap;
 
     margin: 0 auto;
-    padding: 5% 0;
     background-color: rgba(0, 0, 0, 0.55);
 }
 

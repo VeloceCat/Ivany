@@ -1,9 +1,11 @@
 <div id="comment-form" class="col-md-8 col-md-offset-2">
     @if($comment->exists)
         <form action="{{ route('update_comment_path', ['comment' => $comment->id]) }}" method="POST">
+        <h2>Reactie bewerken</h2>
             {{ method_field('PUT') }}
     @else
         <form action="{{ route('store_comment_path', ['post' => $post->id]) }}" method="POST">
+        <h2>Reactie toevoegen</h2>
     @endif
 
         {{ csrf_field() }}

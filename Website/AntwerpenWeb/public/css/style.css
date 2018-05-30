@@ -376,7 +376,7 @@ footer a:hover {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: #000;
     margin: auto;
     padding: 0;
     width: 70%;
@@ -402,7 +402,7 @@ footer a:hover {
 
 /* The Close Button */
 .close {
-    color: #000;
+    color: #fff;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -419,24 +419,27 @@ footer a:hover {
 
 .modal-header {
     padding: 10px 20px;
-    background-color: transparent;
-    color: #000;
-    border-radius: none;
+    background-color: #000;
+    color: #F18A00;
+    text-align: center;
+    border-bottom: solid 3px #F18A00;
 }
 
 .modal-body {
     padding: 10px 20px;
     font-size: 110%;
     overflow: scroll;
-    background-color: transparent;
+    background-color: #fff;
     color: #000;
+    border: none;
 }
 
 .modal-footer {
     padding: 10px 20px;
-    background-color: transparent;
+    background-color: #fff;
     color: #000;
     height: 30px;
+    border: none;
 }
 
 .modal-footer h3 {
@@ -1004,6 +1007,32 @@ footer a:hover {
 .confirmButtons .form-group {
     margin: 10px;
 }
+
+.btn-success, .btn-primary, .btn-default, .btn-danger {
+    border-radius: 0!important;
+}
+
+.btn-success {
+    background-color: #6CC24A;
+    border-color: #6CC24A;
+    font-weight: 900;
+}
+
+.btn-success:hover {
+    background-color: rgba(108, 194, 74, 0.74);
+    border-color: rgba(108, 194, 74, 0.74);
+}
+
+.btn-primary {
+    background-color: #0064B4;
+    border-color: #0064B4;
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 99, 180, 0.74);
+    border-color: rgba(0, 99, 180, 0.74);
+}
+
 
 /* -------------- CONTACT PAGE -------------- */
 .contactBlok {

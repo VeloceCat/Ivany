@@ -255,15 +255,15 @@ footer a:hover {
 }
 
 #btnInfo {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #FFF;
-}
-
-#btnInfo:hover {
     background-color: #fff;
     color: #000;
     border: 1px solid #fff;
+}
+
+#btnInfo:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
 }
 
 #btnGame { 
@@ -273,9 +273,9 @@ footer a:hover {
 }
 
 #btnGame:hover {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #fff;
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
 }
 
 #buttons .buttonFullWidth:last-child {
@@ -335,8 +335,9 @@ footer a:hover {
 }
 
 .anchorBtn:hover {
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
+    color: #0064B4;
 }
 
 .artikel p {
@@ -573,16 +574,16 @@ footer a:hover {
 }
 
 #myTable .editbuttons .buttonEdit button:hover {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
     cursor: pointer;
 }
 
 #myTable .editbuttons .buttonDelete button:hover {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
     cursor: pointer;
 }
 
@@ -740,16 +741,16 @@ footer a:hover {
     font-weight: bolder;
     font-family: inherit;
     border: solid 1px #fff;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     text-align: center;
-    background-color: transparent;
+    background-color: #fff;
 }
 
 .addPostButton a:hover, .addCommentButton a:hover {
-    background-color: #fff;
-    color: #000;
-    border: solid 1px #fff;
+    background-color: #0064B4;
+    color: #fff;
+    border: solid 1px #0064B4;
 }
 
 .article-overview, .fullPost, .comments {
@@ -809,6 +810,10 @@ footer a:hover {
     margin-right: 5%;
 }
 
+postContentFullWidth {
+    width: 100%;
+}
+
 .post .managePost {
     width: 25%;
 }
@@ -852,9 +857,9 @@ footer a:hover {
 }
 
 .managePost .btn-info:hover, .manageComment .btn-info:hover {
-    background-color: #fff!important;
-    color: #000;
-    border: solid 1px #fff;
+    background-color: #0064B4!important;
+    color: #fff;
+    border: solid 1px #0064B4;
 }
 
 .managePost .btn-danger, .manageComment .btn-danger {
@@ -862,9 +867,9 @@ footer a:hover {
 }
 
 .managePost .btn-danger:hover, .manageComment .btn-danger:hover {
-    background-color: #fff!important;
-    color: #000;
-    border: solid 1px #fff;
+    background-color: #0064B4!important;
+    color: #fff;
+    border: solid 1px #0064B4;
 }
 
 .postFooter p {
@@ -907,7 +912,15 @@ footer a:hover {
     width: 88%;
     padding-left: 20px;
     color: #fff;
-    font-size: 1.8em;
+    font-size: 1.7em;
+    margin-right: 2%;
+}
+
+.descriptionFullWidth {
+    width: 100%;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 1.7em;
     margin-right: 2%;
 }
 
@@ -967,6 +980,12 @@ footer a:hover {
     font-size: 1.3em;
 }
 
+.commentTextFullWidth {
+    width: 100%;
+    margin-right: 2%;
+    font-size: 1.3em;
+}
+
 .manageComment {
     width: 11%;
     align-content: right;
@@ -1019,8 +1038,8 @@ footer a:hover {
 }
 
 .btn-success:hover {
-    background-color: rgba(108, 194, 74, 0.74);
-    border-color: rgba(108, 194, 74, 0.74);
+    background-color: rgb(84, 150, 58);
+    border-color: rgb(84, 150, 58);
 }
 
 .btn-primary {
@@ -1029,8 +1048,13 @@ footer a:hover {
 }
 
 .btn-primary:hover {
-    background-color: rgba(0, 99, 180, 0.74);
-    border-color: rgba(0, 99, 180, 0.74);
+    background-color: rgb(0, 114, 207);
+    border-color: rgb(0, 114, 207);
+}
+
+.form-group .btn-danger {
+    margin-left: 0;
+    font-weight: 900;
 }
 
 
@@ -1075,6 +1099,11 @@ footer a:hover {
 
 .contactLink:nth-child(3), .contactLink:nth-child(4), .contactLink:nth-child(5) {
     border-top: solid 3px #F18A00;
+}
+
+.contactLink a:hover {
+    color: #0064B4;
+    text-decoration: none;
 }
 
 /* -------------- LOGIN PAGE -------------- */

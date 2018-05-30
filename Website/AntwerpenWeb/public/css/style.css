@@ -729,7 +729,7 @@ footer a:hover {
 .addPostButton, .addCommentButton {
     width: 100%;
     margin: 20px auto;
-    padding-bottom: 15%;
+    padding-bottom: 5%;
     text-align: center;
     border-bottom: solid 2px #F18A00;
 }
@@ -1073,7 +1073,7 @@ postContentFullWidth {
 
 #contactTitle2 {
     width: 100%;
-    margin: 0 auto 15% auto;
+    margin: 0 auto 5% auto;
     padding: 0 10px;
     color: #fff;
     font-size: 1.5em;

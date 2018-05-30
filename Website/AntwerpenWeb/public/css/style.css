@@ -802,7 +802,6 @@ footer a:hover {
     color: #fff;
     font-size: 1.8em;
     font-weight: normal;
-    text-transform: capitalize!important;
     text-decoration: none;
 }
 
@@ -972,6 +971,12 @@ footer a:hover {
 }
 
 /* FORUM EDIT */
+#post-form, #comment-form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .confirmButtons {
     display: -webkit-box;
     display: -moz-box;
@@ -979,6 +984,7 @@ footer a:hover {
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
+    margin-left: -10px;
 }
 
 .confirmButtons .form-group {

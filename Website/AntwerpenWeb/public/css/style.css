@@ -498,7 +498,7 @@ footer a:hover {
     border-top-right-radius: 12px;
 }
 
-.btn-danger {
+.bg-danger .btn-danger {
     float: left;
     margin: 10px;
 }
@@ -889,6 +889,7 @@ postContentFullWidth {
 
 .managePost .btn-danger, .manageComment .btn-danger {
     border-radius: 0;
+    margin: 10px;
 }
 
 .managePost .btn-danger:hover, .manageComment .btn-danger:hover {
@@ -1045,11 +1046,10 @@ postContentFullWidth {
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    margin-left: -10px;
 }
 
 .confirmButtons .form-group {
-    margin: 10px;
+    margin-right: 10px;
 }
 
 .btn-success, .btn-primary, .btn-default, .btn-danger {

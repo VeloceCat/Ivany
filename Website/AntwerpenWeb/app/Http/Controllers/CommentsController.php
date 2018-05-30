@@ -30,10 +30,11 @@ class CommentsController extends Controller
         $comment->post()->associate($post);
 
         $comment->user_id = $request->user()->id;
+        $comment->is_allowed = 0;
 
         $comment->save();
 
-        session()->flash('message', 'Je reactie is toegevoegd.');
+        session()->flash('message', 'Je reactie wordt zo snel mogelijk gecontrolleerd, ze staat binnenkort online.');
 
         return redirect()->route('post_path', [$post->post]);
     }
@@ -42,6 +43,7 @@ class CommentsController extends Controller
     public function edit($id) 
     {
         $comment = Comment::find($id);
+        $comment->is_allowed = 0;
 
         return view('comments.edit')->with(['comment' => $comment]);
     }
@@ -51,9 +53,11 @@ class CommentsController extends Controller
         $comment = Comment::find($id);
 
         $comment->comment = $request->comment;
+        $comment->is_allowed = 0;
+
         $comment->save();
 
-        session()->flash('message', 'Je reactie is bijgewerkt.');
+        session()->flash('message', 'Je reactie is bijgewerkt. Ze wordt zo snel mogelijk gecontrolleerd, hij staat binnenkort weer online.');
 
         return redirect()->route('post_path', $comment->post->id);
     }
@@ -65,7 +69,8 @@ class CommentsController extends Controller
             
             return redirect()->route('posts_path');
         }
-
+        
+        $comment->is_allowed = 0;
         $comment->delete();
 
         session()->flash('message', 'Je reactie is verwijderd.');

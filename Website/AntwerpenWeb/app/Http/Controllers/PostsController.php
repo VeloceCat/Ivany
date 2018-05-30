@@ -30,6 +30,8 @@ class PostsController extends Controller
     public function create()
     {
         $post = new Post;
+
+        $post->is_allowed = 0;
         
         return view('posts.create')->with(['post' => $post]);
     }
@@ -44,6 +46,7 @@ class PostsController extends Controller
         );
 
         $post->user_id = $request->user()->id;
+        $post->is_allowed = 0;
 
         $post->save();
 
@@ -59,19 +62,23 @@ class PostsController extends Controller
             return redirect()->route('posts_path');
         }
 
+        $post->is_allowed = 0;
+
         return view('posts.edit')->with(['post' => $post]);
     }
 
 
     public function update(Post $post, UpdatePostRequest $request)
     {
+        $post->is_allowed = 0;
+
         $post->update(
             $request->only('title', 'description')
         );
 
-        session()->flash('message', 'Je post is bijgewerkt.');
+        session()->flash('message', 'Je post is bijgewerkt. Hij wordt zo snel mogelijk gecontrolleerd en staat binnenkort weer online.');
 
-        return redirect()->route('post_path', ['post' => $post->id]);
+        return redirect()->route('posts_path', ['post' => $post->id]);
     }
 
 
@@ -80,6 +87,8 @@ class PostsController extends Controller
         if($post->user_id != \Auth::user()->id) {
             return redirect()->route('posts_path');
         }
+
+        $post->is_allowed = 0;
 
         $post->delete();
 

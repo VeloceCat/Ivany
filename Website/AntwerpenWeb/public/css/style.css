@@ -504,16 +504,16 @@ footer a:hover {
 }
 
 .keuzeknop:hover {
-    background-color: #fff;
-    color: #000;
-    border: 2px solid #CF0039;
+    background-color: #0064B4;
+    color: #fff;
+    border: 2px solid #0064B4;
     cursor: pointer;
 }
 
 #activeKeuzeknop {
-    background-color: #fff;
-    color: #000;
-    border: 2px solid #CF0039;
+    background-color: #0064B4;
+    color: #fff;
+    border: 2px solid #0064B4;
 }
 
 #myTable {

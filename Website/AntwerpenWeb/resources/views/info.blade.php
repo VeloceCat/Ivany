@@ -25,7 +25,7 @@
                         $shortendText = substr($text, 0, $maxCharacters);
                         $idCounter += 1;
 
-                        echo("<div class='artikel'><h2>$title</h2><p>$shortendText...<br><button onclick='Modal($idCounter)' class='anchorBtn' type='submit'>lees meer ></button></p></div>");
+                        echo("<div class='artikel'><h2>$title</h2><p>$shortendText...<br><button onclick='Modal($idCounter)' class='anchorBtn' type='submit'>Lees meer ></button></p></div>");
                         
                     }
                     echo("</div>");

@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="postText">
                                         <?php 
-                                            $shortendText = substr($post->description, 0, 50); 
+                                            $shortendText = substr($post->description, 0, 80); 
                                             echo "<p>$shortendText ...</p>";
                                         ?>
                                     </div>

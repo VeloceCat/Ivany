@@ -11,19 +11,39 @@
         $infoNummer = 1;
     }
 
-    if (isset($_POST['delete'])) {
-        if ($_POST['delete'] == 'pushed') {
+    if ((isset($_POST['delete']) && $_POST['delete'] == 'pushed') || (isset($_POST['allowed']) && $_POST['allowed'] == 'pushed') || (isset($_POST['allowed']) && $_POST['allowed'] == 'repushed')) {
+            if (isset($_POST['delete']) && $_POST['delete'] == 'pushed') {
+                $headerText = "Bent u zeker dat u dit wilt verwijderen?";
+                $name = "delete";
+                $button = "Verwijderen";
+                $value = "confirmed";
+                $class = "fa fa-btn fa-trash";
+            }
+            elseif (isset($_POST['allowed']) && $_POST['allowed'] == 'repushed') {
+                $headerText = "Bent u zeker dat u dit niet meer toelaat op de pagina?";
+                $name = "allowed";
+                $button = "Niet meer toestaan";
+                $value = "unconfirmed";
+                $class = "fas fa-times";
+            }
+            elseif (isset($_POST['allowed']) && $_POST['allowed'] == 'pushed') {
+                $headerText = "Bent u zeker dat u dit toelaat op de pagina?";
+                $name = "allowed";
+                $button = "Toestaan";
+                $value = "confirmed";
+                $class = "fas fa-check";
+            }
             ?>  <div class="bg-danger clearfix">             
-                    <h3>Bent u zeker dat u dit wilt verwijderen?</h3>
+                    <h3>{{$headerText}}</h3>
                     <div class="confirmButtons">
                         <form action="{{ route('adminPost') }}" method="POST" class="pull-right">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="hidden" name="delete" value="confirmed">
+                            <input type="hidden" name="{{$name}}" value="{{$value}}">
                             <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
                             <input type="hidden" name="table" value="<?php echo $_POST['table'] ?>">
                             <input type='hidden' name='nummer' value="<?php echo $infoNummer; ?>"> 
-                            <button type='submit' name="button" class="btn btn-danger" value="delete">
-                                <i class="fa fa-btn fa-trash" title="delete"></i> Verwijderen
+                            <button type='submit' name="button" class="btn btn-danger">
+                                <i class="{{$class}}" title="{{$name}}"></i> {{$button}}
                             </button>
                         </form>
                         <form method='POST' action="{{ route('adminPost') }}"  class="pull-right"> 
@@ -35,20 +55,37 @@
                         </form>
                     </div>
                 </div> <?php
-        }
+    }
 
-        if ($_POST['delete'] == 'confirmed') {
-            $table = $_POST['table'];
-            $id = $_POST['id'];
-            $dateToPost = date('Y-m-d H:i:s');
-            try {
-                DB::update("UPDATE `$table` SET deleted_at = '$dateToPost' WHERE id='$id'");
-                DB::commit();
-            } catch (\Exception $e) {
-                DB::rollback();
-                /*$MSG = "Comment failed deleting. " . $e->getMessage() . "";
-                echo $MSG;*/
-            }
+    if (isset($_POST['delete']) && $_POST['delete'] == 'confirmed') {
+        $table = $_POST['table'];
+        $id = $_POST['id'];
+        $dateToPost = date('Y-m-d H:i:s');
+        try {
+            DB::update("UPDATE `$table` SET deleted_at = '$dateToPost' WHERE id='$id'");
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            /*$MSG = "Comment failed deleting. " . $e->getMessage() . "";
+            echo $MSG;*/
+        }
+    }
+
+    if (isset($_POST['allowed']) && $_POST['allowed'] != 'pushed' && $_POST['allowed'] != 'repushed') {
+        $table = $_POST['table'];
+        $id = $_POST['id'];
+        $allowed = $_POST['allowed'];
+        $bool = 0;
+        $bool = $allowed == 'confirmed'? 1 : 0;
+        
+        try {
+            DB::update("UPDATE `$table` SET is_allowed = $bool WHERE id='$id'");
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            DB::rollback();
+            $MSG = "Comment failed deleting. " . $e->getMessage() . "";
+            echo $MSG;
         }
     }
 
@@ -193,7 +230,7 @@
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='1'>
-                                                            <input type='hidden' name='id' value='<?php echo $article->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$article->id}}'>
                                                             <input type='hidden' name='table' value="articles">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                         </form>
@@ -202,7 +239,7 @@
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='1'>
                                                             <input type='hidden' name='delete' value='pushed'>
-                                                            <input type='hidden' name='id' value='<?php echo $article->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$article->id}}'>
                                                             <input type='hidden' name='table' value="articles">
                                                             @if ($deleted == 'Nee')
                                                                 <button type='submit'><i class='fa fa-trash'></i></button>
@@ -229,7 +266,7 @@
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='2'>
-                                                            <input type='hidden' name='id' value='<?php echo $article->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$article->id}}'>
                                                             <input type='hidden' name='table' value="quotes">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                         </form>
@@ -238,7 +275,7 @@
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='2'>
                                                             <input type='hidden' name='delete' value='pushed'>
-                                                            <input type='hidden' name='id' value='<?php echo $article->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$article->id}}'>
                                                             <input type='hidden' name='table' value="quotes">
                                                             @if ($deleted == 'Nee')
                                                                 <button type='submit'><i class='fa fa-trash'></i></button>
@@ -266,7 +303,7 @@
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                     <input type='hidden' name='nummer' value='3'>
-                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='id' value='{{$post->id}}'>
                                                     <input type='hidden' name='table' value="posts">
                                                     <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                     </form>
@@ -275,12 +312,21 @@
                                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                     <input type='hidden' name='nummer' value='3'>
                                                     <input type='hidden' name='delete' value='pushed'>
-                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='id' value='{{$post->id}}'>
                                                     <input type='hidden' name='table' value="posts">
                                                     @if ($deleted == 'Nee')
                                                         <button type='submit'><i class='fa fa-trash'></i></button>
                                                     @endif
-                                                    </form> <?php
+                                                    </form> 
+                                                    
+                                                    <form class='buttonUncheck' method='POST' action="{{ route('adminPost') }}"> 
+                                                    <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                    <input type='hidden' name='nummer' value='3'>
+                                                    <input type='hidden' name='allowed' value='repushed'>
+                                                    <input type='hidden' name='id' value='{{$post->id}}'>
+                                                    <input type='hidden' name='table' value="posts">
+                                                    <button type='submit'><i class="fas fa-times"></i></button>
+                                                    </form><?php
                                                     
                                                     echo"</td><td>$post->title</td><td>$shortendText...</td><td>$post->user_id</td><td>$updated</td><td>$deleted</td></tr>";
                                     }
@@ -301,7 +347,7 @@
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='4'>
-                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$comment->id}}'>
                                                             <input type='hidden' name='table' value="comments">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                         </form>
@@ -310,12 +356,21 @@
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='4'>
                                                             <input type='hidden' name='delete' value='pushed'>
-                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$comment->id}}'>
                                                             <input type='hidden' name='table' value="comments">
                                                             @if ($deleted == 'Nee')
                                                                 <button type='submit'><i class='fa fa-trash'></i></button>
                                                             @endif
-                                                        </form> <?php
+                                                        </form> 
+                                                        
+                                                        <form class='buttonUncheck' method='POST' action="{{ route('adminPost') }}"> 
+                                                        <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                        <input type='hidden' name='nummer' value='4'>
+                                                        <input type='hidden' name='allowed' value='repushed'>
+                                                        <input type='hidden' name='id' value='{{$comment->id}}'>
+                                                        <input type='hidden' name='table' value="comments">
+                                                        <button type='submit'><i class="fas fa-times"></i></button>
+                                                        </form><?php
                                                     
                                                     echo"</td><td>$shortendText...</td><td>$comment->user_id</td><td>$comment->post_id</td><td>$updated</td><td>$deleted</td></tr>";
                                     }
@@ -336,7 +391,7 @@
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                     <input type='hidden' name='nummer' value='5'>
-                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='id' value='{{$post->id}}'>
                                                     <input type='hidden' name='table' value="posts">
                                                     <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                     </form>
@@ -345,12 +400,21 @@
                                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                     <input type='hidden' name='nummer' value='5'>
                                                     <input type='hidden' name='delete' value='pushed'>
-                                                    <input type='hidden' name='id' value='<?php echo $post->id ?>'>
+                                                    <input type='hidden' name='id' value='{{$post->id}}'>
                                                     <input type='hidden' name='table' value="posts">
                                                     @if ($deleted == 'Nee')
                                                         <button type='submit'><i class='fa fa-trash'></i></button>
                                                     @endif
-                                                    </form> <?php
+                                                    </form> 
+                                                        
+                                                    <form class='buttonCheck' method='POST' action="{{ route('adminPost') }}"> 
+                                                    <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                    <input type='hidden' name='nummer' value='5'>
+                                                    <input type='hidden' name='allowed' value='pushed'>
+                                                    <input type='hidden' name='id' value='{{$post->id}}'>
+                                                    <input type='hidden' name='table' value="posts">
+                                                    <button type='submit'><i class="fas fa-check"></i></button>
+                                                    </form><?php
                                                     
                                                     echo"</td><td>$post->title</td><td>$shortendText...</td><td>$post->user_id</td><td>$updated</td><td>$deleted</td></tr>";
                                     }
@@ -371,7 +435,7 @@
                                                     ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}"> 
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='6'>
-                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$comment->id}}'>
                                                             <input type='hidden' name='table' value="comments">
                                                             <button type='submit'><i class='fas fa-pencil-alt'></i></button>
                                                         </form>
@@ -380,12 +444,21 @@
                                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                             <input type='hidden' name='nummer' value='6'>
                                                             <input type='hidden' name='delete' value='pushed'>
-                                                            <input type='hidden' name='id' value='<?php echo $comment->id ?>'>
+                                                            <input type='hidden' name='id' value='{{$comment->id}}ùm='>
                                                             <input type='hidden' name='table' value="comments">
                                                             @if ($deleted == 'Nee')
                                                                 <button type='submit'><i class='fa fa-trash'></i></button>
                                                             @endif
-                                                        </form> <?php
+                                                        </form> 
+                                                        
+                                                        <form class='buttonCheck' method='POST' action="{{ route('adminPost') }}"> 
+                                                        <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                                        <input type='hidden' name='nummer' value='6'>
+                                                        <input type='hidden' name='allowed' value='pushed'>
+                                                        <input type='hidden' name='id' value='{{$comment->id}}'>
+                                                        <input type='hidden' name='table' value="comments">
+                                                        <button type='submit'><i class="fas fa-check"></i></button>
+                                                        </form><?php
                                                     
                                                     echo"</td><td>$shortendText...</td><td>$comment->user_id</td><td>$comment->post_id</td><td>$updated</td><td>$deleted</td></tr>";
                                     }

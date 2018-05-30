@@ -1,16 +1,18 @@
 <div id="post-form" class="col-md-8 col-md-offset-2">
     @if($post->exists)
         <form action="{{ route('update_post_path', ['post' => $post->id]) }}" method="POST">
+        <h2>Post bewerken</h2>
             {{ method_field('PUT') }}
     @else
         <form action="{{ route('store_post_path') }}" method="POST">
+        <h2>Post toevoegen</h2>
     @endif
 
         {{ csrf_field() }}
 
         <div class="form-group">
             <label for="title">Titel:</label>
-            <input type="text" name="title" class="form-control" value="{{ $post->title or old('title') }}"/>
+            <input type="text" name="title" class="form-control" value="{{ $post->title or old('title') }}" maxlength="50"/>
         </div>
 
         <div class="form-group">

@@ -44,7 +44,25 @@ public class Home_Start : ChoiceScript {
         switch (num)
         {
             case 1:
+                narrativeText = "\"Tuuuuuut, tuuuuut\" nog half slapend duw je de snooze knop van de wekker in. \"Opstaan!!\" hoor je iemand roepen.";
+                chain = 1;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
 
+            case 2:
+                narrativeText = "Redelijk slecht gezind sta je toch maar op. Gelukkig is het woensdag, maar een halve dag dus. Je staat op, doet je kleren aan en gaat naar beneden.";
+                chain = 2;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
+            case 3:
+                narrativeText = "Iedereen is al druk in de weer. Je sloft naar de keukentafel voor je ontbijt. Na de laatste hap voel je je al een pak beter en je vertrekt naar de tramhalte om naar school te gaan.";
+                chain = 3;
+                numberOfOptions = 1;
+                option01Text = "...";
+                endOfEvent = true;
                 break;
 
             default:

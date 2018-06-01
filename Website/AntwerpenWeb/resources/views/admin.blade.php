@@ -190,10 +190,10 @@
                 $buttonNaam = "Forum reacties";
                 break;
             case 5:
-                $buttonNaam = "Bevestig post";
+                $buttonNaam = "Bevestig post <p class='counter'>" . DB::table('posts')->where('is_allowed', '=', 0)->count() . "</p>";
                 break;
             case 6:
-                $buttonNaam = "Bevestig reactie";
+                $buttonNaam = "Bevestig reactie <p class='counter'>" . DB::table('comments')->where('is_allowed', '=', 0)->count() . "</p>";
                 break;
             case 7:
                 $buttonNaam = "Mijn posts";
@@ -211,7 +211,7 @@
         ?> <form method='POST' action="{{ route('adminPost') }}"> 
             <input type='hidden' name='_token' value='{{ csrf_token() }}'> 
             <input type='hidden' name='nummer' value='<?php echo $nummer ?>'>
-            <input type='submit' class='keuzeknop' <?php echo $id ?> value='<?php echo $buttonNaam ?>'>
+            <button type='submit' class='keuzeknop' <?php echo $id ?>><?php echo $buttonNaam ?></button>
         </form> <?php
 	}
 
@@ -234,11 +234,7 @@
             buttonActive(3,$infoNummer);
             buttonActive(4,$infoNummer);
             buttonActive(5,$infoNummer);
-            echo ("<p class='counter'>" . $postCount = DB::table('posts')->where('is_allowed', '=', 0)->count() . "</p>");
-
             buttonActive(6,$infoNummer);
-            echo ("<p class='counter'>" . $commentCount = DB::table('comments')->where('is_allowed', '=', 0)->count() . "</p>");
-
             echo "</div>";
             overzichtInfo($infoNummer, $user);
         }

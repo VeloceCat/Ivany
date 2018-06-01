@@ -557,6 +557,17 @@ footer a:hover {
     border: 2px solid #0064B4;
 }
 
+.keuzeknoppen .counter {
+    display: inline-block;
+    vertical-align: center;
+    background-color: #CF0039;
+    color: #fff;
+    border-radius: 100px;
+    border-color: #CF0039;
+    padding: .20rem .90rem;
+    margin: 10px 20px 10px 0;
+}
+
 #myTable {
     margin: 20px 50px 10px 50px;
     max-width: 90%;

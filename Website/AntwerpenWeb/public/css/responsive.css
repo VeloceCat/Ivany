@@ -78,6 +78,15 @@
         font-size: 80%;
     }
 
+    .infoTitelBlok h1 {
+        padding-top: 7%;
+        font-size: 2em;
+    }
+
+    #infoTitle2 {
+        font-size: 1.3em;
+    }
+
     .artikel {
         flex: 100%;
         max-width: 100%;
@@ -112,6 +121,11 @@
         padding: 5px 10px;
     }
 
+    #achtergrond {
+        background-position: bottom center;
+        background-size: cover;
+    }
+
     #scroll {
         bottom: 15px;
         right: 15px;
@@ -129,7 +143,7 @@
         font-size: .9em;
     }
 
-    .btn-danger {
+    .bg-danger .btn-danger {
         font-size: .8em;
     }
 
@@ -157,6 +171,73 @@
 
     .col-sm-6 label:first-child {
         margin-left: 0;
+    }
+
+    .panel-heading h1 {
+        padding-top: 7%;
+        font-size: 2em;
+    }
+
+    .forumTitleUnder {
+        font-size: 1.3em;
+    }
+
+    .post {
+        flex: 100%;
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .post:nth-child(odd) {
+        margin-right: 0;
+    }
+
+    .postHeader h2 {
+        width: 75%;
+    }
+
+    .postContent, .post .managePost, .fullPost .managePost, .manageComment {
+        width: 100%;
+        margin: 0;
+    }
+
+    .fullPost {
+        padding: 0 5%;
+    }
+
+    .fullPost .description {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .comments {
+        padding: 0;
+    }
+
+    .comments ul {
+        padding: 0;
+    }
+
+    .comments ul li {
+        padding-left: 5%;
+    }
+
+    .commentHeader h3 {
+        width: 75%;
+    }
+
+    .commentBody .commentText {
+        width: 100%;
+    }
+
+    .contactBlok h1 {
+        margin-top: 7%;
+        font-size: 2em;
+    }
+
+    .contactTitle2 {
+        font-size: 1.3em;
     }
 
     .contactLink {

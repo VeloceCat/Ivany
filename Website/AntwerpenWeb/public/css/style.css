@@ -23,6 +23,7 @@
 #app {
     margin: 0px;
     min-height: calc(100% - 45px);
+    background-color: #F3F3F5;
 }
 
 h1, h2, h3, a, .anchorBtn {
@@ -504,7 +505,7 @@ footer a:hover {
 
 .keuzeknoppen {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     padding: 10px 50px;
     font-size: 20px;
     font-weight: bolder;
@@ -654,7 +655,7 @@ footer a:hover {
     padding: 0 0 0 15px;
     background-color: #0064B4;
     color: #fff;
-    border-radius: .25rem;
+    border-radius: 0;
     display: flex;
     flex-direction: row;
     border: none;
@@ -662,14 +663,14 @@ footer a:hover {
 
 .breadcrumb button:hover {
     background-color: rgb(0, 114, 207);
-    border-radius: .25rem;
+    border-radius: 0;
     cursor: pointer;
 }
 
 .breadcrumb a:hover {
     background-color: rgb(0, 114, 207);
     text-decoration: none;
-    border-radius: .25rem;
+    border-radius: 0;
 }
 
 .breadcrumb, .delete-button {
@@ -752,6 +753,10 @@ footer a:hover {
 }
 
 /* FORUM HOME */
+.panel-default {
+    padding-bottom: 20px;
+}
+
 .panelBackground {
     min-height: 100%;
     background-color: #121212;
@@ -1161,11 +1166,200 @@ postContentFullWidth {
 }
 
 /* -------------- LOGIN PAGE -------------- */
-.row {
-    margin: 0;
+.loginTable, .registerTable {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+
+    height: 100%;
+    width: 100%;
 }
 
-/* -------------- FORUM PAGE -------------- */
-.panel-default {
-    padding-bottom: 20px;
+.loginTable-left, .registerTable-left {
+    width: 40%;
+    background-color: #fff;
+    min-height: 100%;
+}
+
+.login-info, .register-info {
+    margin: 15% 20px 20px 30%;
+}
+
+.loginTable-right, .registerTable-right {
+    width: 60%;
+    background-color: #F3F3F5;
+    min-height: 100%;
+}
+
+.login-fields, .register-fields {
+    margin: 11% 20px 20px 20px;
+}
+
+.loginTable-right input {
+    width: 90%;
+    border-radius: 0;
+    padding: 15px 20px;
+}
+
+.forgotPassword {
+    font-size: .9em;
+    text-decoration: underline;
+    color: #0064B4;
+}
+
+.forgotPassword:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0064B4;
+}
+
+.loginButton button {
+    width: 150px;
+    height: 48px;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+.loginButton span {
+    margin-right: 5px;
+}
+
+.registerLink {
+    margin-top: 20px;
+    color: #8d9092;
+}
+
+.registerLink a {
+    text-decoration: underline;
+    color: #0064B4;
+}
+
+.registerLink a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0064B4;
+}
+
+.loginFooter, .registerFooter {
+    width: 100%;
+    margin-top: 3.75rem;
+    padding-top: 5px;
+    border-top: solid 1px #BABABA; 
+    font-size: 1.2em;
+}
+
+.loginFooter .ng-scope, .registerFooter .ng-scope {
+    font-weight: bold;
+}
+
+.loginFooter p, .registerFooter p {
+    margin: 10px 0;
+}
+
+.loginFooter a, .registerFooter a {
+    margin-right: 20px;
+}
+
+/* -------------- REGISTER PAGE -------------- */
+.register-fields form {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.register-fields .form-group {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.register-fields .form-group-full {
+    width: 100%;
+    padding-right: 5%;
+}
+
+.registerTable-right input {
+    width: 90%;
+    border-radius: 0;
+    padding: 15px 20px;
+}
+
+.registerTable label b {
+    color: #CF0039;
+    font-weight: normal;
+}
+
+.uitlegSchuilnaam, .uitlegWachtwoord {
+    font-size: .9em;
+    color: #8d9092;
+    padding: 10px 5% 0 0;
+    margin-bottom: 0;
+}
+
+.form-group-full {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.form-group-full input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: auto;
+    cursor: pointer;
+    height: 22px;
+    width: 22px;
+}
+
+.form-group-full .checkmark {
+    border: solid 1px #BABABA;
+    border-radius: 0;
+    line-height: 1.4em;
+    color: #614d4d;
+    background-color: #fff;
+    padding: .12rem .65rem;
+}
+
+.form-group-full input:checked ~ .checkmark {
+    background-color: #0064B4;
+    border-color: #0064B4;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form-group-full input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.form-group-full label {
+    padding-left: 10px;
 }

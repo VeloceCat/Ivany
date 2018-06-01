@@ -149,12 +149,18 @@
 
     .keuzeknoppen {
         max-width: 100%;
+        padding: 20px 5%;
     }
 
     .keuzeknop {
         margin: 5px 10px;
         width: 80px;
         font-size: .8em;
+    }
+
+    #myTable {
+        margin: 20px 5%;
+        width: 100%;
     }
 
     #myTable th:nth-child(3), #myTable th:nth-child(4), #myTable th:nth-child(5), #myTable th:nth-child(6) {
@@ -243,6 +249,23 @@
     .contactLink {
         border-bottom: none;
         border-top: solid 3px #F18A00;
+    }
+
+    .loginTable-left, .registerTable-left {
+        width: 100%;
+    }
+
+    .login-info, .register-info {
+        margin: 5% 20px;
+    }
+
+    .loginTable-right, .registerTable-right {
+        width: 100%;
+    }
+
+    .register-fields .form-group {
+        width: 100%;
+        padding-right: 5%;
     }
 
 }

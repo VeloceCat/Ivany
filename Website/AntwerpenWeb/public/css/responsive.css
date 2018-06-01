@@ -158,6 +158,12 @@
         font-size: .8em;
     }
 
+    .keuzeknoppen .counter {
+        margin: 5px 10px 5px 0;
+        font-size: .8em;
+        padding: .20rem .75rem;
+    }
+
     #myTable {
         margin: 20px 5%;
         width: 100%;

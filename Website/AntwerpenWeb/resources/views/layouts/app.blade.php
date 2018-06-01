@@ -44,9 +44,16 @@
                             @guest
                                 <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                             @else
+                            <?php
+                                $postCount = DB::table('posts')->where('is_allowed', '=', 0)->count();
+                                $commentCount = DB::table('comments')->where('is_allowed', '=', 0)->count();
+                            ?>
                                 <li class="nav-item dropdown  {{ Request::is('admin') ? ' active' : null }}">
                                     <a id="navbarDropdown" class="nav-link" href="{{ route('admin') }}" role="button">
-                                        {{ Auth::user()->name }} 
+                                        {{ Auth::user()->name }}
+                                        @if(($commentCount+$postCount) != 0)
+                                            <i class="fas fa-exclamation"></i>
+                                        @endif
                                     </a>
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="caret"></span>

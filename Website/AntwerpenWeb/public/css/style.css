@@ -149,6 +149,18 @@ footer a:hover {
     border: solid 3px #fff;
 }
 
+#navbarDropdown i {
+    line-height: 1.3em;
+    vertical-align: top;
+    background-color: #CF0039;
+    color: #fff;
+    border-radius: 100px;
+    border-color: #CF0039;
+    font-size: .6em;
+    padding: .13rem .42rem;
+    margin: 0;
+}
+
 .navbar-toggler-icon {
     color: #fff;
 }

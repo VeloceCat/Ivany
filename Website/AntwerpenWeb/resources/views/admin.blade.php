@@ -234,7 +234,11 @@
             buttonActive(3,$infoNummer);
             buttonActive(4,$infoNummer);
             buttonActive(5,$infoNummer);
+            echo ($postCount = DB::table('posts')->where('is_allowed', '=', 0)->count());
+
             buttonActive(6,$infoNummer);
+            echo ($commentCount = DB::table('comments')->where('is_allowed', '=', 0)->count());
+            
             echo "</div>";
             overzichtInfo($infoNummer, $user);
         }

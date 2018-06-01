@@ -190,8 +190,6 @@ footer a:hover {
     border-color:rgba(255,255,255,.5)
 }
 
-
-
 /* -------------- HOMEPAGE -------------- */
 #home {
     height: 100%;
@@ -302,13 +300,13 @@ footer a:hover {
 
 .infoTitelBlok {
     width: 100%;
-    margin: 0 0 5% 0;
+    margin: 0;
     padding: 0;
     background-color: #121212;
     border-bottom: solid 3px #F18A00;
 }
 
-.infoBlok h1 {
+.infoTitelBlok h1 {
     width: 100%;
     margin: 0 auto;
     padding: 3% 10px 0 10px;
@@ -334,6 +332,7 @@ footer a:hover {
     display: flex;
     flex-wrap: wrap;
 
+    padding: 5% 0;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.55);
 }
@@ -589,13 +588,13 @@ footer a:hover {
 #myTable .editbuttons .buttonEdit button {
     background-color: #F18A00;
     color: #fff;
-    border: 1px solid #000;
+    border: 1px solid #F18A00;
 }
 
 #myTable .editbuttons .buttonDelete button {
     background-color: #CF0039;
     color: #fff;
-    border: 1px solid #000;
+    border: 1px solid #CF0039;
 }
 
 #myTable .editbuttons .buttonEdit button:hover {
@@ -606,6 +605,32 @@ footer a:hover {
 }
 
 #myTable .editbuttons .buttonDelete button:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+    cursor: pointer;
+}
+
+#myTable .editbuttons .buttonCheck button {
+    background-color: #6CC24A;
+    color: #fff;
+    border: 1px solid #6CC24A;
+}
+
+#myTable .editbuttons .buttonUncheck button {
+    background-color: #6CC24A;
+    color: #fff;
+    border: 1px solid #6CC24A;
+}
+
+#myTable .editbuttons .buttonCheck button:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+    cursor: pointer;
+}
+
+#myTable .editbuttons .buttonUncheck button:hover {
     background-color: #0064B4;
     color: #fff;
     border: 1px solid #0064B4;
@@ -1030,6 +1055,10 @@ postContentFullWidth {
 .commentFooter {
     color: #8d9092;
 
+}
+
+.commentsPlaceholder {
+    padding: 10% 0;
 }
 
 /* FORUM EDIT */

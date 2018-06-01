@@ -18,13 +18,14 @@
                     $blokID = $firstarticlenumber->blokID;
                     $firstarticles = DB::select("SELECT * FROM `articles` WHERE `deleted_at` IS NULL AND blokID = '$blokID'");
 
-                    echo("<div class='infoBlok'>");
                     ?>
-                    <div class="infoTitelBlok">
-                        <h1>Lees verhalen die jou misschien kunnen helpen</h1>
-                        <p id="infoTitle2">Heel wat mensen en organisaties staan voor je klaar.</p>
-                    </div>
+                        <div class="infoTitelBlok">
+                            <h1>Lees verhalen die jou misschien kunnen helpen</h1>
+                            <p id="infoTitle2">Heel wat mensen en organisaties staan voor je klaar.</p>
+                        </div>
                     <?php
+                    echo("<div class='infoBlok'>");
+                    
                     foreach($firstarticles as $firstarticle) {
                         $title = $firstarticle->title;
                         $text = $firstarticle->text;

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="panelBackground panel-default">
         @if($post->is_allowed == 1)
             <div class="panel-heading">
@@ -87,6 +88,9 @@
                             @endif
                         @endforeach
                     </ul>
+                    <div class="commentsPlaceholder">
+
+                    </div>
                 </div>
             </div>
         @endif

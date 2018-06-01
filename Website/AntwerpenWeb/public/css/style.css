@@ -30,6 +30,10 @@ h1, h2, h3, a, .anchorBtn {
     font-family: 'Antwerpen', Arial;
 }
 
+input, textarea {
+    border-radius: 0!important;
+}
+
 footer {
     text-align: center;
     color: #BABABA;

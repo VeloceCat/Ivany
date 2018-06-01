@@ -61,7 +61,7 @@
                         <label for="username" class="col-form-label text-md-right">Anonieme schuilnaam <b> *</b></label>
 
                         <div>
-                            <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+                            <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" maxlength="30" required autofocus>
 
                             @if ($errors->has('username'))
                                 <span class="invalid-feedback">
@@ -70,7 +70,7 @@
                             @endif
                         </div>
 
-                        <p class="uitlegSchuilnaam"><span>Uw gebruikersnaam moet tussen 5 en 50 karakters bevatten en kan bestaan uit letters, cijfers en volgende speciale tekens + . _ - @ (spaties zijn niet toegestaan).</span></p>
+                        <p class="uitlegSchuilnaam"><span>Uw gebruikersnaam moet tussen 5 en 30 karakters bevatten en kan bestaan uit letters, cijfers en volgende speciale tekens + . _ - @ (spaties zijn niet toegestaan).</span></p>
                     </div>
 
 

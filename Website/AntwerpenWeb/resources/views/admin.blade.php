@@ -72,8 +72,8 @@
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            /*$MSG = "Comment failed deleting. " . $e->getMessage() . "";
-            echo $MSG;*/
+            $MSG = "Comment failed deleting. " . $e->getMessage() . "";
+            echo $MSG;
         }
     }
 
@@ -154,6 +154,7 @@
     }
 
     if (isset($_POST['settings_changed']) && $_POST['settings_changed'] == 1) {
+        session()->flash('message', 'Je post wordt zo snel mogelijk gecontrolleerd, hij staat binnenkort online.');
         $id = $_POST['id'];
         $name = $_POST['name'];
         $lastName = $_POST['lastName'];
@@ -190,10 +191,10 @@
                 $buttonNaam = "Forum reacties";
                 break;
             case 5:
-                $buttonNaam = "Bevestig post <p class='counter'>" . DB::table('posts')->where('is_allowed', '=', 0)->count() . "</p>";
+                $buttonNaam = "Bevestig post <p class='counter'>" . DB::table('posts')->where('is_allowed', '=', 0)->where('deleted_at', '=', NULL)->count() . "</p>";
                 break;
             case 6:
-                $buttonNaam = "Bevestig reactie <p class='counter'>" . DB::table('comments')->where('is_allowed', '=', 0)->count() . "</p>";
+                $buttonNaam = "Bevestig reactie <p class='counter'>" . DB::table('comments')->where('is_allowed', '=', 0)->where('deleted_at', '=', NULL)->count() . "</p>";
                 break;
             case 7:
                 $buttonNaam = "Mijn posts";
@@ -497,7 +498,7 @@
                                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                                     <input type='hidden' name='nummer' value='6'>
                                                     <input type='hidden' name='delete' value='pushed'>
-                                                    <input type='hidden' name='id' value='{{$comment->id}}ùm='>
+                                                    <input type='hidden' name='id' value='{{$comment->id}}'>
                                                     <input type='hidden' name='table' value="comments">
                                                     @if ($deleted == 'Nee')
                                                         <button type='submit'><i class='fa fa-trash'></i></button>

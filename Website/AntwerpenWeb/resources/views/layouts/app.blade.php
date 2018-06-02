@@ -45,8 +45,8 @@
                                 <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                             @else
                             <?php
-                                $postCount = DB::table('posts')->where('is_allowed', '=', 0)->count();
-                                $commentCount = DB::table('comments')->where('is_allowed', '=', 0)->count();
+                                $postCount = DB::table('posts')->where('is_allowed', '=', 0)->where('deleted_at', '=', NULL)->count();
+                                $commentCount = DB::table('comments')->where('is_allowed', '=', 0)->where('deleted_at', '=', NULL)->count();
                             ?>
                                 <li class="nav-item dropdown  {{ Request::is('admin') ? ' active' : null }}">
                                     <a id="navbarDropdown" class="nav-link" href="{{ route('admin') }}" role="button">

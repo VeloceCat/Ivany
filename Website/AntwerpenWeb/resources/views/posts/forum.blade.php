@@ -67,7 +67,7 @@
                                     
                                 </div>
                                 <div class="postFooter">
-                                    <p>Gepost op {{ $post->created_at->formatLocalized('%d %B') }} | <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->comments()->count() }} @if($post->comments()->count() == 1) reactie @else reacties @endif</a></p>
+                                    <p>Gepost op {{ $post->created_at->formatLocalized('%d %B') }} | <a href="{{ route('post_path', ['post' => $post->id]) }}">{{ $post->comments()->where('is_allowed', '=', 1)->count() }} @if($post->comments()->where('is_allowed', '=', 1)->count() == 1) reactie @else reacties @endif</a></p>
                                 </div>
                             </div>
                         @endif

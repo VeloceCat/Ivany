@@ -6,7 +6,7 @@
         @if($post->is_allowed == 1)
             <div class="panel-heading">
                 <h1>{{ $post->title }}</h1>
-                <p class="forumTitleUnder"><b>{{ $post->user->username }}</b> schreef op {{ $post->created_at->formatLocalized('%d %B') }} | {{ $post->comments()->count() }} @if($post->comments()->count() == 1) reactie @else reacties @endif</p>
+                <p class="forumTitleUnder"><b>{{ $post->user->username }}</b> schreef op {{ $post->created_at->formatLocalized('%d %B') }} | {{ $post->comments()->where('is_allowed', '=', 1)->count() }} @if($post->comments()->where('is_allowed', '=', 1)->count() == 1) reactie @else reacties @endif</p>
                 <div class="addCommentButton">
                     @if(\Auth::check()) 
                         <a href="{{ route('create_comment_path', ['post' => $post->id]) }}">Een reactie toevoegen</a>

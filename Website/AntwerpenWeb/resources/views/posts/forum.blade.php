@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<?php setlocale(LC_ALL, 'nl_NL'); ?>
 
         <div class="panelBackground panel-default">
             <div class="panel-heading">

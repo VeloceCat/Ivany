@@ -86,7 +86,6 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="edited" value="true">
 
-                                <!-- Article data -->
                                 @if ($_POST['table'] == 'articles')
                                     <?php 
                                         $id = $_POST['id'];
@@ -173,6 +172,7 @@
                                             $text = $post->description;
                                             $userID = $post->user_id;
                                             $deleted = ($post->deleted_at == null) ? 'false' : 'true';
+                                            $allowed = ($post->is_allowed == '1') ? 'true' : 'false';
                                         }
                                     ?>
                                     <input type='hidden' name='id' value='{{$id}}'>
@@ -202,6 +202,20 @@
                                             </button>
                                         </div>
                                     </div>
+                                    
+                                    @if (Auth::user()->is_admin == 1 && $allowed == 'false')
+                                        <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
+                                            <input type="hidden" name="allow" value="true">
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-3 col-sm-6">
+                                                    <button type="submit" class="btn btn-default">
+                                                        <i class="fa fa-pencil-square-o"></i>Bewaren en toestaan
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    @endif
+
                                 @elseif ($_POST['table'] == 'comments')
                                     <?php 
                                         $id = $_POST['id'];
@@ -212,6 +226,7 @@
                                             $userID = $comment->user_id;
                                             $postID = $comment->post_id;
                                             $deleted = ($comment->deleted_at == null) ? 'false' : 'true';
+                                            $allowed = ($comment->is_allowed == '1') ? 'true' : 'false';
                                         }
                                     ?>
                                     <input type='hidden' name='id' value='{{$id}}'>
@@ -241,6 +256,20 @@
                                             </button>
                                         </div>
                                     </div>
+
+                                    @if (Auth::user()->is_admin == 1 && $allowed == 'false')
+                                        <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
+                                            <input type="hidden" name="allow" value="true">
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-3 col-sm-6">
+                                                    <button type="submit" class="btn btn-default">
+                                                        <i class="fa fa-pencil-square-o"></i>Bewaren en toestaan
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    @endif
+
                                 @endif
                             </form>
 

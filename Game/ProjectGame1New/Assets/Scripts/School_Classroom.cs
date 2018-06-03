@@ -115,14 +115,6 @@ public class School_Classroom : ChoiceScript {
 
             case 20:
                 narrativeText = "Het is een foto van je terwijl je naar het toilet gaat op school!";
-                chain = 20;
-                numberOfOptions = 2;
-                option01Text = "Je weet niet goed wat je ermee moet doen.";
-                option02Text = "Je bent erg aangeslagen en vindt dat je dit moet zeggen.";
-                break;
-
-            case 21:
-                narrativeText = "Het is een foto van je terwijl je naar het toilet gaat op school!";
                 chain = 22;
                 numberOfOptions = 2;
                 option01Text = "Omdat je zelf op de foto staat durf je het tegen niemand te zeggen.";

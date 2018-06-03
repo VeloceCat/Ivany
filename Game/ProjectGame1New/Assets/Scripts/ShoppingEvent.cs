@@ -161,7 +161,7 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 14:
-                narrativeText = "Je loopt er zelf snel achteraan en even later heb je er een te pakken en iemand van de security heeft de andere te pakken.";
+                narrativeText = "Je loopt er zelf snel achteraan. Even later heb je een van de jongens te pakken en iemand van de security heeft de andere te pakken.";
                 redBox = true;
                 chain = 14;
                 numberOfOptions = 1;

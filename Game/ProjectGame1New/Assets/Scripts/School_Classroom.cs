@@ -19,7 +19,7 @@ public class School_Classroom : ChoiceScript {
         base.AfterDialogue();
         StaticInfo.AfterClass = true;
 
-        SceneManager.LoadScene("School");
+        SceneManager.LoadScene("School_After");
     }
 
 

@@ -263,7 +263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 564483848}
         m_MethodName: ChoiceOption02
         m_Mode: 1
         m_Arguments:
@@ -570,7 +570,6 @@ GameObject:
   - component: {fileID: 564483850}
   - component: {fileID: 564483849}
   - component: {fileID: 564483847}
-  - component: {fileID: 564483853}
   - component: {fileID: 564483848}
   m_Layer: 5
   m_Name: SchoolCanvas
@@ -591,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beforeSchool: {fileID: 564483848}
-  afterSchool: {fileID: 564483853}
+  afterSchool: {fileID: 0}
 --- !u!114 &564483848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,22 +685,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &564483853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 564483846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dbb1bf858a20db4d9332a76496386c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 943341496}
-  choice01: {fileID: 671051165}
-  choice02: {fileID: 65237624}
-  choice03: {fileID: 886748227}
-  choice04: {fileID: 1197290274}
 --- !u!1 &671051165
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +761,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 564483848}
         m_MethodName: ChoiceOption01
         m_Mode: 1
         m_Arguments:
@@ -900,7 +883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 564483848}
         m_MethodName: ChoiceOption03
         m_Mode: 1
         m_Arguments:
@@ -1072,7 +1055,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 564483848}
         m_MethodName: ChoiceOption04
         m_Mode: 1
         m_Arguments:

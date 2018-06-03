@@ -8,6 +8,14 @@ public class Home_Start : ChoiceScript {
     void Start ()
     {
         StaticInfo.RandomEventNbr = Random.Range(1, 4);
+        if (Random.Range(0,2) == 0)
+        {
+            StaticInfo.ShopNotPool = true;
+        }
+        else
+        {
+            StaticInfo.ShopNotPool = false;
+        }
     }
 
     public override void StartDialogue()

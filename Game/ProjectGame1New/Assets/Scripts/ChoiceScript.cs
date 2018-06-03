@@ -18,7 +18,9 @@ public class ChoiceScript : MonoBehaviour {
     [SerializeField]
     protected GameObject choice04;
 
-    
+    // Narrativetext kleuren
+    protected bool greenBox = false;
+    protected bool redBox = false;
 
     protected int choiceMade;
 
@@ -109,8 +111,27 @@ public class ChoiceScript : MonoBehaviour {
         chain += choiceMade * 4;
 
         StartTalking(num);
-        
-        
+
+        if (greenBox)
+        {
+            textBox.GetComponent<Image>().color = new Color32(109, 194, 75, 255);
+            greenBox = false;
+        }
+        else
+        {
+            textBox.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        }
+
+        if (redBox)
+        {
+            textBox.GetComponent<Image>().color = new Color32(218, 40, 28, 255);
+            redBox = false;
+        }
+        else
+        {
+            textBox.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+        }
+
 
         textBox.GetComponentInChildren<Text>().text = narrativeText;
 

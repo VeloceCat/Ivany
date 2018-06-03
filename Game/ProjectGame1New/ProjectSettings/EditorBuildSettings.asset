@@ -20,3 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shopping.unity
     guid: 3e2dca2faa61f9643a09170439452b8c
+  - enabled: 1
+    path: Assets/Scenes/Home_After.unity
+    guid: ad7b9b2231de06d4295d6413c6e5d0c1
+  - enabled: 1
+    path: Assets/Scenes/School_After.unity
+    guid: 7742e1548415648468cd6f17a502a835
+  - enabled: 1
+    path: Assets/Scenes/Pool.unity
+    guid: 5383f231fe4283443b2921565b216552

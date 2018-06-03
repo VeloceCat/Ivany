@@ -18,7 +18,7 @@ public class School_Before : ChoiceScript {
     {
         base.AfterDialogue();
 
-        SceneManager.LoadScene("School");
+        SceneManager.LoadScene("Classroom");
     }
 
 
@@ -62,7 +62,7 @@ public class School_Before : ChoiceScript {
 
             case 11:
                 rnd = Random.Range(1, 3);
-                if (rnd = 1)
+                if (rnd == 1)
                 {
                     narrativeText = "\"Ik moet je iets zeggen dat ik niet zomaar aan iedereen wil vertellen, maar jou vertrouw ik wel.\"";
                     chain = 11;

@@ -13,7 +13,7 @@ public static class StaticInfo {
 
 
     // HomeStart or HomeEnd
-    private static bool isHomeStart;
+    private static bool isHomeStart = true;
     
     private static bool afterClass = false;
 

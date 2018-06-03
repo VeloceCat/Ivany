@@ -1296,10 +1296,6 @@ MonoBehaviour:
   choice02: {fileID: 282833326}
   choice03: {fileID: 540087713}
   choice04: {fileID: 758069585}
-  sceneToLoad: Map
-  pic1: {fileID: 2138801127}
-  pic2: {fileID: 714084321}
-  fadeSpeed: 0.00001
 --- !u!1 &1531852783
 GameObject:
   m_ObjectHideFlags: 0

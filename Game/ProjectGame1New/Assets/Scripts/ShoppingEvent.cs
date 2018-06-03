@@ -18,7 +18,7 @@ public class ShoppingEvent : ChoiceScript {
     {
         base.AfterDialogue();
 
-        StaticInfo.NextScene = "Home";
+        StaticInfo.NextScene = "Home_After";
 
         if (StaticInfo.RandomEventNbr == 3)
         {

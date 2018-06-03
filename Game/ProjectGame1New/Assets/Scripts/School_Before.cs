@@ -35,7 +35,7 @@ public class School_Before : ChoiceScript {
                 break;
 
             case 2:
-                int rnd = Random.Range(1, 3);
+                rnd = Random.Range(1, 3);
                 if (rnd == 1)
                 {
                     narrativeText = "Een van je vrienden ziet je en komt meteen naar je toe.";
@@ -61,7 +61,7 @@ public class School_Before : ChoiceScript {
                 break;
 
             case 11:
-                int rnd = Random.Range(1, 3);
+                rnd = Random.Range(1, 3);
                 if (rnd = 1)
                 {
                     narrativeText = "\"Ik moet je iets zeggen dat ik niet zomaar aan iedereen wil vertellen, maar jou vertrouw ik wel.\"";
@@ -105,13 +105,11 @@ public class School_Before : ChoiceScript {
 
             case 15:
                 narrativeText = "Je zegt dat ze die man waarschijnlijk nooit meer zal zien.";
-                moodValue = -5;
                 endOfEvent = true;
                 break;
 
             case 16:
                 narrativeText = "Je vriend blijft nog staan als jij verder naar he vrienden wandeld";
-                moodValue = -5;
                 endOfEvent = true;
                 break;
 
@@ -124,13 +122,11 @@ public class School_Before : ChoiceScript {
 
             case 18:
                 narrativeText = "\"Daarna we gaan voor jou zorgen, vandaag ga ik geen les geven en jullie 2 hoeven niet naar de les. Ik zal met jullie meegaan naar de politie.\"";
-                moodValue = 5;
                 endOfEvent = true;
                 break;
 
             case 19:
                 narrativeText = "Na aan rare blik gaan jullie weer bij de rest staan.";
-                moodValue = -5;
                 endOfEvent = true;
                 break;
 
@@ -151,7 +147,7 @@ public class School_Before : ChoiceScript {
 
             case 30:
                 narrativeText = "Je vraagt aan de vriend die je het meest vertrouwd of je hem even kan spreken. \"Wij gaan even naar de WC\" zeggen jullie tegen de rest.";
-                chain = 32;
+                chain = 33;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
@@ -170,12 +166,12 @@ public class School_Before : ChoiceScript {
                 option01Text = "...";
                 break;
 
-            case 32:
+            case 33:
                 narrativeText = "Vind je deze personen niet in je omgeving? Dan vind je op de website heel wat plaatsen waar mensen naar je zullen luisteren en die je kan vertrouwen.";
                 endOfEvent = true;
                 break;
 
-            case 33:
+            case 34:
                 narrativeText = "Wanneer jullie wat verder staan vertel je je verhaal. Je vriend stelt voor om naar een van de leerkrachten te gaan. Een waarvan jullie allebei weten dat hij te vertrouwen is.";
                 chain = 33;
                 numberOfOptions = 1;

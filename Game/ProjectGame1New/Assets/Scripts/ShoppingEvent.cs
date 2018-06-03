@@ -134,7 +134,6 @@ public class ShoppingEvent : ChoiceScript {
                 {
                     narrativeText = "De smartphone wordt snel weggetrokken.";
                     chain = 10;
-                    CameraIsPointedAtYou = false;
                     numberOfOptions = 2;
                     option01Text = "Je schreeuwt dat er iemand je aan het filmen is.";
                     option02Text = "Je stapt snel uit je pashokje. Om de dader zelf te pakken.";
@@ -208,7 +207,7 @@ public class ShoppingEvent : ChoiceScript {
                 option01Text = "...";
                 break;
 
-            case 30:
+            case 32:
                 narrativeText = "\"Dankje, maar zover woon ik nu niet dus ik kan het wel alleen,\" zeg je met een lachje. Je bent heel blij dat je vrienden zo om je geven.";
                 greenBox = true;
                 endOfEvent = true;

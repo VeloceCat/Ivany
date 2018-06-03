@@ -10,7 +10,7 @@ public class PoolEvent : ChoiceScript {
         choiceMade = 0;
         chain = 0;
 
-        rnd = Random.Range(1, 3);
+        int rnd = Random.Range(1, 3);
         Consequences(rnd);
     }
 
@@ -177,7 +177,7 @@ public class PoolEvent : ChoiceScript {
                 option01Text = "...";
                 break;
 
-            case 26:
+            case 34:
                 narrativeText = "Wanneer je even later buitenkomt vragen je vrienden wat er was. Je  verteld wat er gebeurt is. Na je verhaal is het tijd om naar huis te gaan. Jullie nemen afscheid en ieder gaat zijn eigen weg.";
                 endOfEvent = true;
                 break;

@@ -120,10 +120,10 @@ footer a:hover {
 .dropdown-menu {
     background-color: #CF0039!important;
     color: #fff!important;
-    border: solid 3px #CF0039;
+    border: solid 2px #CF0039;
     border-radius: 0!important;
-    min-width: 5rem!important;
-    padding: 5px 10px;
+    min-width: 3rem!important;
+    padding: 2px 2px;
 }
 
 .dropdown-group {
@@ -137,9 +137,16 @@ footer a:hover {
     text-transform: capitalize!important;
 }
 
-.navbar a, .nav-link a, .dropdown-item a {
+.nav-link {
     color: #fff!important;
     font-size: 130%!important;
+    display: inline;
+    padding: 0!important;
+}
+
+.dropdown-item {
+    color: #fff!important;
+    font-size: 90%!important;
     display: inline;
     padding: 0!important;
 }
@@ -151,7 +158,7 @@ footer a:hover {
 }
 
 .dropdown-menu:hover {
-    border: solid 3px #fff;
+    border: solid 2px #fff;
 }
 
 #navbarDropdown i {
@@ -252,7 +259,7 @@ footer a:hover {
 }
 
 #homeText h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     color: #F18A00;
 }
 

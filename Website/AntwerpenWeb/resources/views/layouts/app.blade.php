@@ -35,11 +35,11 @@
 
                         <!-- Right Side Of Navbar -->
                         <ul id="navigatie" class="navbar-nav ml-auto">
-                            <li {{ Request::is('home') ? ' class=active' : (Request::is('/') ? ' class=active' : null) }}><a href="{{ route('home') }}">Home</a></li>
-                            <li {{ Request::is('info') ? ' class=active' : null }}><a href="{{ route('info') }}">Info</a></li>
-                            <li {{ Request::is('game') ? ' class=active' : null }}><a href="{{ route('game') }}">Game</a></li>
-                            <li {{ Request::is('forum') ? ' class=active' : null }}><a href="{{ route('posts_path') }}">Forum</a></li>
-                            <li {{ Request::is('contact') ? ' class=active' : null }}><a href="{{ route('contact') }}">Contact</a></li>
+                            <li {{ Request::is('home') ? ' class=active' : (Request::is('/') ? ' class=active' : null) }}><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                            <li {{ Request::is('info') ? ' class=active' : null }}><a class="nav-link" href="{{ route('info') }}">Info</a></li>
+                            <li {{ Request::is('game') ? ' class=active' : null }}><a class="nav-link" href="{{ route('game') }}">Game</a></li>
+                            <li {{ Request::is('forum') ? ' class=active' : null }}><a class="nav-link" href="{{ route('posts_path') }}">Forum</a></li>
+                            <li {{ Request::is('contact') ? ' class=active' : null }}><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                             <!-- Authentication Links -->
                             @guest
                                 <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>

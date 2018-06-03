@@ -59,9 +59,6 @@ public class Home_Start : ChoiceScript {
 
             case 3:
                 narrativeText = "Iedereen is al druk in de weer. Je sloft naar de keukentafel voor je ontbijt. Na de laatste hap voel je je al een pak beter en je vertrekt naar de tramhalte om naar school te gaan.";
-                chain = 3;
-                numberOfOptions = 1;
-                option01Text = "...";
                 endOfEvent = true;
                 break;
 

@@ -96,8 +96,8 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 15:
-                int rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "De vrouw zie je niet meer terug en je vergeet het voorval al snel.";
                     //geen effect
@@ -146,8 +146,8 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 21:
-                int rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "Hij merkt door je korte antwoorden dat je niet van plan bent om te veel te zeggen en hij gaat weg. “Wat een rare man” denk je in jezelf.";
                     //geen effect
@@ -164,8 +164,8 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 22:
-                rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "Hij achtervolgt je. Tot je besluit bij een groepje betrouwbaar uitziende mensen te gaan staan en doet alsof het je vrienden zijn. Als de man weg is leg je uit wat er gebeurd is en de mensen vragen of alles ok is met je en ze gaan nog eindje met je mee.";
                 }
@@ -177,8 +177,8 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 23:
-                rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "De man lijkt het te begrijpen laat je met rust.";
                     greenBox = true;
@@ -196,8 +196,8 @@ public class RandomEvent : ChoiceScript {
 
             case 24:
                 greenBox = true;
-                rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "De man probeert nog 1 vraag te stellen, maar daarna geeft hij op.";
                     endOfEvent = true;
@@ -219,8 +219,8 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 26:
-                int rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "De man stopt plots met vragen stellen en gaat weg. “Waarom wou hij dat allemaal weten?” vraag je jezelf af.";
                     greenBox = true;
@@ -237,8 +237,8 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 27:
-                int rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "De man gaat weg.";
                     endOfEvent = true;

@@ -9,8 +9,8 @@ public class Home_End : ChoiceScript {
         choiceMade = 0;
         chain = 0;
 
-
-        Consequences(1);
+        int rnd = Random.Range(1, 3);
+        Consequences(rnd);
     }
 
     public override void AfterDialogue()
@@ -88,8 +88,8 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 20:
-                int rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "Je gaat toch maar even naar beneden. Je zegt even hallo en eet een koekje. Daarna ga je snel weer naar boven.";
                     //geen effect
@@ -104,8 +104,8 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 21:
-                int rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "\"Goed\" zeg je nog eens waarna je een nieuwe hap neemt.";
                     //geen effect
@@ -141,8 +141,8 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 25:
-                int rnd = Random.Range(1, 2);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "Je moeder hoort je zachtjes wenen en stapt de kamer binnen.";
                     chain = 25;

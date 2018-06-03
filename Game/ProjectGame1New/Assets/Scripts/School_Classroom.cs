@@ -10,8 +10,8 @@ public class School_Classroom : ChoiceScript {
         choiceMade = 0;
         chain = 0;
 
-
-        Consequences(1);
+        int rnd = Random.Range(1, 5);
+        Consequences(rnd);
     }
 
     public override void AfterDialogue()
@@ -30,13 +30,11 @@ public class School_Classroom : ChoiceScript {
         {
             case 1:
                 narrativeText = "Weeral een doodnormale, redelijk saaie schooldag.";
-                moodValue = -5;
                 endOfEvent = true;
                 break;
 
             case 2:
                 narrativeText = "Vandaag was er een leerkracht jarig. Een feestje in de klas en een leuke les.";
-                moodValue = 5;
                 endOfEvent = true;
                 break;
 
@@ -55,8 +53,8 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 10:
-                int rnd = Random.Range(1, 3);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "Je vrienden zien al snel wat er gebeurd en trekken je al snel mee.";
                     chain = 10;
@@ -79,11 +77,11 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 12:
-                int rnd = Random.Range(1, 3);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "Al snel hoor je dat de persoon opgeeft. \"Als je wordt genegeerd is de pret er snel af hé.\" Lach je in jezelf.";
-                    moodValue = 5;
+                    greenBox = true;
                     endOfEvent = true;
                 }
                 else
@@ -97,6 +95,7 @@ public class School_Classroom : ChoiceScript {
 
             case 13:
                 narrativeText = "Maar dat is juist wat je achtervolger wou. Je reageert nog eens, zonder resultaat.";
+                redBox = true;
                 chain = 13;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -104,13 +103,11 @@ public class School_Classroom : ChoiceScript {
 
             case 14:
                 narrativeText = "Je beslist om je achtervolger dan maar gewoon te negeren. Geen reactie, geen plezier blijkbaar want je achtervolger geeft al snel op.";
-                moodValue = -5;
                 endOfEvent = true;
                 break;
 
             case 15:
                 narrativeText = "Ze ziet wat er aan de hand is en stuurt je belager snel weg. \"Alles ok?\" vraagt ze, \"ja hoor\" antwoord je en je gaat op je plaats zitten.";
-                moodValue = -5;
                 endOfEvent = true;
                 break;
 
@@ -132,16 +129,9 @@ public class School_Classroom : ChoiceScript {
                 option02Text = "Je probeert iemand te vinden die je kan vertrouwen om erover te praten.";
                 break;
 
-            case 22:
-                narrativeText = "Je gaat snel naar de directeur om te laten zien wat je gevonden hebt.";
-                chain = ;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
             case 23:
                 narrativeText = "Wie heeft die foto genomen? Wie heeft de foto al gezien? Zoveel vragen zonder antwoord. Elke dag dat je naar school gaat ga je er mee zitten.";
-                moodValue = -5;
+                redBox = true;
                 endOfEvent = true;
                 break;
 
@@ -154,13 +144,13 @@ public class School_Classroom : ChoiceScript {
 
             case 25:
                 narrativeText = "Je verteld het tussen 2 lessen aan je beste vriend.";
-                chain = 21;
+                chain = 25;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 26:
-                narrativeText = "Die zegt dat je het best ook tegen de directeur moet zeggen, zij kunnen misschien de schuldige vinden.";
+                narrativeText = "Die zegt dat je het best ook tegen de directeur moet zeggen, hij kunnen misschien de schuldige vinden.";
                 chain = 26;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -182,7 +172,7 @@ public class School_Classroom : ChoiceScript {
 
             case 32:
                 narrativeText = "De directeur beloofd te onderzoeken wie dit gedaan heeft en hen te straffen.";
-                moodValue = -10;
+                greenBox = true;
                 endOfEvent = true;
                 break;
 

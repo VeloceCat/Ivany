@@ -120,8 +120,8 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 10:
-                int rnd = Random.Range(1, 3);
-                if (rnd = 1)
+                rnd = Random.Range(1, 3);
+                if (rnd == 1)
                 {
                     narrativeText = "De camera blijft op je gericht.";
                     chain = 10;

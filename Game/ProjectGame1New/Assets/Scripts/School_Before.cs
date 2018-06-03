@@ -97,7 +97,7 @@ public class School_Before : ChoiceScript {
 
 
             case 14:
-                narrativeText = "Hij luistert aandachtig naar het verhaal van je vriend.";
+                narrativeText = "De leerkracht luistert aandachtig naar het verhaal van je vriend.";
                 chain = 16;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -173,7 +173,14 @@ public class School_Before : ChoiceScript {
 
             case 34:
                 narrativeText = "Wanneer jullie wat verder staan vertel je je verhaal. Je vriend stelt voor om naar een van de leerkrachten te gaan. Een waarvan jullie allebei weten dat hij te vertrouwen is.";
-                chain = 33;
+                chain = 34;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
+            case 35:
+                narrativeText = "De leerkracht luistert aandachtig naar het je verhaal.";
+                chain = 16;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;

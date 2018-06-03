@@ -89,6 +89,7 @@
         <footer>
             <span>© 2018 Antwerpen.be | </span>
             <a href="https://www.antwerpen.be/nl/info/5310f241aaa8a74f6c8b458d/a-stad-uw-privacy-en-hoe-gebruiken" target="_blank"><span>Privacy &amp; gebruiksvoorwaarden</span></a>
+            <span> | </span>
             <a href="mailto:forum@antwerpen.be?Subject=Forum%20probleem" target="_top"><span>Contacteer de beheerder.</span></a>
         </footer>
 

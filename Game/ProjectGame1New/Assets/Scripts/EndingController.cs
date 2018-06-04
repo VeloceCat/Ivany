@@ -51,10 +51,14 @@ public class EndingController : MonoBehaviour {
             default:
                 break;
         }
+
+
     }
 
     public void Restart()
     {
+        StaticInfo.TotalScore = 0;
+        StaticInfo.ScoresCounted = 0;
         EnterFade();
         //SceneManager.LoadScene("Home");
     }

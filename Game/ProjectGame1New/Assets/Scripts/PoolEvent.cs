@@ -59,6 +59,8 @@ public class PoolEvent : ChoiceScript {
 
             case 11:
                 rnd = Random.Range(1, 4);
+                redBox = true;
+                ScoreManager(1);
                 if (rnd == 1)
                 {
                     narrativeText = "Je ziet niets aan de andere kant. Je zet je rugzak dan maar voor het gaatje zodat er zeker niemand kan doorkijken.";
@@ -75,7 +77,7 @@ public class PoolEvent : ChoiceScript {
                 }
                 else
                 {
-                    narrativeText = "Je ziet aan de andere kant een oude man zich omkleden. Zich totaal niet bewust van het gaatje.";
+                    narrativeText = "Er zit iemand in het hokje naast je!";
                     chain = 15;
                     numberOfOptions = 1;
                     option01Text = "...";
@@ -93,13 +95,14 @@ public class PoolEvent : ChoiceScript {
             case 13:
                 narrativeText = "De man achter de kassa bedankt je. Hij licht meteen de politie in en ze maken het gaatje toe en controleren of er meer zijn.";
                 greenBox = true;
+                ScoreManager(3);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 14:
-                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen bespeid?";
+                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen bespied?";
                 redBox = true;
                 chain = 20;
                 numberOfOptions = 1;
@@ -114,7 +117,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 16:
-                narrativeText = "Omdat je zelf nog niet half aan gekleed bent kan je niet kijken wie het is.";
+                narrativeText = "Het is een oudere man die zich aankleedt. Zich totaal niet bewust van het gaatje.";
                 chain = 29;
                 numberOfOptions = 2;
                 option01Text = "Je stopt meteen met kijken.";
@@ -122,7 +125,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 21:
-                narrativeText = "Je verteld je vrienden over het gaatje en  ze vragen meteen of je de medewerkers heb laten weten dat het er is zodat er niemand anders nog last van zal hebben.";
+                narrativeText = "Je verteld je vrienden over het gaatje en ze vragen meteen of je de medewerkers heb laten weten dat het er is zodat er niemand anders nog last van zal hebben.";
                 chain = 21;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -144,12 +147,14 @@ public class PoolEvent : ChoiceScript {
             case 26:
                 narrativeText = "\"Natuurlijk,\" zeg je. Ik zou het zelf niet graag hebben. Dus ben ik het snel gaan zeggen. Je neemt afscheid van je vrienden en gaat naar huis.";
                 greenBox = true;
+                ScoreManager(3);
                 endOfEvent = true;
                 break;
 
             case 30:
                 narrativeText = "Wanneer je je omgekleed hebt ga je naar de kassa om te vertellen dat er een gaatje is tussen 2 kleedhokjes. De man achter de kassa bedankt je.";
                 greenBox = true;
+                ScoreManager(3);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -158,6 +163,7 @@ public class PoolEvent : ChoiceScript {
             case 31:
                 narrativeText = "Plots ziet de man je kijken, hij haalt er de man achter de kassa erbij.";
                 redBox = true;
+                ScoreManager(1);
                 chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";

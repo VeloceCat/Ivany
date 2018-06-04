@@ -58,6 +58,7 @@ public class RandomEvent : ChoiceScript {
 
             case 9:
                 narrativeText = "Door de wandeling ben je een beetje later. “Waar bleef je?” vraagt iemand?";
+                chain = 12;
                 numberOfOptions = 2;
                 option01Text = "Je verteld wat er gebeurd is.";
                 option02Text = "Je zegt dat de tram wat te laat was.";
@@ -79,7 +80,7 @@ public class RandomEvent : ChoiceScript {
 
             case 12:
                 narrativeText = "Ze kijkt je geschrokken aan en zegt dat ze helemaal niet naar jou aan het kijken was. \nMisschien had je niet zo moeten reageren?";
-                redBox = true;
+                ScoreCounter(2);
                 endOfEvent = true;
                 break;
 
@@ -91,7 +92,9 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 14:
-                narrativeText = "Je dag gaat verder zoals gepland. Maar je blijft wel moet de vrouw in he hoofd zitten.";
+                narrativeText = "Je dag gaat verder zoals gepland. Maar je blijft wel moet de vrouw in je hoofd zitten. Misschien had je het toch moeten zeggen?";
+                redBox = true;
+                ScoreCounter(1);
                 endOfEvent = true;
                 break;
 
@@ -114,6 +117,7 @@ public class RandomEvent : ChoiceScript {
             case 16:
                 narrativeText = "Dit is meestal geen goed idee. Als iemand je verteld dat die persoon zo iets heeft meegemaakt mag je nooit zeggen dat het aan hen licht.";
                 redBox = true;
+                ScoreCounter(1);
                 endOfEvent = true;
                 break;
 
@@ -122,6 +126,7 @@ public class RandomEvent : ChoiceScript {
 
             case 17:
                 narrativeText = "Hij stelt rare vragen, hij is duidelijk niet gewoon op zoek naar iemand om zomaar een praatje mee te doen.";
+                ScoreCounter(2);
                 chain = 20;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -130,6 +135,8 @@ public class RandomEvent : ChoiceScript {
 
             case 18:
                 chain = 22;
+                greenBox = true;
+                ScoreCounter(3);
                 narrativeText = "Hij blijft nog even doorvragen.";
                 numberOfOptions = 2;
                 option01Text = "Je blijft hem negeren.";
@@ -139,6 +146,7 @@ public class RandomEvent : ChoiceScript {
             case 19:
                 narrativeText = "Na een tijdje begint hij hele specifieke en rare vragen te stellen. Hij vraagt of je een ‘liefje’ hebt en waar je naartoe gaat.\nMisschien zou je toch wat moeten oppassen met zomaar praten?";
                 redBox = true;
+                ScoreCounter(1);
                 chain = 25;
                 numberOfOptions = 2;
                 option01Text = "Je antwoord op al zijn vragen ook al hij heeft daar eigenlijk niets mee te maken.";
@@ -150,7 +158,7 @@ public class RandomEvent : ChoiceScript {
                 if (rnd == 1)
                 {
                     narrativeText = "Hij merkt door je korte antwoorden dat je niet van plan bent om te veel te zeggen en hij gaat weg. “Wat een rare man” denk je in jezelf.";
-                    //geen effect
+                    endOfEvent = true;
                 }
                 else
                 {
@@ -160,7 +168,6 @@ public class RandomEvent : ChoiceScript {
                     option01Text = "...";
 
                 }
-
                 break;
 
             case 22:
@@ -171,7 +178,7 @@ public class RandomEvent : ChoiceScript {
                 }
                 else
                 {
-                    narrativeText = "De man blijft staan en even later ben je uit het zicht en je haalt opgelucht adem.";
+                    narrativeText = "De man blijft staan en even later is hij uit je zicht verdwenen en je haalt opgelucht adem.";
                 }
                 endOfEvent = true;
                 break;
@@ -182,6 +189,7 @@ public class RandomEvent : ChoiceScript {
                 {
                     narrativeText = "De man lijkt het te begrijpen laat je met rust.";
                     greenBox = true;
+                    ScoreCounter(3);
                     endOfEvent = true;
                 }
                 else
@@ -196,6 +204,7 @@ public class RandomEvent : ChoiceScript {
 
             case 24:
                 greenBox = true;
+                ScoreCounter(3);
                 rnd = Random.Range(1, 3);
                 if (rnd == 1)
                 {
@@ -224,6 +233,7 @@ public class RandomEvent : ChoiceScript {
                 {
                     narrativeText = "De man stopt plots met vragen stellen en gaat weg. “Waarom wou hij dat allemaal weten?” vraag je jezelf af.";
                     greenBox = true;
+                    ScoreCounter(3);
                     endOfEvent = true;
                 }
                 else
@@ -261,20 +271,23 @@ public class RandomEvent : ChoiceScript {
 
 
             case 31:
-                narrativeText = "Je kan het incident maar niet uit je hoofd zetten. Je twijfeld aan jezelf \"is dit nu mijn fout?\"";
+                narrativeText = "Je kan het incident maar niet uit je hoofd zetten. Je twijfelt aan jezelf \"is dit nu mijn fout?\"";
                 redBox = true;
+                ScoreCounter(1);
                 endOfEvent = true;
                 break;
 
             case 41:
                 narrativeText = "\n Je geeft een beschrijving van de man en volgens de politie heeft deze man het zelfde ook al gedaan bij andere mensen. Ze gaan hem opzoeken en houden je gegevens bij.";
                 greenBox = true;
+                ScoreCounter(3);
                 endOfEvent = true;
                 break;
 
             case 42:
                 narrativeText = "Je blijft de hele dag denken aan wat de man deed, ook al doe je zo je best het te vergeten.";
                 redBox = true;
+                ScoreCounter(1);
                 chain = 42;
                 numberOfOptions = 1;
                 option01Text = "...";

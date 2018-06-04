@@ -82,6 +82,7 @@ public class School_Classroom : ChoiceScript {
                 {
                     narrativeText = "Al snel hoor je dat de persoon opgeeft. \"Als je wordt genegeerd is de pret er snel af hé.\" Lach je in jezelf.";
                     greenBox = true;
+                    ScoreCounter(3);
                     endOfEvent = true;
                 }
                 else
@@ -96,6 +97,7 @@ public class School_Classroom : ChoiceScript {
             case 13:
                 narrativeText = "Maar dat is juist wat je achtervolger wou. Je reageert nog eens, zonder resultaat.";
                 redBox = true;
+                ScoreCounter(1);
                 chain = 13;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -103,6 +105,7 @@ public class School_Classroom : ChoiceScript {
 
             case 14:
                 narrativeText = "Je beslist om je achtervolger dan maar gewoon te negeren. Geen reactie, geen plezier blijkbaar want je achtervolger geeft al snel op.";
+                greenBox = true;
                 endOfEvent = true;
                 break;
 
@@ -124,6 +127,7 @@ public class School_Classroom : ChoiceScript {
             case 23:
                 narrativeText = "Wie heeft die foto genomen? Wie heeft de foto al gezien? Zoveel vragen zonder antwoord. Elke dag dat je naar school gaat ga je er mee zitten.";
                 redBox = true;
+                ScoreCounter(1);
                 endOfEvent = true;
                 break;
 
@@ -142,7 +146,8 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 26:
-                narrativeText = "Die zegt dat je het best ook tegen de directeur moet zeggen, hij kunnen misschien de schuldige vinden.";
+                narrativeText = "Die zegt dat je het best ook tegen de directeur kan zeggen, hij kan misschien de schuldige vinden.";
+                greenBox = true;
                 chain = 26;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -156,7 +161,7 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 31:
-                narrativeText = "Het is een beetje raar om de foto te laten zien, maar je misschien help je andere die het niet durven zeggen.";
+                narrativeText = "Het is een beetje raar om de foto te laten zien, maar misschien help je andere die het niet durven zeggen.";
                 chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -165,6 +170,7 @@ public class School_Classroom : ChoiceScript {
             case 32:
                 narrativeText = "De directeur beloofd te onderzoeken wie dit gedaan heeft en hen te straffen.";
                 greenBox = true;
+                ScoreCounter(3);
                 endOfEvent = true;
                 break;
 

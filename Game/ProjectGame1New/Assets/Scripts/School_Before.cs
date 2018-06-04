@@ -98,6 +98,8 @@ public class School_Before : ChoiceScript {
 
             case 14:
                 narrativeText = "De leerkracht luistert aandachtig naar het verhaal van je vriend.";
+                greenBox = true;
+                ScoreCounter(3);
                 chain = 16;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -105,11 +107,14 @@ public class School_Before : ChoiceScript {
 
             case 15:
                 narrativeText = "Je zegt dat ze die man waarschijnlijk nooit meer zal zien.";
+                ScoreCounter(2);
                 endOfEvent = true;
                 break;
 
             case 16:
                 narrativeText = "Je vriend blijft nog staan als jij verder naar he vrienden wandeld";
+                redBox = true;
+                ScoreCounter(1);
                 endOfEvent = true;
                 break;
 
@@ -121,8 +126,10 @@ public class School_Before : ChoiceScript {
                 break;
 
             case 18:
-                narrativeText = "\"Daarna we gaan voor jou zorgen, vandaag ga ik geen les geven en jullie 2 hoeven niet naar de les. Ik zal met jullie meegaan naar de politie.\"";
-                endOfEvent = true;
+                narrativeText = "\"We zorgen er later voor dat we dit aan de politie vertellen. Gaan jullie nu maar gewoon naar de les zodat niemand zich afvraagt waar jullie zijn.\"";
+                chain = 31;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
 
             case 19:
@@ -148,13 +155,6 @@ public class School_Before : ChoiceScript {
             case 30:
                 narrativeText = "Je vraagt aan de vriend die je het meest vertrouwd of je hem even kan spreken. \"Wij gaan even naar de WC\" zeggen jullie tegen de rest.";
                 chain = 33;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
-            case 31:
-                narrativeText = "Praten met je vrienden helpt je om je zorgen even te vergeten. Jammer genoeg gaat de bel al snel.";
-                chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;

@@ -55,18 +55,16 @@ public class Home_End : ChoiceScript {
                 numberOfOptions = 3;
                 option01Text = "\"Het was een moeilijke dag, meer niet.\" Zeg je.";
                 option02Text = "Je zegt helemaal niets en gaat weer naar je kamer.";
-                option03Text = "Je verteld hen wat er gebeurt is de voorbije dagen.";
+                option03Text = "Je verteld hen wat er gebeurt is vandaag.";
                 break;
 
             case 15:
                 narrativeText = "Je hoort beneden iedereen dag zeggen tegen je oma en daarna hoor je de voordeur dichtslaan. Niet veel later roept je moeder je. Ze is wat boos op je omdat je zelfs niet even de moeite gedaan hebt om gewoon \"hallo\" te komen zeggen.";
-                chain = 19;
-                numberOfOptions = 1;
-                option01Text = "...";
+                endOfEvent = true;
                 break;
 
             case 16:
-                narrativeText = "Ook de tweede keer zeg je helemaal niets, je moeder klinkt boos wanneer ze even later voor de derde keer komt vragen of je niet even naar beneden komt.";
+                narrativeText = "Je moeder klinkt boos wanneer ze even later voor de tweede keer komt vragen of je niet even naar beneden komt.";
                 chain = 20;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -74,48 +72,30 @@ public class Home_End : ChoiceScript {
 
             case 17:
                 narrativeText = "\"Ooh zulke dagen heb je nu eenmaal\" zegt je oma. Je neemt een koekje en gaat weer naar je kamer.";
+                ScoreManager(2);
                 endOfEvent = true;
                 break;
 
             case 18:
                 narrativeText = "\"Tja, kleine kindjes worden groot\" zegt je oma al lachend tegen je ouders.";
+                ScoreManager(1);
+                redBox = true;
                 endOfEvent = true;
                 break;
 
             case 19:
                 narrativeText = "Iedereen luistert aandachtig tot je je hele verhaal hebt gedaan, je moeder komt naast je zitten en slaagt haar arm om je. \n\"We zullen samen naar een oplossing zoeken\" stelt ze voor, en je kan enkel nog knikken. Je verhaal doen was moeilijk maar je weet dat dit de juiste beslissing was.";
-                endOfEvent = true;
-                break;
-
-            case 20:
-                rnd = Random.Range(1, 3);
-                if (rnd == 1)
-                {
-                    narrativeText = "Je gaat toch maar even naar beneden. Je zegt even hallo en eet een koekje. Daarna ga je snel weer naar boven.";
-                    //geen effect
-
-                }
-                else
-                {
-                    narrativeText = "Je zegt nog steeds niets, ook al weet je dat je moeder daar helemaal niet blij mee gaat zijn.";
-
-                }
+                ScoreManager(3);
+                greenBox = true;
                 endOfEvent = true;
                 break;
 
             case 21:
                 rnd = Random.Range(1, 3);
-                if (rnd == 1)
-                {
-                    narrativeText = "\"Goed\" zeg je nog eens waarna je een nieuwe hap neemt.";
-                    //geen effect
-
-                }
-                else
-                {
-                    narrativeText = "Je verteld tijdens het eten over je dag en je hebt een leuke gesprek met je ouders.";
-                }
-                endOfEvent = true;
+                chain = 13;
+                numberOfOptions = 2;
+                option01Text = "Je gaat toch maar naar beneden";
+                option01Text = "Je zegt nog steeds niets.";
                 break;
 
             case 22:
@@ -127,7 +107,8 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 23:
-                narrativeText = "Je durft het niet te zeggen, je gaat naar je kamer en staart uit de raam. Je probeert je tranen te bedwingen maar het gaat niet. Je kan niet meer.";
+                narrativeText = "Je durft het niet te zeggen, je gaat naar je kamer en staart uit de raam. Je kan niet meer. Misschien moet je het toch maar zeggen.";
+                ScoreManager(2);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -161,6 +142,7 @@ public class Home_End : ChoiceScript {
             case 26:
                 narrativeText = "Je merkt pas dat ze er is als je een arm om je heen voelt. Je moeder zegt niks, maar houd je gewoon vast.\nJe voelt jezelf blij worden, en voor je het weet doe je je verhaal. Je moeder luistert gewoon, maar je voelt dat hij alles voor je zal doen om je te helpen.";
                 greenBox = true;
+                ScoreManager(3);
                 chain = 29;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -168,7 +150,7 @@ public class Home_End : ChoiceScript {
 
             case 27:
                 narrativeText = "Je laat je tranen de vrije loop gaan. Wanneer je even later naar beneden gaat voor het avond eten zien je ouders dat er iets niet klopt.";
-                greenBox = true;
+                ScoreManager(2);
                 chain = 27;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -184,6 +166,7 @@ public class Home_End : ChoiceScript {
 
             case 30:
                 narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nVJe  voelt je gewoon blij en gelukkig.";
+                greenBox = true;
                 endOfEvent = true;
                 break;
 

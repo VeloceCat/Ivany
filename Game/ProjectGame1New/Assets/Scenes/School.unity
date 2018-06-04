@@ -569,7 +569,6 @@ GameObject:
   - component: {fileID: 564483851}
   - component: {fileID: 564483850}
   - component: {fileID: 564483849}
-  - component: {fileID: 564483847}
   - component: {fileID: 564483848}
   m_Layer: 5
   m_Name: SchoolCanvas
@@ -578,19 +577,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &564483847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 564483846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99dde88af5f2784eb98505372dbbeda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beforeSchool: {fileID: 564483848}
-  afterSchool: {fileID: 0}
 --- !u!114 &564483848
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -53,9 +53,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChoiceScript.cs" />
      <Compile Include="Assets\Scripts\ClassroomController.cs" />
+     <Compile Include="Assets\Scripts\EndingController.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\Home_End.cs" />
      <Compile Include="Assets\Scripts\Home_Start.cs" />
+     <Compile Include="Assets\Scripts\OpeningController.cs" />
      <Compile Include="Assets\Scripts\PoolEvent.cs" />
      <Compile Include="Assets\Scripts\RandomEvent.cs" />
      <Compile Include="Assets\Scripts\RoomController.cs" />

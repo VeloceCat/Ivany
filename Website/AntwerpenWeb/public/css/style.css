@@ -1019,6 +1019,11 @@ postContentFullWidth {
     margin-right: 2%;
 }
 
+.description pre, .descriptionFullWidth pre {
+    color: #fff;
+    font-family: inherit;
+}
+
 .fullPost .managePost {
     width: 10%;
 }
@@ -1079,6 +1084,11 @@ postContentFullWidth {
     width: 100%;
     margin-right: 2%;
     font-size: 1.3em;
+}
+
+.commentText pre, .commentTextFullWidth pre {
+    color: #fff;
+    font-family: inherit;
 }
 
 .manageComment {

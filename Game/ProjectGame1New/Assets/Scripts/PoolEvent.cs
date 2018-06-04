@@ -60,7 +60,7 @@ public class PoolEvent : ChoiceScript {
             case 11:
                 rnd = Random.Range(1, 4);
                 redBox = true;
-                ScoreManager(1);
+                ScoreCounter(1);
                 if (rnd == 1)
                 {
                     narrativeText = "Je ziet niets aan de andere kant. Je zet je rugzak dan maar voor het gaatje zodat er zeker niemand kan doorkijken.";
@@ -95,7 +95,7 @@ public class PoolEvent : ChoiceScript {
             case 13:
                 narrativeText = "De man achter de kassa bedankt je. Hij licht meteen de politie in en ze maken het gaatje toe en controleren of er meer zijn.";
                 greenBox = true;
-                ScoreManager(3);
+                ScoreCounter(3);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -147,14 +147,14 @@ public class PoolEvent : ChoiceScript {
             case 26:
                 narrativeText = "\"Natuurlijk,\" zeg je. Ik zou het zelf niet graag hebben. Dus ben ik het snel gaan zeggen. Je neemt afscheid van je vrienden en gaat naar huis.";
                 greenBox = true;
-                ScoreManager(3);
+                ScoreCounter(3);
                 endOfEvent = true;
                 break;
 
             case 30:
                 narrativeText = "Wanneer je je omgekleed hebt ga je naar de kassa om te vertellen dat er een gaatje is tussen 2 kleedhokjes. De man achter de kassa bedankt je.";
                 greenBox = true;
-                ScoreManager(3);
+                ScoreCounter(3);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -163,7 +163,7 @@ public class PoolEvent : ChoiceScript {
             case 31:
                 narrativeText = "Plots ziet de man je kijken, hij haalt er de man achter de kassa erbij.";
                 redBox = true;
-                ScoreManager(1);
+                ScoreCounter(1);
                 chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";

@@ -93,20 +93,20 @@ public class Home_End : ChoiceScript {
 
             case 17:
                 narrativeText = "\"Ooh zulke dagen heb je nu eenmaal\" zegt je oma. Je neemt een koekje en gaat weer naar je kamer.";
-                ScoreManager(2);
+                ScoreCounter(2);
                 endOfEvent = true;
                 break;
 
             case 18:
                 narrativeText = "\"Tja, kleine kindjes worden groot\" zegt je oma al lachend tegen je ouders.";
-                ScoreManager(1);
+                ScoreCounter(1);
                 redBox = true;
                 endOfEvent = true;
                 break;
 
             case 19:
                 narrativeText = "Iedereen luistert aandachtig tot je je hele verhaal hebt gedaan, je moeder komt naast je zitten en slaagt haar arm om je. \n\"We zullen samen naar een oplossing zoeken\" stelt ze voor, en je kan enkel nog knikken. Je verhaal doen was moeilijk maar je weet dat dit de juiste beslissing was.";
-                ScoreManager(3);
+                ScoreCounter(3);
                 greenBox = true;
                 endOfEvent = true;
                 break;
@@ -129,7 +129,7 @@ public class Home_End : ChoiceScript {
 
             case 23:
                 narrativeText = "Je durft het niet te zeggen, je gaat naar je kamer en staart uit de raam. Je kan niet meer. Misschien moet je het toch maar zeggen.";
-                ScoreManager(2);
+                ScoreCounter(2);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -163,7 +163,7 @@ public class Home_End : ChoiceScript {
             case 26:
                 narrativeText = "Je merkt pas dat ze er is als je een arm om je heen voelt. Je moeder zegt niks, maar houd je gewoon vast.\nJe voelt jezelf blij worden, en voor je het weet doe je je verhaal. Je moeder luistert gewoon, maar je voelt dat hij alles voor je zal doen om je te helpen.";
                 greenBox = true;
-                ScoreManager(3);
+                ScoreCounter(3);
                 chain = 29;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -171,7 +171,7 @@ public class Home_End : ChoiceScript {
 
             case 27:
                 narrativeText = "Je laat je tranen de vrije loop gaan. Wanneer je even later naar beneden gaat voor het avond eten zien je ouders dat er iets niet klopt.";
-                ScoreManager(2);
+                ScoreCounter(2);
                 chain = 27;
                 numberOfOptions = 1;
                 option01Text = "...";

@@ -159,6 +159,13 @@ public class School_Before : ChoiceScript {
                 option01Text = "...";
                 break;
 
+            case 31:
+                narrativeText = "Praten met je vrienden helpt je om je zorgen even te vergeten.";
+                chain = 31;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
             case 32:
                 narrativeText = "Vertellen over wat er gebeurt is is vaak heel moeilijk. Maar het kan je erg helpen. Je moet op zoek gaan naar personen die je kan vertrouwen om je verhaal te kunnen doen.";
                 chain = 32;

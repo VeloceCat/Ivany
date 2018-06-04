@@ -24,9 +24,7 @@
                     
                     @if($post->wasCreatedBy( Auth::user() ))
                         <div class="description">
-                            <p>
-                                <pre>{{ $post->description }}</pre>
-                            </p>
+                            <p>{{ $post->description }}</p>
                         </div>
                     
                         <div class="managePost">
@@ -44,9 +42,7 @@
 
                     @else
                         <div class="descriptionFullWidth">
-                            <p>
-                                <pre>{{ $post->description }}</pre>
-                            </p>
+                            <p>{{ $post->description }}</p>
                         </div>
                     @endif
                     
@@ -65,7 +61,7 @@
                                         
                                         @if($comment->wasCreatedBy( Auth::user() ))
                                             <div class="commentText">
-                                                <pre>{{ $comment->comment }}</pre>
+                                                {{ $comment->comment }}
                                             </div>
                                             <div class="manageComment"> 
                                                 <small class="pull-right">
@@ -81,7 +77,7 @@
                                             </div>
                                         @else
                                             <div class="commentTextFullWidth">
-                                                <pre>{{ $comment->comment }}</pre>
+                                                {{ $comment->comment }}
                                             </div>
                                         @endif
                                         

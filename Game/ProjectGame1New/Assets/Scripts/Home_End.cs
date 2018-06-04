@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Home_End : ChoiceScript {
 
+    [SerializeField]
+    protected Image fade;
+
     public override void StartDialogue()
     {
+        fade.enabled = false;
         choiceMade = 0;
         chain = 0;
 
@@ -16,8 +22,23 @@ public class Home_End : ChoiceScript {
     public override void AfterDialogue()
     {
         base.AfterDialogue();
-        
+        EnterFade();
+        //SceneManager.LoadScene("Ending");
 
+    }
+
+    public void EnterFade()
+    {
+        StartCoroutine(CrossFadeOut());
+    }
+
+    IEnumerator CrossFadeOut()
+    {
+        fade.canvasRenderer.SetAlpha(0);
+        fade.enabled = true;
+        fade.CrossFadeAlpha(1, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Ending");
     }
 
 

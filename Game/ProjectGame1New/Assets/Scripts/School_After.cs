@@ -42,7 +42,7 @@ public class School_After : ChoiceScript {
 
     public override void StartTalking(int num)
     {
-        int rnd;
+        //int rnd;
         switch (num)
         {
             case 1:

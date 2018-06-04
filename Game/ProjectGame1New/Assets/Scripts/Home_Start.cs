@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Home_Start : ChoiceScript {
 
-    void Start ()
+
+    [SerializeField]
+    protected Image fade;
+
+    
+    public override void StartDialogue()
     {
+        choiceMade = 0;
+        chain = 0;
+
         StaticInfo.RandomEventNbr = Random.Range(1, 4);
-        if (Random.Range(0,2) == 0)
+        if (Random.Range(0, 2) == 0)
         {
             StaticInfo.ShopNotPool = true;
         }
@@ -16,15 +25,11 @@ public class Home_Start : ChoiceScript {
         {
             StaticInfo.ShopNotPool = false;
         }
-    }
 
-    public override void StartDialogue()
-    {
-        choiceMade = 0;
-        chain = 0;
-
+        StartCoroutine(CrossFade());
 
         Consequences(1);
+        
     }
 
     public override void AfterDialogue()
@@ -45,10 +50,20 @@ public class Home_Start : ChoiceScript {
 
     }
 
+    IEnumerator CrossFade()
+    {
+        fade.canvasRenderer.SetAlpha(1);
+        fade.enabled = true;
+        
+        fade.CrossFadeAlpha(0, 2.0f, false);
+        yield return new WaitForSeconds(2);
+        fade.enabled = false;
+    }
+
 
     public override void StartTalking(int num)
     {
-        int rnd;
+        //int rnd;
         switch (num)
         {
             case 1:
@@ -74,5 +89,6 @@ public class Home_Start : ChoiceScript {
                 narrativeText = "Error";
                 break;
         }
+        
     }
 }

@@ -98,6 +98,7 @@
         $dateToPost =  date('Y-m-d H:i:s');
         $undelete = (isset($_POST['undelete']) && $_POST['undelete'] == 'true') ? ", deleted_at = NULL" : '';
         $allow = (isset($_POST['allow']) && $_POST['allow'] == 'true') ? ", is_allowed = 1" : '';
+        $unallow = (isset($_POST['unallow']) && $_POST['unallow'] == 'true') ? ", is_allowed = 0" : '';
         try {
             if ($table == 'articles') {
                 $title = '"'.str_replace('"', '\"', $_POST['titel']).'"';
@@ -116,14 +117,14 @@
                 $description = '"'.str_replace('"', '\"', $_POST['description']).'"';
                 $userID = $_POST['userID'];
 
-                DB::update("UPDATE `posts` SET title = '$title', description = $description, user_id = '$userID', updated_at = '$dateToPost' $undelete $allow WHERE id='$id'");
+                DB::update("UPDATE `posts` SET title = '$title', description = $description, user_id = '$userID', updated_at = '$dateToPost' $undelete $allow $unallow WHERE id='$id'");
             }
             elseif ($table == 'comments') {
                 $comment = '"'.str_replace('"', '\"', $_POST['comment']).'"';
                 $userID = $_POST['userID'];
                 $postID = $_POST['postID'];
 
-                DB::update("UPDATE `comments` SET comment = $comment, user_id = '$userID', post_id = '$postID', updated_at = '$dateToPost' $undelete $allow WHERE id='$id'");
+                DB::update("UPDATE `comments` SET comment = $comment, user_id = '$userID', post_id = '$postID', updated_at = '$dateToPost' $undelete $allow $unallow WHERE id='$id'");
             }
             DB::commit();
         } catch (\Exception $e) {

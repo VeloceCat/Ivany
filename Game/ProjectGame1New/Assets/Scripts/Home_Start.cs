@@ -36,7 +36,7 @@ public class Home_Start : ChoiceScript {
     {
         base.AfterDialogue();
 
-        StaticInfo.NextScene = "RandomEventScene";
+        SceneManager.LoadScene("RandomEventScene");
 
         /*
         if (StaticInfo.RandomEventNbr == 1)

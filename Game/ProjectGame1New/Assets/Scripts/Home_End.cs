@@ -57,14 +57,14 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "Wanneer je thuiskomt merken je ouders merken er iets niet klopt en vragen nog maar eens wat er is. Maar je antwoord niet.";
+                narrativeText = "Wanneer je thuiskomt merken je ouders dat er iets niet klopt en vragen nog maar eens wat er is. Maar je antwoordt niet.";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 3:
-                narrativeText = "Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust en je moeder klopt op de deur van je kamer en vraagt wat er is.";
+                narrativeText = "Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust. Je moeder klopt op de deur van je kamer en vraagt wat er is.";
                 chain = 21;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -76,7 +76,7 @@ public class Home_End : ChoiceScript {
                 numberOfOptions = 3;
                 option01Text = "\"Het was een moeilijke dag, meer niet.\" Zeg je.";
                 option02Text = "Je zegt helemaal niets en gaat weer naar je kamer.";
-                option03Text = "Je verteld hen wat er gebeurt is vandaag.";
+                option03Text = "Je vertelt hen wat er gebeurt is vandaag.";
                 break;
 
             case 15:
@@ -120,7 +120,7 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 22:
-                narrativeText = "Maar je antwoord niet. Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust en je moeder klopt op de deur van je kamer en vraagt nog maar eens wat er is.";
+                narrativeText = "Maar je antwoordt niet. Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust en je moeder klopt op de deur van je kamer en vraagt nog maar eens wat er is.";
                 chain = 22;
                 numberOfOptions = 2;
                 option01Text = "Je zegt weer niks.";
@@ -186,7 +186,7 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 30:
-                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nVJe  voelt je gewoon blij en gelukkig.";
+                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nVJe voelt je gewoon blij en gelukkig.";
                 greenBox = true;
                 endOfEvent = true;
                 break;

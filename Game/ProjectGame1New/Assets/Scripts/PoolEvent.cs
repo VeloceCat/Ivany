@@ -53,7 +53,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 3:
-                narrativeText = "\"Ik moet nu wel vertrekken, wij hebben bezoek,\" zegt iemand. Ook de andere gaan naar huis. Jullie nemen afscheid en iedereen gaat naar huis.";
+                narrativeText = "\"Ik moet nu wel vertrekken, wij hebben bezoek,\" zegt iemand. Ook de anderen gaan naar huis. Jullie nemen afscheid en iedereen gaat naar huis.";
                 endOfEvent = true;
                 break;
 
@@ -102,7 +102,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 14:
-                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen bespied?";
+                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen bespied!";
                 redBox = true;
                 chain = 20;
                 numberOfOptions = 1;
@@ -132,7 +132,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 22:
-                narrativeText = "Je ziet in dat je dat had moeten doen en draait snel terug om het te gaan zeggen. Als je terug komt zijn al een paar van je vrienden vertrokken, je neemt afscheid van de andere en vertrekt naar huis";
+                narrativeText = "Je ziet in dat je dat had moeten doen en draait snel terug om het te gaan zeggen. Als je terug komt zijn al een paar van je vrienden vertrokken, je neemt afscheid van de anderen en vertrekt naar huis";
                 redBox = true;
                 endOfEvent = true;
                 break;

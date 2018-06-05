@@ -52,7 +52,7 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 3:
-                narrativeText = "Terwijl je aan het passen bent zie je plots een smartphone uitsteken boven je hoofd. Met de camera naar jou vanuit het pashokje naast je.";
+                narrativeText = "Terwijl je aan het passen bent zie je plots een smartphone uitsteken boven je hoofd. Met de camera naar jou gericht vanuit het pashokje naast je.";
                 chain = 19;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -62,7 +62,7 @@ public class ShoppingEvent : ChoiceScript {
                 rnd = Random.Range(1, 3);
                 if (rnd == 1)
                 {
-                    narrativeText = "\"Past perfect\" zegt de medewerker die wat kleren opplooit.";
+                    narrativeText = "\"Past perfect\" zegt de medewerker die wat kleren opvouwt.";
                     chain = 4;
                 }
                 else
@@ -80,7 +80,7 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 6:
-                narrativeText = "\"Dank je,\" zeg je als je met je gekozen kleren naar de kassa vertrekt. \"Geen probleem.\" Antwoord hij blij terug. ";
+                narrativeText = "\"Dank je,\" zeg je als je met je gekozen kleren naar de kassa vertrekt. \"Geen probleem.\" Antwoordt hij blij terug. ";
                 chain = 0;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -164,7 +164,7 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 14:
-                narrativeText = "Je loopt er zelf snel achteraan. Even later heb je een van de jongens te pakken en iemand van de security heeft de andere te pakken.";
+                narrativeText = "Je loopt er zelf snel achteraan. Even later heb je één van de jongens te pakken en iemand van de security heeft de andere te pakken.";
                 redBox = true;
                 ScoreCounter(1);
                 chain = 14;

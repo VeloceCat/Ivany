@@ -53,7 +53,7 @@ public class School_After : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "\"Natuurlijk,\" zeggen de meeste enthousiast. Onderweg vraagt er iemand of jullie zin heeft om na het eten iets te gaan doen.";
+                narrativeText = "\"Natuurlijk,\" zeggen de meeste enthousiast. Onderweg vraagt er iemand of jullie zin hebben om na het eten iets te gaan doen.";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -75,7 +75,7 @@ public class School_After : ChoiceScript {
                 break;
 
             case 4:
-                narrativeText = "De andere zijn meteen akkoord. \"Dat is dan afgesproken, even thuis onze school spullen wegzetten en dan kunnen we vertrekken!\"";
+                narrativeText = "De anderen zijn meteen akkoord. \"Dat is dan afgesproken, even thuis onze school spullen wegzetten en dan kunnen we vertrekken!\"";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";

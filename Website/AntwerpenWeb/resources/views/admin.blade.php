@@ -156,7 +156,7 @@
     }
 
     if (isset($_POST['settings_changed']) && $_POST['settings_changed'] == 1) {
-        session()->flash('message', 'Je post wordt zo snel mogelijk gecontrolleerd, hij staat binnenkort online.');
+        session()->flash('message', 'Je gegevens zijn opgeslagen.');
         $id = $_POST['id'];
         $name = $_POST['name'];
         $lastName = $_POST['lastName'];

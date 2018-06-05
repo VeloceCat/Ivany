@@ -488,19 +488,6 @@ footer a:hover {
     border: none;
 }
 
-.modal-footer {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    height: 30px;
-    border: none;
-}
-
-.modal-footer h3 {
-    font-size: 90%;
-    
-}
-
 /* -------------- ADMINPAGE -------------- */
 .py-4 {
     margin: 0!important;

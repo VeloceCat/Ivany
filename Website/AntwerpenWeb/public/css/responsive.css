@@ -126,7 +126,7 @@
         font-size: 1.1em;
     }
 
-    .modal-header, .modal-body, .modal-footer {
+    .modal-header, .modal-body {
         padding: 5px 10px;
     }
 

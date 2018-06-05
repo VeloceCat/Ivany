@@ -482,7 +482,7 @@ footer a:hover {
 .modal-body {
     padding: 10px 20px;
     font-size: 110%;
-    overflow: scroll;
+    overflow: auto;
     background-color: #fff;
     color: #000;
     border: none;

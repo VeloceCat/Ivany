@@ -10,7 +10,7 @@
                 $maxCharacters = 100; /* text letters */
                 $articlesCount = DB::select('SELECT COUNT(id) AS counter FROM `articles` WHERE `deleted_at` IS NULL');
                 $firstarticlesnumber = DB::select('SELECT blokID FROM `articles` WHERE `deleted_at` IS NULL LIMIT 1');
-                $quotes = DB::select('SELECT * FROM `quotes` WHERE `deleted_at` IS NULL');
+                $quotes = DB::select('SELECT * FROM `quotes` WHERE `deleted_at` IS NULL ORDER BY `blokID` ASC');
                 foreach($articlesCount as $count) {
                     $counter = $count->counter;
                 }
@@ -46,7 +46,7 @@
 
                     $articlesLeft = DB::select("SELECT COUNT(id) AS counter FROM `articles` WHERE `deleted_at` IS NULL AND blokID = '$quoteBlokID'  LIMIT 1");
                     foreach($articlesLeft as $articleLeft) {
-                        if($articleLeft->counter > 0) {
+                        if($articleLeft->counter >= 0) {
                             $articles = DB::select("SELECT * FROM `articles` WHERE `deleted_at` IS NULL AND blokID = '$quoteBlokID'");
                             echo("<div class='infoBlok'>");
                             foreach($articles as $article) {
@@ -62,7 +62,7 @@
                     }
                 }
                     
-                    $articlesModal = DB::select("SELECT * FROM `articles` WHERE `deleted_at` IS NULL");
+                    $articlesModal = DB::select("SELECT * FROM `articles` WHERE `deleted_at` IS NULL ORDER BY `blokID` ASC");
                     $idCounter = 0;
                     foreach($articlesModal as $articleModal) {
                         $text = $articleModal->text;

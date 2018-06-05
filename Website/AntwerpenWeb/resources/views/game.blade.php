@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <p class="hintForMobileGame">Tip: draai je telefoon of tablet eerst in landscape en klik dan op "Fullscreen"</p>
     <div class="webgl-content">
-        <div id="gameContainer" style="width: 960px; height: 600px"></div>
+        <div id="gameContainer"></div>
         <div class="footer">
             <div class="webgl-logo"></div>
             <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>

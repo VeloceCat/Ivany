@@ -1406,3 +1406,13 @@ postContentFullWidth {
 .form-group-full label .termsText {
     padding-left: 10px;
 }
+
+/* -------------- GAME PAGE -------------- */
+#gameContainer {
+    width: 960px;
+    height: 600px;
+}
+
+.hintForMobileGame {
+    display: none;
+}

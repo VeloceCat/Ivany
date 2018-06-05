@@ -70,7 +70,7 @@
                             @endif
                         </div>
 
-                        <p class="uitlegSchuilnaam"><span>Uw gebruikersnaam moet tussen 5 en 30 karakters bevatten en kan bestaan uit letters, cijfers en volgende speciale tekens + . _ - @ (spaties zijn niet toegestaan).</span></p>
+                        <p class="uitlegSchuilnaam"><span>Uw gebruikersnaam moet tussen 5 en 30 karakters bevatten en kan bestaan uit letters, cijfers en volgende speciale tekens + . _ - @.</span></p>
                     </div>
 
 
@@ -86,7 +86,7 @@
                                 </span>
                             @endif
                         </div>
-                        <p class="uitlegWachtwoord"><span>Het wachtwoord moet minstens 8 tekens lang zijn, 1 hoofdletter en 1 cijfer of symbool bevatten.</span></p>
+                        <p class="uitlegWachtwoord"><span>Het wachtwoord moet minstens 8 tekens lang zijn, 1 hoofdletter en 1 cijfer bevatten. Symbolen ook toegelaten.</span></p>
                     </div>
 
                     <div class="form-group">

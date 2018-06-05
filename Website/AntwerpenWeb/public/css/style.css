@@ -430,7 +430,7 @@ footer a:hover {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #000;
+    background-color: #121212;
     margin: auto;
     padding: 0;
     width: 70%;
@@ -473,7 +473,7 @@ footer a:hover {
 
 .modal-header {
     padding: 10px 20px;
-    background-color: #000;
+    background-color: #121212;
     color: #F18A00;
     text-align: center;
     border-bottom: solid 3px #F18A00;

@@ -293,6 +293,19 @@
         height: auto;
     }
 
+    .webgl-content .footer {
+        margin-top: 0;
+        line-height: 15px;
+        font-family: inherit;
+        font-size: 8px;
+        height: 15px;
+    }
+
+    .webgl-content .footer .fullscreen {
+        width: 15px;
+        background-size: 15px;
+    }
+
 }
 
 

@@ -16,7 +16,7 @@ public class Home_Start : ChoiceScript {
         choiceMade = 0;
         chain = 0;
 
-        StaticInfo.RandomEventNbr = Random.Range(1, 4);
+        //StaticInfo.RandomEventNbr = Random.Range(1, 4);
         if (Random.Range(0, 2) == 0)
         {
             StaticInfo.ShopNotPool = true;
@@ -36,8 +36,9 @@ public class Home_Start : ChoiceScript {
     {
         base.AfterDialogue();
 
-        StaticInfo.NextScene = "School";
+        StaticInfo.NextScene = "RandomEventScene";
 
+        /*
         if (StaticInfo.RandomEventNbr == 1)
         {
             SceneManager.LoadScene("RandomEventScene");
@@ -46,7 +47,7 @@ public class Home_Start : ChoiceScript {
         {
             SceneManager.LoadScene(StaticInfo.NextScene);
         }
-        
+        */
 
     }
 

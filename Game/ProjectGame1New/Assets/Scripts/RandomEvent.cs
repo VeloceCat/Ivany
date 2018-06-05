@@ -21,7 +21,8 @@ public class RandomEvent : ChoiceScript {
 
     public override void AfterDialogue()
     {
-        SceneManager.LoadScene(StaticInfo.NextScene);
+        //SceneManager.LoadScene(StaticInfo.NextScene);
+        SceneManager.LoadScene("School");
     }
 
     public override void StartTalking(int num)

@@ -100,7 +100,7 @@
         <script src="{{ asset('TemplateData/UnityProgress.js') }}"></script>  
         <script src="{{ asset('Build/UnityLoader.js') }}"></script>
         <script>
-            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build2.json", {onProgress: UnityProgress});
+            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/FinalBuild.json", {onProgress: UnityProgress});
         </script>
     </body>
 </html>

@@ -202,6 +202,10 @@
                                             </button>
                                         </div>
                                     </div>
+                                    @if (Auth::user()->is_admin != 1)
+                                        <p>let op! als je iets aanpast, zal deze weer worden gecontroleerd voor deze online staat.</p>
+                                        <input type='hidden' name='unallow' value="true">
+                                    @endif
                                     
                                     @if (Auth::user()->is_admin == 1 && $allowed == 'false')
                                         <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
@@ -256,6 +260,10 @@
                                             </button>
                                         </div>
                                     </div>
+                                    @if (Auth::user()->is_admin != 1)
+                                        <p>let op! als je iets aanpast, zal deze weer worden gecontroleerd voor deze online staat.</p>
+                                        <input type='hidden' name='unallow' value="true">
+                                    @endif
 
                                     @if (Auth::user()->is_admin == 1 && $allowed == 'false')
                                         <form action="{{ route('admin') }}" method="POST" class="form-horizontal">

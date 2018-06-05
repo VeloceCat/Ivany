@@ -99,9 +99,12 @@
 
                     <div class="form-group-full">
                         <div>
-                            <input type="checkbox" class="field" name="terms" required>
-                            <span class="checkmark"></span>
-                            <label for="terms"><span>Ik ga akkoord met de <a href="https://aprofiel.antwerpen.be/nl/terms" target="_blank"><span>algemene voorwaarden</span></a><b> *</b></span></label>
+                            
+                            <label for="terms">
+                                <input type="checkbox" class="field" name="terms" required>
+                                <span class="checkmark"></span>
+                                <span class="termsText">Ik ga akkoord met de <a href="https://aprofiel.antwerpen.be/nl/terms" target="_blank"><span>algemene voorwaarden</span></a><b>*</b></span>
+                            </label>
                         </div>
                     </div>
 

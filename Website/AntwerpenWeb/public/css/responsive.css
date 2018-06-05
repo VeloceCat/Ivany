@@ -51,6 +51,10 @@
         justify-content: flex-start!important;
     }
 
+    footer {
+        height: 60px;
+    }
+
     .container {
         margin-left: 0;
     }
@@ -122,8 +126,8 @@
     }
 
     #achtergrond {
-        background-position: bottom center;
-        background-size: cover;
+        background-image: none;
+        background-color: #121212;
     }
 
     #scroll {
@@ -272,6 +276,15 @@
     .register-fields .form-group {
         width: 100%;
         padding-right: 5%;
+    }
+
+    .form-group-full .field {
+        padding: 0;
+    }
+
+    .webgl-content {
+        max-width: 300px;
+
     }
 
 }

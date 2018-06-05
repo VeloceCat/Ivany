@@ -7,7 +7,7 @@
         <div class="footer">
             <div class="webgl-logo"></div>
             <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-            <div class="title">Antwerp game</div>
+            <div class="title">Een dag in de schoenen van...</div>
         </div>
     </div>
 

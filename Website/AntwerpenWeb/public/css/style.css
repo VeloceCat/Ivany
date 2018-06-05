@@ -1354,6 +1354,10 @@ postContentFullWidth {
     font-size: 1em;
 }
 
+.form-group-full > div {
+    display: inline;
+}
+
 .form-group-full input[type="checkbox"] {
     position: absolute;
     opacity: 0;
@@ -1399,6 +1403,6 @@ postContentFullWidth {
     transform: rotate(45deg);
 }
 
-.form-group-full label {
+.form-group-full label .termsText {
     padding-left: 10px;
 }

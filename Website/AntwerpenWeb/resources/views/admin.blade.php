@@ -162,10 +162,12 @@
         $lastName = $_POST['lastName'];
         $email = $_POST['email'];
         $userName = '"'.$_POST['username'].'"';
-        $password = '"'.Hash::make($_POST['password']).'"';
+        /*$password = '';
+        if ($_POST['password'] != ''){
+            $password = 'password="'.Hash::make($_POST['password']).'"';
+        }*/
         try {
-            DB::update("UPDATE `users` SET name='$name', lastName='$lastName', email='$email', userName=$userName, password=$password  WHERE id='$id'");
-            DB::commit();
+            DB::update("UPDATE `users` SET name='$name', lastName='$lastName', email='$email', userName=$userName/*, $password*/  WHERE id='$id'");
         } catch (\Exception $e) {
             DB::rollback();
         }
@@ -623,6 +625,7 @@
                                         <input type='hidden' name='settings_changed' value='1'>
                                         <input type='hidden' name='nummer' value='9'>
                                         <input type='hidden' name='id' value='{{$user}}'>
+                                        {{ csrf_field() }}
 
                                         <div class="form-group">
                                             <label for="name" class="col-form-label text-md-right">Voornaam <b> *</b></label>
@@ -659,23 +662,26 @@
                                             <p class="uitlegSchuilnaam"><span>Uw gebruikersnaam moet tussen 5 en 30 karakters bevatten en kan bestaan uit letters, cijfers en volgende speciale tekens + . _ - @ (spaties zijn niet toegestaan).</span></p>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="password" class="col-form-label text-md-right">Wachtwoord <b> *</b></label>
-                                            <div>
-                                                <input id="password" type="password" class="form-control" name="password" required>
-                                            </div>
-                                            <p class="uitlegWachtwoord"><span>Het wachtwoord moet minstens 8 tekens lang zijn, 1 hoofdletter en 1 cijfer of symbool bevatten.</span></p>
-                                        </div>
-
                                         <div class="form-group-full">
-                                            <div>
                                             <div class="loginButton">
                                                 <button type="submit" class="btn btn-primary">
                                                     <span class="fa fa-user"></span>
                                                     Wijzigen
                                                 </button>
+                                            </div>
                                         </div>
                                     </form>
+                                    <form method="POST" action="{{ route('passReset') }}">
+                                            <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                            <input type='hidden' name='id' value='{{$user}}'>
+                                            <div class="form-group-full">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary">
+                                                        Wachtwoord wijzigen
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                 </div>
                             </div>
                         </div><?php

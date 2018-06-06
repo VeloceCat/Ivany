@@ -61,4 +61,9 @@ class HomeController extends Controller
         return view('adminAdd');
     }
 
+    public function passReset()
+    {
+        return view('auth.password');
+    }
+
 }

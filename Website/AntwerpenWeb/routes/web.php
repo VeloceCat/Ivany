@@ -29,9 +29,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/admin', 'HomeController@admin')->name('adminPost');
 
-    Route::post('/adminEdit', 'HomeController@adminEdit')->name('adminEdit');
+    Route::post('/admin/edit', 'HomeController@adminEdit')->name('adminEdit');
 
-    Route::post('/adminAdd', 'HomeController@adminAdd')->name('adminAdd');
+    Route::post('/admin/add', 'HomeController@adminAdd')->name('adminAdd');
+    
+    Route::post('/admin/password', 'HomeController@passReset')->name('passReset');
 
     
     Route::get('/forum/create', 'PostsController@create')->name('create_post_path');

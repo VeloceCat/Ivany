@@ -156,7 +156,7 @@
     }
 
     if (isset($_POST['settings_changed']) && $_POST['settings_changed'] == 1) {
-        session()->flash('message', 'Je gegevens zijn opgeslagen.');
+        session()->now('message', 'Je gegevens zijn opgeslagen.');
         $id = $_POST['id'];
         $name = $_POST['name'];
         $lastName = $_POST['lastName'];
@@ -671,14 +671,12 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <form method="POST" action="{{ route('passReset') }}">
+                                    <form id="passReset" method="POST" action="{{ route('passReset') }}">
                                             <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                                             <input type='hidden' name='id' value='{{$user}}'>
                                             <div class="form-group-full">
                                                 <div>
-                                                    <button type="submit" class="btn btn-primary">
-                                                        Wachtwoord wijzigen
-                                                    </button>
+                                                    <a href="#" onclick="document.getElementById('passReset').submit();">Wachtwoord wijzigen</a>
                                                 </div>
                                             </div>
                                         </form>

@@ -13,10 +13,10 @@
 
         if($passwordConfirm == $password) {
             if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
-                session()->flash('danger', 'Je wachtwoord voldoed niet aan het minimum. Het wachtwoord moet minstens 8 tekens lang zijn, 1 hoofdletter en 1 cijfer bevatten. Symbolen ook toegelaten.');
+                session()->now('danger', 'Je wachtwoord voldoed niet aan het minimum. Het wachtwoord moet minstens 8 tekens lang zijn, 1 hoofdletter en 1 cijfer bevatten. Symbolen ook toegelaten.');
             }
             else {
-                session()->flash('message', 'Je wachtwoord is gewijzigd.');
+                session()->now('message', 'Je wachtwoord is gewijzigd.');
                 $password = 'password="'.Hash::make($_POST['password']).'"';
 
                 try {
@@ -27,12 +27,21 @@
             }
         }
         else {
-            session()->flash('danger', 'Gelieve hetzelfde wachtwoord 2 keer in te geven.');
+            session()->now('danger', 'Gelieve hetzelfde wachtwoord 2 keer in te geven.');
         }
     }
 
 
 ?>
+    <div class="edit-page-container">
+        <div class="breadcrumb">
+            <form method='POST' action="{{ route('admin') }}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type='hidden' name='nummer' value='9'>
+                <button type="submit">← Terug naar instellingen</button>
+            </form>
+        </div>
+    </div>
     <div class="registerTable">
         <div class="registerTable-left">
             <div class="register-info">

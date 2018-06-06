@@ -56,7 +56,7 @@
                     <input type="hidden" name='id' value='{{$user}}'>
 
                     <div class="form-group">
-                        <label for="password" class="col-form-label text-md-right">Wachtwoord <b> *</b></label>
+                        <label for="password" class="col-form-label text-md-right">Nieuw wachtwoord <b> *</b></label>
                         <div>
                             <input id="password" type="password" class="form-control" name="password" required>
                         </div>

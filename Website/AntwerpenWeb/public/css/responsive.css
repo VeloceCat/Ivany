@@ -1,0 +1,325 @@
+/* -------------- VANAF HAMBURGERMENU OP SCHERM KOMT -------------- */
+@media (orientation: portrait) {
+    .navbar {
+        background-color: #121212;
+    }
+
+    .buttonFullWidth, #home section {
+        width: 100%;
+    }
+
+    #buttons .buttonFullWidth:last-child {
+        margin-left: 0px;
+    }
+    
+    #buttons .buttonFullWidth:first-child {
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
+
+    #homeText h1 {
+        margin-top: 30px;
+    }
+
+    .hintForMobileGame {
+        display: inline;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar button {
+        margin: 10px;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    #logo img {
+        width: 60px;
+        height: 60px;
+        float: right;
+        margin-top: -47px;
+    }
+    
+    #navigatie li {
+        margin: 2px 0 2px 10px;
+    }
+
+    #navigatie li:last-child {
+        margin-bottom: 5px;
+    }
+
+    #navigatie {
+        display: block;
+        justify-content: flex-start!important;
+    }
+
+    footer {
+        height: 60px;
+    }
+
+    .container {
+        margin-left: 0;
+    }
+
+    #home section {
+        width: 100%;
+    }
+
+    #homeText p {
+        padding: 0;
+    }
+
+    #buttons {
+        margin-top: 20px;
+        -webkit-flex-flow: column wrap;
+    }
+
+    #homeText {
+        width: 100%;
+        padding: 0 10% 0 10%;
+        margin-top: 15%;
+    }
+
+    #home {
+        font-size: 70%;
+    }
+
+    .infoTitelBlok h1 {
+        padding-top: 7%;
+        font-size: 2em;
+    }
+
+    #infoTitle2 {
+        font-size: 1.3em;
+    }
+
+    .artikel {
+        flex: 100%;
+        max-width: 100%;
+        padding: 20px 40px;
+    }
+
+    .artikel:first-child {
+        margin-top: 20px;
+    }
+
+    .tussenBlok {
+        padding: 20px 15px;
+    }
+
+    .tussenBlok h2 {
+        font-size: 1.2em;
+    }
+
+    .modal {
+        padding-top: 15%;
+    }
+
+    .modal-content {
+        min-height: 80%;
+    }
+
+    .modal-header h2 {
+        font-size: 1.1em;
+    }
+
+    .modal-header, .modal-body {
+        padding: 5px 10px;
+    }
+
+    #achtergrond {
+        background-image: none;
+        background-color: #121212;
+    }
+
+    #scroll {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #scroll i {
+        font-size: 28px;
+    }
+
+    .bg-danger {
+        width: 80%;
+    }
+
+    .bg-danger h3 {
+        font-size: .9em;
+    }
+
+    .bg-danger .btn-danger {
+        font-size: .8em;
+    }
+
+    .keuzeknoppen {
+        max-width: 100%;
+        padding: 20px 5%;
+    }
+
+    .keuzeknop {
+        margin: 5px 10px;
+        width: 100px;
+        font-size: .8em;
+    }
+
+    .keuzeknoppen .counter {
+        margin: 5px 10px 5px 0;
+        font-size: .8em;
+        padding: .20rem .75rem;
+    }
+
+    #myTable {
+        margin: 20px 5%;
+        width: 100%;
+    }
+
+    #myTable th:nth-child(3), #myTable th:nth-child(4), #myTable th:nth-child(5), #myTable th:nth-child(6) {
+        display: none;
+    }
+
+    #myTable td:nth-child(3), #myTable td:nth-child(4), #myTable td:nth-child(5), #myTable td:nth-child(6) {
+        display: none;
+    }
+
+    #myTable th:nth-child(2), #myTable td:nth-child(2) {
+        border-right: 3px solid #000;
+    }
+
+    .col-sm-6 label:first-child {
+        margin-left: 0;
+    }
+
+    .panel-heading h1 {
+        padding-top: 7%;
+        font-size: 2em;
+    }
+
+    .forumTitleUnder {
+        font-size: 1.3em;
+    }
+
+    .post {
+        flex: 100%;
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .post:nth-child(odd) {
+        margin-right: 0;
+    }
+
+    .postHeader h2 {
+        width: 75%;
+    }
+
+    .postContent, .post .managePost, .fullPost .managePost, .manageComment {
+        width: 100%;
+        margin: 0;
+    }
+
+    .fullPost {
+        padding: 0 5%;
+    }
+
+    .fullPost .description {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .comments {
+        padding: 0;
+    }
+
+    .comments ul {
+        padding: 0;
+    }
+
+    .comments ul li {
+        padding-left: 5%;
+    }
+
+    .commentHeader h3 {
+        width: 75%;
+    }
+
+    .commentBody .commentText {
+        width: 100%;
+    }
+
+    .contactBlok h1 {
+        margin-top: 7%;
+        font-size: 2em;
+    }
+
+    .contactTitle2 {
+        font-size: 1.3em;
+    }
+
+    .contactLink {
+        border-bottom: none;
+        border-top: solid 3px #F18A00;
+    }
+
+    .loginTable-left, .registerTable-left {
+        width: 100%;
+    }
+
+    .login-info, .register-info {
+        margin: 5% 20px;
+    }
+
+    .loginTable-right, .registerTable-right {
+        width: 100%;
+    }
+
+    .register-fields .form-group {
+        width: 100%;
+        padding-right: 5%;
+    }
+
+    .form-group-full .field {
+        padding: 0;
+    }
+
+    #gameContainer {
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .webgl-content .footer {
+        margin-top: 0;
+        line-height: 15px;
+        font-family: inherit;
+        font-size: 8px;
+        height: 15px;
+    }
+
+    .webgl-content .footer .fullscreen {
+        width: 15px;
+        background-size: 15px;
+    }
+
+}
+
+
+
+/* -------------- VOOR KLEINE SCHERMEN IN LANDSCAPE -------------- */
+@media (orientation: landscape) {
+    .navbar {
+        background-color: #121212;
+    }
+
+    #buttons {
+        -webkit-flex-flow: row wrap;
+    }
+
+    
+
+}

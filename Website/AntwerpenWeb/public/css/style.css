@@ -1,0 +1,1405 @@
+/* -------------- FONTS -------------- */
+@font-face{
+    font-family: 'Antwerpen';
+    src:  url('/fonts/Antwerpen-Regular.woff') format('woff'),
+    url('/fonts/Antwerpen-Regular.ttf')  format('truetype');
+}
+
+@font-face{
+    font-family: 'SunAntwerpen';
+    src:  url('/fonts/SunAntwerpen_300.woff') format('woff'),
+    url('/fonts/SunAntwerpen_300.ttf')  format('truetype');
+}
+
+* {
+    font-family: 'SunAntwerpen', Arial;
+}   
+ 
+ body, html {
+    margin: 0px;
+    height: 100%;
+ }
+
+#app {
+    margin: 0px;
+    min-height: calc(100% - 45px);
+    background-color: #F3F3F5;
+}
+
+.webgl-content {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1, h2, h3, a, .anchorBtn {
+    font-family: 'Antwerpen', Arial;
+}
+
+input, textarea {
+    border-radius: 0!important;
+}
+
+footer {
+    text-align: center;
+    color: #BABABA;
+    padding: 10px 0;
+    background-color: #000;
+    font-size: 13px;
+    font-weight: normal;
+    width: 100%;
+    height: 45px;
+}
+
+footer a {
+    text-align: center;
+    font-size: 13px;
+    color: #BABABA;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.col-md-8 .card {
+    margin-bottom: 15px;
+}
+
+
+
+/* -------------- NAVIGATIE -------------- */
+#logo img {
+    width: 96px;
+    height: 96px;
+}
+
+#logo a {
+    text-decoration: none;
+}
+
+.navbar {
+    z-index: 2;
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+    background-color: #121212;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+
+.container {
+    min-width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+#navigatie {
+    min-width: 50%!important;
+    right: 0!important;
+    margin: 0!important;
+    display: flex!important;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: flex-end!important;
+}
+
+#navigatie li {
+    margin: 0 2%;
+}
+
+#navigatie li:last-child {
+    margin-right: 40px;
+}
+
+.dropdown-menu {
+    background-color: #CF0039!important;
+    color: #fff!important;
+    border: solid 2px #CF0039;
+    border-radius: 0!important;
+    min-width: 3rem!important;
+    padding: 2px 2px;
+}
+
+.dropdown-group {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    padding: 0!important;
+    text-transform: capitalize!important;
+}
+
+.nav-link {
+    color: #fff!important;
+    font-size: 130%!important;
+    display: inline;
+    padding: 0!important;
+}
+
+.dropdown-item {
+    color: #fff!important;
+    font-size: 90%!important;
+    display: inline;
+    padding: 0!important;
+}
+
+.navbar a:hover, .nav-link a:hover, .dropdown-group:hover {
+    text-decoration: none!important;
+    background-color: transparent!important;
+    border-bottom: 3px solid #CF0039!important;
+}
+
+.dropdown-menu:hover {
+    border: solid 2px #fff;
+}
+
+#navbarDropdown i {
+    line-height: 1.3em;
+    vertical-align: top;
+    background-color: #CF0039;
+    color: #fff;
+    border-radius: 100px;
+    border-color: #CF0039;
+    font-size: .6em;
+    padding: .13rem .42rem;
+    margin: 0;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+
+.active a {
+    border-bottom: 3px solid #CF0039;
+}
+
+#scroll {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    margin: 0 auto;
+    display: block;
+    display: none;
+    text-decoration: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#scroll i {
+    color: #F18A00;
+    margin: 0;
+    position: relative;
+    font-size: 40px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* KLEUR HAMBURGER ICOON 
+    aan te passen achter 'stroke='    */
+.navbar-light .navbar-toggler-icon{
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+}
+
+/* KLEUR HAMBURGER ICOON BORDER */
+.navbar-light .navbar-toggler{
+    border-color:rgba(255,255,255,.5)
+}
+
+/* -------------- HOMEPAGE -------------- */
+#home {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    background-image: url('/img/HomeFotoDarker.png');
+    background-position: top right;
+    text-align: center;
+    background-size: cover;
+}
+
+#home section {
+    height: 100%;
+    width: 80%;
+}
+
+#buttons, #homeText {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+#homeText {
+    -webkit-flex-flow: column wrap;
+    color: #fff;
+    padding-top: 8%;
+    margin-top: 15%;
+}
+
+#homeText h1 {
+    font-size: 3em;
+    color: #F18A00;
+}
+
+#homeText p {
+    font-size: 1.5em;
+    padding: 0 20%;
+}
+
+#buttons{
+    -webkit-flex-flow: row wrap;
+    margin-top: 20px;
+}
+
+#buttons button {
+    padding: 5px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 180px;
+    font-weight: bolder;
+}
+
+#btnInfo {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #fff;
+}
+
+#btnInfo:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+}
+
+#btnGame { 
+    background-color: #CF0039;
+    color: #fff;
+    border: 1px solid #CF0039;
+}
+
+#btnGame:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+}
+
+#buttons .buttonFullWidth:last-child {
+    margin-left: 5px;
+}
+
+#buttons .buttonFullWidth:first-child {
+    margin-right: 5px;
+}
+
+
+
+/* -------------- INFOPAGE -------------- */
+#achtergrond {
+    background-image: url('/img/InfoFoto.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#achtergrond section {
+    width: 100%;
+}
+
+.infoTitelBlok {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    border-bottom: solid 3px #F18A00;
+}
+
+.infoTitelBlok h1 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3% 10px 0 10px;
+    color: #F18A00;
+    font-size: 3em;
+    text-align: center;
+}
+
+#infoTitle2 {
+    width: 100%;
+    margin: 0 auto 10% auto;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+
+.infoBlok {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 5% 0;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.artikel {
+    padding: 2% 7% 0 7%;
+    flex: 30%;
+    max-width: 33%;
+    align-content: center;
+}
+
+.artikel a {
+    color: #F18A00;
+}
+
+.anchorBtn {
+    color: #F18A00;
+    background-color: transparent;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    display: flex; 
+    justify-content: center;
+}
+
+.anchorBtn:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0064B4;
+}
+
+.artikel p {
+    text-align: center;
+    color: #fff;
+}
+
+.artikel h2 {
+    text-align: center;
+    color: #fff;
+}
+
+.tussenBlok {
+    padding: 5% 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: solid 3px #F18A00;
+    border-bottom: solid 3px #F18A00;
+    color: #fff;
+}
+
+/* The Modal */
+.modal {
+    /*display: none;*/ /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 10%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #121212;
+    margin: auto;
+    padding: 0;
+    width: 70%;
+    height: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border: solid 3px #F18A00;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: none!important;
+}
+
+.close:hover,
+.close:focus {
+    color: #0064B4;
+    text-decoration: none;
+    text-shadow: none!important;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 10px 20px;
+    background-color: #121212;
+    color: #F18A00;
+    text-align: center;
+    border-bottom: solid 3px #F18A00;
+}
+
+.modal-body {
+    padding: 10px 20px;
+    font-size: 110%;
+    overflow: auto;
+    background-color: #fff;
+    color: #000;
+    border: none;
+}
+
+/* -------------- ADMINPAGE -------------- */
+.py-4 {
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.bg-danger {
+    width: 50%;
+    margin: 10px auto;
+    background-color: transparent!important;
+    border: solid 3px #000;
+    border-radius: 15px;
+}
+
+.bg-danger h3 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.3em;
+    background-color: #CF0039;
+    padding: 10px;
+    margin: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.bg-danger .btn-danger {
+    float: left;
+    margin: 10px;
+}
+
+.keuzeknoppen {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    border-bottom: 3px solid #CF0039;
+}
+
+.keuzeknoppen:first-child .keuzeknop {
+    margin-left: 0!important;
+}
+
+.keuzeknop {
+    background-color: #CF0039;
+    color: #fff;
+    border: solid 2px #CF0039;
+    margin: 10px 20px;
+    width: 200px;
+}
+
+.plusknop {
+    width: 39px;
+}
+
+.keuzeknop:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 2px solid #0064B4;
+    cursor: pointer;
+}
+
+#activeKeuzeknop {
+    background-color: #0064B4;
+    color: #fff;
+    border: 2px solid #0064B4;
+}
+
+.keuzeknoppen .counter {
+    display: inline-block;
+    vertical-align: center;
+    background-color: #6CC24A;
+    color: #fff;
+    border-radius: 100px;
+    border-color: #6CC24A;
+    padding: 0 .555em;
+    margin: 0 0 0 10px;
+}
+
+#myTable {
+    margin: 20px 50px 10px 50px;
+    max-width: 90%;
+}
+
+#myTable td, #myTable th {
+    padding: 0 10px;
+}
+
+#myTable tbody {
+    border: 3px solid #000;
+    border-radius: 5px;
+}
+
+#myTable th, #myTable td {
+    border: 1px solid #000;
+ }
+
+#myTable th {
+    height: 50px;
+    font-weight: bold;
+    background-color: #F4C3CC;
+}
+
+#myTable tr:nth-child(even) {
+    background-color: #F4C3CC;
+}
+
+#myTable .editbuttons {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+    align-content: center;
+    border: none;
+    border-top: 1px solid #000;
+}
+
+#myTable tr:nth-child(3) .editbuttons {
+    border: none;
+}
+
+#myTable .editbuttons button {
+    margin: 5px;
+}
+
+#myTable .editbuttons .buttonEdit button {
+    background-color: #F18A00;
+    color: #fff;
+    border: 1px solid #F18A00;
+}
+
+#myTable .editbuttons .buttonDelete button {
+    background-color: #CF0039;
+    color: #fff;
+    border: 1px solid #CF0039;
+}
+
+#myTable .editbuttons .buttonEdit button:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+    cursor: pointer;
+}
+
+#myTable .editbuttons .buttonDelete button:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+    cursor: pointer;
+}
+
+#myTable .editbuttons .buttonCheck button {
+    background-color: #6CC24A;
+    color: #fff;
+    border: 1px solid #6CC24A;
+}
+
+#myTable .editbuttons .buttonUncheck button {
+    background-color: #6CC24A;
+    color: #fff;
+    border: 1px solid #6CC24A;
+}
+
+#myTable .editbuttons .buttonCheck button:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+    cursor: pointer;
+}
+
+#myTable .editbuttons .buttonUncheck button:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: 1px solid #0064B4;
+    cursor: pointer;
+}
+
+/* -------------- EDIT PAGE -------------- */
+.edit-page-container, .add-page-container {
+    margin: 20px 50px;
+    max-width: 90%;
+}
+
+.breadcrumb {
+    padding: 0;
+    margin-right: 10px;
+}
+
+.breadcrumb button {
+    width: 180px;
+    height: 37px;
+    padding: 0 0 0 15px;
+    background-color: #0064B4;
+    color: #fff;
+    border-radius: 0;
+    display: flex;
+    flex-direction: row;
+    border: none;
+}
+
+.breadcrumb button:hover {
+    background-color: rgb(0, 114, 207);
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.breadcrumb a:hover {
+    background-color: rgb(0, 114, 207);
+    text-decoration: none;
+    border-radius: 0;
+}
+
+.breadcrumb, .delete-button {
+    float: left;
+}
+
+.delete-button {
+    height: 37px;
+}
+
+.delete-button .btn-danger {
+    margin: 0!important;
+}
+
+.btn-danger:hover {
+    cursor: pointer;
+}
+
+.panel-content {
+    padding-top: 40px;
+}
+
+.col-md-10 {
+    padding: 0!important;
+    margin: 0!important;
+}
+
+.col-sm-6 {
+    padding: 0!important;
+    max-width: 100%!important;
+}
+
+.col-sm-6 label {
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 20px;
+    left: 0;
+}
+
+.col-sm-6 label:first-child {
+    margin-left: -190px;
+}
+
+.col-sm-6 input, .col-sm-6 textarea {
+    width: 100%;
+}
+
+.col-sm-6 textarea {
+    height: 300px;
+}
+
+.col-sm-6 .btn-default {
+    margin: 10px 0;
+    background-color: #0064B4;
+    border-radius: .25rem;
+    color: #fff;
+}
+
+.col-sm-6 .btn-default:hover {
+    background-color: rgb(0, 114, 207);
+}
+
+/* -------------- FORUM PAGE -------------- */
+.alert {
+    margin-bottom: 0!important;
+}
+
+.alert-success {
+    background-color: #6CC24A;
+    border-color: #6CC24A;
+    border-radius: 0;
+    color: #000;
+}
+
+.alert-danger {
+    background-color: #CF0039;
+    border-color: #CF0039;
+    border-radius: 0;
+    color: #fff;
+}
+
+/* FORUM HOME */
+.panel-default {
+    padding-bottom: 20px;
+}
+
+.panelBackground {
+    min-height: 100%;
+    background-color: #121212;
+    padding-bottom: 5%;
+}
+
+.panel-heading h1 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3% 10px 0 10px;
+    color: #F18A00;
+    font-size: 3em;
+    text-align: center;
+}
+
+.forumTitleUnder {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+
+.addPostButton, .addCommentButton {
+    width: 100%;
+    margin: 20px auto;
+    padding-bottom: 10%;
+    text-align: center;
+    border-bottom: solid 2px #F18A00;
+}
+
+.addPostButton a, .addCommentButton a {
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: inherit;
+    border: solid 1px #fff;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    background-color: #fff;
+}
+
+.addPostButton a:hover, .addCommentButton a:hover {
+    background-color: #0064B4;
+    color: #fff;
+    border: solid 1px #0064B4;
+}
+
+.article-overview, .fullPost, .comments {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+.post {
+    width: 45%;
+    margin: 30px 0;
+    padding: 20px;
+    border: solid 2px #fff;
+}
+
+.post:nth-child(odd) {
+    margin-right: 10%;
+}
+
+.postHeader, .postBody {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.postAvatar {
+    width: 50px;
+    height: 50px;
+    max-width: 35%;
+    margin-right: 5%;
+}
+
+.postHeader h2 {
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    vertical-align: center;
+    width: 60%;
+    text-transform: capitalize!important;
+    color: #F18A00;
+}
+
+.postBody {
+    border-bottom: solid 2px #F18A00;
+}
+
+.postContent {
+    width: 70%;
+    margin-right: 5%;
+}
+
+postContentFullWidth {
+    width: 100%;
+}
+
+.post .managePost {
+    width: 25%;
+}
+
+.postTitle a {
+    padding-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.postTitle a:hover {
+    color: #0064B4;
+}
+
+.postText {
+    font-size: 1.2em;
+}
+
+.post p {
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.managePost, .manageComment {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.managePost .btn-info, .manageComment .btn-info {
+    margin: 10px 0;
+    background-color: #F18A00!important;
+    border: solid 1px #F18A00;
+    border-radius: 0;
+}
+
+.managePost .btn-info:hover, .manageComment .btn-info:hover {
+    background-color: #0064B4!important;
+    color: #fff;
+    border: solid 1px #0064B4;
+}
+
+.managePost .btn-danger, .manageComment .btn-danger {
+    border-radius: 0;
+    margin: 10px;
+}
+
+.managePost .btn-danger:hover, .manageComment .btn-danger:hover {
+    background-color: #0064B4!important;
+    color: #fff;
+    border: solid 1px #0064B4;
+}
+
+.postFooter p {
+    color: #8d9092;
+}
+
+.postFooter a {
+    color: #8d9092;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.postFooter a:hover {
+    color: #0064B4;
+}
+
+/* FORUM SHOW */
+.backButton {
+    padding: 0 10px;
+}
+
+.backButton a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.backButton a:hover {
+    color: #0064B4;
+}
+
+.forumTitleUnder b {
+    text-transform: capitalize!important;
+}
+
+.fullPost {
+    margin: 20px 0;
+}
+
+.description {
+    width: 88%;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 1.7em;
+    margin-right: 2%;
+}
+
+.descriptionFullWidth {
+    width: 100%;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 1.7em;
+    margin-right: 2%;
+}
+
+.fullPost .managePost {
+    width: 10%;
+}
+
+.comments {
+    margin-left: 5%;
+}
+
+.comments ul {
+    width: 100%;
+    color: #fff;
+    list-style-type: none;
+}
+
+.comments ul li {
+    margin-bottom: 10px;
+}
+
+.commentHeader {
+    width: 98%;
+    padding: 10px 0;
+    border-top: solid 1px #F18A00;
+}
+
+.commentAvatar {
+    width: 40px;
+    height: 40px;
+    max-width: 35%;
+    margin-right: 2%;
+}
+
+.commentHeader h3 {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: center;
+    width: 60%;
+    text-transform: capitalize!important;
+    color: #F18A00;
+}
+
+.commentBody, .commentHeader {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.commentText {
+    width: 87%;
+    margin-right: 2%;
+    font-size: 1.3em;
+}
+
+.commentTextFullWidth {
+    width: 100%;
+    margin-right: 2%;
+    font-size: 1.3em;
+}
+
+.manageComment {
+    width: 11%;
+    align-content: right;
+}
+
+.manageComment small {
+    margin: 0!important;
+    display: block;
+    right: 0;
+}
+
+.managecomment button {
+    right: 0;
+}
+
+.commentFooter {
+    color: #8d9092;
+
+}
+
+.commentsPlaceholder {
+    padding: 10% 0;
+}
+
+/* FORUM EDIT */
+#post-form, #comment-form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.confirmButtons {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.confirmButtons .form-group {
+    margin-right: 10px;
+}
+
+.btn-success, .btn-primary, .btn-default, .btn-danger {
+    border-radius: 0!important;
+}
+
+.btn-success {
+    background-color: #6CC24A;
+    border-color: #6CC24A;
+    font-weight: 900;
+}
+
+.btn-success:hover {
+    background-color: rgb(84, 150, 58);
+    border-color: rgb(84, 150, 58);
+}
+
+.btn-primary {
+    background-color: #0064B4;
+    border-color: #0064B4;
+}
+
+.btn-primary:hover {
+    background-color: rgb(0, 114, 207);
+    border-color: rgb(0, 114, 207);
+}
+
+.form-group .btn-danger {
+    margin-left: 0;
+    font-weight: 900;
+}
+
+
+/* -------------- CONTACT PAGE -------------- */
+.contactBlok {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: #121212;
+    padding-bottom: 5%;
+}
+
+#contactTitle2 {
+    width: 100%;
+    margin: 0 auto 10% auto;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+
+.infoBlok h1, .contactBlok h1 {
+    width: 100%;
+    margin: 3% auto 0 auto;
+    padding: 30px 10px 0 10px;
+    color: #F18A00;
+    text-align: center;
+    font-size: 3em;
+}
+
+.contactLink {
+    margin: 0 2% 0 2%;
+    padding: 3% 2% 2% 2%;
+    max-width: 29%;
+    border-bottom: solid 3px #F18A00;
+    color: #fff;
+}
+
+.contactLink:nth-child(3), .contactLink:nth-child(4), .contactLink:nth-child(5) {
+    border-top: solid 3px #F18A00;
+}
+
+.contactLink a:hover {
+    color: #0064B4;
+    text-decoration: none;
+}
+
+/* -------------- LOGIN PAGE -------------- */
+.loginTable, .registerTable {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+
+    height: 100%;
+    width: 100%;
+}
+
+.loginTable-left, .registerTable-left {
+    width: 40%;
+    background-color: #fff;
+    min-height: 100%;
+}
+
+.login-info, .register-info {
+    margin: 15% 20px 20px 30%;
+}
+
+.loginTable-right, .registerTable-right {
+    width: 60%;
+    background-color: #F3F3F5;
+    min-height: 100%;
+}
+
+.login-fields, .register-fields {
+    margin: 11% 20px 20px 20px;
+}
+
+.loginTable-right input {
+    width: 90%;
+    border-radius: 0;
+    padding: 15px 20px;
+}
+
+.forgotPassword {
+    font-size: .9em;
+    text-decoration: underline;
+    color: #0064B4;
+}
+
+.forgotPassword:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0064B4;
+}
+
+.loginButton button {
+    width: 150px;
+    height: 48px;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+.loginButton span {
+    margin-right: 5px;
+}
+
+.registerLink {
+    margin-top: 20px;
+    color: #8d9092;
+}
+
+.registerLink a {
+    text-decoration: underline;
+    color: #0064B4;
+}
+
+.registerLink a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0064B4;
+}
+
+.loginFooter, .registerFooter {
+    width: 100%;
+    margin-top: 3.75rem;
+    padding-top: 5px;
+    border-top: solid 1px #BABABA; 
+    font-size: 1.2em;
+}
+
+.loginFooter .ng-scope, .registerFooter .ng-scope {
+    font-weight: bold;
+}
+
+.loginFooter p, .registerFooter p {
+    margin: 10px 0;
+}
+
+.loginFooter a, .registerFooter a {
+    margin-right: 20px;
+}
+
+/* -------------- REGISTER PAGE -------------- */
+.register-fields form {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.register-fields .form-group {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.register-fields .form-group-full {
+    width: 100%;
+    padding-right: 5%;
+}
+
+.registerTable-right input {
+    width: 90%;
+    border-radius: 0;
+    padding: 15px 20px;
+}
+
+.registerTable label b {
+    color: #CF0039;
+    font-weight: normal;
+}
+
+.uitlegSchuilnaam, .uitlegWachtwoord {
+    font-size: .9em;
+    color: #8d9092;
+    padding: 10px 5% 0 0;
+    margin-bottom: 0;
+}
+
+.form-group-full {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.form-group-full > div {
+    display: inline;
+}
+
+.form-group-full input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: auto;
+    cursor: pointer;
+    height: 22px;
+    width: 22px;
+}
+
+.form-group-full .checkmark {
+    border: solid 1px #BABABA;
+    border-radius: 0;
+    line-height: 1.4em;
+    color: #614d4d;
+    background-color: #fff;
+    padding: .12rem .65rem;
+}
+
+.form-group-full input:checked ~ .checkmark {
+    background-color: #0064B4;
+    border-color: #0064B4;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form-group-full input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.form-group-full label .termsText {
+    padding-left: 10px;
+}
+
+/* -------------- GAME PAGE -------------- */
+#gameContainer {
+    width: 960px;
+    height: 600px;
+}
+
+.hintForMobileGame {
+    display: none;
+}

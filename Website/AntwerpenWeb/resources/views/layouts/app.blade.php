@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <link rel="shortcut icon" href="{{ asset('TemplateData/favicon.ico') }}">
         <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
-        <link rel="stylesheet" href="{{ asset('TemplateData/gameStyle.css') }}">
+        <link rel="stylesheet" href="{{ asset('TemplateData/Style.css') }}">
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     </head>
     <body>
@@ -81,7 +81,7 @@
                     @include('layouts._errors')
                     @include('layouts._messages')
                     @include('layouts._dangers')
-                    
+
                     @yield('content')
                     <a href="javascript:void(0)" id="scroll" title="Naar de top van de pagina"><i class="fas fa-arrow-alt-circle-up"></i></a>
                 </div>
@@ -98,10 +98,10 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/scroll.js') }}"></script>
         <script src="{{ asset('js/modal.js') }}"></script>
-        <script src="{{ asset('TemplateData/UnityProgress.js') }}"></script>  
+        <script src="{{ asset('TemplateData/UnityProgress.js') }}"></script>
         <script src="{{ asset('Build/UnityLoader.js') }}"></script>
         <script>
-            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/FinalBuild.json", {onProgress: UnityProgress});
+            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
         </script>
     </body>
 </html>

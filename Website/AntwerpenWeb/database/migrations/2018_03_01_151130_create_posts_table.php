@@ -15,8 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('title');
-            $table->text('text');
+            $table->text('description');
+            $table->boolean('is_allowed')->default('0');
+
+            $table->integer('user_id');
 
             $table->timestamps();
             $table->softDeletes();

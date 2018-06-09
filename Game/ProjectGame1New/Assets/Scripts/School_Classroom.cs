@@ -10,7 +10,7 @@ public class School_Classroom : ChoiceScript {
         choiceMade = 0;
         chain = 0;
 
-        int rnd = Random.Range(1, 5);
+        int rnd = Random.Range(1, 4);
         Consequences(rnd);
     }
 
@@ -29,23 +29,22 @@ public class School_Classroom : ChoiceScript {
         switch (num)
         {
             case 1:
-                narrativeText = "Weeral een doodnormale, redelijk saaie schooldag.";
-                endOfEvent = true;
+                narrativeText = "Tijdens de pauze komt er iemand naar je toe en vraagt of jij een naakt foto hebt van je vorige liefje. En of hij die mag hebben.";
+                chain = 39;
+                numberOfOptions = 3;
+                option01Text = "\"Natuurlijk,\" zeg je \"ideaal als wraak.\"";
+                option02Text = "\"Waarom?\" wil je weten.";
+                option03Text = "\"Nee zo iets doe ik niet.\" En je wandelt weg.";
                 break;
 
             case 2:
-                narrativeText = "Vandaag was er een leerkracht jarig. Een feestje in de klas en een leuke les.";
-                endOfEvent = true;
-                break;
-
-            case 3:
                 narrativeText = "In de gang komt er iemand naar je toe en lijkt je te willen versieren. Als snel merk je dat het enkel is om met je te lachen. ";
                 chain = 9;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
-            case 4:
+            case 3:
                 narrativeText = "Je ziet plots dat er een papiertje in je rugzak zit. Je pakt het op en vouwt het open.";
                 chain = 19;
                 numberOfOptions = 1;
@@ -171,6 +170,72 @@ public class School_Classroom : ChoiceScript {
                 narrativeText = "De directeur beloofd te onderzoeken wie dit gedaan heeft en hen te straffen.";
                 greenBox = true;
                 ScoreCounter(3);
+                endOfEvent = true;
+                break;
+
+            /********************************************************************/
+            case 40:
+                narrativeText = "Je stuurt hem de foto door.";
+                ScoreCounter(1);
+                chain = 42;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
+            case 41:
+                narrativeText = "Hij vertelt dat ze hem gewoon wat willen plagen.";
+                chain = 43;
+                numberOfOptions = 2;
+                option01Text = "\"Dan is het goed,\" antwoord je.";
+                option02Text = "Je hebt er een slecht gevoel bij en geeft hem de foto niet.";
+                break;
+
+            case 42:
+                narrativeText = "\"Nee zo iets doe ik niet.\" En je wandelt weg.";
+                ScoreCounter(3);
+                chain = 45;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
+            case 43:
+                narrativeText = "Door de foto wordt je vorig liefje zo hard gepest dat hij van school veranderd. En dat is voor een groot deel jouw fout.";
+                endOfEvent = true;
+                break;
+
+            case 44:
+                narrativeText = "Je stuurt hem de foto door.";
+                ScoreCounter(1);
+                chain = 42;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
+            case 45:
+                narrativeText = "Hij dringt nog even aan en dan gaat hij weg.";
+                ScoreCounter(3);
+                chain = 45;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
+            case 46:
+                narrativeText = "Dat hij zo iets durft vragen, denk je. Misschien zou je moeten vertellen dat hij dat aan jou gevraagd heeft?";
+                chain = 46;
+                numberOfOptions = 2;
+                option01Text = "Je gaat naar een leerkracht om het te vertellen.";
+                option02Text = "\"Pffffft, het tegen iemand zeggen heeft toch geen zin.\"";
+                break;
+
+            case 47:
+                narrativeText = "Later gaan ze hem aan de tand voelen en zijn ouders inlichten. Wat hij vroeg kan gewoon niet.";
+                ScoreCounter(3);
+                endOfEvent = true;
+                break;
+
+            case 47:
+                narrativeText = "Hij heeft blijkbaar van iemand anders wel de foto gekregen. Je vorig liefje wordt daarmee zo hard gepest dat hij van school moet veranderen. Als jij had laten weten dat iemand om die foto vroeg was dit niet gebeurt.";
+                ScoreCounter(1);
                 endOfEvent = true;
                 break;
 

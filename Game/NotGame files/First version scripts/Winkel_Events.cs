@@ -28,7 +28,6 @@ public class HomeEvent : ChoiceScript {
         bool CameraIsPointedAtYou = true;
         switch (num)
         {
-            //Deze zin zou elke keer in het begin moeten komen, ik heb geprobeerd om het hier met een random te maken. Mss had gij daar al iets voor?
             case 1:
                 narrativeText = "Wanneer je langs de lingerie afdeling wandelt zie je daar een man die wat staat rond te kijken. Tot een van de winkel medewerksters van de paskamers wat ondergoed terughangt en de man er meteen naartoe wandelt. \"Ruikt hij nu aan net gepast ondergoed?\" denk je in jezelf.";
                 rnd = Random.Range(1, 2);

@@ -233,7 +233,7 @@ public class School_Classroom : ChoiceScript {
                 endOfEvent = true;
                 break;
 
-            case 47:
+            case 48:
                 narrativeText = "Hij heeft blijkbaar van iemand anders wel de foto gekregen. Je vorig liefje wordt daarmee zo hard gepest dat hij van school moet veranderen. Als jij had laten weten dat iemand om die foto vroeg was dit niet gebeurt.";
                 ScoreCounter(1);
                 endOfEvent = true;

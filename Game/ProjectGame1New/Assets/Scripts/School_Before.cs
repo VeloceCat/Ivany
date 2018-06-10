@@ -48,8 +48,7 @@ public class School_Before : ChoiceScript {
                     narrativeText = "Als ze zien dat je er bent zeggen ze allemaal hallo tegen je en ze praten rustig verder.";
                     chain = 29;
                     numberOfOptions = 2;
-                    option01Text = "Je hebt het gevoel dat je aan iemand je verhaal wilt vertellen.";
-                    option02Text = "Je ziet het niet zitten om je verhaal te vertellen. ";
+                    option01Text = "...";
                 }
                 break;
 
@@ -61,22 +60,10 @@ public class School_Before : ChoiceScript {
                 break;
 
             case 11:
-                rnd = Random.Range(1, 3);
-                if (rnd == 1)
-                {
-                    narrativeText = "\"Ik moet je iets zeggen dat ik niet zomaar aan iedereen wil vertellen, maar jou vertrouw ik wel.\"";
-                    chain = 11;
-                    numberOfOptions = 1;
-                    option01Text = "...";
-                }
-                else
-                {
-                    narrativeText = "\"Je ziet er niet zo blij uit de laatste tijd, is er iets?\"";
-                    chain = 18;
-                    numberOfOptions = 2;
-                    option01Text = "\"Ooh niets hoor\" zeg je, \"gewoon slecht geslapen.\"";
-                    option02Text = "Je vertelt je verhaal.";
-                }
+                narrativeText = "\"Ik moet je iets zeggen dat ik niet zomaar aan iedereen wil vertellen, maar jou vertrouw ik wel.\"";
+                chain = 11;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
 
             case 12:
@@ -98,7 +85,6 @@ public class School_Before : ChoiceScript {
 
             case 14:
                 narrativeText = "De leerkracht luistert aandachtig naar het verhaal van je vriend.";
-                greenBox = true;
                 ScoreCounter(3);
                 chain = 16;
                 numberOfOptions = 1;
@@ -108,14 +94,17 @@ public class School_Before : ChoiceScript {
             case 15:
                 narrativeText = "Je zegt dat ze die man waarschijnlijk nooit meer zal zien.";
                 ScoreCounter(2);
-                endOfEvent = true;
+                chain = 30;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
 
             case 16:
                 narrativeText = "Je vriend blijft nog staan als jij verder naar he vrienden wandeld";
-                redBox = true;
                 ScoreCounter(1);
-                endOfEvent = true;
+                chain = 30;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
 
             case 17:
@@ -131,25 +120,6 @@ public class School_Before : ChoiceScript {
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
-
-            case 19:
-                narrativeText = "Na aan rare blik gaan jullie weer bij de rest staan.";
-                endOfEvent = true;
-                break;
-
-            case 20:
-                narrativeText = "Je vriend stelt voor om naar een van de leerkrachten te gaan.";
-                chain = 20;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
-            case 21:
-                narrativeText = "Hij luistert aandachtig naar je verhaal.";
-                chain = 16;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
             //**************************************************************************
 
             case 30:
@@ -160,7 +130,7 @@ public class School_Before : ChoiceScript {
                 break;
 
             case 31:
-                narrativeText = "Praten met je vrienden helpt je om je zorgen even te vergeten.";
+                narrativeText = "Praten met vrienden kan iemand heel erg hard helpen. Dus neem iemand die je zo iets verteld altijd serieus.";
                 chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";

@@ -36,7 +36,7 @@ public class RandomEvent : ChoiceScript {
 
             case 1:
                 chain = 8;
-                narrativeText = "Op de tram merk je dat er een vrouw al de hele tijd in jou richting zit te kijken. “Zit ze naar mij te staren?” vraag je jezelf af.";
+                narrativeText = "Op de tram merk je dat er een vrouw al de hele tijd in jou richting zit te kijken. \"Zit ze naar mij te staren?\" vraag je jezelf af.";
                 numberOfOptions = 4;
                 option01Text = "Je krijg een ongemakkelijk gevoel en besluit een halte vroeger af te stappen.";
                 option02Text = "Je verplaatst je uit het zicht van de vrouw en stapt af aan je normale halte.";
@@ -46,7 +46,7 @@ public class RandomEvent : ChoiceScript {
 
             case 2:
                 chain = 16;
-                narrativeText = "Een man spreekt je aan, hij ziet er normaal uit maar hij kijkt je raar aan. De man zat je al een tijd aan te staren.";
+                narrativeText = "Onderweg spreekt een man je aan, hij ziet er normaal uit maar kijkt je wat raar aan.";
                 numberOfOptions = 3;
                 option01Text = "Je probeert beleefd duidelijk te maken dat je geen zin hebt om te praten.";
                 option02Text = "Je negeert hem, hopelijk snapt hij dat je geen zin hebt in een gesprek.";
@@ -104,8 +104,6 @@ public class RandomEvent : ChoiceScript {
                 if (rnd == 1)
                 {
                     narrativeText = "De vrouw zie je niet meer terug en je vergeet het voorval al snel.";
-                    //geen effect
-
                 }
                 else
                 {

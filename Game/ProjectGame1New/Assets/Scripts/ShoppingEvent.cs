@@ -106,7 +106,6 @@ public class ShoppingEvent : ChoiceScript {
             case 8:
                 narrativeText = "Je zult het moeten doen met de spiegel in het pashokje. Die is niet zo groot maar het gaat ook.";
                 ScoreCounter(3);
-                greenBox = true;
                 chain = 0;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -115,7 +114,6 @@ public class ShoppingEvent : ChoiceScript {
             case 9:
                 narrativeText = "Je blijft de grote spiegel gebruiken en je let niet op de vrouw.";
                 ScoreCounter(3);
-                greenBox = true;
                 chain = 0;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -145,7 +143,6 @@ public class ShoppingEvent : ChoiceScript {
             case 11:
                 narrativeText = "Een van je vrienden haalt er een winkelmedewerker bij. Zij haalt de politie erbij. De jongens worden gestraft.";
                 ScoreCounter(3);
-                greenBox = true;
                 endOfEvent = true;
                 break;
 
@@ -165,7 +162,6 @@ public class ShoppingEvent : ChoiceScript {
 
             case 14:
                 narrativeText = "Je loopt er zelf snel achteraan. Even later heb je één van de jongens te pakken en iemand van de security heeft de andere te pakken.";
-                redBox = true;
                 ScoreCounter(1);
                 chain = 14;
                 numberOfOptions = 1;
@@ -188,7 +184,6 @@ public class ShoppingEvent : ChoiceScript {
             case 17:
                 narrativeText = "Je zegt dat ze je aan het filmen waren. De 2 jongens worden naar de politie gebracht en worden gestraft.";
                 ScoreCounter(3);
-                greenBox = true;
                 endOfEvent = true;
                 break;
 

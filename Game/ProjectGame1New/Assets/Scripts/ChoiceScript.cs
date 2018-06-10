@@ -199,8 +199,46 @@ public class ChoiceScript : MonoBehaviour {
 
     public void ScoreCounter(int score)
     {
-        StaticInfo.ScoresCounted++;
-        StaticInfo.TotalScore += score;
+
+        if (score == 1)
+        {
+            StaticInfo.SliderCount -= 1;
+            redBox = true;
+        }
+        if (score == 3)
+        {
+            StaticInfo.SliderCount += 1;
+            greenBox = true;
+        }
     }
-    
+
+    IEnumerator CharFadeIn(Image toFade)
+    {
+        toFade.canvasRenderer.SetAlpha(0);
+        toFade.enabled = true;
+        toFade.CrossFadeAlpha(1, 1.0f, false);
+        yield return new WaitForSeconds(2);
+        
+    }
+
+    IEnumerator CharFadeOut(Image toFade)
+    {
+        toFade.canvasRenderer.SetAlpha(1);
+        toFade.enabled = true;
+
+        toFade.CrossFadeAlpha(0, 1.0f, false);
+        yield return new WaitForSeconds(2);
+        toFade.enabled = false;
+    }
+
+    public void FadesIn(Image toFade)
+    {
+        StartCoroutine(CharFadeIn(toFade));
+    }
+
+    public void FadesOut(Image toFade)
+    {
+        StartCoroutine(CharFadeOut(toFade));
+    }
+
 }

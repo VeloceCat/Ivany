@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShoppingEvent : ChoiceScript {
+
+    [SerializeField]
+    protected Image man;
+    [SerializeField]
+    protected Image femaleShadow;
+    [SerializeField]
+    protected Image guard;
 
     public override void StartDialogue()
     {
         choiceMade = 0;
         chain = 0;
+
+        man.enabled = false;
+        femaleShadow.enabled = false;
+        guard.enabled = false;
 
         int rnd = Random.Range(1, 4);
         Consequences(rnd);
@@ -52,7 +64,7 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 3:
-                narrativeText = "Terwijl je aan het passen bent zie je plots een smartphone uitsteken boven je hoofd. Met de camera naar jou vanuit het pashokje naast je.";
+                narrativeText = "Terwijl je aan het passen bent zie je plots een smartphone uitsteken boven je hoofd. Met de camera naar jou gericht vanuit het pashokje naast je.";
                 chain = 19;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -62,12 +74,14 @@ public class ShoppingEvent : ChoiceScript {
                 rnd = Random.Range(1, 3);
                 if (rnd == 1)
                 {
-                    narrativeText = "\"Past perfect\" zegt de medewerker die wat kleren opplooit.";
+                    narrativeText = "\"Past perfect\" zegt de medewerker die wat kleren opvouwt.";
+                    FadesIn(man);
                     chain = 4;
                 }
                 else
                 {
                     narrativeText = "In de spiegel zie je een vrouw naar je kijken.";
+                    FadesIn(femaleShadow);
                     chain = 6;
                 }
                 break;
@@ -80,8 +94,9 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 6:
-                narrativeText = "\"Dank je,\" zeg je als je met je gekozen kleren naar de kassa vertrekt. \"Geen probleem.\" Antwoord hij blij terug. ";
+                narrativeText = "\"Dank je,\" zeg je als je met je gekozen kleren naar de kassa vertrekt. \"Geen probleem.\" Antwoordt hij blij terug. ";
                 chain = 0;
+                FadesOut(man);
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
@@ -99,6 +114,7 @@ public class ShoppingEvent : ChoiceScript {
                 else
                 {
                     narrativeText = "Wanneer je even later met een andere outfit buitenkomt is de vrouw weg. Ze zal toevallig naar jou gekeken hebben.";
+                    FadesOut(femaleShadow);
                     endOfEvent = true;
                 }
                 break;
@@ -106,6 +122,7 @@ public class ShoppingEvent : ChoiceScript {
             case 8:
                 narrativeText = "Je zult het moeten doen met de spiegel in het pashokje. Die is niet zo groot maar het gaat ook.";
                 ScoreCounter(3);
+                FadesOut(femaleShadow);
                 greenBox = true;
                 chain = 0;
                 numberOfOptions = 1;
@@ -115,6 +132,7 @@ public class ShoppingEvent : ChoiceScript {
             case 9:
                 narrativeText = "Je blijft de grote spiegel gebruiken en je let niet op de vrouw.";
                 ScoreCounter(3);
+                FadesOut(femaleShadow);
                 greenBox = true;
                 chain = 0;
                 numberOfOptions = 1;
@@ -164,8 +182,9 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 14:
-                narrativeText = "Je loopt er zelf snel achteraan. Even later heb je een van de jongens te pakken en iemand van de security heeft de andere te pakken.";
+                narrativeText = "Je loopt er zelf snel achteraan. Even later heb je één van de jongens te pakken en iemand van de security heeft de andere te pakken.";
                 redBox = true;
+                FadesIn(guard);
                 ScoreCounter(1);
                 chain = 14;
                 numberOfOptions = 1;

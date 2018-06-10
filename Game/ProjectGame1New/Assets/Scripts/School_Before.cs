@@ -2,14 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class School_Before : ChoiceScript {
+public class School_Before : ChoiceScript
+{
+
+    [SerializeField]
+    protected Image femaleFriend;
+    [SerializeField]
+    protected Image maleFriend;
+    [SerializeField]
+    protected Image teacher;
+
+    protected bool isBoy = false;
 
     public override void StartDialogue()
     {
         choiceMade = 0;
         chain = 0;
 
+        femaleFriend.enabled = false;
+        maleFriend.enabled = false;
+        teacher.enabled = false;
+
+        if (Random.Range(1,3) == 1)
+        {
+            isBoy = true;
+        }
+        else
+        {
+            isBoy = false;
+        }
 
         Consequences(1);
     }
@@ -19,6 +42,33 @@ public class School_Before : ChoiceScript {
         base.AfterDialogue();
 
         SceneManager.LoadScene("Classroom");
+    }
+
+    public void FadeBoyOrGirl(bool isfadeIn)
+    {
+        if (isfadeIn)
+        {
+            if (isBoy)
+            {
+                FadesIn(maleFriend);
+            }
+            else
+            {
+                FadesIn(femaleFriend);
+            }
+        }
+        else
+        {
+            if (isBoy)
+            {
+                FadesOut(maleFriend);
+            }
+            else
+            {
+                FadesOut(femaleFriend);
+            }
+        }
+        
     }
 
 
@@ -39,6 +89,7 @@ public class School_Before : ChoiceScript {
                 if (rnd == 1)
                 {
                     narrativeText = "Een van je vrienden ziet je en komt meteen naar je toe.";
+                    FadesIn(femaleFriend);
                     chain = 9;
                     numberOfOptions = 1;
                     option01Text = "...";
@@ -47,36 +98,24 @@ public class School_Before : ChoiceScript {
                 {
                     narrativeText = "Als ze zien dat je er bent zeggen ze allemaal hallo tegen je en ze praten rustig verder.";
                     chain = 29;
-                    numberOfOptions = 2;
-                    option01Text = "Je hebt het gevoel dat je aan iemand je verhaal wilt vertellen.";
-                    option02Text = "Je ziet het niet zitten om je verhaal te vertellen. ";
+                    numberOfOptions = 1;
+                    option01Text = "...";
                 }
                 break;
 
             case 10:
                 narrativeText = "\"Kan ik je even spreken?\"";
                 chain = 10;
+                
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 11:
-                rnd = Random.Range(1, 3);
-                if (rnd == 1)
-                {
-                    narrativeText = "\"Ik moet je iets zeggen dat ik niet zomaar aan iedereen wil vertellen, maar jou vertrouw ik wel.\"";
-                    chain = 11;
-                    numberOfOptions = 1;
-                    option01Text = "...";
-                }
-                else
-                {
-                    narrativeText = "\"Je ziet er niet zo blij uit de laatste tijd, is er iets?\"";
-                    chain = 18;
-                    numberOfOptions = 2;
-                    option01Text = "\"Ooh niets hoor\" zeg je, \"gewoon slecht geslapen.\"";
-                    option02Text = "Je vertelt je verhaal.";
-                }
+                narrativeText = "\"Ik moet je iets zeggen dat ik niet zomaar aan iedereen wil vertellen, maar jou vertrouw ik wel.\"";
+                chain = 11;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
 
             case 12:
@@ -98,8 +137,8 @@ public class School_Before : ChoiceScript {
 
             case 14:
                 narrativeText = "De leerkracht luistert aandachtig naar het verhaal van je vriend.";
-                greenBox = true;
                 ScoreCounter(3);
+
                 chain = 16;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -108,19 +147,24 @@ public class School_Before : ChoiceScript {
             case 15:
                 narrativeText = "Je zegt dat ze die man waarschijnlijk nooit meer zal zien.";
                 ScoreCounter(2);
-                endOfEvent = true;
+                chain = 30;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
 
             case 16:
                 narrativeText = "Je vriend blijft nog staan als jij verder naar he vrienden wandeld";
-                redBox = true;
                 ScoreCounter(1);
-                endOfEvent = true;
+                chain = 30;
+                numberOfOptions = 1;
+                option01Text = "...";
                 break;
 
             case 17:
                 narrativeText = "\"Dit kunnen we best aan de politie vertellen, zij kunnen de dader opsporen en ervoor zorgen dat dit met niemand anders gebeurd.\"";
                 chain = 17;
+                FadesOut(femaleFriend);
+                FadesIn(teacher);
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
@@ -131,36 +175,20 @@ public class School_Before : ChoiceScript {
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
-
-            case 19:
-                narrativeText = "Na aan rare blik gaan jullie weer bij de rest staan.";
-                endOfEvent = true;
-                break;
-
-            case 20:
-                narrativeText = "Je vriend stelt voor om naar een van de leerkrachten te gaan.";
-                chain = 20;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
-            case 21:
-                narrativeText = "Hij luistert aandachtig naar je verhaal.";
-                chain = 16;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
             //**************************************************************************
 
             case 30:
-                narrativeText = "Je vraagt aan de vriend die je het meest vertrouwd of je hem even kan spreken. \"Wij gaan even naar de WC\" zeggen jullie tegen de rest.";
-                chain = 33;
-                numberOfOptions = 1;
-                option01Text = "...";
+                narrativeText = "Plots komt er iemand aangewandeld die een van je vrienden lastig valt.";
+                chain = 39;
+                
+                numberOfOptions = 2;
+                option01Text = "Je gaat dichter bij je vriend staan en praat met hem.";
+                option02Text = "Je laat het gewoon gebeuren.";
+                option03Text = "Je zegt tegen de belager dat hij moet weggaan.";
                 break;
 
             case 31:
-                narrativeText = "Praten met je vrienden helpt je om je zorgen even te vergeten.";
+                narrativeText = "Praten met vrienden kan iemand heel erg hard helpen. Dus neem iemand die je zo iets verteld altijd serieus.";
                 chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -178,6 +206,13 @@ public class School_Before : ChoiceScript {
                 endOfEvent = true;
                 break;
 
+            case 35:
+                narrativeText = "De leerkracht luistert aandachtig naar het je verhaal.";
+                chain = 16;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
             case 34:
                 narrativeText = "Wanneer jullie wat verder staan vertel je je verhaal. Je vriend stelt voor om naar een van de leerkrachten te gaan. Een waarvan jullie allebei weten dat hij te vertrouwen is.";
                 chain = 34;
@@ -185,11 +220,22 @@ public class School_Before : ChoiceScript {
                 option01Text = "...";
                 break;
 
-            case 35:
-                narrativeText = "De leerkracht luistert aandachtig naar het je verhaal.";
-                chain = 16;
-                numberOfOptions = 1;
-                option01Text = "...";
+            case 40:
+                narrativeText = "Je vriend snapt wat je van plan bent en negeert zijn belager die even later weg gaat. Achteraf bedankt je vriend je.";
+                ScoreCounter(3);
+                endOfEvent = true;
+                break;
+
+            case 41:
+                narrativeText = "Na een tijde wandeld de belager lachend weg, je vriend doet alsof er niets gebeurd is. Misschien had je hem beter geholpen?";
+                ScoreCounter(1);
+                endOfEvent = true;
+                break;
+
+            case 42:
+                narrativeText = "De belager zegt dat jij er niets mee te maken hebt. Maar omdat je je vriend help druipt hij toch af.";
+                ScoreCounter(2);
+                endOfEvent = true;
                 break;
 
             default:

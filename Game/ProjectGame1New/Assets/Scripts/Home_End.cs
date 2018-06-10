@@ -112,7 +112,7 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 21:
-                rnd = Random.Range(1, 3);
+                narrativeText = "\"Kom je naar beneden? Oma is hier.\" zeg je moeder.";
                 chain = 13;
                 numberOfOptions = 2;
                 option01Text = "Je gaat toch maar naar beneden";

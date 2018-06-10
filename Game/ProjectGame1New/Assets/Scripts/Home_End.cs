@@ -128,8 +128,8 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 23:
-                narrativeText = "Je durft het niet te zeggen, je gaat naar je kamer en staart uit de raam. Je kan niet meer. Misschien moet je het toch maar zeggen.";
-                ScoreCounter(2);
+                narrativeText = "Je durft het niet te zeggen, je gaat naar je kamer en staart uit de raam. Je kan niet meer.\nHoe moeilijk het ook is, praten is een belangrijke eerste stap.";
+                ScoreCounter(1);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -143,50 +143,13 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 25:
-                rnd = Random.Range(1, 3);
-                if (rnd == 1)
-                {
-                    narrativeText = "Je moeder hoort je zachtjes wenen en stapt de kamer binnen.";
-                    chain = 25;
-                    numberOfOptions = 1;
-                    option01Text = "...";
-                }
-                else
-                {
-                    narrativeText = "Je hoort je moeder weer naar beneden gaan. En voelt je zo alleen.";
-                    chain = 26;
-                    numberOfOptions = 1;
-                    option01Text = "...";
-                }
-                break;
-
-            case 26:
-                narrativeText = "Je merkt pas dat ze er is als je een arm om je heen voelt. Je moeder zegt niks, maar houd je gewoon vast.\nJe voelt jezelf blij worden, en voor je het weet doe je je verhaal. Je moeder luistert gewoon, maar je voelt dat hij alles voor je zal doen om je te helpen.";
+                narrativeText = "Je probeert jezelf wat op te vrolijken en je begint aan je huiswerk. Maar ergens in je hoofd blijven de gebeurtenissen op de achtergrond aanwezig.";
                 greenBox = true;
-                ScoreCounter(3);
-                chain = 29;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
-            case 27:
-                narrativeText = "Je laat je tranen de vrije loop gaan. Wanneer je even later naar beneden gaat voor het avond eten zien je ouders dat er iets niet klopt.";
-                ScoreCounter(2);
-                chain = 27;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
-            case 28:
-                narrativeText = "Ze zijn zo bezorgd om je en zonder nog verder aan het eten te denken slaan ze hun armen om je heen om vragen je wat er is. Je voelt plots toch de kracht om het te vertellen en je verteld over de dingen die je de laatste dagen hebt meegemaakt.";
-                greenBox = true;
-                chain = 29;
-                numberOfOptions = 1;
-                option01Text = "...";
+                endOfEvent = true;
                 break;
 
             case 30:
-                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nVJe voelt je gewoon blij en gelukkig.";
+                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nJe voelt dat je ouders achter je staan, wat er ook gebeurd.";
                 greenBox = true;
                 endOfEvent = true;
                 break;

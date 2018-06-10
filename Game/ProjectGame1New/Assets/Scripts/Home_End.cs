@@ -144,7 +144,6 @@ public class Home_End : ChoiceScript {
 
             case 25:
                 narrativeText = "Je probeert jezelf wat op te vrolijken en je begint aan je huiswerk. Maar ergens in je hoofd blijven de gebeurtenissen op de achtergrond aanwezig.";
-                greenBox = true;
                 endOfEvent = true;
                 break;
 

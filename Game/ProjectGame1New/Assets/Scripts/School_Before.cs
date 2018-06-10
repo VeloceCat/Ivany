@@ -123,10 +123,12 @@ public class School_Before : ChoiceScript {
             //**************************************************************************
 
             case 30:
-                narrativeText = "Je vraagt aan de vriend die je het meest vertrouwd of je hem even kan spreken. \"Wij gaan even naar de WC\" zeggen jullie tegen de rest.";
-                chain = 33;
-                numberOfOptions = 1;
-                option01Text = "...";
+                narrativeText = "Plots komt er iemand aangewandeld die een van je vrienden lastig valt.";
+                chain = 39;
+                numberOfOptions = 2;
+                option01Text = "Je gaat dichter bij je vriend staan en praat met hem.";
+                option02Text = "Je laat het gewoon gebeuren.";
+                option03Text = "Je zegt tegen de belager dat hij moet weggaan.";
                 break;
 
             case 31:
@@ -148,6 +150,13 @@ public class School_Before : ChoiceScript {
                 endOfEvent = true;
                 break;
 
+            case 35:
+                narrativeText = "De leerkracht luistert aandachtig naar het je verhaal.";
+                chain = 16;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
             case 34:
                 narrativeText = "Wanneer jullie wat verder staan vertel je je verhaal. Je vriend stelt voor om naar een van de leerkrachten te gaan. Een waarvan jullie allebei weten dat hij te vertrouwen is.";
                 chain = 34;
@@ -155,11 +164,22 @@ public class School_Before : ChoiceScript {
                 option01Text = "...";
                 break;
 
-            case 35:
-                narrativeText = "De leerkracht luistert aandachtig naar het je verhaal.";
-                chain = 16;
-                numberOfOptions = 1;
-                option01Text = "...";
+            case 40:
+                narrativeText = "Je vriend snapt wat je van plan bent en negeert zijn belager die even later weg gaat. Achteraf bedankt je vriend je.";
+                ScoreCounter(3);
+                endOfEvent = true;
+                break;
+
+            case 41:
+                narrativeText = "Na een tijde wandeld de belager lachend weg, je vriend doet alsof er niets gebeurd is. Misschien had je hem beter geholpen?";
+                ScoreCounter(1);
+                endOfEvent = true;
+                break;
+
+            case 42:
+                narrativeText = "De belager zegt dat jij er niets mee te maken hebt. Maar omdat je je vriend help druipt hij toch af.";
+                ScoreCounter(2);
+                endOfEvent = true;
                 break;
 
             default:

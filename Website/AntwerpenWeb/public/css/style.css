@@ -1396,8 +1396,8 @@ postContentFullWidth {
 
 /* -------------- GAME PAGE -------------- */
 #gameContainer {
-    width: 960px;
-    height: 600px;
+    width: 1024px;
+    height: 576px;
 }
 
 .hintForMobileGame {

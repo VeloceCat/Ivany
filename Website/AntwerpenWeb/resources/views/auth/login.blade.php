@@ -57,7 +57,7 @@
                         Met uw A-profiel kunt u aanmelden op deze websites:
                     </p>
                     <p>
-                        <a href="http://www.visitantwerpen.be" title="Visit Antwerpen">visitantwerpen.be span</a>
+                        <a href="http://www.visitantwerpen.be" title="Visit Antwerpen">visitantwerpen.be</a>
                         <a href="https://www.gate15.be/nl/home" title="Gate15">gate15.be</a>
                         <a href="https://www.slimnaarantwerpen.be/nl" title="Slim naar Antwerpen">slimnaarantwerpen.be</a>
                     </p>

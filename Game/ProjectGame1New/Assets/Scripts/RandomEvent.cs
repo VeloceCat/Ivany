@@ -126,7 +126,7 @@ public class RandomEvent : ChoiceScript {
 
             case 16:
                 narrativeText = "Door het te zeggen heb je de juiste keuze gemaakt. Iemand die zijn verhaal doet afwimpelen, zoals je vrienden deden, is geen goede zaak. Er zijn altijd andere mensen, noodnummers en forums waar je terecht kan met je problemen.";
-                greenBox = true;
+                //greenBox = true;
                 ScoreCounter(3);
                 endOfEvent = true;
                 break;
@@ -136,7 +136,7 @@ public class RandomEvent : ChoiceScript {
 
             case 17:
                 narrativeText = "Hij stelt rare vragen, hij is duidelijk niet gewoon op zoek naar iemand om zomaar een praatje mee te doen.";
-                ScoreCounter(2);
+                ScoreCounter(3);
                 chain = 20;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -145,8 +145,8 @@ public class RandomEvent : ChoiceScript {
 
             case 18:
                 chain = 22;
-                greenBox = true;
-                ScoreCounter(3);
+                
+                ScoreCounter(2);
                 narrativeText = "Hij blijft nog even doorvragen.";
                 numberOfOptions = 2;
                 option01Text = "Je blijft hem negeren.";
@@ -155,7 +155,7 @@ public class RandomEvent : ChoiceScript {
 
             case 19:
                 narrativeText = "Na een tijdje begint hij hele specifieke en rare vragen te stellen. Hij vraagt of je een ‘liefje’ hebt en waar je naartoe gaat.\nMisschien zou je toch wat moeten oppassen met zomaar praten?";
-                redBox = true;
+                
                 ScoreCounter(1);
                 chain = 25;
                 numberOfOptions = 2;
@@ -242,8 +242,7 @@ public class RandomEvent : ChoiceScript {
                 if (rnd == 1)
                 {
                     narrativeText = "De man stopt plots met vragen stellen en gaat weg. “Waarom wou hij dat allemaal weten?” vraag je jezelf af.";
-                    greenBox = true;
-                    ScoreCounter(3);
+                    
                     endOfEvent = true;
                 }
                 else
@@ -254,6 +253,7 @@ public class RandomEvent : ChoiceScript {
                     option01Text = "...";
 
                 }
+                ScoreCounter(1);
                 break;
 
             case 27:

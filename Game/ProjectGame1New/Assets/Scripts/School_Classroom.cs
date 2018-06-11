@@ -111,7 +111,7 @@ public class School_Classroom : ChoiceScript {
         switch (num)
         {
             case 1:
-                narrativeText = "Tijdens de pauze komt er iemand naar je toe en vraagt of jij een naakt foto hebt van je vorige liefje. En of hij die mag hebben.";
+                narrativeText = "Tijdens de pauze komt er iemand naar je toe en vraagt of jij een naaktfoto hebt van je vorige liefje. En of hij die mag hebben.";
                 chain = 39;
                 FadesIn(maleShadow);
                 numberOfOptions = 3;
@@ -121,7 +121,7 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "In de gang komt er iemand naar je toe en lijkt je te willen versieren. Als snel merk je dat het enkel is om met je te lachen. ";
+                narrativeText = "In de gang komt er iemand naar je toe en lijkt je te willen versieren. Al snel merk je dat het enkel is om met je te lachen. ";
                 FadeBoyOrGirlShadow(true);
                 chain = 9;
                 numberOfOptions = 1;
@@ -139,7 +139,7 @@ public class School_Classroom : ChoiceScript {
                 rnd = Random.Range(1, 3);
                 if (rnd == 1)
                 {
-                    narrativeText = "Je vrienden zien al snel wat er gebeurd en trekken je al snel mee.";
+                    narrativeText = "Je vrienden zien al snel wat er gebeurt en trekken je al snel mee.";
                     FadeBoyOrGirlShadow(false);
                     chain = 10;
                     numberOfOptions = 1;
@@ -147,7 +147,7 @@ public class School_Classroom : ChoiceScript {
                 }
                 else
                 {
-                    narrativeText = "Omdat je een beetje later was zijn jullie bijna alleen in de gang. ";
+                    narrativeText = "Omdat je een beetje later was, zijn jullie bijna alleen in de gang. ";
                     chain = 11;
                     numberOfOptions = 2;
                     option01Text = "Je probeert het gewoon te negeren en wandelt verder tot aan je lokaal. ";
@@ -164,7 +164,7 @@ public class School_Classroom : ChoiceScript {
                 rnd = Random.Range(1, 3);
                 if (rnd == 1)
                 {
-                    narrativeText = "Al snel hoor je dat de persoon opgeeft. \"Als je wordt genegeerd is de pret er snel af hé.\" Lach je in jezelf.";
+                    narrativeText = "Al snel hoor je dat de persoon opgeeft. \"Als je wordt genegeerd, is de pret er snel af hé.\" Lach je in jezelf.";
                     greenBox = true;
                     FadeBoyOrGirlShadow(false);
                     ScoreCounter(3);
@@ -172,7 +172,7 @@ public class School_Classroom : ChoiceScript {
                 }
                 else
                 {
-                    narrativeText = "De persoon blijft je achtervolgen tot aan je lokaal. Wanneer je de deur opendoet staat je leerkracht bij de deur.";
+                    narrativeText = "De persoon blijft je achtervolgen tot aan je lokaal. Wanneer je de deur opendoet, staat je leerkracht bij de deur.";
                     chain = 14;
                     numberOfOptions = 1;
                     option01Text = "...";
@@ -207,7 +207,7 @@ public class School_Classroom : ChoiceScript {
                 narrativeText = "Het is een foto van je terwijl je naar het toilet gaat op school!";
                 chain = 22;
                 numberOfOptions = 2;
-                option01Text = "Omdat je zelf op de foto staat durf je het tegen niemand te zeggen.";
+                option01Text = "Omdat je zelf op de foto staat, durf je het tegen niemand te zeggen.";
                 option02Text = "Je probeert iemand te vinden die je kan vertrouwen om erover te praten.";
                 break;
 
@@ -251,7 +251,7 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 31:
-                narrativeText = "Het is een beetje raar om de foto te laten zien, maar misschien help je andere die het niet durven zeggen.";
+                narrativeText = "Het is een beetje raar om de foto te laten zien, maar misschien help je anderen die het niet durven zeggen.";
                 chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -282,7 +282,7 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 42:
-                narrativeText = "\"Nee zo iets doe ik niet.\" En je wandelt weg.";
+                narrativeText = "\"Nee, zo iets doe ik niet.\" En je wandelt weg.";
                 ScoreCounter(3);
                 chain = 45;
                 numberOfOptions = 1;
@@ -319,7 +319,7 @@ public class School_Classroom : ChoiceScript {
                 break;
 
             case 47:
-                narrativeText = "Later gaan ze hem aan de tand voelen en zijn ouders inlichten. Wat hij vroeg kan gewoon niet.";
+                narrativeText = "Later gaan ze hem aan de tand voelen en zijn ouders inlichten. Wat hij vroeg, kan gewoon niet.";
                 ScoreCounter(3);
                 endOfEvent = true;
                 break;

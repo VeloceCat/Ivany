@@ -92,7 +92,7 @@ public class School_After : ChoiceScript {
         switch (num)
         {
             case 1:
-                narrativeText = "\"Trrriiing\" eindelijk, het laatste belsignaal. Wanneer je naar buiten wandelt voel je je maag grommen \"Iemand zin om een broodje te gaan eten en deze schoolvoormiddag even te vergeten?\" vraag je aan je vrienden.";
+                narrativeText = "\"Trrriiing\" eindelijk, het laatste belsignaal. Wanneer je naar buiten wandelt, voel je je maag grommen. \"Iemand zin om een broodje te gaan eten en deze schoolvoormiddag even te vergeten?\" vraag je aan je vrienden.";
                 chain = 1;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -122,7 +122,7 @@ public class School_After : ChoiceScript {
                 break;
 
             case 4:
-                narrativeText = "De anderen zijn meteen akkoord. \"Dat is dan afgesproken, even thuis onze school spullen wegzetten en dan kunnen we vertrekken!\"";
+                narrativeText = "De anderen zijn meteen akkoord. \"Dat is dan afgesproken, even thuis onze schoolspullen wegzetten en dan kunnen we vertrekken!\"";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";

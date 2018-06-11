@@ -78,7 +78,7 @@ public class School_Before : ChoiceScript
         switch (num)
         {
             case 1:
-                narrativeText = "Je ziet je vrienden staan in de gang en gaat er nog even naartoe.";
+                narrativeText = "Je ziet je vrienden staan in de gang en gaat er naartoe.";
                 chain = 1;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -96,7 +96,7 @@ public class School_Before : ChoiceScript
                 }
                 else
                 {
-                    narrativeText = "Als ze zien dat je er bent zeggen ze allemaal hallo tegen je en ze praten rustig verder.";
+                    narrativeText = "Je gaat bij hen staan en praat met hen mee tot de bel gaat.";
                     chain = 29;
                     numberOfOptions = 1;
                     option01Text = "...";
@@ -126,12 +126,12 @@ public class School_Before : ChoiceScript
                 break;
 
             case 13:
-                narrativeText = "\"Als ik zie dat ik dat niet leuk vond reageerde hij niet. En wanneer ik uitstapte achtervolgde hij mij tot ik thuis was en naar binnen ging. En ik heb geen idee wat ik moet  doen.\"";
+                narrativeText = "\"Als ik zei dat ik dat niet leuk vond, reageerde hij niet. Wanneer ik uitstapte, bleef hij mij volgen tot ik thuis was en naar binnen ging. Ik heb geen idee wat ik moet doen.\"";
                 chain = 13;
                 numberOfOptions = 3;
                 option01Text = "Je stelt voor om naar een leerkracht te gaan.";
                 option02Text = "Je stelt haar gerust";
-                option03Text = "Je zegt haar dat ze zich maar wat inbeeld.";
+                option03Text = "Je zegt haar dat ze zich maar wat inbeeldt.";
                 break;
 
 
@@ -154,7 +154,7 @@ public class School_Before : ChoiceScript
                 break;
 
             case 16:
-                narrativeText = "Je vriend blijft nog staan als jij verder naar he vrienden wandeld";
+                narrativeText = "Je vriend blijft nog staan als jij verder naar je vrienden wandelt";
                 ScoreCounter(1);
                 chain = 30;
                 numberOfOptions = 1;
@@ -181,22 +181,21 @@ public class School_Before : ChoiceScript
             case 30:
                 narrativeText = "Plots komt er iemand aangewandeld die een van je vrienden lastig valt.";
                 chain = 39;
-                
-                numberOfOptions = 2;
+                numberOfOptions = 3;
                 option01Text = "Je gaat dichter bij je vriend staan en praat met hem.";
                 option02Text = "Je laat het gewoon gebeuren.";
                 option03Text = "Je zegt tegen de belager dat hij moet weggaan.";
                 break;
 
             case 31:
-                narrativeText = "Praten met vrienden kan iemand heel erg hard helpen. Dus neem iemand die je zo iets verteld altijd serieus.";
+                narrativeText = "Praten met vrienden kan iemand heel erg hard helpen. Dus neem iemand die je zo iets vertelt altijd serieus.";
                 chain = 31;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 32:
-                narrativeText = "Vertellen over wat er gebeurt is is vaak heel moeilijk. Maar het kan je erg helpen. Je moet op zoek gaan naar personen die je kan vertrouwen om je verhaal te kunnen doen.";
+                narrativeText = "Vertellen over wat er gebeurd is, is vaak heel moeilijk. Maar het kan je erg helpen. Je moet op zoek gaan naar personen die je kan vertrouwen om je verhaal te kunnen doen.";
                 chain = 32;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -215,7 +214,7 @@ public class School_Before : ChoiceScript
                 break;
 
             case 34:
-                narrativeText = "Wanneer jullie wat verder staan vertel je je verhaal. Je vriend stelt voor om naar een van de leerkrachten te gaan. Een waarvan jullie allebei weten dat hij te vertrouwen is.";
+                narrativeText = "Wanneer jullie wat verder staan, vertel je je verhaal. Je vriend stelt voor om naar een van de leerkrachten te gaan. Een waarvan jullie allebei weten dat hij te vertrouwen is.";
                 chain = 34;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -234,7 +233,7 @@ public class School_Before : ChoiceScript
                 break;
 
             case 42:
-                narrativeText = "De belager zegt dat jij er niets mee te maken hebt. Maar omdat je je vriend helpt druipt hij toch af.";
+                narrativeText = "De belager zegt dat jij er niets mee te maken hebt. Maar omdat je je vriend helpt, druipt hij toch af.";
                 ScoreCounter(2);
                 endOfEvent = true;
                 break;

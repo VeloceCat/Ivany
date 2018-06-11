@@ -83,9 +83,9 @@ public class Home_End : ChoiceScript {
                 chain = 16;
                 FadesIn(grandMother);
                 numberOfOptions = 3;
-                option01Text = "\"Het was een moeilijke dag, meer niet.\" Zeg je.";
+                option01Text = "\"Het was een moeilijke dag, meer niet,\" zeg je.";
                 option02Text = "Je zegt helemaal niets en gaat weer naar je kamer.";
-                option03Text = "Je vertelt hen wat er gebeurt is vandaag.";
+                option03Text = "Je vertelt hen wat er gebeurd is vandaag.";
                 break;
 
             case 15:
@@ -114,15 +114,23 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 19:
-                narrativeText = "Iedereen luistert aandachtig tot je je hele verhaal hebt gedaan, je moeder komt naast je zitten en slaagt haar arm om je. \n\"We zullen samen naar een oplossing zoeken\" stelt ze voor, en je kan enkel nog knikken. Je verhaal doen was moeilijk maar je weet dat dit de juiste beslissing was.";
+                narrativeText = "Iedereen luistert aandachtig tot je je hele verhaal hebt gedaan, je moeder komt naast je zitten en slaat haar arm om je. \n\"We zullen samen naar een oplossing zoeken\" stelt ze voor, en je kan enkel nog knikken.";
+                ScoreCounter(3);
+                FadesIn(mother);
+                chain = 19;
+                numberOfOptions = 1;
+                option01Text = "...";
+                break;
+
+            case 20:
+                narrativeText = "Je verhaal doen was moeilijk maar je weet dat dit de juiste beslissing was.";
                 ScoreCounter(3);
                 FadesIn(mother);
                 greenBox = true;
                 endOfEvent = true;
                 break;
-
             case 21:
-                narrativeText = "\"Kom je naar beneden? Oma is hier.\" zeg je moeder.";
+                narrativeText = "\"Kom je naar beneden? Oma is hier.\" zegt je moeder.";
                 chain = 13;
                 numberOfOptions = 2;
                 option01Text = "Je gaat toch maar naar beneden";
@@ -134,7 +142,7 @@ public class Home_End : ChoiceScript {
                 chain = 22;
                 numberOfOptions = 2;
                 option01Text = "Je zegt weer niks.";
-                option02Text = "Je verteld je ouders wat je allemaal hebt meegemaakt.";
+                option02Text = "Je vertelt je ouders wat je allemaal hebt meegemaakt.";
                 break;
 
             case 23:
@@ -159,7 +167,7 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 30:
-                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nJe voelt dat je ouders achter je staan, wat er ook gebeurd.";
+                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe gingen. \nJe voelt dat je ouders achter je staan, wat er ook gebeurt.";
                 greenBox = true;
                 endOfEvent = true;
                 break;

@@ -44,7 +44,7 @@ public class PoolEvent : ChoiceScript {
         switch (num)
         {
             case 1:
-                narrativeText = "Terwijl je je aan het omkleden bent zie je plots iets vreemd. Er is precies een gaatje in de muur van je kleedcabine. Snel sla je je handdoek om je heen.";
+                narrativeText = "Terwijl je je aan het omkleden bent, zie je plots iets vreemd. Er is precies een gaatje in de muur van je kleedcabine. Snel sla je je handdoek om je heen.";
                 chain = 10;
                 numberOfOptions = 2;
                 option01Text = "Je probeert zelf door het gaatje te kijken.";
@@ -52,7 +52,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "Uitgeput maar tevreden komen jullie het zwembad buiten. Je kijkt op je gsm, \"tijd om naar huis te gaan,\" denk je in jezelf.";
+                narrativeText = "Uitgeput maar tevreden komen jullie het zwembad buiten. Je kijkt op je gsm, \"tijd om naar huis te gaan,\" denk je bij jezelf.";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -91,7 +91,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 12:
-                narrativeText = "Als je klaar bent pak je je rugzak op en zie je het gaatje weer.";
+                narrativeText = "Als je klaar bent, pak je je rugzak op en zie je het gaatje weer.";
                 chain = 12;
                 numberOfOptions = 2;
                 option01Text = "Je gaat naar de kassa om te vertellen dat er een gaatje is tussen 2 kleedhokjes.";
@@ -99,7 +99,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 13:
-                narrativeText = "De man achter de kassa bedankt je. Hij licht meteen de politie in en ze maken het gaatje toe en controleren of er meer zijn.";
+                narrativeText = "De man achter de kassa bedankt je. Hij licht meteen de politie in en hij maakt het gaatje toe en controleert of er meer zijn.";
                 greenBox = true;
                 ScoreCounter(3);
                 chain = 24;
@@ -108,7 +108,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 14:
-                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen bespied!";
+                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen zal bespieden!";
                 redBox = true;
                 chain = 20;
                 numberOfOptions = 1;
@@ -116,7 +116,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 15:
-                narrativeText = "Omdat je zelf nog niet half aan gekleed bent kan je niet kijken wie het is.";
+                narrativeText = "Omdat je zelf nog niet half aangekleed bent kan je niet kijken wie het is.";
                 chain = 20;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -131,20 +131,20 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 21:
-                narrativeText = "Je verteld je vrienden over het gaatje en ze vragen meteen of je de medewerkers heb laten weten dat het er is zodat er niemand anders nog last van zal hebben.";
+                narrativeText = "Je vertelt je vrienden over het gaatje en ze vragen meteen of je de medewerkers hebt laten weten dat het er is zodat er niemand anders nog last van zal hebben.";
                 chain = 21;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 22:
-                narrativeText = "Je ziet in dat je dat had moeten doen en draait snel terug om het te gaan zeggen. Als je terug komt zijn al een paar van je vrienden vertrokken, je neemt afscheid van de anderen en vertrekt naar huis";
+                narrativeText = "Je ziet in dat je dat had moeten doen en je gaat snel terug om het te gaan zeggen. Als je terug komt zijn al een paar van je vrienden vertrokken, je neemt afscheid van de anderen en vertrekt naar huis";
                 redBox = true;
                 endOfEvent = true;
                 break;
 
             case 25:
-                narrativeText = "Je verteld je vrienden over het gaatje en ze vragen meteen of je de medewerkers heb laten weten dat het er is zodat er niemand anders nog last van zal hebben.";
+                narrativeText = "Je vertelt je vrienden over het gaatje en ze vragen meteen of je de medewerkers hebt laten weten dat het er is zodat er niemand anders nog last van zal hebben.";
                 chain = 25;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -184,14 +184,14 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 33:
-                narrativeText = "Gelukkig geloven ze je omdat je regelmatig komt zwemmen en dat niet eerder gebeurt is. \"Maar als het nog eens gebeurt bel ik de politie,\" zegt de man van de kassa.";
+                narrativeText = "Gelukkig geloven ze je omdat je regelmatig komt zwemmen en dat niet eerder gebeurd is. \"Maar als het nog eens gebeurt bel ik de politie,\" zegt de man aa, de kassa.";
                 chain = 33;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 34:
-                narrativeText = "Wanneer je even later buitenkomt vragen je vrienden wat er was. Je  verteld wat er gebeurt is. Na je verhaal is het tijd om naar huis te gaan. Jullie nemen afscheid en ieder gaat zijn eigen weg.";
+                narrativeText = "Wanneer je even later buiten komt, vragen je vrienden wat er was. Je  vertelt wat er gebeurd is. Na je verhaal is het tijd om naar huis te gaan. Jullie nemen afscheid en ieder gaat zijn eigen weg.";
                 FadesOut(man);
                 endOfEvent = true;
                 break;

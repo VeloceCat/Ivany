@@ -117,12 +117,7 @@ public class ChoiceScript : MonoBehaviour {
             textBox.GetComponent<Image>().color = new Color32(109, 194, 75, 255);
             greenBox = false;
         }
-        else
-        {
-            textBox.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
-        }
-
-        if (redBox)
+        else if (redBox)
         {
             textBox.GetComponent<Image>().color = new Color32(218, 40, 28, 255);
             redBox = false;
@@ -131,6 +126,9 @@ public class ChoiceScript : MonoBehaviour {
         {
             textBox.GetComponent<Image>().color = new Color32(0, 0, 0, 255);
         }
+
+        
+        
 
 
         textBox.GetComponentInChildren<Text>().text = narrativeText;
@@ -204,8 +202,7 @@ public class ChoiceScript : MonoBehaviour {
         {
             StaticInfo.SliderCount -= 1;
             redBox = true;
-        }
-        if (score == 3)
+        } else if (score == 3)
         {
             StaticInfo.SliderCount += 1;
             greenBox = true;

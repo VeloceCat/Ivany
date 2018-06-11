@@ -146,7 +146,8 @@ public class School_Before : ChoiceScript
 
             case 15:
                 narrativeText = "Je zegt dat ze die man waarschijnlijk nooit meer zal zien.";
-                ScoreCounter(2);
+                ScoreCounter(3);
+                greenBox = true;
                 chain = 30;
                 numberOfOptions = 1;
                 option01Text = "...";

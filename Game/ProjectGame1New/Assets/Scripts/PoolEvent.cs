@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PoolEvent : ChoiceScript {
+
+    [SerializeField]
+    protected Image man;
 
     public override void StartDialogue()
     {
         choiceMade = 0;
         chain = 0;
+
+        man.enabled = false;
 
         int rnd = Random.Range(1, 3);
         Consequences(rnd);
@@ -53,7 +59,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 3:
-                narrativeText = "\"Ik moet nu wel vertrekken, wij hebben bezoek,\" zegt iemand. Ook de andere gaan naar huis. Jullie nemen afscheid en iedereen gaat naar huis.";
+                narrativeText = "\"Ik moet nu wel vertrekken, wij hebben bezoek,\" zegt iemand. Ook de anderen gaan naar huis. Jullie nemen afscheid en iedereen gaat naar huis.";
                 endOfEvent = true;
                 break;
 
@@ -102,7 +108,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 14:
-                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen bespied?";
+                narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen bespied!";
                 redBox = true;
                 chain = 20;
                 numberOfOptions = 1;
@@ -132,7 +138,7 @@ public class PoolEvent : ChoiceScript {
                 break;
 
             case 22:
-                narrativeText = "Je ziet in dat je dat had moeten doen en draait snel terug om het te gaan zeggen. Als je terug komt zijn al een paar van je vrienden vertrokken, je neemt afscheid van de andere en vertrekt naar huis";
+                narrativeText = "Je ziet in dat je dat had moeten doen en draait snel terug om het te gaan zeggen. Als je terug komt zijn al een paar van je vrienden vertrokken, je neemt afscheid van de anderen en vertrekt naar huis";
                 redBox = true;
                 endOfEvent = true;
                 break;
@@ -172,6 +178,7 @@ public class PoolEvent : ChoiceScript {
             case 32:
                 narrativeText = "Je vertelt hen dat je het gaatje net had opgemerkt en je gewoon even wou kijken wat er aan de andere kant was.";
                 chain = 32;
+                FadesIn(man);
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
@@ -185,6 +192,7 @@ public class PoolEvent : ChoiceScript {
 
             case 34:
                 narrativeText = "Wanneer je even later buitenkomt vragen je vrienden wat er was. Je  verteld wat er gebeurt is. Na je verhaal is het tijd om naar huis te gaan. Jullie nemen afscheid en ieder gaat zijn eigen weg.";
+                FadesOut(man);
                 endOfEvent = true;
                 break;
 

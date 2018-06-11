@@ -6,13 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class RandomEvent : ChoiceScript {
 
-    
-    
+    [SerializeField]
+    protected Image woman;
+    [SerializeField]
+    protected Image femShad;
+    [SerializeField]
+    protected Image maleShad;
+
 
     public override void StartDialogue()
     {
         choiceMade = 0;
         chain = 0;
+
+        woman.enabled = false;
+        femShad.enabled = false;
+        maleShad.enabled = false;
 
         // In geval event begint met random
         int rnd = Random.Range(1, 3);
@@ -36,19 +45,20 @@ public class RandomEvent : ChoiceScript {
 
             case 1:
                 chain = 8;
-                narrativeText = "Op de tram merk je dat er een vrouw al de hele tijd in jou richting zit te kijken. “Zit ze naar mij te staren?” vraag je jezelf af.";
+                narrativeText = "Op de tram merk je dat er een vrouw al de hele tijd in jou richting zit te kijken. \"Zit ze naar mij te staren?\" vraag je jezelf af.";
                 numberOfOptions = 4;
-                option01Text = "Je krijg een ongemakkelijk gevoel en besluit een halte vroeger af te stappen. Het is goed weer een wandeling zal je goed doen.";
-                option02Text = "Je verplaats je op de tram uit het zicht van de vrouw en stapt af aan je normale halte.";
-                option03Text = "Je blijft zitten waar je zit en probeert de vrouw te negeren en je stapt aan je normale halte af.";
+                option01Text = "Je krijg een ongemakkelijk gevoel en besluit een halte vroeger af te stappen.";
+                option02Text = "Je verplaatst je uit het zicht van de vrouw en stapt af aan je normale halte.";
+                option03Text = "Je probeert de vrouw te negeren en je stapt aan je normale halte af.";
                 option04Text = "Je vraagt aan de vrouw waarom ze naar je zit te kijken.";
                 break;
 
             case 2:
                 chain = 16;
-                narrativeText = "Een man spreekt je aan, hij ziet er normaal uit maar hij kijkt je raar aan. De man zat je al een tijd aan te staren.";
+                narrativeText = "Onderweg spreekt een man je aan, hij ziet er normaal uit maar kijkt je wat raar aan.";
+                FadesIn(maleShad);
                 numberOfOptions = 3;
-                option01Text = "Je bent beleefd en antwoord kort op zijn vragen en probeert duidelijk te maken dat je geen zin hebt om te praten.";
+                option01Text = "Je probeert beleefd duidelijk te maken dat je geen zin hebt om te praten.";
                 option02Text = "Je negeert hem, hopelijk snapt hij dat je geen zin hebt in een gesprek.";
                 option03Text = "Je praat met hem ook al ken je hem helemaal niet.";
                 break;
@@ -81,12 +91,13 @@ public class RandomEvent : ChoiceScript {
 
             case 12:
                 narrativeText = "Ze kijkt je geschrokken aan en zegt dat ze helemaal niet naar jou aan het kijken was. \nMisschien had je niet zo moeten reageren?";
+                FadesIn(woman);
                 ScoreCounter(2);
                 endOfEvent = true;
                 break;
 
             case 13:
-                narrativeText = "Je vrienden vertellen je dat ze wellicht aan het dromen was.";
+                narrativeText = "Je vrienden vertellen je dat je wellicht aan het dromen was.";
                 chain = 15;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -104,21 +115,19 @@ public class RandomEvent : ChoiceScript {
                 if (rnd == 1)
                 {
                     narrativeText = "De vrouw zie je niet meer terug en je vergeet het voorval al snel.";
-                    //geen effect
-
                 }
                 else
                 {
-                    narrativeText = "De vrouw stapt ook uit. En achtervolgt je. Wanneer je op je bestemming aankomt en je achterom kijkt is ze verdwenen. Je bent de hele dag bang dat je de vrouw weer zal tegenkomen.";
-
+                    narrativeText = "De vrouw stapt ook uit en achtervolgt je. Wanneer je op je bestemming aankomt en achterom kijkt is ze verdwenen. Je bent de hele dag bang dat je de vrouw weer zal tegenkomen.";
+                    FadesIn(femShad);
                 }
                 endOfEvent = true;
                 break;
 
             case 16:
-                narrativeText = "Dit is meestal geen goed idee. Als iemand je verteld dat die persoon zo iets heeft meegemaakt mag je nooit zeggen dat het aan hen licht.";
-                redBox = true;
-                ScoreCounter(1);
+                narrativeText = "Door het te zeggen heb je de juiste keuze gemaakt. Iemand die zijn verhaal doet afwimpelen, zoals je vrienden deden, is geen goede zaak. Er zijn altijd andere mensen, noodnummers en forums waar je terecht kan met je problemen.";
+                greenBox = true;
+                ScoreCounter(3);
                 endOfEvent = true;
                 break;
 
@@ -150,7 +159,7 @@ public class RandomEvent : ChoiceScript {
                 ScoreCounter(1);
                 chain = 25;
                 numberOfOptions = 2;
-                option01Text = "Je antwoord op al zijn vragen ook al hij heeft daar eigenlijk niets mee te maken.";
+                option01Text = "Je antwoordt op al zijn vragen ook al hij heeft daar eigenlijk niets mee te maken.";
                 option02Text = "Je zegt “sorry maar dat zijn jouw zaken niet” en negeert hem";
                 break;
 
@@ -179,7 +188,7 @@ public class RandomEvent : ChoiceScript {
                 }
                 else
                 {
-                    narrativeText = "De man blijft staan en even later is hij uit je zicht verdwenen en je haalt opgelucht adem.";
+                    narrativeText = "De man blijft staan en even later is hij uit je zicht verdwenen. Je haalt opgelucht adem.";
                 }
                 endOfEvent = true;
                 break;
@@ -198,7 +207,7 @@ public class RandomEvent : ChoiceScript {
                     narrativeText = "De man komt heel dicht om nog een vraag te stellen en je duwt hem weg. Iemand anders ziet dit en vraagt wat er aan de hand is. “Niets” zegt de man snel en hij gaat weg.";
                     chain = 40;
                     numberOfOptions = 2;
-                    option01Text = "Je verteld de persoon wat er gebeurd is en samengaan jullie naar de politie om je verhaal te vertellen.";
+                    option01Text = "Je vertelt de persoon wat er gebeurd is en jullie gaan samen naar de politie om je verhaal te vertellen.";
                     option01Text = "Je bedankt de persoon en wandelt weg.";
                 }
                 break;
@@ -261,6 +270,7 @@ public class RandomEvent : ChoiceScript {
                     numberOfOptions = 1;
                     option01Text = "...";
                 }
+                FadesOut(maleShad);
                 break;
 
             case 28:

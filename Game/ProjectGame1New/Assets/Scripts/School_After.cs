@@ -2,14 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class School_After : ChoiceScript {
+
+    [SerializeField]
+    protected Image maleFriend;
+    [SerializeField]
+    protected Image femaleFriend;
+
+    protected bool isBoy;
 
     public override void StartDialogue()
     {
         choiceMade = 0;
         chain = 0;
 
+        maleFriend.enabled = false;
+        femaleFriend.enabled = false;
+
+        if (Random.Range(1, 3) == 1)
+        {
+            isBoy = true;
+        }
+        else
+        {
+            isBoy = false;
+        }
 
         Consequences(1);
     }
@@ -39,6 +58,33 @@ public class School_After : ChoiceScript {
 
     }
 
+    public void FadeBoyOrGirl(bool isfadeIn)
+    {
+        if (isfadeIn)
+        {
+            if (isBoy)
+            {
+                FadesIn(maleFriend);
+            }
+            else
+            {
+                FadesIn(femaleFriend);
+            }
+        }
+        else
+        {
+            if (isBoy)
+            {
+                FadesOut(maleFriend);
+            }
+            else
+            {
+                FadesOut(femaleFriend);
+            }
+        }
+
+    }
+
 
     public override void StartTalking(int num)
     {
@@ -53,7 +99,7 @@ public class School_After : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "\"Natuurlijk,\" zeggen de meeste enthousiast. Onderweg vraagt er iemand of jullie zin heeft om na het eten iets te gaan doen.";
+                narrativeText = "\"Natuurlijk,\" zeggen de meeste enthousiast. Onderweg vraagt er iemand of jullie zin hebben om na het eten iets te gaan doen.";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -69,13 +115,14 @@ public class School_After : ChoiceScript {
                     narrativeText = "\"Het is mooi weer vandaag dus waarom niet?\" zeg je. \"Laten we gaan zwemmen!\" stelt iemand voor.";
 
                 }
+                FadeBoyOrGirl(true);
                 chain = 3;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 4:
-                narrativeText = "De andere zijn meteen akkoord. \"Dat is dan afgesproken, even thuis onze school spullen wegzetten en dan kunnen we vertrekken!\"";
+                narrativeText = "De anderen zijn meteen akkoord. \"Dat is dan afgesproken, even thuis onze school spullen wegzetten en dan kunnen we vertrekken!\"";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";

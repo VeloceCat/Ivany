@@ -19,9 +19,8 @@ public static class StaticInfo {
 
 
     // Scoreteller
-    private static int totalScore = 0;
+    private static int sliderCount = 0;
 
-    private static int scoresCounted = 0;
 
 
     //*****************************************************
@@ -46,6 +45,18 @@ public static class StaticInfo {
         set
         {
             shopNotPool = value;
+        }
+    }
+
+    public static int SliderCount
+    {
+        get
+        {
+            return sliderCount;
+        }
+        set
+        {
+            sliderCount = value;
         }
     }
 
@@ -85,28 +96,5 @@ public static class StaticInfo {
         }
     }
 
-    public static int TotalScore
-    {
-        get
-        {
-            return totalScore;
-        }
-        set
-        {
-            totalScore = value;
-        }
-    }
-
-    public static int ScoresCounted
-    {
-        get
-        {
-            return scoresCounted;
-        }
-        set
-        {
-            scoresCounted = value;
-        }
-    }
 
 }

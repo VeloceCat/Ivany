@@ -9,11 +9,19 @@ public class Home_End : ChoiceScript {
     [SerializeField]
     protected Image fade;
 
+    [SerializeField]
+    protected Image grandMother;
+    [SerializeField]
+    protected Image mother;
+
     public override void StartDialogue()
     {
         fade.enabled = false;
         choiceMade = 0;
         chain = 0;
+
+        mother.enabled = false;
+        grandMother.enabled = false;
 
         int rnd = Random.Range(1, 3);
         Consequences(rnd);
@@ -44,7 +52,7 @@ public class Home_End : ChoiceScript {
 
     public override void StartTalking(int num)
     {
-        int rnd;
+        //int rnd;
         switch (num)
         {
             case 1:
@@ -57,14 +65,14 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "Wanneer je thuiskomt merken je ouders merken er iets niet klopt en vragen nog maar eens wat er is. Maar je antwoord niet.";
+                narrativeText = "Wanneer je thuiskomt merken je ouders dat er iets niet klopt en vragen nog maar eens wat er is. Maar je antwoordt niet.";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 3:
-                narrativeText = "Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust en je moeder klopt op de deur van je kamer en vraagt wat er is.";
+                narrativeText = "Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust. Je moeder klopt op de deur van je kamer en vraagt wat er is.";
                 chain = 21;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -73,10 +81,11 @@ public class Home_End : ChoiceScript {
             case 14:
                 narrativeText = "Even later ga je naar beneden om hallo te zeggen tegen je oma. Ze ziet dat je er een beetje triest uitziet. \"Wat is er?\" vraagt ze.";
                 chain = 16;
+                FadesIn(grandMother);
                 numberOfOptions = 3;
                 option01Text = "\"Het was een moeilijke dag, meer niet.\" Zeg je.";
                 option02Text = "Je zegt helemaal niets en gaat weer naar je kamer.";
-                option03Text = "Je verteld hen wat er gebeurt is vandaag.";
+                option03Text = "Je vertelt hen wat er gebeurt is vandaag.";
                 break;
 
             case 15:
@@ -107,12 +116,13 @@ public class Home_End : ChoiceScript {
             case 19:
                 narrativeText = "Iedereen luistert aandachtig tot je je hele verhaal hebt gedaan, je moeder komt naast je zitten en slaagt haar arm om je. \n\"We zullen samen naar een oplossing zoeken\" stelt ze voor, en je kan enkel nog knikken. Je verhaal doen was moeilijk maar je weet dat dit de juiste beslissing was.";
                 ScoreCounter(3);
+                FadesIn(mother);
                 greenBox = true;
                 endOfEvent = true;
                 break;
 
             case 21:
-                rnd = Random.Range(1, 3);
+                narrativeText = "\"Kom je naar beneden? Oma is hier.\" zeg je moeder.";
                 chain = 13;
                 numberOfOptions = 2;
                 option01Text = "Je gaat toch maar naar beneden";
@@ -120,7 +130,7 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 22:
-                narrativeText = "Maar je antwoord niet. Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust en je moeder klopt op de deur van je kamer en vraagt nog maar eens wat er is.";
+                narrativeText = "Maar je antwoordt niet. Je gaat gewoon meteen weer naar je kamer. Je ouders zijn erg ongerust en je moeder klopt op de deur van je kamer en vraagt nog maar eens wat er is.";
                 chain = 22;
                 numberOfOptions = 2;
                 option01Text = "Je zegt weer niks.";
@@ -128,8 +138,8 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 23:
-                narrativeText = "Je durft het niet te zeggen, je gaat naar je kamer en staart uit de raam. Je kan niet meer. Misschien moet je het toch maar zeggen.";
-                ScoreCounter(2);
+                narrativeText = "Je durft het niet te zeggen, je gaat naar je kamer en staart uit de raam. Je kan niet meer.\nHoe moeilijk het ook is, praten is een belangrijke eerste stap.";
+                ScoreCounter(1);
                 chain = 24;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -143,50 +153,13 @@ public class Home_End : ChoiceScript {
                 break;
 
             case 25:
-                rnd = Random.Range(1, 3);
-                if (rnd == 1)
-                {
-                    narrativeText = "Je moeder hoort je zachtjes wenen en stapt de kamer binnen.";
-                    chain = 25;
-                    numberOfOptions = 1;
-                    option01Text = "...";
-                }
-                else
-                {
-                    narrativeText = "Je hoort je moeder weer naar beneden gaan. En voelt je zo alleen.";
-                    chain = 26;
-                    numberOfOptions = 1;
-                    option01Text = "...";
-                }
-                break;
-
-            case 26:
-                narrativeText = "Je merkt pas dat ze er is als je een arm om je heen voelt. Je moeder zegt niks, maar houd je gewoon vast.\nJe voelt jezelf blij worden, en voor je het weet doe je je verhaal. Je moeder luistert gewoon, maar je voelt dat hij alles voor je zal doen om je te helpen.";
+                narrativeText = "Je probeert jezelf wat op te vrolijken en je begint aan je huiswerk. Maar ergens in je hoofd blijven de gebeurtenissen op de achtergrond aanwezig.";
                 greenBox = true;
-                ScoreCounter(3);
-                chain = 29;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
-            case 27:
-                narrativeText = "Je laat je tranen de vrije loop gaan. Wanneer je even later naar beneden gaat voor het avond eten zien je ouders dat er iets niet klopt.";
-                ScoreCounter(2);
-                chain = 27;
-                numberOfOptions = 1;
-                option01Text = "...";
-                break;
-
-            case 28:
-                narrativeText = "Ze zijn zo bezorgd om je en zonder nog verder aan het eten te denken slaan ze hun armen om je heen om vragen je wat er is. Je voelt plots toch de kracht om het te vertellen en je verteld over de dingen die je de laatste dagen hebt meegemaakt.";
-                greenBox = true;
-                chain = 29;
-                numberOfOptions = 1;
-                option01Text = "...";
+                endOfEvent = true;
                 break;
 
             case 30:
-                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nVJe  voelt je gewoon blij en gelukkig.";
+                narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe ging. \nJe voelt dat je ouders achter je staan, wat er ook gebeurd.";
                 greenBox = true;
                 endOfEvent = true;
                 break;

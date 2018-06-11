@@ -16,6 +16,8 @@ public class Home_Start : ChoiceScript {
         choiceMade = 0;
         chain = 0;
 
+        StaticInfo.SliderCount = 0;
+
         //StaticInfo.RandomEventNbr = Random.Range(1, 4);
         if (Random.Range(0, 2) == 0)
         {
@@ -36,7 +38,7 @@ public class Home_Start : ChoiceScript {
     {
         base.AfterDialogue();
 
-        StaticInfo.NextScene = "RandomEventScene";
+        SceneManager.LoadScene("RandomEventScene");
 
         /*
         if (StaticInfo.RandomEventNbr == 1)

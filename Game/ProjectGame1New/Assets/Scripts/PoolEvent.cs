@@ -24,16 +24,9 @@ public class PoolEvent : ChoiceScript {
     {
         base.AfterDialogue();
 
-        StaticInfo.NextScene = "Home_After";
 
-        if (StaticInfo.RandomEventNbr == 3)
-        {
-            SceneManager.LoadScene("RandomEventScene");
-        }
-        else
-        {
-            SceneManager.LoadScene(StaticInfo.NextScene);
-        }
+        SceneManager.LoadScene("Home_After");
+        
 
     }
 

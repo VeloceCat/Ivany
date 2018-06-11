@@ -39,22 +39,13 @@ public class School_After : ChoiceScript {
 
         if (StaticInfo.ShopNotPool)
         {
-            StaticInfo.NextScene = "Shopping";
+            SceneManager.LoadScene("Shopping");
         }
         else
         {
-            StaticInfo.NextScene = "Pool";
+            SceneManager.LoadScene("Pool");
         }
         
-
-        if (StaticInfo.RandomEventNbr == 2)
-        {
-            SceneManager.LoadScene("RandomEventScene");
-        }
-        else
-        {
-            SceneManager.LoadScene(StaticInfo.NextScene);
-        }
 
     }
 
@@ -106,7 +97,7 @@ public class School_After : ChoiceScript {
                 break;
 
             case 3:
-                if (StaticInfo.NextScene == "Shopping")
+                if (StaticInfo.ShopNotPool)
                 {
                     narrativeText = "\"Het is mooi weer vandaag dus waarom niet?\" zeg je. \"Laten we gaan shoppen!\" stelt iemand voor.";
                 }

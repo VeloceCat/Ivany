@@ -97,7 +97,7 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 13:
-                narrativeText = "Je vrienden vertellen je dat ze wellicht aan het dromen was.";
+                narrativeText = "Je vrienden vertellen je dat je wellicht aan het dromen was.";
                 chain = 15;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -125,9 +125,9 @@ public class RandomEvent : ChoiceScript {
                 break;
 
             case 16:
-                narrativeText = "Dit is meestal geen goed idee. Als iemand je verteld dat die persoon zo iets heeft meegemaakt mag je nooit zeggen dat het aan hen ligt.";
-                redBox = true;
-                ScoreCounter(1);
+                narrativeText = "Door het te zeggen heb je de juiste keuze gemaakt. Iemand die zijn verhaal doet afwimpelen, zoals je vrienden deden, is geen goede zaak. Er zijn altijd andere mensen, noodnummers en forums waar je terecht kan met je problemen.";
+                greenBox = true;
+                ScoreCounter(3);
                 endOfEvent = true;
                 break;
 

@@ -161,7 +161,7 @@ public class School_Before : ChoiceScript
                 break;
 
             case 17:
-                narrativeText = "\"Dit kunnen we best aan de politie vertellen, zij kunnen de dader opsporen en ervoor zorgen dat dit met niemand anders gebeurd.\"";
+                narrativeText = "\"Dit kunnen we best aan de politie vertellen, zij kunnen de dader opsporen en ervoor zorgen dat dit met niemand anders gebeurt.\"";
                 chain = 17;
                 FadesOut(femaleFriend);
                 FadesIn(teacher);
@@ -227,13 +227,13 @@ public class School_Before : ChoiceScript
                 break;
 
             case 41:
-                narrativeText = "Na een tijde wandeld de belager lachend weg, je vriend doet alsof er niets gebeurd is. Misschien had je hem beter geholpen?";
+                narrativeText = "Na een tijdje wandelt de belager lachend weg, je vriend doet alsof er niets gebeurd is. Misschien had je hem beter geholpen?";
                 ScoreCounter(1);
                 endOfEvent = true;
                 break;
 
             case 42:
-                narrativeText = "De belager zegt dat jij er niets mee te maken hebt. Maar omdat je je vriend help druipt hij toch af.";
+                narrativeText = "De belager zegt dat jij er niets mee te maken hebt. Maar omdat je je vriend helpt druipt hij toch af.";
                 ScoreCounter(2);
                 endOfEvent = true;
                 break;

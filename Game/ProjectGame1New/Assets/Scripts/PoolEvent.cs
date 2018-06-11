@@ -102,7 +102,7 @@ public class PoolEvent : ChoiceScript {
 
             case 14:
                 narrativeText = "Als je nu zou vertellen dat het gaatje er is kan je misschien voorkomen dat er nog iemand mensen zal bespieden!";
-                redBox = true;
+                ScoreCounter(1);
                 chain = 20;
                 numberOfOptions = 1;
                 option01Text = "...";

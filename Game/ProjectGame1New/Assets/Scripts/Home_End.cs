@@ -162,13 +162,13 @@ public class Home_End : ChoiceScript {
 
             case 25:
                 narrativeText = "Je probeert jezelf wat op te vrolijken en je begint aan je huiswerk. Maar ergens in je hoofd blijven de gebeurtenissen op de achtergrond aanwezig.";
-                greenBox = true;
+                
                 endOfEvent = true;
                 break;
 
             case 30:
                 narrativeText = "De volgende dag ga je met je ouders naar de politie om je verhaal te doen.\nDaarna nemen ze je mee naar een van die leuke plekjes waar jullie vroeger vaak naartoe gingen. \nJe voelt dat je ouders achter je staan, wat er ook gebeurt.";
-                greenBox = true;
+                ScoreCounter(3);
                 endOfEvent = true;
                 break;
 

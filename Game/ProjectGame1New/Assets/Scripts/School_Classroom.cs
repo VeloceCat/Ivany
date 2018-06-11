@@ -190,7 +190,7 @@ public class School_Classroom : ChoiceScript {
 
             case 14:
                 narrativeText = "Je beslist om je achtervolger dan maar gewoon te negeren. Geen reactie, geen plezier blijkbaar want je achtervolger geeft al snel op.";
-                greenBox = true;
+                //greenBox = true;
                 FadeBoyOrGirlShadow(false);
                 endOfEvent = true;
                 break;
@@ -236,6 +236,7 @@ public class School_Classroom : ChoiceScript {
             case 26:
                 narrativeText = "Die zegt dat je het best ook tegen de directeur kan zeggen, zij kan misschien de schuldige vinden.";
                 greenBox = true;
+                ScoreCounter(3);
                 chain = 29;
                 numberOfOptions = 1;
                 option01Text = "...";

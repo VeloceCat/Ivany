@@ -234,7 +234,7 @@ public class School_Before : ChoiceScript
 
             case 42:
                 narrativeText = "De belager zegt dat jij er niets mee te maken hebt. Maar omdat je je vriend helpt, druipt hij toch af.";
-                ScoreCounter(2);
+                ScoreCounter(3);
                 endOfEvent = true;
                 break;
 

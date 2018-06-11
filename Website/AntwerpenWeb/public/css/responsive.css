@@ -130,6 +130,10 @@
         padding: 5px 10px;
     }
 
+    .modal-header {
+        min-height: 20px;
+    }
+
     #achtergrond {
         background-image: none;
         background-color: #121212;

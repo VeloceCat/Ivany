@@ -76,7 +76,7 @@ class PostsController extends Controller
             $request->only('title', 'description')
         );
 
-        session()->flash('message', 'Je post is bijgewerkt. Hij wordt zo snel mogelijk gecontrolleerd en staat binnenkort weer online.');
+        session()->flash('message', 'Je post is bijgewerkt. Hij wordt zo snel mogelijk gecontroleerd en staat binnenkort weer online.');
 
         return redirect()->route('posts_path', ['post' => $post->id]);
     }

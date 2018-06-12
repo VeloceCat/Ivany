@@ -39,6 +39,8 @@ class PostsController extends Controller
 
     public function store(CreatePostRequest $request)
     {
+        $searchArray = array('"', "</br>", "\n");
+        $replaceArray = array('\"', '', '</br>');
         $post = new Post;
 
         $post->fill(
@@ -47,6 +49,7 @@ class PostsController extends Controller
 
         $post->user_id = $request->user()->id;
         $post->is_allowed = 0;
+        $post->description = str_replace($searchArray, $replaceArray, $post->description);
 
         $post->save();
 
@@ -70,7 +73,10 @@ class PostsController extends Controller
 
     public function update(Post $post, UpdatePostRequest $request)
     {
+        $searchArray = array('"', "</br>", "\n");
+        $replaceArray = array('\"', '', '</br>');
         $post->is_allowed = 0;
+        $post->description = str_replace($searchArray, $replaceArray, $post->description);
 
         $post->update(
             $request->only('title', 'description')

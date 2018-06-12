@@ -76,8 +76,6 @@
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            /*$MSG = "Comment failed deleting. " . $e->getMessage() . "";
-            echo $MSG;*/
         }
     }
 
@@ -118,13 +116,13 @@
             }
             elseif ($table == 'posts') {
                 $title = $_POST['title'];
-                $description = $_POST['description'];
+                $description = '"'.str_replace($searchArray, $replaceArray, $_POST['description']).'"';
                 $userID = $_POST['userID'];
 
                 DB::update("UPDATE `posts` SET title = '$title', description = $description, user_id = '$userID', updated_at = '$dateToPost' $undelete $allow $unallow WHERE id='$id'");
             }
             elseif ($table == 'comments') {
-                $comment = $_POST['comment'];
+                $comment = '"'.str_replace($searchArray, $replaceArray, $_POST['comment']).'"';
                 $userID = $_POST['userID'];
                 $postID = $_POST['postID'];
 

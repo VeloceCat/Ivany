@@ -22,6 +22,8 @@ class CommentsController extends Controller
 
     public function store(CreateCommentRequest $request, $id) 
     {
+        $searchArray = array('"', "</br>", "\n");
+        $replaceArray = array('\"', '', '</br>');
         $post = Post::find($id);
 
         $comment = new Comment;
@@ -31,6 +33,7 @@ class CommentsController extends Controller
 
         $comment->user_id = $request->user()->id;
         $comment->is_allowed = 0;
+        $comment->comment = str_replace($searchArray, $replaceArray, $comment->comment);
 
         $comment->save();
 
@@ -50,10 +53,13 @@ class CommentsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $searchArray = array('"', "</br>", "\n");
+        $replaceArray = array('\"', '', '</br>');
         $comment = Comment::find($id);
 
         $comment->comment = $request->comment;
         $comment->is_allowed = 0;
+        $comment->comment = str_replace($searchArray, $replaceArray, $comment->comment);
 
         $comment->save();
 

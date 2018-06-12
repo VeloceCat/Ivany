@@ -178,6 +178,10 @@
                                     <input type='hidden' name='id' value='{{$id}}'>
                                     <input type='hidden' name='table' value="posts">
                                     <input type='hidden' name='nummer' value="{{$infoNummer}}">
+                                    <input type='hidden' name='userID' value="{{$userID}}">
+                                    <!--@if ($allowed == 'false')
+                                        <input type='hidden' name='unallow' value="true">
+                                    @endif-->
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="title" class="col-sm-3 control-label">Titel:</label>
@@ -205,10 +209,9 @@
                                         <input type='hidden' name='unallow' value="true">
                                     @endif
                                     
-                                    @if (Auth::user()->is_admin == 1 && $allowed == 'false')
+                                    @if (Auth::user()->is_admin == 1 && $allowed == 'false' && $deleted == 'false')
                                         <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
                                             <input type="hidden" name="allow" value="true">
-                                            <input type='hidden' name='userID' value="{{$userID}}">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
                                                     <button type="submit" class="btn btn-success">
@@ -235,6 +238,11 @@
                                     <input type='hidden' name='id' value='{{$id}}'>
                                     <input type='hidden' name='table' value="comments">
                                     <input type='hidden' name='nummer' value="{{$infoNummer}}">
+                                    <input type='hidden' name='userID' value="{{$userID}}">
+                                    <input type='hidden' name='postID' value="{{$postID}}">
+                                    @if ($allowed == 'false')
+                                        <input type='hidden' name='unallow' value="true">
+                                    @endif
                                     <div class="form-group">
                                         <div class="col-sm-6">
                                             <label for="comment" class="col-sm-3 control-label">Comment:</label>
@@ -260,11 +268,9 @@
                                         <input type='hidden' name='unallow' value="true">
                                     @endif
 
-                                    @if (Auth::user()->is_admin == 1 && $allowed == 'false')
+                                    @if (Auth::user()->is_admin == 1 && $allowed == 'false' && $deleted == 'false')
                                         <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
                                             <input type="hidden" name="allow" value="true">
-                                            <input type='hidden' name='userID' value="{{$userID}}">
-                                            <input type='hidden' name='postID' value="{{$postID}}">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
                                                     <button type="submit" class="btn btn-success">

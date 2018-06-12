@@ -578,7 +578,7 @@
                                             <td class='editbuttons'>"
                                             ?> <form class='buttonEdit' method='POST' action="{{ route('adminEdit') }}">
                                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                                                    <input type='hidden' name='nummer' value='4'>
+                                                    <input type='hidden' name='nummer' value='8'>
                                                     <input type='hidden' name='id' value='{{$comment->id}}'>
                                                     <input type='hidden' name='table' value="comments">
                                                     <button type='submit'><i class='fas fa-pencil-alt'></i></button>
@@ -586,7 +586,7 @@
 
                                                 <form class='buttonDelete' method='POST' action="{{ route('adminPost') }}">
                                                     <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                                                    <input type='hidden' name='nummer' value='4'>
+                                                    <input type='hidden' name='nummer' value='8'>
                                                     <input type='hidden' name='delete' value='pushed'>
                                                     <input type='hidden' name='id' value='{{$comment->id}}'>
                                                     <input type='hidden' name='table' value="comments">

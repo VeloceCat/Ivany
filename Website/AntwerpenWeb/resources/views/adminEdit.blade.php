@@ -208,6 +208,8 @@
                                     @if (Auth::user()->is_admin == 1 && $allowed == 'false')
                                         <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
                                             <input type="hidden" name="allow" value="true">
+                                            <input type='hidden' name='id' value='{{$id}}'>
+                                            <input type='hidden' name='table' value="posts">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
                                                     <button type="submit" class="btn btn-success">
@@ -262,6 +264,8 @@
                                     @if (Auth::user()->is_admin == 1 && $allowed == 'false')
                                         <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
                                             <input type="hidden" name="allow" value="true">
+                                            <input type='hidden' name='id' value='{{$id}}'>
+                                            <input type='hidden' name='table' value="comments">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
                                                     <button type="submit" class="btn btn-success">

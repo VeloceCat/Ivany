@@ -117,14 +117,14 @@
                 DB::update("UPDATE `quotes` SET quote = $quote, blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
             }
             elseif ($table == 'posts') {
-                $title = '"' .str_replace($searchArray, $replaceArray,$_POST['title']).'"';
-                $description = '"'.str_replace($searchArray, $replaceArray, $_POST['description']).'"';
+                $title = $_POST['title'];
+                $description = $_POST['description'];
                 $userID = $_POST['userID'];
 
                 DB::update("UPDATE `posts` SET title = '$title', description = $description, user_id = '$userID', updated_at = '$dateToPost' $undelete $allow $unallow WHERE id='$id'");
             }
             elseif ($table == 'comments') {
-                $comment = '"'.str_replace($searchArray, $replaceArray, $_POST['comment']).'"';
+                $comment = $_POST['comment'];
                 $userID = $_POST['userID'];
                 $postID = $_POST['postID'];
 

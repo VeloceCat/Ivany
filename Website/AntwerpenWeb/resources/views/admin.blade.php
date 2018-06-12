@@ -5,8 +5,8 @@
     <?php
 
     
-    $searchArray = array('"', "\n");
-    $replaceArray = array('\"', '</br>');
+    $searchArray = array('"', "</br>", "\n");
+    $replaceArray = array('\"', '', '</br>');
 
     if (isset($_POST['nummer'])) {
         $infoNummer = $_POST['nummer'];

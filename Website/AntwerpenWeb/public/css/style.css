@@ -1403,3 +1403,8 @@ postContentFullWidth {
 .hintForMobileGame {
     display: none;
 }
+
+.fullscreen:hover {
+    background-color: rgb(0, 114, 207);
+    cursor: pointer;
+}

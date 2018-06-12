@@ -526,7 +526,7 @@
                 break;
 
                 case 7:
-                    echo "  <table id='myTable'><tr><th>Titel</th><th>Text</th><th>Gebruikersnummer</th><th>Goedgekeurd</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='7'></td></tr>";
+                    echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Gebruikersnummer</th><th>Goedgekeurd</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='7'></td></tr>";
                             $posts = DB::select("SELECT * FROM `posts` WHERE user_id = '$user' ORDER BY deleted_at ASC, id DESC");
                             foreach($posts as $post) {
                                 $shortendText = substr($post->description, 0, 100);

@@ -16,6 +16,11 @@
             <p>Bezoek <a href="https://www.awel.be/" target="_blank">awel.be</a>.</p>
         </div>
         <div class="artikel contactLink">
+            <h2>OverKop</h2>
+            <p>In een OverKop-huis kan je als jongere tot 25 jaar gewoon binnen en buiten lopen en allerlei leuke activiteiten doen. Het is een veilige plek waar je ook een luisterend oor vindt en beroep kan doen op professionele therapeutische hulp, zonder een label opgeplakt te krijgen.</p>
+            <p>Bezoek de <a href="https://www.overkop.be/" target="_blank">site</a> of vind het dichtstbijzijnde <a href="https://overkop.be/huizen" target="_blank">Overkop-huis</a>.</p>
+        </div>
+        <div class="artikel contactLink">
             <h2>Pimento</h2>
             <p>Organisatie die zorgt voor informatie, participatie en vorming voor kinderen, jongeren en hun begeleiders. Ze hebben een ervaringsgericht vormingsaanbod.</p>
             <p>Bezoek <a href="https://www.pimento.be" target="_blank">pimento.be</a>.</p>

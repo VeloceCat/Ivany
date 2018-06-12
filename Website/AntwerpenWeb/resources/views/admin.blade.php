@@ -144,12 +144,12 @@
         try {
             if ($table == 'articles') {
                 $title = '"' . $_POST['titel'] . '"';
-                $text = '"' .str_replace($searchArray, $replaceArray,$_POST['text'] . '"';
+                $text = '"' .str_replace($searchArray, $replaceArray,$_POST['text']) . '"';
                 $blokID = '"' . $_POST['blokID'] . '"';
                 DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ($title, $text, $blokID, $dateToPost)");
             }
             elseif ($table == 'quotes') {
-                $quote = '"' . str_replace($searchArray, $replaceArray,$_POST['text'] . '"';
+                $quote = '"' . str_replace($searchArray, $replaceArray,$_POST['text']) . '"';
                 $blokID = '"' . $_POST['blokID'] . '"';
                 DB::insert("INSERT INTO `quotes`(`quote`, `blokID`, `created_at`) VALUES ($quote, $blokID, $dateToPost)");
             }

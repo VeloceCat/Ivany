@@ -212,7 +212,7 @@
                                             <input type="hidden" name="allow" value="true">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
-                                                    <button type="submit" class="btn btn-default">
+                                                    <button type="submit" class="btn btn-success">
                                                         <i class="fa fa-pencil-square-o"></i>Bewaren en toestaan
                                                     </button>
                                                 </div>
@@ -270,7 +270,7 @@
                                             <input type="hidden" name="allow" value="true">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
-                                                    <button type="submit" class="btn btn-default">
+                                                    <button type="submit" class="btn btn-success">
                                                         <i class="fa fa-pencil-square-o"></i>Bewaren en toestaan
                                                     </button>
                                                 </div>

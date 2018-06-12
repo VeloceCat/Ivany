@@ -143,7 +143,7 @@
         $dateToPost = '"' . date('Y-m-d H:i:s') . '"';
         try {
             if ($table == 'articles') {
-                $title = '"' .str_replace($searchArray, $replaceArray,$_POST['titel'] . '"';
+                $title = '"' .str_replace($searchArray, $replaceArray,$_POST['titel']) . '"';
                 $text = '"' .str_replace($searchArray, $replaceArray,$_POST['text']) . '"';
                 $blokID = '"' . $_POST['blokID'] . '"';
                 DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ($title, $text, $blokID, $dateToPost)");

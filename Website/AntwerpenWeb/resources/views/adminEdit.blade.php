@@ -184,8 +184,6 @@
                                             <input type="text" name="title" value="{{$title}}" class="form-control" required>
                                             <label for="description" class="col-sm-3 control-label">Beschrijving:</label>
                                             <textarea type="text" name="description" class="form-control" required>{{$text}}</textarea>
-                                            <label for="userID" class="col-sm-3 control-label">Gebruikersnummer:</label>
-                                            <input type="text" name="userID" value="{{$userID}}" class="form-control" required>
                                             @if ($deleted == 'true')
                                                 <label for="undelete" class="col-sm-3 control-label">Herstellen</label>
                                                 <input type="checkbox" name="undelete" value="true">
@@ -240,10 +238,6 @@
                                         <div class="col-sm-6">
                                             <label for="comment" class="col-sm-3 control-label">Comment:</label>
                                             <textarea type="text" name="comment" class="form-control" required>{{$commentText}}</textarea>
-                                            <label for="userID" class="col-sm-3 control-label">Gebruikersnummer:</label>
-                                            <input type="text" name="userID" value="{{$userID}}" class="form-control" required>
-                                            <label for="postID" class="col-sm-3 control-label">Post nummer:</label>
-                                            <input type="text" name="postID" value="{{$postID}}" class="form-control" required>
                                             @if ($deleted == 'true')
                                                 <label for="undelete" class="col-sm-3 control-label">Herstellen</label>
                                                 <input type="checkbox" name="undelete" value="true">
@@ -261,7 +255,7 @@
                                         </div>
                                     </div>
                                     @if (Auth::user()->is_admin != 1)
-                                        <p>let op! als je iets aanpast, zal deze weer worden gecontroleerd voor deze online staat.</p>
+                                        <p>Let op! als je iets aanpast, zal deze weer worden gecontroleerd voor deze online staat.</p>
                                         <input type='hidden' name='unallow' value="true">
                                     @endif
 

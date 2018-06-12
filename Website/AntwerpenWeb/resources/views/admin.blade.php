@@ -117,7 +117,7 @@
                 DB::update("UPDATE `quotes` SET quote = $quote, blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
             }
             elseif ($table == 'posts') {
-                $title = $_POST['title'];
+                $title = '"'.str_replace($searchArray, $replaceArray,$_POST['text']$_POST['title']).'"';
                 $description = '"'.str_replace($searchArray, $replaceArray, $_POST['description']).'"';
                 $userID = $_POST['userID'];
 
@@ -143,7 +143,7 @@
         $dateToPost = '"' . date('Y-m-d H:i:s') . '"';
         try {
             if ($table == 'articles') {
-                $title = '"' . $_POST['titel'] . '"';
+                $title = '"' .str_replace($searchArray, $replaceArray,$_POST['text']$_POST['titel']) . '"';
                 $text = '"' .str_replace($searchArray, $replaceArray,$_POST['text']) . '"';
                 $blokID = '"' . $_POST['blokID'] . '"';
                 DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ($title, $text, $blokID, $dateToPost)");

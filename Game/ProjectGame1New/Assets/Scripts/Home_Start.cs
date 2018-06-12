@@ -77,7 +77,7 @@ public class Home_Start : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "Redelijk slecht gezind sta je toch maar op. Gelukkig is het woensdag, maar een halve dag dus. Je staat op, doet je kleren aan en gaat naar beneden.";
+                narrativeText = "Redelijk slechtgezind sta je toch maar op. Gelukkig is het woensdag, maar een halve dag dus. Je staat op, doet je kleren aan en gaat naar beneden.";
                 chain = 2;
                 numberOfOptions = 1;
                 option01Text = "...";

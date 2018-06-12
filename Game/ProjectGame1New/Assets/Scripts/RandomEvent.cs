@@ -45,12 +45,12 @@ public class RandomEvent : ChoiceScript {
 
             case 1:
                 chain = 8;
-                narrativeText = "Op de tram merk je dat er een vrouw al de hele tijd in jou richting zit te kijken. \"Zit ze naar mij te staren?\" vraag je jezelf af.";
+                narrativeText = "Op de tram merk je dat een vrouw de hele tijd in jou richting zit te kijken. \"Zit ze naar mij te staren?\" vraag je jezelf af.";
                 numberOfOptions = 4;
                 option01Text = "Je krijg een ongemakkelijk gevoel en besluit een halte vroeger af te stappen.";
                 option02Text = "Je verplaatst je uit het zicht van de vrouw en stapt af aan je normale halte.";
                 option03Text = "Je probeert de vrouw te negeren en je stapt aan je normale halte af.";
-                option04Text = "Je vraagt aan de vrouw waarom ze naar je zit te kijken.";
+                option04Text = "Je vraagt vriendelijk aan de vrouw waarom ze naar je zit te kijken.";
                 break;
 
             case 2:

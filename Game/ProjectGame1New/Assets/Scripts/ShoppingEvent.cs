@@ -30,16 +30,8 @@ public class ShoppingEvent : ChoiceScript {
     {
         base.AfterDialogue();
 
-        StaticInfo.NextScene = "Home_After";
-
-        if (StaticInfo.RandomEventNbr == 3)
-        {
-            SceneManager.LoadScene("RandomEventScene");
-        }
-        else
-        {
-            SceneManager.LoadScene(StaticInfo.NextScene);
-        }
+        SceneManager.LoadScene("Home_After");
+        
 
     }
 
@@ -57,14 +49,14 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 2:
-                narrativeText = "Je komt uit je pashokje om in een grotere spiegel te kijken om je kleren passen.";
+                narrativeText = "Je komt uit je pashokje om in een grotere spiegel te kijken of de kleren je wel staan.";
                 chain = 3;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 3:
-                narrativeText = "Terwijl je aan het passen bent zie je plots een smartphone uitsteken boven je hoofd. Met de camera naar jou gericht vanuit het pashokje naast je.";
+                narrativeText = "Terwijl je aan het passen bent, zie je plots een smartphone boven het pashokje. Met de camera op jou gericht.";
                 chain = 19;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -87,14 +79,14 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 5:
-                narrativeText = "Als je even later met een andere T-shirt je pashokje buiten komt ziet hij dat je niet echt tevreden bent en helpt je met iets anders zoeken.";
+                narrativeText = "Als je even later met een andere T-shirt je pashokje buiten komt, ziet hij dat je niet echt tevreden bent en helpt je met iets anders zoeken.";
                 chain = 5;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 6:
-                narrativeText = "\"Dank je,\" zeg je als je met je gekozen kleren naar de kassa vertrekt. \"Geen probleem.\" Antwoordt hij blij terug. ";
+                narrativeText = "\"Dank je,\" zeg je als je met je gekozen kleren naar de kassa vertrekt. \"Geen probleem,\" antwoordt hij blij terug. ";
                 chain = 0;
                 FadesOut(man);
                 numberOfOptions = 1;
@@ -113,7 +105,7 @@ public class ShoppingEvent : ChoiceScript {
                 }
                 else
                 {
-                    narrativeText = "Wanneer je even later met een andere outfit buitenkomt is de vrouw weg. Ze zal toevallig naar jou gekeken hebben.";
+                    narrativeText = "Wanneer je even later met een andere outfit buitenkomt, is de vrouw weg. Ze zal toevallig naar jou gekeken hebben.";
                     FadesOut(femaleShadow);
                     endOfEvent = true;
                 }
@@ -168,14 +160,14 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 13:
-                narrativeText = "De smartphone wordt snel weggetrokken en je hoort mensen snel de winkel uitlopen.";
+                narrativeText = "De smartphone wordt snel weggetrokken en je hoort mensen snel het pashokje uitlopen.";
                 chain = 15;
                 numberOfOptions = 1;
                 option01Text = "...";
                 break;
 
             case 12:
-                narrativeText = "Je staat voor het andere pashokje als de deur opengaat. De 2 jongens die je aan het filmen waren duwen je opzij en proberen snel weg te lopen.";
+                narrativeText = "Je staat voor het andere pashokje als de deur opengaat. De 2 jongens die je aan het filmen waren, duwen je opzij en proberen snel weg te lopen.";
                 chain = 13;
                 numberOfOptions = 1;
                 option01Text = "...";
@@ -192,7 +184,7 @@ public class ShoppingEvent : ChoiceScript {
                 break;
 
             case 15:
-                narrativeText = "Hij bedankt je, maar zegt ook dat wat je deed geen goed idee is. Als de jongen gevallen was had hij jou ook kunnen aanklagen.";
+                narrativeText = "Hij bedankt je, maar zegt ook dat wat je deed geen goed idee is. Als de jongen gevallen was, had hij jou ook kunnen aanklagen.";
                 redBox = true;
                 endOfEvent = true;
                 break;

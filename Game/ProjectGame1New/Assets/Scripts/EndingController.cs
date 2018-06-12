@@ -28,17 +28,17 @@ public class EndingController : MonoBehaviour {
         
         if (StaticInfo.SliderCount < 0)
         {
-            resultText.GetComponent<Text>().text = "Je heb bij het spelen vooral slechte keuzes hebben gemaakt (rode achtergrond).\nEr zijn een aantal dingen die je zelf kan doen als slachtoffer of als iemand naar jou komt die zelf slachtoffer is die jou of de ander erg kunnen helpen. De belangrijkste daarvan is praten, zelf iemand vinden om mee te kunnen praten of klaarstaan om te luisteren is vaak de eerste stap in het verwerken en hulp zoeken.\nDaarnaast kan wat voorzichtig zijn heel wat slechte situaties voorkomen.";
+            resultText.GetComponent<Text>().text = "Je hebt bij het spelen vooral slechte keuzes gemaakt (rode achtergrond).\nEr zijn een aantal dingen die je zelf kan doen als slachtoffer of als iemand naar jou komt die zelf slachtoffer is, die jou of de andere erg kunnen helpen. De belangrijkste daarvan is praten, zelf iemand vinden om mee te kunnen praten of klaarstaan om te luisteren is vaak de eerste stap in het verwerken en hulp zoeken.\nDaarnaast kan wat voorzichtiger zijn heel wat slechte situaties voorkomen.";
 
         }
         else if (StaticInfo.SliderCount > 0)
         {
-            resultText.GetComponent<Text>().text = "Je heb bij het spelen goede keuzes hebt gemaakt tijdens het spel (groene achtergrond). Super! Je weet hoe je moet omgaan met mogelijk gevaarlijke situaties en hoe je moet reageren als er iemand jou om hulp vraagt. Je bent iemand waar slachtoffers bij terug zouden kunnen en je weet je als slachtoffer er niet alleen voor staat.";
+            resultText.GetComponent<Text>().text = "Je hebt bij het spelen goede keuzes gemaakt tijdens het spel (groene achtergrond). Super! Je weet hoe je moet omgaan met mogelijk gevaarlijke situaties en hoe je moet reageren als er iemand jou om hulp vraagt. Je bent iemand waar slachtoffers bij terecht zouden kunnen en je weet dat je er als slachtoffer niet alleen voor staat.";
 
         }
         else
         {
-            resultText.GetComponent<Text>().text = "Je heb bij het spelen zowel goede, slechte als neutrale keuzes gemaakt. Je hebt dus een aantal situaties goed aangepakt en een aantal minder goed of zelfs slecht. Je al op de goede weg om slachtoffers van seksuele intimidatie goed op te vangen of zou je de juiste keuzes maken als je zelf slachtoffer bent.";
+            resultText.GetComponent<Text>().text = "Je hebt bij het spelen zowel goede, slechte als neutrale keuzes gemaakt. Je hebt dus een aantal situaties goed aangepakt en een aantal minder goed of zelfs slecht. Je bent al op de goede weg om slachtoffers van seksuele intimidatie goed op te vangen of je zou de juiste keuzes maken als je zelf slachtoffer bent.";
 
         }
 

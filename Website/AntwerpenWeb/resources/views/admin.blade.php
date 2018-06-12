@@ -5,8 +5,8 @@
     <?php
 
     
-    $searchArray = array('"', "\n");
-    $replaceArray = array('\"', '</br>');
+    $searchArray = array('"', "</br>", "\n");
+    $replaceArray = array('\"', '', '</br>');
 
     if (isset($_POST['nummer'])) {
         $infoNummer = $_POST['nummer'];
@@ -118,13 +118,13 @@
             }
             elseif ($table == 'posts') {
                 $title = $_POST['title'];
-                $description = '"'.str_replace($searchArray, $replaceArray, $_POST['description']).'"';
+                $description = $_POST['description'];
                 $userID = $_POST['userID'];
 
                 DB::update("UPDATE `posts` SET title = '$title', description = $description, user_id = '$userID', updated_at = '$dateToPost' $undelete $allow $unallow WHERE id='$id'");
             }
             elseif ($table == 'comments') {
-                $comment = '"'.str_replace($searchArray, $replaceArray, $_POST['comment']).'"';
+                $comment = $_POST['comment'];
                 $userID = $_POST['userID'];
                 $postID = $_POST['postID'];
 
@@ -143,7 +143,7 @@
         $dateToPost = '"' . date('Y-m-d H:i:s') . '"';
         try {
             if ($table == 'articles') {
-                $title = '"' . $_POST['titel'] . '"';
+                $title = '"' .str_replace($searchArray, $replaceArray,$_POST['titel']) . '"';
                 $text = '"' .str_replace($searchArray, $replaceArray,$_POST['text']) . '"';
                 $blokID = '"' . $_POST['blokID'] . '"';
                 DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ($title, $text, $blokID, $dateToPost)");

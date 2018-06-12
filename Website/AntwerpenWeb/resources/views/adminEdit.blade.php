@@ -264,6 +264,7 @@
                                         <form action="{{ route('admin') }}" method="POST" class="form-horizontal">
                                             <input type="hidden" name="allow" value="true">
                                             <input type='hidden' name='userID' value="{{$userID}}">
+                                            <input type='hidden' name='postID' value="{{$postID}}">
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
                                                     <button type="submit" class="btn btn-success">

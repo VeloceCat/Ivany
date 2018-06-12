@@ -4,6 +4,10 @@
 
     <?php
 
+    
+    $searchArray = array('"', "\n");
+    $replaceArray = array('\"', '</br>');
+
     if (isset($_POST['nummer'])) {
         $infoNummer = $_POST['nummer'];
     }
@@ -101,26 +105,26 @@
         $unallow = (isset($_POST['unallow']) && $_POST['unallow'] == 'true') ? ", is_allowed = 0" : '';
         try {
             if ($table == 'articles') {
-                $title = '"'.str_replace('"', '\"', $_POST['titel']).'"';
-                $text = '"'.str_replace('"', '\"', $_POST['text']).'"';
+                $title = '"'.str_replace($searchArray, $replaceArray, $_POST['titel']).'"';
+                $text = '"'.str_replace($searchArray, $replaceArray, $_POST['text']).'"';
                 $blokID = $_POST['blokID'];
 
                 DB::update("UPDATE `articles` SET title = $title, text = $text, blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id' ");
             }
             elseif ($table == 'quotes') {
                 $blokID =  $_POST['blokID'];
-                $quote = '"'.str_replace('"', '\"', $_POST['text']).'"';
+                $quote = '"'.str_replace($searchArray, $replaceArray, $_POST['text']).'"';
                 DB::update("UPDATE `quotes` SET quote = $quote, blokID = '$blokID', updated_at = '$dateToPost' $undelete WHERE id='$id'");
             }
             elseif ($table == 'posts') {
                 $title = $_POST['title'];
-                $description = '"'.str_replace('"', '\"', $_POST['description']).'"';
+                $description = '"'.str_replace($searchArray, $replaceArray, $_POST['description']).'"';
                 $userID = $_POST['userID'];
 
                 DB::update("UPDATE `posts` SET title = '$title', description = $description, user_id = '$userID', updated_at = '$dateToPost' $undelete $allow $unallow WHERE id='$id'");
             }
             elseif ($table == 'comments') {
-                $comment = '"'.str_replace('"', '\"', $_POST['comment']).'"';
+                $comment = '"'.str_replace($searchArray, $replaceArray, $_POST['comment']).'"';
                 $userID = $_POST['userID'];
                 $postID = $_POST['postID'];
 
@@ -140,12 +144,12 @@
         try {
             if ($table == 'articles') {
                 $title = '"' . $_POST['titel'] . '"';
-                $text = '"' . $_POST['text'] . '"';
+                $text = '"' .str_replace($searchArray, $replaceArray,$_POST['text'] . '"';
                 $blokID = '"' . $_POST['blokID'] . '"';
                 DB::insert("INSERT INTO `articles`(`title`, `text`, `blokID`, `created_at`) VALUES ($title, $text, $blokID, $dateToPost)");
             }
             elseif ($table == 'quotes') {
-                $quote = '"' . $_POST['text'] . '"';
+                $quote = '"' . str_replace($searchArray, $replaceArray,$_POST['text'] . '"';
                 $blokID = '"' . $_POST['blokID'] . '"';
                 DB::insert("INSERT INTO `quotes`(`quote`, `blokID`, `created_at`) VALUES ($quote, $blokID, $dateToPost)");
             }

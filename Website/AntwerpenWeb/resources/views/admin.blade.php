@@ -528,7 +528,7 @@
                 break;
 
                 case 7:
-                    echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Gebruikersnummer</th><th>Goedgekeurd</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='7'></td></tr>";
+                    echo "  <table id='myTable'><tr><th></th><th>Titel</th><th>Text</th><th>Goedgekeurd</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='6'></td></tr>";
                             $posts = DB::select("SELECT * FROM `posts` WHERE user_id = '$user' ORDER BY deleted_at ASC, id DESC");
                             foreach($posts as $post) {
                                 $shortendText = substr($post->description, 0, 100);
@@ -557,14 +557,14 @@
                                             @endif
                                             </form><?php
 
-                                            echo"</td><td>$post->title</td><td>$shortendText...</td><td>$post->user_id</td><td>$checked</td><td>$updated</td><td>$deleted</td></tr>";
+                                            echo"</td><td>$post->title</td><td>$shortendText...</td><td>$checked</td><td>$updated</td><td>$deleted</td></tr>";
                             }
                             echo '</table>';
 
                 break;
 
                 case 8:
-                    echo "  <table id='myTable'><tr><th></th><th>Reacties</th><th>Gebruikersnummer</th><th>Post nummer</th><th>Goedgekeurd</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='7'></td></tr>";
+                    echo "  <table id='myTable'><tr><th></th><th>Reacties</th><th>Goedgekeurd</th><th>Laatste update</th><th>Verwijderd</th></tr><tr><td colspan='5'></td></tr>";
                             $comments = DB::select("SELECT * FROM `comments` WHERE user_id = '$user' ORDER BY deleted_at ASC, id DESC");
                             foreach($comments as $comment) {
                                 $shortendText = substr($comment->comment, 0, 100);
@@ -593,7 +593,7 @@
                                                     @endif
                                                 </form><?php
 
-                                            echo"</td><td>$shortendText...</td><td>$comment->user_id</td><td>$comment->post_id</td><td>$checked</td><td>$updated</td><td>$deleted</td></tr>";
+                                            echo"</td><td>$shortendText...</td><td>$checked</td><td>$updated</td><td>$deleted</td></tr>";
                             }
                             echo '</table>';
 

@@ -34,7 +34,7 @@ class CommentsController extends Controller
 
         $comment->save();
 
-        session()->flash('message', 'Je reactie wordt zo snel mogelijk gecontrolleerd, ze staat binnenkort online.');
+        session()->flash('message', 'Je reactie wordt zo snel mogelijk gecontroleerd, ze staat binnenkort online.');
 
         return redirect()->route('post_path', [$post->post]);
     }
@@ -57,7 +57,7 @@ class CommentsController extends Controller
 
         $comment->save();
 
-        session()->flash('message', 'Je reactie is bijgewerkt. Ze wordt zo snel mogelijk gecontrolleerd, hij staat binnenkort weer online.');
+        session()->flash('message', 'Je reactie is bijgewerkt. Ze wordt zo snel mogelijk gecontroleerd, hij staat binnenkort weer online.');
 
         return redirect()->route('post_path', $comment->post->id);
     }

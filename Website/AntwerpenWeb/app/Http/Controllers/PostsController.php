@@ -50,7 +50,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        session()->flash('message', 'Je post wordt zo snel mogelijk gecontrolleerd, hij staat binnenkort online.');
+        session()->flash('message', 'Je post wordt zo snel mogelijk gecontroleerd, hij staat binnenkort online.');
 
         return redirect()->route('posts_path');
     }
